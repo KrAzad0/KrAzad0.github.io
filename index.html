@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kumar Azad | Theoretical Physicist</title>
+    <style>
+        :root {
+            --primary: #0a192f; /* Deep Navy - Academic/Physics vibe */
+            --secondary: #64ffda; /* Cyan - Quantum/Tech vibe */
+            --text: #8892b0;
+            --heading: #ccd6f6;
+            --bg: #0a192f;
+            --card-bg: #112240;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 60px 0;
+            text-align: left;
+        }
+
+        h1 {
+            color: var(--heading);
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-top: 0;
+        }
+
+        h3 {
+            color: var(--heading);
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 10px;
+            margin-top: 40px;
+            display: inline-block;
+        }
+
+        a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #233554;
+        }
+
+        .project-title {
+            color: var(--heading);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .project-meta {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-item {
+            background: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+
+        .btn {
+            display: inline-block;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            padding: 10px 20px;
+            border-radius: 4px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h5>Hi, my name is</h5>
+        <h1>Kumar Azad.</h1>
+        <h2>Theoretical & Mathematical Physicist.</h2>
+        <p style="max-width: 500px;">
+            Specializing in Quantum Dynamics, Effective Field Theories, and QCD. 
+            I focus on analytical and computational modeling of particle interactions 
+            grounded in mathematical formulations.
+        </p>
+        <div class="contact-info">
+            <a href="mailto:kumarazad9211p@gmail.com">Email</a> | 
+            <a href="https://github.com/KrAzad0">GitHub</a> | 
+            <a href="https://researchgate.net/profile/Kumar-Azad">ResearchGate</a> | 
+            <a href="https://www.linkedin.com/in/kumar-azad-791012298/">LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="section" id="about">
+        <h3>About Me</h3>
+        <p>
+            I am a researcher based in <strong>Bihar, India</strong>, with a strong foundation in both Physics and Mathematics. 
+            Currently pursuing an <strong>M.Sc. in Mathematics</strong>, I combine rigorous mathematical structures 
+            (Number Theory, Complex Analysis) with high-energy physics applications. My work spans from 
+            <strong>Ramanujan's Lost Notebook</strong> to <strong>Positive Geometry in Scattering Amplitudes</strong>.
+        </p>
+    </div>
+
+    <div class="section" id="research">
+        <h3>Selected Research</h3>
+        
+        <div class="project-card">
+            <div class="project-title">Mathematical Formulation from Ramanujan's Lost Notebook</div>
+            <div class="project-meta">2025 - Present | Independent Theoretical Work</div>
+            <p>
+                Investigating identities and series from Ramanujan's Lost Notebook to develop rigorous integral transforms. 
+                The aim is to use these formulations to model and analyze physics problems in strong-interaction and 
+                field-theoretic settings.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Positive Geometry in Scattering Amplitudes</div>
+            <div class="project-meta">2025 | ICTS Research Program</div>
+            <p>
+                Explored geometric formulations of scattering amplitudes with applications to QCD kinematics and 
+                twistor-space mapping. Focused on Scattering Dynamics and Amplituhedron Geometry.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <div class="project-title">Electron Dynamics in Attosecond Laser-Torus Systems</div>
+            <div class="project-meta">2024 | AISILS Research Program</div>
+            <p>
+                Studied charged-particle dynamics under intense fields and toroidal confinement using numerical 
+                TDSE (Time-Dependent Schrödinger Equation) solvers.
+            </p>
+        </div>
+    </div>
+
+    <div class="section" id="skills">
+        <h3>Technical Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-item"><strong>Physics:</strong> QCD, EFT, QFT, Scattering Theory, Statistical Physics</div>
+            <div class="skill-item"><strong>Math:</strong> Linear Algebra, PDEs, Complex Analysis, Number Theory</div>
+            <div class="skill-item"><strong>Computational:</strong> MATLAB, Python, IBM Qiskit, Numerical TDSE</div>
+            <div class="skill-item"><strong>Languages:</strong> English, Hindi, Sanskrit, Japanese (Basic)</div>
+        </div>
+    </div>
+
+    <div class="section" id="certifications">
+        <h3>Certifications</h3>
+        <ul>
+            <li><strong>IBM Quantum:</strong> Quantum Diagonalization Algorithms, Qiskit Global Summer School (2025)</li>
+            <li><strong>Washington Institute:</strong> Quantum Algorithms to Solve PDEs (2025)</li>
+            <li><strong>IIT Jodhpur/Delhi:</strong> Winter School on Intense Laser Science (2024)</li>
+            <li><strong>Google:</strong> AI Essentials (2024)</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p style="font-size: 0.8rem; margin-top: 50px;">
+            &copy; 2026 Kumar Azad. Built with HTML/CSS.
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>
