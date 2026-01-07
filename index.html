@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -21,7 +21,24 @@
       line-height: 1.6;
     }
     .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
-    header { padding: 60px 0; border-bottom: 1px solid #233554; margin-bottom: 50px; }
+    header {
+      padding: 60px 0;
+      border-bottom: 1px solid #233554;
+      margin-bottom: 50px;
+      display: flex;
+      align-items: flex-start;
+      gap: 50px;
+    }
+    .profile-image {
+      width: 220px;
+      height: 220px;
+      border-radius: 12px;
+      border: 3px solid var(--secondary);
+      object-fit: cover;
+      box-shadow: 0 8px 32px rgba(100, 255, 218, 0.2);
+      flex-shrink: 0;
+    }
+    .header-content { flex: 1; }
     h1 {
       color: var(--heading);
       font-size: 3.5rem;
@@ -144,6 +161,8 @@
     @media (max-width: 768px) {
       h1 { font-size: 2.5rem; }
       h2 { font-size: 1.3rem; }
+      header { flex-direction: column; gap: 30px; }
+      .profile-image { width: 180px; height: 180px; }
       .skills-grid { grid-template-columns: 1fr; }
       .contact-info { flex-direction: column; gap: 10px; }
     }
@@ -152,19 +171,22 @@
 <body>
   <div class="container">
     <header>
-      <h5>Hi, my name is</h5>
-      <h1>Kumar Azad.</h1>
-      <h2>Theoretical & Mathematical Physicist</h2>
-      <p style="max-width: 600px; margin-top: 20px;">
-        Specializing in <strong>Quantum Dynamics</strong>, <strong>Effective Field Theories</strong>, and <strong>QCD</strong>.
-        I focus on analytical and computational modeling of particle interactions, scattering amplitudes, and field-theoretic structures
-        grounded in mathematical formulations.
-      </p>
-      <div class="contact-info">
-        <a href="mailto:kumarazad9211p@gmail.com">📧 Email</a>
-        <a href="https://github.com/KrAzad0">💻 GitHub</a>
-        <a href="https://www.linkedin.com/in/kumar-azad-791012298/">🔗 LinkedIn</a>
-        <a href="https://researchgate.net/profile/Kumar-Azad">📊 ResearchGate</a>
+      <img src="profile.jpg" alt="Kumar Azad" class="profile-image">
+      <div class="header-content">
+        <h5>Hi, my name is</h5>
+        <h1>Kumar Azad.</h1>
+        <h2>Theoretical & Mathematical Physicist</h2>
+        <p style="max-width: 600px; margin-top: 20px;">
+          Specializing in <strong>Quantum Dynamics</strong>, <strong>Effective Field Theories</strong>, and <strong>QCD</strong>.
+          I focus on analytical and computational modeling of particle interactions, scattering amplitudes, and field-theoretic structures
+          grounded in mathematical formulations.
+        </p>
+        <div class="contact-info">
+          <a href="mailto:kumarazad9211p@gmail.com">📧 Email</a>
+          <a href="https://github.com/KrAzad0">💻 GitHub</a>
+          <a href="https://www.linkedin.com/in/kumar-azad-791012298/">🔗 LinkedIn</a>
+          <a href="https://researchgate.net/profile/Kumar-Azad">📊 ResearchGate</a>
+        </div>
       </div>
     </header>
 
@@ -288,3 +310,4 @@
   </div>
 </body>
 </html>
+
