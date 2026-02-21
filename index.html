@@ -88,7 +88,7 @@
         .social-icons-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 30px;
+            gap: 25px;
             margin-top: 20px;
             justify-content: flex-start;
         }
@@ -97,10 +97,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             text-decoration: none;
             transition: transform 0.3s;
-            width: 80px;
+            width: 85px;
         }
 
         .social-icon-link:hover {
@@ -113,6 +113,7 @@
             height: 48px;
             filter: grayscale(20%) brightness(90%);
             transition: filter 0.3s;
+            border-radius: 10px;
         }
 
         .social-icon-link:hover img {
@@ -120,7 +121,7 @@
         }
 
         .social-icon-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--text);
             text-align: center;
         }
@@ -180,18 +181,11 @@
 
         .certification-list li:before {
             content: "\25B8";
-            position: absolute;
-            left: 0;
-            color: var(--secondary);
+            position: absolute; left: 0; color: var(--secondary);
         }
 
         footer {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #4c5772;
-            margin-top: 80px;
-            padding-top: 40px;
-            border-top: 1px solid #233554;
+            text-align: center; font-size: 0.85rem; color: #4c5772; margin-top: 80px; padding-top: 40px; border-top: 1px solid #233554;
         }
 
         @media (max-width: 768px) {
@@ -260,6 +254,14 @@
                     <img src="https://cdn.simpleicons.org/youtube/FF0000" alt="YouTube">
                     <span class="social-icon-label">YouTube</span>
                 </a>
+                <a href="https://openai.com/index/introducing-the-codex-app/" class="social-icon-link" target="_blank">
+                    <img src="https://cdnlogo.com/logos/c/73/codex.svg" alt="Codex">
+                    <span class="social-icon-label">Codex</span>
+                </a>
+                <a href="https://antigravity.google" class="social-icon-link" target="_blank">
+                    <img src="https://latestlogo.com/wp-content/uploads/2026/01/Google-Antigravity-Logo.png" alt="Antigravity">
+                    <span class="social-icon-label">Antigravity</span>
+                </a>
             </div>
         </section>
 
@@ -284,7 +286,7 @@
             <h3>Experience</h3>
             <div class="project-card">
                 <div class="project-title">Independent Researcher</div>
-                <div class="project-meta">Self-Employed | Jun 2025 - Present | 8 months</div>
+                <div class="project-meta">Self-Employed | Jun 2025 - Present</div>
                 <p>Independent research in theoretical physics and mathematics focusing on quantum computing and amplituhedron geometry.</p>
             </div>
         </section>
@@ -299,73 +301,12 @@
             <div class="education-item">
                 <div class="degree">M.Sc. Applied Physics</div>
                 <div class="university">Amity University, Gurugram</div>
-                <div class="stats">2024-2025 | CGPA: 5.27 (1 year completed, withdrawn)</div>
+                <div class="stats">2024-2025 | CGPA: 5.27 (1 year completed)</div>
             </div>
             <div class="education-item">
                 <div class="degree">B.Sc. Physics (Honours)</div>
                 <div class="university">SRM University, Andhra Pradesh</div>
                 <div class="stats">2021-2024 | CGPA: 6.67</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">Minor in Artificial Intelligence</div>
-                <div class="university">IIT Ropar</div>
-                <div class="stats">2024-2025</div>
-                <p><strong>Elective:</strong> Mechanics and Robotics | Project: Build an LLM from Scratch</p>
-            </div>
-            <div class="education-item">
-                <div class="degree">QUCAN - Quantum Computing Seasonal Course</div>
-                <div class="university">Quantum Computing Course</div>
-                <div class="stats">Dec 2024 - Feb 2025</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">Unacademy - JEE Online Preparation Learning PCM</div>
-                <div class="university">Unacademy</div>
-                <div class="stats">Jul 2020 - Sep 2021</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">FIITJEE Bokaro Jharkhand - JEE Preparation PCM</div>
-                <div class="university">FIITJEE Bokaro Jharkhand</div>
-                <div class="stats">Jul 2018 - Jul 2020</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">G G S PUB SCH SEC-5B B S CITY BOKARO JHARKHAND - CBSE 11/12, PCM and Computer Science</div>
-                <div class="university">GGS PUB SCH SEC-5B</div>
-                <div class="stats">Apr 2018 - Mar 2020 | Grade: 68%</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">DAV PUBLIC SCHOOL MATHURAPUR BHAGALPUR BIHAR - CBSE (CLASS 3 -CLASS-10)</div>
-                <div class="university">DAV PUBLIC SCHOOL MATHURAPUR BHAGALPUR BIHAR</div>
-                <div class="stats">Apr 2010 - Apr 2018 | Grade: 83</div>
-            </div>
-            <div class="education-item">
-                <div class="degree">ST. JOSEPH SCHOOL(DAY) SAHIBGANJ -JHARKHAND - ICSE (KGI-CLASS2)</div>
-                <div class="university">ST. JOSEPH SCHOOL(DAY) SAHIBGANJ -JHARKHAND</div>
-                <div class="stats">Apr 2006 - Mar 2010 | Grade: RANK 3</div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h3>Coursework</h3>
-            <div class="project-card">
-                <div class="project-title">B.Sc. Physics (Honours) - Completed Coursework</div>
-                <div class="university">SRM University, Andhra Pradesh | 2021-2024 | 46 Courses Completed</div>
-                <p><strong>Core Physics:</strong> Classical and Modern Physics, Mechanics, Heat and Thermodynamics, Wave and Oscillations, Introduction to Optics, Quantum Mechanics, Electrostatics and Electric Current, Electrodynamics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, Non-Linear Optics, Introduction to Lab View, Introduction to Quantum Computation</p>
-                <p><strong>Advanced Physics:</strong> Special Theory of Relativity, Free Space and Optical Fibre Communication, Analog and Digital Electronics, Introduction to Impedance Spectroscopy and ZView Lab, Research Projects I & II</p>
-                <p><strong>Mathematics & Computational:</strong> Mathematical Physics, Linear Algebra, Differential Equations, Complex Analysis, Elementary Number Theory, Introduction to Partial Differential Equations, Mobile Application Development (Java), Web Programming</p>
-                <p><strong>Laboratory & Practical:</strong> Physics Lab, Atomic & Molecular Physics Lab, Solid State Physics Lab, Department Seminar</p>
-                <p><strong>General Education:</strong> Communicative English, Psychology, Critical Thinking, Idea of India, Environmental Science</p>
-            </div>
-            <div class="project-card">
-                <div class="project-title">M.Sc. Mathematics - Completed Coursework</div>
-                <div class="university">Mangalayatan University (Online) | 2024 - Present</div>
-                <p><strong>Core Mathematics:</strong> Real Analysis, Abstract Algebra, Partial Differential Equations, Differential Geometry, Classical Mechanics, Complex Analysis, General Topology</p>
-                <p><strong>Applied & Computational:</strong> Numerical Methods, Operations Research, Programming in C & Lab</p>
-            </div>
-            <div class="project-card">
-                <div class="project-title">M.Sc. Applied Physics - Completed Coursework</div>
-                <div class="university">Amity University, Gurugram | 2024-2025</div>
-                <p><strong>Semester 1:</strong> Classical Mechanics, Quantum Mechanics, Electronics, Mathematical Physics, MATLAB, Japanese-I</p>
-                <p><strong>Semester 2:</strong> Quantum Mechanics II, Electrodynamics, Atomic and Molecular Physics, Statistical Physics, Condensed Matter Physics-I, Japanese-II</p>
             </div>
         </section>
 
@@ -373,75 +314,19 @@
             <h3>Research Experience</h3>
             <div class="project-card">
                 <div class="project-title">Searching for Mathematical Formulation from Ramanujan's Lost Notebook</div>
-                <div class="project-meta">2025 - Present | Independent Theoretical Work</div>
-                <p>Investigating identities and series from Ramanujan's Lost Notebook to develop rigorous integral transforms and analytical structures. Aim to use these formulations to model and analyze physics problems in strong-interaction and field-theoretic settings.</p>
+                <div class="project-meta">2025 - Present</div>
+                <p>Investigating identities and series from Ramanujan's Lost Notebook for theoretical physics applications.</p>
             </div>
             <div class="project-card">
                 <div class="project-title">Positive Geometry in Scattering Amplitudes</div>
-                <div class="project-meta">2025 | ICTS Research Program (School for Advanced Topics in Particle Physics)</div>
-                <p>Explored geometric formulations of scattering amplitudes with applications to QCD kinematics and twistor-space mapping. Focused on Scattering Dynamics and Amplituhedron Geometry.</p>
-            </div>
-            <div class="project-card">
-                <div class="project-title">Electron Dynamics in Attosecond Laser-Torus Systems</div>
-                <div class="project-meta">2024 | WiSILS Research Program (IIT Jodhpur)</div>
-                <p>Studied charged-particle dynamics under intense fields and toroidal confinement using numerical TDSE solvers. Applied computational methods to model ultrafast electron dynamics in attosecond laser systems.</p>
-            </div>
-        </section>
-
-        <section class="section">
-            <h3>Technical Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <strong>Physics:</strong>
-                    <p>Quantum Mechanics, QCD, EFT, QFT, Scattering Theory, Statistical Physics, Nuclear Physics</p>
-                </div>
-                <div class="skill-item">
-                    <strong>Mathematics:</strong>
-                    <p>Linear Algebra, ODEs, PDEs, Complex Analysis, Number Theory, Mathematical Physics, Special Functions</p>
-                </div>
-                <div class="skill-item">
-                    <strong>Computational:</strong>
-                    <p>C, C++, Java, MATLAB, Python, Qiskit, TDSE Solvers, Mathematica, LaTeX</p>
-                </div>
-                <div class="skill-item">
-                    <strong>Languages:</strong>
-                    <p>English (Proficient), Hindi (Native), Sanskrit, Japanese (Basic)</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h3>Certifications & Achievements</h3>
-            <ul class="certification-list">
-                <li><strong>IBM Quantum (2025):</strong> Quantum Diagonalization, QML, Variational Algorithms, Qiskit Global Summer School</li>
-                <li><strong>Washington Institute (2025):</strong> Quantum Algorithms for PDEs and Nonlinear Problems</li>
-                <li><strong>NPTEL (2025):</strong> Algebra II (58%), Basic Linear Algebra (54%)</li>
-                <li><strong>NPTEL (2024):</strong> Attosecond Science (46%), Quantum Entanglement (44%)</li>
-                <li><strong>Workshops (2024):</strong> WiSILS IIT Jodhpur, Quantum Computation IIT Delhi</li>
-            </ul>
-        </section>
-
-        <section class="section">
-            <h3>Projects</h3>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <strong>Ramanujan Lost Notebook Review</strong>
-                    <p>Analysis of identities for theoretical physics applications.</p>
-                </div>
-                <div class="skill-item">
-                    <strong>Amplituhedron Geometry</strong>
-                    <p>Exploring geometric formulations in QFT.</p>
-                </div>
-                <div class="skill-item">
-                    <strong>Attosecond Simulations</strong>
-                    <p>Computational modeling of ultrafast dynamics.</p>
-                </div>
+                <div class="project-meta">2025 | ICTS Research Program</div>
+                <p>Explored geometric formulations of scattering amplitudes with applications to QCD kinematics.</p>
             </div>
         </section>
 
         <footer>
             <p>&copy; 2026 Kumar Azad. Based in Bihar, India 🇮🇳</p>
-            <p>Pursuing excellence in theoretical physics and mathematical research | Open to collaborations</p>
+            <p>Pursuing excellence in theoretical physics and mathematical research</p>
             <p>Contact: <a href="mailto:kumarazad9211p@gmail.com">kumarazad9211p@gmail.com</a></p>
         </footer>
     </div>
