@@ -13,7 +13,6 @@
             --bg: #0a192f;
             --card-bg: #112240;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,7 +20,6 @@
             color: var(--text);
             line-height: 1.6;
         }
-
         .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
         header {
             padding: 60px 0;
@@ -31,7 +29,6 @@
             align-items: flex-start;
             gap: 50px;
         }
-
         .profile-image {
             width: 220px;
             height: 220px;
@@ -41,7 +38,6 @@
             box-shadow: 0 8px 32px rgba(100, 255, 218, 0.2);
             flex-shrink: 0;
         }
-
         .header-content { flex: 1; }
         h1 { color: var(--heading); font-size: 3.5rem; margin-bottom: 10px; font-weight: 700; }
         h2 { color: var(--secondary); font-size: 1.8rem; font-weight: 400; margin: 10px 0; }
@@ -54,12 +50,10 @@
             padding-bottom: 10px;
             display: inline-block;
         }
-
         h5 { color: var(--secondary); font-size: 1rem; font-weight: 400; }
         p { margin: 15px 0; line-height: 1.8; }
         a { color: var(--secondary); text-decoration: none; transition: 0.3s; }
         a:hover { color: #fff; }
-
         .contact-info, .platform-links {
             margin-top: 20px;
             display: flex;
@@ -67,19 +61,16 @@
             flex-wrap: wrap;
             align-items: center;
         }
-
         .contact-info a svg, .platform-links a svg {
             width: 24px;
             height: 24px;
             fill: var(--secondary);
             transition: 0.3s;
         }
-
         .contact-info a:hover svg, .platform-links a:hover svg {
             fill: #fff;
             transform: translateY(-3px);
         }
-
         .section { margin-bottom: 50px; }
         .project-card {
             background-color: var(--card-bg);
@@ -92,7 +83,6 @@
         .project-card:hover { border-color: var(--secondary); transform: translateY(-2px); }
         .project-title { color: var(--heading); font-size: 1.2rem; font-weight: bold; margin-bottom: 8px; }
         .project-meta { font-size: 0.85rem; color: var(--secondary); margin-bottom: 12px; font-family: monospace; }
-        
         .education-item {
             background-color: var(--card-bg);
             padding: 20px;
@@ -103,7 +93,6 @@
         .degree { color: var(--heading); font-weight: bold; font-size: 1.1rem; }
         .university { color: var(--secondary); font-size: 0.95rem; margin-top: 5px; }
         .stats { color: var(--text); font-size: 0.9rem; margin-top: 5px; }
-
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -117,7 +106,6 @@
             border: 1px solid #233554;
         }
         .skill-item strong { color: var(--secondary); }
-        
         .certification-list { list-style: none; margin-top: 15px; }
         .certification-list li {
             padding: 12px 0;
@@ -127,7 +115,6 @@
         }
         .certification-list li:before { content: "▸"; position: absolute; left: 0; color: var(--secondary); }
         .certification-list li:last-child { border-bottom: none; }
-
         footer {
             text-align: center;
             font-size: 0.85rem;
@@ -136,115 +123,144 @@
             padding-top: 40px;
             border-top: 1px solid #233554;
         }
-
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.3rem; }
             header { flex-direction: column; gap: 30px; }
             .profile-image { width: 180px; height: 180px; }
             .skills-grid { grid-template-columns: 1fr; }
+            .contact-info { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <header>
+            <a href="/"><img src="profile.jpg" alt="Kumar Azad" class="profile-image"></a>
+            <div class="header-content">
+                <h5>Hi, my name is</h5>
+                <h1>Kumar Azad.</h1>
+                <h2>Theoretical & Mathematical Physicist</h2>
+                <p style="max-width: 600px; margin-top: 20px;">Currently exploring the deep connections between mathematical structures and physical theory. I'm reading through <strong>Ramanujan's Lost Notebook</strong> for field theory applications, learning <strong>positive geometry</strong> for scattering amplitudes, and working on <strong>attosecond quantum dynamics</strong> simulations. My journey spans quantum mechanics, field theory, and computational physics—documenting every step with code, notes, and simulations.</p>
+                <div class="contact-info">
+                    <a href="mailto:kumarazad9211p@gmail.com" title="Email"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                    <a href="https://github.com/KrAzad0" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                    <a href="https://www.linkedin.com/in/kumar-azad-791012298/" target="_blank" title="LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    <a href="https://www.researchgate.net/profile/Kumar-Azad" target="_blank" title="ResearchGate"><svg viewBox="0 0 24 24"><path d="M22.5 0h-21C.67 0 0 .67 0 1.5v21c0 .83.67 1.5 1.5 1.5h21c.83 0 1.5-.67 1.5-1.5v-21c0-.83-.67-1.5-1.5-1.5zm-11.4 17.7c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8c.8 0 1.6.3 2.2.8l-1.1 1.1c-.3-.3-.7-.4-1.1-.4-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c.7 0 1.3-.4 1.6-1.1h-1.6v-1.5h3.1c0 .2.1.4.1.7 0 2.1-1.6 3.8-3.2 3.8zm6.9-1.5h-1.6v-4.5h-1.5v-1.5h3.1v6z"/></svg></a>
+                    <a href="https://www.youtube.com/@thquantum-zero" target="_blank" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                    <a href="https://substack.com/@kumarazad" target="_blank" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.079v2.836zm0 4.381H1.46V9.788h21.079v2.835zM1.46 14.169h21.079v8.425L12 17.525l-10.54 5.069v-8.425z"/></svg></a>
+                </div>
+            </div>
+        </header>
 
-<div class="container">
-    <header>
-        <img src="profile.jpg" alt="Kumar Azad" class="profile-image">
-        <div class="header-content">
-            <h5>Hi, my name is</h5>
-            <h1>Kumar Azad.</h1>
-            <h2>Theoretical & Mathematical Physicist</h2>
-            <p style="max-width: 600px; margin-top: 20px;">Currently exploring the deep connections between mathematical structures and physical theory. I'm reading through <strong>Ramanujan's Lost Notebook</strong> for field theory applications, learning <strong>positive geometry</strong> for scattering amplitudes, and working on <strong>attosecond quantum dynamics</strong> simulations. My journey spans quantum mechanics, field theory, and computational physics—documenting every step with code, notes, and simulations.</p>
-            
-            <div class="contact-info">
-                <a href="mailto:kumarazad9211p@gmail.com" title="Email">
-                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                </a>
-                <a href="https://github.com/KrAzad0" target="_blank" title="GitHub">
-                    <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/kumar-azad-791012298/" target="_blank" title="LinkedIn">
-                    <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                </a>
-                <a href="https://www.researchgate.net/profile/Kumar-Azad" target="_blank" title="ResearchGate">
-                    <svg viewBox="0 0 24 24"><path d="M22.5 0h-21C.67 0 0 .67 0 1.5v21c0 .83.67 1.5 1.5 1.5h21c.83 0 1.5-.67 1.5-1.5v-21c0-.83-.67-1.5-1.5-1.5zm-11.4 17.7c-2.1 0-3.8-1.7-3.8-3.8s1.7-3.8 3.8-3.8c.8 0 1.6.3 2.2.8l-1.1 1.1c-.3-.3-.7-.4-1.1-.4-1.2 0-2.2 1-2.2 2.2s1 2.2 2.2 2.2c.7 0 1.3-.4 1.6-1.1h-1.6v-1.5h3.1c0 .2.1.4.1.7 0 2.1-1.6 3.8-3.2 3.8zm6.9-1.5h-1.6v-4.5h-1.5v-1.5h3.1v6z"/></svg>
-                </a>
-                <a href="https://www.youtube.com/@thquantum-zero" target="_blank" title="YouTube">
-                    <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                </a>
-                <a href="https://substack.com/@kumarazad" target="_blank" title="Substack">
-                    <svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.079v2.836zm0 4.381H1.46V9.788h21.079v2.835zM1.46 14.169h21.079v8.425L12 17.525l-10.54 5.069v-8.425z"/></svg>
-                </a>
+        <div class="section">
+            <h3>About Me</h3>
+            <p>I am a researcher based in <strong>Bihar, India</strong>, with a strong foundation in both Physics and Mathematics. Currently pursuing an <strong>M.Sc. in Mathematics</strong> at Mangalayatan University (2024-Present), I combine rigorous mathematical structures (Number Theory, Complex Analysis, Special Functions) with high-energy physics applications.</p>
+            <p>My research spans from investigating <strong>Ramanujan's Lost Notebook</strong> identities for field-theoretic applications to exploring <strong>Positive Geometry in Scattering Amplitudes</strong>. I'm particularly interested in QCD kinematics, twistor-space geometry, and amplituhedron formulations.</p>
+        </div>
+
+        <div class="section">
+            <h3>Think.AI - Science Blog</h3>
+            <p>Visit my science blog <a href="https://krazad0.github.io/think-ai/" target="_blank" title="Think.AI Blog"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px; vertical-align: middle; fill: var(--secondary); margin-right: 5px;"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 14h-3v-3h3v3zm4-5h-7v-2h7v2z"/></svg><strong>Think.AI</strong></a> where I share insights on AI, quantum computing, physics, and mathematics.</p>
+        </div>
+
+        <div class="section">
+            <h3>Coding Platforms</h3>
+            <div class="platform-links">
+                <a href="https://github.com/KrAzad0" target="_blank" title="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+                <a href="https://huggingface.co/" target="_blank" title="Hugging Face"><svg viewBox="0 0 100 100"><text y=".9em" font-size="90">🤗</text></svg></a>
+                <a href="https://leetcode.com/" target="_blank" title="LeetCode"><svg viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-11.71 11.59a1.374 1.374 0 0 0 0 1.956l11.314 11.314a1.374 1.374 0 0 0 1.956 0l11.59-11.71a1.374 1.374 0 0 0-.414-.961L13.483 0zm-1.062 1.374L22.626 11.66l-11.59 11.71L1.414 12l11.007-10.626z"/></svg></a>
+                <a href="https://www.codechef.com/users/zesty_ref_37/" target="_blank" title="CodeChef"><svg viewBox="0 0 24 24"><path d="M11 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM11 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg></a>
+                <a href="https://codeforces.com/profile/Krazad0" target="_blank" title="Codeforces"><svg viewBox="0 0 24 24"><path d="M4.5 7.5h3v15h-3v-15zm4.5-4.5h3v19.5h-3V3zm4.5 9h3v10.5h-3v-9z"/></svg></a>
+                <a href="https://www.geeksforgeeks.org/" target="_blank" title="GeeksforGeeks"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></a>
             </div>
         </div>
-    </header>
 
-    <div class="section">
-        <h3>About Me</h3>
-        <p>I am a researcher based in <strong>Bihar, India</strong>, with a strong foundation in both Physics and Mathematics. Currently pursuing an <strong>M.Sc. in Mathematics</strong> at Mangalayatan University (2024-Present), I combine rigorous mathematical structures (Number Theory, Complex Analysis, Special Functions) with high-energy physics applications.</p>
-        <p>My research spans from investigating <strong>Ramanujan's Lost Notebook</strong> identities for field-theoretic applications to exploring <strong>Positive Geometry in Scattering Amplitudes</strong>. I'm particularly interested in QCD kinematics, twistor-space geometry, and amplituhedron formulations.</p>
-    </div>
-
-    <div class="section">
-        <h3>Think.AI - Science Blog</h3>
-        <p>Visit my science blog <a href="https://krazad0.github.io/think-ai/" target="_blank"><strong>Think.AI</strong></a> where I share insights on AI, quantum computing, physics, and mathematics. I explore cutting-edge research topics and discuss complex scientific concepts in an accessible way.</p>
-    </div>
-
-    <div class="section">
-        <h3>Coding Platforms</h3>
-        <div class="platform-links">
-            <a href="https://github.com/KrAzad0" target="_blank" title="GitHub">
-                <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-            <a href="https://huggingface.co/" target="_blank" title="Hugging Face">
-                <svg viewBox="0 0 100 100"><text y=".9em" font-size="90">🤗</text></svg>
-            </a>
-            <a href="https://leetcode.com/" target="_blank" title="LeetCode">
-                <svg viewBox="0 0 24 24"><path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-11.71 11.59a1.374 1.374 0 0 0 0 1.956l11.314 11.314a1.374 1.374 0 0 0 1.956 0l11.59-11.71a1.374 1.374 0 0 0-.414-.961L13.483 0zm-1.062 1.374L22.626 11.66l-11.59 11.71L1.414 12l11.007-10.626z"/></svg>
-            </a>
-            <a href="https://www.codechef.com/users/zesty_ref_37/" target="_blank" title="CodeChef">
-                <svg viewBox="0 0 24 24"><path d="M11 2a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 7a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM11 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM7 17a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm14 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/></svg>
-            </a>
+        <div class="section">
+            <h3>Experience</h3>
+            <div class="project-card">
+                <div class="project-title">Independent Researcher</div>
+                <div class="project-meta">Jun 2025 - Present | 8 months</div>
+                <p>Conducting independent research in theoretical physics and mathematics with focus on quantum computing, amplituhedron geometry, and attosecond physics. Actively developing research projects and publishing findings.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h3>Experience</h3>
-        <div class="project-card">
-            <div class="project-title">Independent Researcher</div>
-            <div class="project-meta">Jun 2025 - Present | 8 months</div>
-            <p>Conducting independent research in theoretical physics and mathematics with focus on quantum computing, amplituhedron geometry, and attosecond physics. Actively developing research projects and publishing findings.</p>
+        <div class="section">
+            <h3>Education</h3>
+            <div class="education-item">
+                <div class="degree">M.Sc. Mathematics (Online)</div>
+                <div class="university">Mangalayatan University</div>
+                <div class="stats">2024 - Present | CGPA: 6.3/10</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">M.Sc. Applied Physics</div>
+                <div class="university">Amity University, Gurugram</div>
+                <div class="stats">2024-2025 | CGPA: 5.27 (1 year completed, withdrawn)</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">B.Sc. Physics (Honours)</div>
+                <div class="university">SRM University, Andhra Pradesh</div>
+                <div class="stats">2021-2024 | CGPA: 6.67</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Minor in Artificial Intelligence</div>
+                <div class="university">IIT Ropar</div>
+                <div class="stats">2024-2025</div>
+                <p><strong>Elective:</strong> Mechanics and Robotics | Project: Build an LLM from Scratch</p>
+            </div>
+            <div class="education-item">
+                <div class="degree">QUCAN - Quantum Computing Seasonal Course</div>
+                <div class="university">Quantum Computing Course</div>
+                <div class="stats">Dec 2024 - Feb 2025</div>
+            </div>
         </div>
-    </div>
 
-    <div class="section">Restore full content with SVG icons
-        <h3>Education</h3>
-        <div class="education-item">
-            <div class="degree">M.Sc. Mathematics (Online)</div>
-            <div class="university">Mangalayatan University</div>
-            <div class="stats">2024 - Present | CGPA: 6.3/10</div>
+        <div class="section">
+            <h3>Coursework</h3>
+            <div class="education-item">
+                <div class="degree">B.Sc. Physics (Honours) - Completed Coursework</div>
+                <div class="university">SRM University, Andhra Pradesh</div>
+                <div class="stats">2021-2024 | 46 Courses Completed</div>
+                <p style="margin-top: 15px;"><strong>Core Physics:</strong> Classical and Modern Physics, Mechanics, Heat and Thermodynamics, Wave and Oscillations, Introduction to Optics, Quantum Mechanics, Electrostatics and Electric Current, Electrodynamics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, Non-Linear Optics, Introduction to Lab View, Introduction to Quantum Computation</p>
+                <p><strong>Advanced Physics:</strong> Special Theory of Relativity, Free Space and Optical Fibre Communication, Analog and Digital Electronics, Introduction to Impedance Spectroscopy and ZView Lab, Research Projects I & II</p>
+                <p><strong>Mathematics & Computational:</strong> Mathematical Physics, Linear Algebra, Differential Equations, Complex Analysis, Elementary Number Theory, Introduction to Partial Differential Equations, Mobile Application Development (Java), Web Programming</p>
+            </div>
+            <div class="education-item">
+                <div class="degree">M.Sc. Mathematics - Completed Coursework</div>
+                <div class="university">Mangalayatan University (Online)</div>
+                <div class="stats">2024 - Present</div>
+                <p><strong>Core Mathematics:</strong> Real Analysis, Abstract Algebra, Partial Differential Equations, Differential Geometry, Classical Mechanics, Complex Analysis, General Topology</p>
+            </div>
         </div>
-        <div class="education-item">
-            <div class="degree">B.Sc. Physics (Honours)</div>
-            <div class="university">SRM University, Andhra Pradesh</div>
-            <div class="stats">2021-2024 | CGPA: 6.67</div>
+
+        <div class="section">
+            <h3>Research Experience</h3>
+            <div class="project-card">
+                <div class="project-title">Searching for Mathematical Formulation from Ramanujan's Lost Notebook</div>
+                <div class="project-meta">2025 - Present | Independent Theoretical Work</div>
+                <p>Investigating identities and series from Ramanujan's Lost Notebook to develop rigorous integral transforms and analytical structures for field-theoretic settings.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Positive Geometry in Scattering Amplitudes</div>
+                <div class="project-meta">2025 | ICTS Research Program</div>
+                <p>Explored geometric formulations of scattering amplitudes with applications to QCD kinematics and twistor-space mapping.</p>
+            </div>
         </div>
-    </div>
 
-    <div class="section">
-        <h3>Technical Skills</h3>
-        <div class="skills-grid">
-            <div class="skill-item"><strong>Physics:</strong><p>Quantum Mechanics, QCD, Field Theories, Scattering Theory, Statistical Physics</p></div>
-            <div class="skill-item"><strong>Mathematics:</strong><p>Linear Algebra, Differential Equations, Complex Analysis, Number Theory</p></div>
-            <div class="skill-item"><strong>Computational:</strong><p>Python, C++, MATLAB, IBM Qiskit, LaTeX</p></div>
+        <div class="section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Physics:</strong><p>Quantum Mechanics, QCD, Field Theory, Scattering Theory, Statistical Physics, Nuclear Physics</p></div>
+                <div class="skill-item"><strong>Mathematics:</strong><p>Linear Algebra, PDEs, Complex Analysis, Number Theory, Special Functions, Differential Geometry</p></div>
+                <div class="skill-item"><strong>Computational:</strong><p>C, C++, Java, MATLAB, Python, Qiskit, Mathematica, LaTeX</p></div>
+                <div class="skill-item"><strong>Languages:</strong><p>English (Proficient), Hindi (Native), Sanskrit, Japanese (Basic)</p></div>
+            </div>
         </div>
+
+        <footer>
+            <p>&copy; 2026 Kumar Azad. Based in Bihar, India 🇮🇳</p>
+            <p>Pursuing excellence in theoretical physics research | <a href="mailto:kumarazad9211p@gmail.com" title="Email Me"><svg viewBox="0 0 24 24" style="width: 20px; height: 20px; vertical-align: middle; fill: #4c5772;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a></p>
+        </footer>
     </div>
-
-    <footer>
-        <p>&copy; 2026 Kumar Azad. Based in Bihar, India 🇮🇳</p>
-        <p>Pursuing excellence in theoretical physics research | <a href="mailto:kumarazad9211p@gmail.com">Contact Me</a></p>
-    </footer>
-</div>
-
 </body>
 </html>
