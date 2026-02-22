@@ -100,54 +100,13 @@
         .contact-info {
             margin-top: 20px;
             font-size: 1rem;
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+            display: flex; gap: 20px; flex-wrap: wrap;
         }
+
+        .contact-info a { margin: 0; }
 
         .section {
             margin-bottom: 50px;
-        }
-
-        .social-icons-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            margin-top: 20px;
-            justify-content: flex-start;
-        }
-
-        .social-icon-link {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            transition: transform 0.3s;
-            width: 85px;
-        }
-
-        .social-icon-link:hover {
-            transform: translateY(-5px);
-            text-decoration: none;
-        }
-
-        .social-icon-link img {
-            width: 48px;
-            height: 48px;
-            filter: grayscale(20%) brightness(90%);
-            transition: filter 0.3s;
-            border-radius: 10px;
-        }
-
-        .social-icon-link:hover img {
-            filter: grayscale(0%) brightness(110%);
-        }
-
-        .social-icon-label {
-            font-size: 0.75rem;
-            color: var(--text);
-            text-align: center;
         }
 
         .project-card {
@@ -241,6 +200,10 @@
             color: var(--secondary);
         }
 
+        .certification-list li:last-child {
+            border-bottom: none;
+        }
+
         footer {
             text-align: center;
             font-size: 0.85rem;
@@ -251,23 +214,12 @@
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-            header {
-                flex-direction: column;
-                gap: 30px;
-            }
-            .profile-image {
-                width: 180px;
-                height: 180px;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 1.3rem; }
+            header { flex-direction: column; gap: 30px; }
+            .profile-image { width: 180px; height: 180px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .contact-info { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
@@ -304,48 +256,6 @@
         </div>
 
         <div class="section">
-            <h3>Find Me Online</h3>
-            <div class="social-icons-grid">
-                <a href="https://github.com/KrAzad0" class="social-icon-link">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-                    <span class="social-icon-label">GitHub</span>
-                </a>
-                <a href="https://substack.com/@kumarazad" class="social-icon-link">
-                    <img src="https://substack.com/static/img/favicon.ico" alt="Substack">
-                    <span class="social-icon-label">Substack</span>
-                </a>
-                <a href="https://colab.research.google.com" class="social-icon-link">
-                    <img src="https://www.gstatic.com/images/branding/product/1x/colab_64dp.png" alt="Colab">
-                    <span class="social-icon-label">Colab</span>
-                </a>
-                <a href="https://www.linkedin.com/in/kumar-azad-791012298/" class="social-icon-link">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
-                    <span class="social-icon-label">LinkedIn</span>
-                </a>
-                <a href="https://www.researchgate.net/profile/Kumar-Azad" class="social-icon-link">
-                    <img src="https://www.researchgate.net/favicon.ico" alt="ResearchGate">
-                    <span class="social-icon-label">ResearchGate</span>
-                </a>
-                <a href="https://chatgpt.com" class="social-icon-link">
-                    <img src="https://openai.com/favicon.ico" alt="ChatGPT">
-                    <span class="social-icon-label">ChatGPT</span>
-                </a>
-                <a href="https://www.youtube.com/@thquantum-zero" class="social-icon-link">
-                    <img src="https://www.youtube.com/favicon.ico" alt="YouTube">
-                    <span class="social-icon-label">YouTube</span>
-                </a>
-                <a href="https://openai.com/index/introducing-the-codex-app/" class="social-icon-link">
-                    <img src="https://openai.com/favicon.ico" alt="Codex">
-                    <span class="social-icon-label">Codex</span>
-                </a>
-                <a href="https://antigravity.google" class="social-icon-link">
-                    <img src="https://www.gstatic.com/images/branding/product/1x/googleg_48dp.png" alt="Antigravity">
-                    <span class="social-icon-label">Antigravity</span>
-                </a>
-            </div>
-        </div>
-
-        <div class="section">
             <h3>Think.AI - Science Blog</h3>
             <p>Visit my science blog <a href="https://krazad0.github.io/think-ai/"><strong>Think.AI</strong></a> where I share insights on AI, quantum computing, physics, and mathematics. I explore cutting-edge research topics and discuss complex scientific concepts in an accessible way.</p>
         </div>
@@ -366,8 +276,7 @@
             <h3>Experience</h3>
             <div class="project-card">
                 <div class="project-title">Independent Researcher</div>
-                <div class="project-meta">Self-Employed | Jun 2025 - Present</div>
-                <p>Independent research in theoretical physics and mathematics focusing on quantum computing and amplituhedron geometry.</p>
+                <div class="project-meta">Self-Employed | Jun 2025 - Present | 8 months</div>
             </div>
         </div>
 
@@ -381,12 +290,26 @@
             <div class="education-item">
                 <div class="degree">M.Sc. Applied Physics</div>
                 <div class="university">Amity University, Gurugram</div>
-                <div class="stats">2024-2025 | CGPA: 5.27 (1 year completed)</div>
+                <div class="stats">2024-2025 | CGPA: 5.27 (1 year completed, withdrawn)</div>
             </div>
             <div class="education-item">
                 <div class="degree">B.Sc. Physics (Honours)</div>
                 <div class="university">SRM University, Andhra Pradesh</div>
                 <div class="stats">2021-2024 | CGPA: 6.67</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Minor in Artificial Intelligence</div>
+                <div class="university">IIT Ropar | 2024-2025</div>
+                <div class="stats">Elective: Mechanics and Robotics | Project: Build an LLM from Scratch</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Coursework</h3>
+            <div class="project-card">
+                <div class="project-title">B.Sc. Physics (Honours)</div>
+                <div class="project-meta">SRM University, Andhra Pradesh | 46 Courses Completed</div>
+                <p>Classical & Modern Physics, Quantum Mechanics, Nuclear & Particle Physics, Mathematical Physics, Complex Analysis, etc.</p>
             </div>
         </div>
 
@@ -404,8 +327,17 @@
             </div>
         </div>
 
+        <div class="section">
+            <h3>Technical Skills</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Physics:</strong> QM, QCD, QFT, Scattering Theory</div>
+                <div class="skill-item"><strong>Mathematics:</strong> Number Theory, Special Functions, PDEs</div>
+                <div class="skill-item"><strong>Computational:</strong> C++, Python, MATLAB, IBM Qiskit</div>
+            </div>
+        </div>
+
         <footer>
-            <p>© 2026 Kumar Azad. Based in Bihar, India \1f1ee\1f1f3</p>
+            <p>© 2026 Kumar Azad. Based in Mathura Pur, Bihar, India \1f1ee\1f1f3</p>
             <p>Pursuing excellence in theoretical physics and mathematical research</p>
             <p>Contact: <a href="mailto:kumarazad9211p@gmail.com">kumarazad9211p@gmail.com</a></p>
         </footer>
