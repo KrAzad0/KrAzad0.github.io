@@ -76,16 +76,9 @@
             display: inline-block;
         }
 
-        h5 {
-            color: var(--secondary);
-            font-size: 1rem;
-            font-weight: 400;
-        }
+        h5 { color: var(--secondary); font-size: 1rem; font-weight: 400; }
 
-        p {
-            margin: 15px 0;
-            line-height: 1.8;
-        }
+        p { margin: 15px 0; line-height: 1.8; }
 
         a {
             color: var(--secondary);
@@ -100,10 +93,14 @@
         .contact-info {
             margin-top: 20px;
             font-size: 1rem;
-            display: flex; gap: 20px; flex-wrap: wrap;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .contact-info a { margin: 0; }
+        .contact-info a {
+            margin: 0;
+        }
 
         .section {
             margin-bottom: 50px;
@@ -194,7 +191,7 @@
         }
 
         .certification-list li:before {
-            content: "\25B8";
+            content: "▸";
             position: absolute;
             left: 0;
             color: var(--secondary);
@@ -216,31 +213,44 @@
         @media (max-width: 768px) {
             h1 { font-size: 2.5rem; }
             h2 { font-size: 1.3rem; }
-            header { flex-direction: column; gap: 30px; }
-            .profile-image { width: 180px; height: 180px; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .contact-info { flex-direction: column; gap: 10px; }
+            header {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .profile-image {
+                width: 180px;
+                height: 180px;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <img src="profile.jpg" alt="Kumar Azad" class="profile-image">
+            <a href="/">
+                <img src="https://github.com/KrAzad0.png" alt="Kumar Azad" class="profile-image">
+            </a>
             <div class="header-content">
                 <h5>Hi, my name is</h5>
                 <h1>Kumar Azad.</h1>
                 <h2>Theoretical & Mathematical Physicist</h2>
                 <p>
-                    Currently exploring the deep connections between mathematical structures and physical theory. I'm reading through **Ramanujan's Lost Notebook** for field theory applications, learning **positive geometry** for scattering amplitudes, and working on **attosecond quantum dynamics** simulations. My journey spans quantum mechanics, field theory, and computational physics—documenting every step with code, notes, and simulations.
+                    Currently exploring the deep connections between mathematical structures and physical theory. I'm reading through <strong>Ramanujan's Lost Notebook</strong> for field theory applications, learning <strong>positive geometry</strong> for scattering amplitudes, and working on <strong>attosecond quantum dynamics</strong> simulations. My journey spans quantum mechanics, field theory, and computational physics—documenting every step with code, notes, and simulations.
                 </p>
                 <div class="contact-info">
                     <a href="mailto:kumarazad9211p@gmail.com">Email</a>
-                    <a href="https://github.com/KrAzad0">GitHub</a>
-                    <a href="https://www.linkedin.com/in/kumar-azad-791012298/">LinkedIn</a>
-                    <a href="https://www.researchgate.net/profile/Kumar-Azad">ResearchGate</a>
-                    <a href="https://www.youtube.com/@thquantum-zero">YouTube</a>
-                    <a href="https://substack.com/@kumarazad">Substack</a>
+                    <a href="https://github.com/KrAzad0" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/kumar-azad-791012298/" target="_blank">LinkedIn</a>
+                    <a href="https://www.researchgate.net/profile/Kumar-Azad" target="_blank">ResearchGate</a>
+                    <a href="https://www.youtube.com/@thquantum-zero" target="_blank">YouTube</a>
+                    <a href="https://substack.com/@kumarazad" target="_blank">Substack</a>
                 </div>
             </div>
         </header>
@@ -248,35 +258,38 @@
         <div class="section">
             <h3>About Me</h3>
             <p>
-                I am a researcher based in **Bihar, India**, with a strong foundation in both Physics and Mathematics. Currently pursuing an **M.Sc. in Mathematics** at Mangalayatan University (2024-Present), I combine rigorous mathematical structures (Number Theory, Complex Analysis, Special Functions) with high-energy physics applications.
+                I am a researcher based in <strong>Bihar, India</strong>, with a strong foundation in both Physics and Mathematics. Currently pursuing an <strong>M.Sc. in Mathematics</strong> at Mangalayatan University (2024-Present), I combine rigorous mathematical structures (Number Theory, Complex Analysis, Special Functions) with high-energy physics applications.
             </p>
             <p>
-                My research spans from investigating **Ramanujan's Lost Notebook** identities for field-theoretic applications to exploring **Positive Geometry in Scattering Amplitudes**. I'm particularly interested in QCD kinematics, twistor-space geometry, and amplituhedron formulations.
+                My research spans from investigating <strong>Ramanujan's Lost Notebook</strong> identities for field-theoretic applications to exploring <strong>Positive Geometry in Scattering Amplitudes</strong>. I'm particularly interested in QCD kinematics, twistor-space geometry, and amplituhedron formulations.
             </p>
         </div>
 
         <div class="section">
             <h3>Think.AI - Science Blog</h3>
-            <p>Visit my science blog <a href="https://krazad0.github.io/think-ai/"><strong>Think.AI</strong></a> where I share insights on AI, quantum computing, physics, and mathematics. I explore cutting-edge research topics and discuss complex scientific concepts in an accessible way.</p>
+            <p>
+                Visit my science blog <a href="https://krazad0.github.io/think-ai/" target="_blank"><strong>Think.AI</strong></a> where I share insights on AI, quantum computing, physics, and mathematics. I explore cutting-edge research topics and discuss complex scientific concepts in an accessible way.
+            </p>
         </div>
 
         <div class="section">
             <h3>Coding Platforms</h3>
             <div class="contact-info">
-                <a href="https://github.com/KrAzad0">GitHub</a>
-                <a href="https://huggingface.co/">Hugging Face</a>
-                <a href="https://leetcode.com/">LeetCode</a>
-                <a href="https://www.codechef.com/users/zesty_ref_37/">CodeChef</a>
-                <a href="https://codeforces.com/profile/Krazad0">Codeforces</a>
-                <a href="https://www.geeksforgeeks.org/">GeeksforGeeks</a>
+                <a href="https://github.com/KrAzad0" target="_blank">GitHub</a>
+                <a href="https://huggingface.co/" target="_blank">Hugging Face</a>
+                <a href="https://leetcode.com/" target="_blank">LeetCode</a>
+                <a href="https://www.codechef.com/users/zesty_ref_37/" target="_blank">CodeChef</a>
+                <a href="https://codeforces.com/profile/Krazad0" target="_blank">Codeforces</a>
+                <a href="https://www.geeksforgeeks.org/" target="_blank">GeeksforGeeks</a>
             </div>
         </div>
 
         <div class="section">
             <h3>Experience</h3>
-            <div class="project-card">
-                <div class="project-title">Independent Researcher</div>
-                <div class="project-meta">Self-Employed | Jun 2025 - Present | 8 months</div>
+            <div class="education-item">
+                <div class="degree">Independent Researcher</div>
+                <div class="university">Self-Employed</div>
+                <div class="stats">Jun 2025 - Present | 8 months</div>
             </div>
         </div>
 
@@ -299,17 +312,79 @@
             </div>
             <div class="education-item">
                 <div class="degree">Minor in Artificial Intelligence</div>
-                <div class="university">IIT Ropar | 2024-2025</div>
-                <div class="stats">Elective: Mechanics and Robotics | Project: Build an LLM from Scratch</div>
+                <div class="university">IIT Ropar</div>
+                <div class="stats">2024-2025</div>
+                <p><strong>Elective:</strong> Mechanics and Robotics | Project: Build an LLM from Scratch</p>
+            </div>
+            <div class="education-item">
+                <div class="degree">QUCAN - Quantum Computing Seasonal Course</div>
+                <div class="university">Quantum Computing Course</div>
+                <div class="stats">Dec 2024 - Feb 2025</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">Unacademy - JEE Online Preparation Learning PCM</div>
+                <div class="university">Unacademy</div>
+                <div class="stats">Jul 2020 - Sep 2021</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">FIITJEE Bokaro Jharkhand - JEE Preparation PCM</div>
+                <div class="university">FIITJEE Bokaro Jharkhand</div>
+                <div class="stats">Jul 2018 - Jul 2020</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">G G S PUB SCH SEC-5B B S CITY BOKARO JHARKHAND - CBSE 11/12, PCM and Computer Science</div>
+                <div class="university">GGS PUB SCH SEC-5B</div>
+                <div class="stats">Apr 2018 - Mar 2020</div>
+                <div class="stats">Grade: 68%</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">DAV PUBLIC SCHOOL MATHURAPUR BHAGALPUR BIHAR - CBSE (CLASS 3 -CLASS-10)</div>
+                <div class="university">DAV PUBLIC SCHOOL MATHURAPUR BHAGALPUR BIHAR</div>
+                <div class="stats">Apr 2010 - Apr 2018</div>
+                <div class="stats">Grade: 83</div>
+            </div>
+            <div class="education-item">
+                <div class="degree">ST. JOSEPH SCHOOL(DAY) SAHIBGANJ -JHARKHAND - ICSE (KGI-CLASS2)</div>
+                <div class="university">ST. JOSEPH SCHOOL(DAY) SAHIBGANJ -JHARKHAND</div>
+                <div class="stats">Apr 2006 - Mar 2010</div>
+                <div class="stats">Grade: RANK 3</div>
             </div>
         </div>
 
         <div class="section">
             <h3>Coursework</h3>
-            <div class="project-card">
-                <div class="project-title">B.Sc. Physics (Honours)</div>
-                <div class="project-meta">SRM University, Andhra Pradesh | 46 Courses Completed</div>
-                <p>Classical & Modern Physics, Quantum Mechanics, Nuclear & Particle Physics, Mathematical Physics, Complex Analysis, etc.</p>
+            <div class="education-item">
+                <div class="degree">B.Sc. Physics (Honours) - Completed Coursework</div>
+                <div class="university">SRM University, Andhra Pradesh</div>
+                <div class="stats">2021-2024 | 46 Courses Completed</div>
+                <p><strong>Core Physics:</strong> Classical and Modern Physics, Mechanics, Heat and Thermodynamics, Wave and Oscillations, Introduction to Optics, Quantum Mechanics, Electrostatics and Electric Current, Electrodynamics, Atomic and Molecular Physics, Solid State Physics, Nuclear and Particle Physics, Non-Linear Optics, Introduction to Lab View, Introduction to Quantum Computation</p>
+                <p><strong>Advanced Physics:</strong> Special Theory of Relativity, Free Space and Optical Fibre Communication, Analog and Digital Electronics, Introduction to Impedance Spectroscopy and ZView Lab, Research Projects I & II</p>
+                <p><strong>Mathematics & Computational:</strong> Mathematical Physics, Linear Algebra, Differential Equations, Complex Analysis, Elementary Number Theory, Introduction to Partial Differential Equations, Mobile Application Development (Java), Web Programming</p>
+                <p><strong>Laboratory & Practical:</strong> Physics Lab (Mechanics, Thermodynamics, Optics, Electronics, Electrodynamics), Atomic & Molecular Physics Lab, Solid State Physics Lab, Department Seminar</p>
+                <p><strong>General Education:</strong> Introduction to Communicative English, Psychology for Everyday Living, Critical Thinking, Idea of India, Introduction to Environmental Science</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Mathematics Coursework</h3>
+            <div class="education-item">
+                <div class="degree">M.Sc. Mathematics - Completed Coursework</div>
+                <div class="university">Mangalayatan University (Online)</div>
+                <div class="stats">2024 - Present | CGPA: 6.3/10</div>
+                <p><strong>Core Mathematics:</strong> Real Analysis, Abstract Algebra, Partial Differential Equations, Differential Geometry, Classical Mechanics, Complex Analysis, General Topology</p>
+                <p><strong>Applied & Computational:</strong> Numerical Methods, Operations Research</p>
+                <p><strong>Programming & Practical:</strong> Programming in C, Programming in C Lab</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Applied Physics Coursework</h3>
+            <div class="education-item">
+                <div class="degree">M.Sc. Applied Physics - Completed Coursework</div>
+                <div class="university">Amity University, Gurugram</div>
+                <div class="stats">September 2024 - Present (1 year completed, withdrawn)</div>
+                <p><strong>Semester 1 Courses:</strong> Classical Mechanics, Quantum Mechanics, Electronics, Mathematical Physics, MATLAB, Integrated Physics Lab-I, Japanese-I, Basics of Communication, Behavioural Science</p>
+                <p><strong>Semester 2 Courses:</strong> Quantum Mechanics II, Electrodynamics, Atomic and Molecular Physics, Statistical Physics, Condensed Matter Physics-I, Integrated Physics Lab-II, Japanese-II, Workshop on Communication Skills and Psychological Behaviour Skills</p>
             </div>
         </div>
 
@@ -317,30 +392,157 @@
             <h3>Research Experience</h3>
             <div class="project-card">
                 <div class="project-title">Searching for Mathematical Formulation from Ramanujan's Lost Notebook</div>
-                <div class="project-meta">2025 - Present</div>
-                <p>Investigating identities and series from Ramanujan's Lost Notebook for theoretical physics applications.</p>
+                <div class="project-meta">2025 - Present | Independent Theoretical Work</div>
+                <p>Investigating identities and series from Ramanujan's Lost Notebook to develop rigorous integral transforms and analytical structures. Aim to use these formulations to model and analyze physics problems in strong-interaction and field-theoretic settings.</p>
             </div>
             <div class="project-card">
                 <div class="project-title">Positive Geometry in Scattering Amplitudes</div>
-                <div class="project-meta">2025 | ICTS Research Program</div>
-                <p>Explored geometric formulations of scattering amplitudes with applications to QCD kinematics.</p>
+                <div class="project-meta">2025 | ICTS Research Program (School for Advanced Topics in Particle Physics)</div>
+                <p>Explored geometric formulations of scattering amplitudes with applications to QCD kinematics and twistor-space mapping. Focused on Scattering Dynamics and Amplituhedron Geometry.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Electron Dynamics in Attosecond Laser-Torus Systems</div>
+                <div class="project-meta">2024 | WiSILS Research Program (IIT Jodhpur)</div>
+                <p>Studied charged-particle dynamics under intense fields and toroidal confinement using numerical TDSE (Time-Dependent Schrödinger Equation) solvers. Applied computational methods to model ultrafast electron dynamics in attosecond laser systems.</p>
             </div>
         </div>
 
         <div class="section">
             <h3>Technical Skills</h3>
             <div class="skills-grid">
-                <div class="skill-item"><strong>Physics:</strong> QM, QCD, QFT, Scattering Theory</div>
-                <div class="skill-item"><strong>Mathematics:</strong> Number Theory, Special Functions, PDEs</div>
-                <div class="skill-item"><strong>Computational:</strong> C++, Python, MATLAB, IBM Qiskit</div>
+                <div class="skill-item">
+                    <strong>Physics:</strong><br>
+                    Quantum Mechanics, QCD, Effective Field Theories, Quantum Field Theory, Scattering Theory, Statistical Physics, Nuclear Physics
+                </div>
+                <div class="skill-item">
+                    <strong>Mathematics:</strong><br>
+                    Linear Algebra, Differential Equations, PDEs, Complex Analysis, Number Theory, Mathematical Physics, Special Functions
+                </div>
+                <div class="skill-item">
+                    <strong>Computational:</strong><br>
+                    C, C++, Java, MATLAB, Python, IBM Qiskit, Numerical TDSE, Mathematica, LaTeX
+                </div>
+                <div class="skill-item">
+                    <strong>Languages:</strong><br>
+                    English (Proficient), Hindi (Native), Sanskrit (Reading), Japanese (Basic)
+                </div>
             </div>
         </div>
 
-        <footer>
-            <p>© 2026 Kumar Azad. Based in Mathura Pur, Bihar, India \1f1ee\1f1f3</p>
-            <p>Pursuing excellence in theoretical physics and mathematical research</p>
-            <p>Contact: <a href="mailto:kumarazad9211p@gmail.com">kumarazad9211p@gmail.com</a></p>
-        </footer>
+        <div class="section">
+            <h3>Certifications & Achievements</h3>
+            <ul class="certification-list">
+                <li><strong>IBM Quantum (2025):</strong> Quantum Diagonalization Algorithms, Quantum Machine Learning, Variational Algorithm Design, Fundamentals of Quantum Algorithms, Qiskit Global Summer School</li>
+                <li><strong>Washington Institute (2025):</strong> Quantum Algorithms to Solve PDEs (Module 2), Quantum Algorithms for Nonlinear Problems (Module 5)</li>
+                <li><strong>NPTEL Certifications (2025):</strong> Algebra II (IMSc) - 58%, Basic Linear Algebra (IIT Bombay) - 54%</li>
+                <li><strong>NPTEL Certifications (2024):</strong> Fundamentals of Attosecond Science and Technology (IIT Madras-Tirupati) - 46%, Coherence and Quantum Entanglement (IIT Kanpur) - 44%</li>
+                <li><strong>IIT Workshops (2024):</strong> Winter School on Intense Laser Science (IIT Jodhpur), Workshop on Quantum Computation (IIT Delhi)</li>
+                <li><strong>Google AI Essentials (2024):</strong> Coursera Certification</li>
+                <li><strong>MathWorks:</strong> MATLAB Fundamentals (2023)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Conferences & Schools</h3>
+            <ul class="certification-list">
+                <li><strong>2025:</strong> School for Advanced Topics in Particle Physics (SATPP) - ICTS-TIFR</li>
+                <li><strong>2025:</strong> QM100 Workshop - ICTS (Zoom Online)</li>
+                <li><strong>2025:</strong> QM100 Workshop - IMSc (Online YouTube)</li>
+                <li><strong>2025:</strong> QM100 Workshop - IISER Kolkata (Online YouTube)</li>
+                <li><strong>2025:</strong> Positive Geometry School (POSGT) - International Centre for Theoretical Sciences</li>
+                <li><strong>2024:</strong> Winter School on Intense Laser Science (WiSILS) - IIT Jodhpur (December 2024) - 6-Day Training on Laser-Matter Interaction, Theoretical and Experimental Formalism</li>
+                <li><strong>2024:</strong> Workshop on Quantum Computation - IIT Delhi</li>
+                <li><strong>2024:</strong> Conference on Algebraic Geometry in Mathematical Physics (Online)</li>
+                <li><strong>2024:</strong> Combinatorics in Fundamental Physics (Online)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h3>Experience</h3>
+            <div class="education-item">
+                <div class="degree">Independent Researcher</div>
+                <div class="university">Jun 2025 to Present | 8 months</div>
+                <p>Conducting independent research in theoretical physics and mathematics with focus on quantum computing, amplituhedron geometry, and attosecond physics. Actively developing research projects and publishing findings.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Projects</h3>
+            <div class="project-card">
+                <div class="project-title">Literature Review on Ramanujan Lost Notebook</div>
+                <div class="project-meta">Nov 2025 - Present</div>
+                <p>In-depth analysis of identities and series from Ramanujan's Lost Notebook for theoretical physics applications.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Literature Review on Quantum Mechanics</div>
+                <div class="project-meta">Sep 2025 - Present</div>
+                <p>Comprehensive review of quantum mechanics principles and advanced topics with focus on computational applications.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Amplituhedron Geometry in Quantum Field Theory</div>
+                <div class="project-meta">2025</div>
+                <p>Exploring geometric formulations and positive geometry structures in quantum amplitudes.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Quantum Algorithm Development and Optimization</div>
+                <div class="project-meta">2025</div>
+                <p>Research on variational algorithms and quantum optimization techniques for mathematical problem-solving.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Numerical Simulations in Attosecond Physics</div>
+                <div class="project-meta">2024 - 2025</div>
+                <p>Computational modeling of ultrafast electron dynamics using TDSE (Time-Dependent Schrödinger Equation) solvers.</p>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Mathematical Physics Problem Solving</div>
+                <div class="project-meta">Ongoing</div>
+                <p>Collection of solutions and analysis of problems in classical mechanics, quantum theory, and field theory.</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Skills (10)</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Programming Languages:</strong> C, C++, Java, MATLAB, Python, JavaScript, LaTeX</div>
+                <div class="skill-item"><strong>Quantum Computing:</strong> IBM Qiskit, Variational Algorithms, Quantum ML, Quantum Optimization</div>
+                <div class="skill-item"><strong>Physics & Mathematical Methods:</strong> Quantum Mechanics, QCD, PDEs, Complex Analysis, Fourier Analysis, Differential Geometry</div>
+                <div class="skill-item"><strong>Computational Tools:</strong> Mathematica, NumPy, SciPy, Git, Numerical TDSE, Data Analysis</div>
+                <div class="skill-item"><strong>Research Methodologies:</strong> Literature Review, Mathematical Modeling, Computational Physics, Problem-Solving, Academic Writing</div>
+                <div class="skill-item"><strong>Advanced Topics:</strong> Amplituhedron Geometry, Attosecond Physics, Positive Geometry, Scattering Amplitudes</div>
+                <div class="skill-item"><strong>LEAN:</strong> Proof Formalization, Mathematical Verification, Formal Methods</div>
+                <div class="skill-item"><strong>Applied Mathematics:</strong> Linear Algebra, Numerical Methods, Operations Research, Special Functions</div>
+                <div class="skill-item"><strong>AI & Machine Learning:</strong> Neural Networks, Deep Learning, Pattern Recognition, AI Applications in Physics</div>
+                <div class="skill-item"><strong>Technical Writing:</strong> Scientific Papers, Technical Documentation, Research Presentations, LaTeX Documents</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Courses & Training (31 Total)</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>Advanced Physics Courses:</strong> Quantum Field Theory, General Relativity, Advanced Quantum Mechanics, Statistical Mechanics, Electrodynamics</div>
+                <div class="skill-item"><strong>Mathematics Courses:</strong> Abstract Algebra, Real Analysis, Complex Analysis, Differential Geometry, PDEs, Linear Algebra</div>
+                <div class="skill-item"><strong>Quantum Computing & AI Courses:</strong> Quantum Algorithms, IBM Quantum, Washington Institute Modules, Google AI Essentials</div>
+                <div class="skill-item"><strong>Specialized Topics:</strong> Attosecond Science, Quantum Entanglement, Amplituhedron Geometry, Coherence Theory</div>
+                <div class="skill-item"><strong>NPTEL Certifications:</strong> Algebra II (IMSc), Basic Linear Algebra (IIT Bombay), Attosecond Science, Quantum Entanglement</div>
+                <div class="skill-item"><strong>Laboratory & Practical:</strong> Physics Lab, Atomic & Molecular Physics Lab, Solid State Physics Lab, Electronics Lab</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h3>Languages (4)</h3>
+            <div class="skills-grid">
+                <div class="skill-item"><strong>English (Proficient):</strong> Professional & Academic Communication, Technical Writing, Presentation Skills</div>
+                <div class="skill-item"><strong>Hindi (Native):</strong> Fluent in reading, writing, and speaking</div>
+                <div class="skill-item"><strong>Sanskrit (Reading):</strong> Classical knowledge and research context</div>
+                <div class="skill-item"><strong>Japanese (Basic):</strong> Elementary communication and technical terminology</div>
+            </div>
+        </div>
     </div>
+
+    <footer>
+        <p>© 2026 Kumar Azad. Based in Mathura Pur, Bihar, India 🇮🇳</p>
+        <p>Pursuing excellence in theoretical physics and mathematical research | Open to collaborations and academic opportunities</p>
+        <p>Contact: <a href="mailto:kumarazad9211p@gmail.com">kumarazad9211p@gmail.com</a></p>
+    </footer>
 </body>
 </html>
