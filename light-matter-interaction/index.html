@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="M.Sc.-level expository notes on light–matter interaction: minimal coupling, electromagnetic gauges, dipole transitions, time-dependent perturbation theory and attosecond pulses.">
+<meta name="theme-color" content="#ffffff">
+<title>Light–Matter Interaction — Mathematical Physics Notes | Kumar Azad</title>
+<style>
+:root{color-scheme:light;--ink:#171717;--link:#19436a;--rule:#b3b3b3}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:#fff;color:var(--ink)}
+body{max-width:815px;margin:0 auto;padding:26px 35px 72px;font:17px/1.64 "Times New Roman",Georgia,serif;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible{outline:2px solid var(--link);outline-offset:4px}
+.skip-link{position:absolute;top:-120px;background:#fff;padding:10px;z-index:2}.skip-link:focus{top:8px}
+.site-nav{display:flex;gap:20px;justify-content:space-between;align-items:center;border-bottom:1px solid var(--rule);padding:0 0 15px;font:13px/1.5 Arial,sans-serif;flex-wrap:wrap}
+header{text-align:center;padding:44px 0 31px}
+header p{margin:8px auto;text-align:center}
+.eyebrow{text-transform:uppercase;letter-spacing:.07em;font:11px/1.5 Arial,sans-serif;color:#555}
+h1{font-size:36px;font-weight:normal;line-height:1.2;margin:15px 0 12px}
+.subtitle{font-size:19px;line-height:1.4}.author{font-size:17px;margin-top:20px}header small{color:#565656;font-size:13px}
+h2{font-size:23px;line-height:1.32;margin:35px 0 14px}
+h3{font-size:19px;line-height:1.34;margin:24px 0 11px}
+p{margin:12px 0;text-align:justify;hyphens:auto}
+.abstract{max-width:705px;margin:0 auto 30px;padding:0 15px}
+.abstract h2{font-size:18px;text-align:center;margin:0 0 12px}
+.abstract p{font-size:16px;line-height:1.58}
+.status{font-size:15px;color:#434343;margin:18px 0 24px}
+.contents{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 18px 13px;margin:29px 0 36px;font-size:16px}
+.contents h2{font-size:17px;margin:6px 0}
+.contents ol{padding-left:24px;margin:3px 0}.contents li{margin:4px 0}
+section{scroll-margin-top:18px}
+.equation{margin:19px 0 24px;padding:8px 4px;text-align:center;overflow-x:auto;font-size:1.02em}
+.equation mjx-container[display="true"]{margin:0!important;padding:6px 0!important}
+.equation mjx-container{max-width:100%}
+figure{margin:24px auto 30px;max-width:620px}
+figure svg{display:block;width:100%;height:auto;margin:auto}
+figcaption{font-size:14px;line-height:1.48;color:#444;text-align:center;margin:9px auto;max-width:550px}
+.inline-note{font-size:15px;color:#444;margin:15px 0 20px;padding:10px 0;border-top:1px solid #d2d2d2;border-bottom:1px solid #d2d2d2}
+.exercise{margin:18px 0;padding:12px 0;border-top:1px solid #bfbfbf;border-bottom:1px solid #bfbfbf;font-size:16px}
+#references ol{padding-left:24px}#references li{margin:9px 0;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--rule);padding-top:18px;margin-top:44px;color:#555;font-size:14px}
+footer p{text-align:left}
+@media(max-width:640px){
+body{padding:18px 17px 42px;font-size:16px;line-height:1.6}header{padding:31px 0 22px}
+h1{font-size:30px}h2{font-size:21px}h3{font-size:18px}
+.subtitle{font-size:17px}.abstract{padding:0}.abstract p{font-size:15px}
+p{text-align:left;hyphens:none}.equation{font-size:.95em}.contents{padding:8px 12px}
+}
+@media print{
+@page{size:A4;margin:22mm}html,body{max-width:none;padding:0;margin:0}
+body{font-size:11pt;line-height:1.48}.site-nav,.skip-link{display:none}
+h2,h3{break-after:avoid}figure,.equation{break-inside:avoid}a{color:inherit}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script>
+window.MathJax={
+ tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true,tags:'all',tagSide:'right',tagIndent:'0.5em'},
+ chtml:{scale:1.02},
+ options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<nav class="site-nav" aria-label="Research note navigation">
+<a href="../">← Kumar Azad · Home</a>
+<a href="../positive-geometry/">Positive Geometry notes</a>
+</nav>
+<header>
+<p class="eyebrow">Expository notes · Quantum and mathematical physics</p>
+<h1>Light–Matter Interaction</h1>
+<p class="subtitle">From minimal coupling to ultrafast atomic dynamics</p>
+<p class="author">Kumar Azad</p>
+<p><small>M.Sc.-level learning notes · 10 November 2026</small></p>
+</header>
+<main id="content">
+<section class="abstract" aria-labelledby="abstract-heading">
+<h2 id="abstract-heading">Abstract</h2>
+<p>Light–matter interaction provides a bridge between classical electromagnetic fields and quantum dynamics. These notes derive the Hamiltonian of an electron in an applied field, explain the electric-dipole and gauge approximations, establish transition amplitudes and selection rules, and introduce ultrashort pulses. Hydrogen serves as a worked example, with a final section outlining mathematically controlled numerical calculations.</p>
+</section>
+<p class="status"><em>Status.</em> Educational notes based on established quantum theory and the cited literature. These are not a claim of new research results. We use a prescribed classical electromagnetic field acting on a nonrelativistic electron; a fully quantized electromagnetic field requires a different Hamiltonian.</p>
+
+<nav class="contents" aria-label="Contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#setup">The model and electromagnetic coupling</a></li>
+<li><a href="#gauge">Velocity and length gauges</a></li>
+<li><a href="#transition">Transition amplitudes and spectral response</a></li>
+<li><a href="#hydrogen">Hydrogen and dipole selection rules</a></li>
+<li><a href="#pulses">Ultrashort and attosecond fields</a></li>
+<li><a href="#numerics">Numerical methods and checks</a></li>
+<li><a href="#references">Exercises and references</a></li>
+</ol>
+</nav>
+
+<section id="setup">
+<h2>1. The model and electromagnetic coupling</h2>
+<p>Consider an electron of mass \(m_e\) and charge \(q=-e\), bound to a fixed proton. Let \(\mathbf r\) and \(\mathbf p=-i\hbar\nabla\) denote its position and canonical momentum operators. Without the applied field, the hydrogen Hamiltonian is</p>
+<div class="equation" role="math" aria-label="Field-free hydrogen Hamiltonian">
+\[
+H_0=\frac{\mathbf p^2}{2m_e}
+-\frac{e^2}{4\pi\varepsilon_0 r}.
+\]
+</div>
+<p>For externally prescribed scalar and vector potentials \(\phi(\mathbf r,t)\) and \(\mathbf A(\mathbf r,t)\), minimal coupling gives</p>
+<div class="equation" role="math" aria-label="Minimal-coupling Hamiltonian for an electron">
+\[
+H(t)=\frac{[\mathbf p-q\mathbf A(\mathbf r,t)]^2}{2m_e}
++q\phi(\mathbf r,t)-\frac{e^2}{4\pi\varepsilon_0 r}.
+\]
+</div>
+<p>The classical fields obey \(\mathbf E=-\nabla\phi-\partial_t\mathbf A\) and \(\mathbf B=\nabla\times\mathbf A\). For wavelengths much larger than the atomic size \(a_0\), the dipole approximation replaces \(\mathbf A(\mathbf r,t)\) by a spatially uniform \(\mathbf A(t)\). A useful scale condition is \(ka_0\ll1\), where \(k=2\pi/\lambda\).</p>
+<figure>
+<svg viewBox="0 0 640 196" role="img" aria-labelledby="fig-title fig-desc">
+<title id="fig-title">Schematic optical field illuminating an atom</title>
+<desc id="fig-desc">An oscillating incoming electric field moves toward a stylized atom. The drawing illustrates coupling, not a numerical simulation.</desc>
+<rect x="0" y="0" width="640" height="196" fill="white"/>
+<path d="M25 98 H400" stroke="#999" stroke-width="1.3" stroke-dasharray="4 7"/>
+<path d="M25 98 Q52 29 79 98 T133 98 T187 98 T241 98 T295 98 T349 98 T403 98" fill="none" stroke="#22577a" stroke-width="3.2"/>
+<path d="M390 88 L408 98 L390 108" fill="none" stroke="#22577a" stroke-width="2.2"/>
+<g transform="translate(506,98)">
+<circle cx="0" cy="0" r="55" fill="none" stroke="#777" stroke-width="1.5" stroke-dasharray="5 5"/>
+<ellipse cx="0" cy="0" rx="64" ry="26" fill="none" stroke="#557a8b" stroke-width="1.7" transform="rotate(-34)"/>
+<circle cx="0" cy="0" r="11" fill="#233950"/>
+<circle cx="42" cy="-46" r="6" fill="#1c6c8e"/>
+</g>
+<g font-family="Georgia,serif" font-size="15" fill="#333">
+<text x="41" y="31">Applied field</text>
+<text x="456" y="181">Atomic system</text>
+</g>
+</svg>
+<figcaption>Figure 1. Schematic of an applied electromagnetic field and a localized atomic system; not to scale and not a computed trajectory.</figcaption>
+</figure>
+</section>
+
+<section id="gauge">
+<h2>2. Velocity and length gauges</h2>
+<p>In the spatially uniform field approximation, choose \(\phi=0\) and \(\mathbf A=\mathbf A(t)\). The minimal-coupling Hamiltonian is called the velocity-gauge Hamiltonian:</p>
+<div class="equation" role="math" aria-label="Velocity gauge Hamiltonian">
+\[
+H_{\mathrm V}(t)=\frac{[\mathbf p+e\mathbf A(t)]^2}{2m_e}
+-\frac{e^2}{4\pi\varepsilon_0 r},\qquad
+\mathbf E(t)=-\dot{\mathbf A}(t).
+\]
+</div>
+<p>With the unitary transformation \(\psi_{\mathrm L}=U(t)\psi_{\mathrm V}\), where \(U(t)=\exp[i e\,\mathbf r\cdot\mathbf A(t)/\hbar]\), the length-gauge Hamiltonian follows from \(H_{\mathrm L}=UH_{\mathrm V}U^\dagger+i\hbar\dot U U^\dagger\):</p>
+<div class="equation" role="math" aria-label="Length gauge Hamiltonian and electric dipole interaction">
+\[
+\begin{aligned}
+H_{\mathrm L}(t)
+&=H_0+e\,\mathbf r\cdot\mathbf E(t)\\
+&=H_0-\mathbf d\cdot\mathbf E(t),\qquad
+\mathbf d=q\mathbf r=-e\mathbf r.
+\end{aligned}
+\]
+</div>
+<p>This is an exact unitary equivalence within the spatially uniform, prescribed-field model. It does <em>not</em> imply that arbitrarily truncated atomic bases will produce identical results in both gauges. For spatially varying fields, magnetic effects, relativistic processes, or a quantized cavity field, the model needs additional terms or degrees of freedom.</p>
+</section>
+
+<section id="transition">
+<h2>3. Transition amplitudes and spectral response</h2>
+<p>Let \(H_0|n\rangle=E_n|n\rangle\). Expand a state in stationary eigenstates (including continuum states when necessary) as \(|\psi(t)\rangle=\sum_n c_n(t)e^{-iE_nt/\hbar}|n\rangle\). The time-dependent Schrödinger equation becomes</p>
+<div class="equation" role="math" aria-label="Evolution of amplitudes in a stationary-state basis">
+\[
+i\hbar\,\dot c_f(t)=
+\sum_n e^{i\omega_{fn}t}
+\langle f|V(t)|n\rangle c_n(t),
+\qquad
+\omega_{fn}=\frac{E_f-E_n}{\hbar}.
+\]
+</div>
+<p>For an initially occupied state \(|i\rangle\), a weak applied field, and a distinct final state \(|f\rangle\), first-order time-dependent perturbation theory gives</p>
+<div class="equation" role="math" aria-label="First order electric dipole transition amplitude">
+\[
+\begin{aligned}
+c_f^{(1)}(t)&=-\frac{i}{\hbar}
+\int_{t_i}^{t}dt'\,
+e^{i\omega_{fi}t'}\langle f|V(t')|i\rangle\\
+&=\frac{i}{\hbar}\int_{t_i}^{t}dt'\,
+e^{i\omega_{fi}t'}\,
+\mathbf d_{fi}\cdot\mathbf E(t'),
+\quad \mathbf d_{fi}=\langle f|\mathbf d|i\rangle.
+\end{aligned}
+\]
+</div>
+<p>For linearly polarized light with fixed unit polarization \(\hat{\boldsymbol\epsilon}\), write \(\mathbf E(t)=\hat{\boldsymbol\epsilon} E(t)\). The transition probability to first nonvanishing order is</p>
+<div class="equation" role="math" aria-label="Transition probability and Fourier transform of electric field">
+\[
+P_{i\to f}\simeq
+\frac{|\hat{\boldsymbol\epsilon}\cdot\mathbf d_{fi}|^2}{\hbar^2}
+\left|\int_{t_i}^{t}dt'\,E(t')e^{i\omega_{fi}t'}\right|^2.
+\]
+</div>
+<p>Thus the transition probes the spectral content of the field at the Bohr frequency \(\omega_{fi}\), multiplied by the dipole matrix element. This formula assumes the perturbative regime; strong-field ionization and multiphoton effects require more complete dynamics.</p>
+</section>
+
+<section id="hydrogen">
+<h2>4. Hydrogen and electric-dipole selection rules</h2>
+<p>For hydrogenic bound states \(|n\ell m\rangle\), electric-dipole transitions couple opposite-parity orbital states. In the spin-independent, nonrelativistic model, the orbital selection rules are</p>
+<div class="equation" role="math" aria-label="Orbital dipole selection rules">
+\[
+\Delta\ell=\pm1,\qquad
+\Delta m=0,\pm1;\qquad
+\Delta m=0\ \text{for a field polarized along }z.
+\]
+</div>
+<p>As an explicit example, let \(|100\rangle\) denote the \(1s\) state and \(|210\rangle\) the \(2p,m=0\) state. Writing \(\psi_{n\ell m}(r,\theta,\varphi)=R_{n\ell}(r)Y_{\ell m}(\theta,\varphi)\), one finds</p>
+<div class="equation" role="math" aria-label="Hydrogen 1s to 2p z dipole matrix element">
+\[
+\begin{aligned}
+\langle 210|z|100\rangle
+&=\left[\int_0^\infty r^3R_{21}(r)R_{10}(r)\,dr\right]
+\left[\int Y_{10}^{*}\cos\theta\,Y_{00}\,d\Omega\right]\\
+&=\frac{768a_0}{243\sqrt6}\cdot\frac{1}{\sqrt3}
+=\frac{256a_0}{243\sqrt2}.
+\end{aligned}
+\]
+</div>
+<p>The electronic transition dipole is \(\langle 210|d_z|100\rangle=-e\,256a_0/(243\sqrt2)\), assuming a fixed proton and the usual real hydrogen wavefunctions. The familiar nonrelativistic level formula \(E_n\simeq-13.6\,\mathrm{eV}/n^2\) gives an energy separation near \(10.2\,\mathrm{eV}\), corresponding to the Lyman-\(\alpha\) spectral region. For precision spectroscopy one must account for reduced mass, fine structure, and other corrections. See the <a href="#ref-nist">NIST selection-rule reference</a>.</p>
+</section>
+
+<section id="pulses">
+<h2>5. Ultrashort and attosecond fields</h2>
+<p>An attosecond is \(10^{-18}\,\mathrm s\). Ultrafast light pulses can probe electronic motion on its intrinsic timescales. To construct a finite, localized pulse with a vanishing time integral of the electric field, define a Gaussian-envelope <em>vector potential</em> (rather than choosing an unrelated electric-field envelope). With \(u=t-t_0\),</p>
+<div class="equation" role="math" aria-label="Localized Gaussian envelope vector potential">
+\[
+\mathbf A(t)=\hat{\mathbf z}\,A_0\,
+e^{-u^2/(2\sigma^2)}\sin(\omega_0u+\phi).
+\]
+</div>
+<p>The corresponding field is the negative time derivative,</p>
+<div class="equation" role="math" aria-label="Electric field derived from Gaussian envelope vector potential">
+\[
+\mathbf E(t)=
+\hat{\mathbf z}\,A_0e^{-u^2/(2\sigma^2)}
+\left[
+\frac{u}{\sigma^2}\sin(\omega_0u+\phi)
+-\omega_0\cos(\omega_0u+\phi)
+\right].
+\]
+</div>
+<p>Because \(\mathbf A(t)\to0\) as \(t\to\pm\infty\), this idealized pulse satisfies \(\int_{-\infty}^{\infty}\mathbf E(t)\,dt=0\). The parameter \(\sigma\) controls the temporal envelope, while \(\phi\) is the carrier-envelope phase. A pulse duration alone does not specify the photon energy or guarantee an allowed transition: both its spectrum and the matrix elements matter.</p>
+<p>For a near-resonant, weakly driven two-level system, the rotating-wave approximation leads to resonant Rabi oscillations for an approximately constant amplitude:</p>
+<div class="equation" role="math" aria-label="Resonant two level Rabi oscillations">
+\[
+P_e(t)=\sin^2\left(\frac{\Omega_R t}{2}\right),
+\qquad
+\Omega_R=\frac{|\mathbf d_{eg}\cdot\mathbf E_0|}{\hbar}.
+\]
+</div>
+<p>This formula is not generally valid for intense, isolated subcycle pulses. When the rotating-wave or two-level assumptions fail, solve the full time-dependent Hamiltonian and include sufficiently many bound and continuum states as appropriate. Attosecond science is reviewed by <a href="#ref-attosecond">Corkum and Krausz</a>.</p>
+</section>
+
+<section id="numerics">
+<h2>6. Numerical methods and mathematical checks</h2>
+<p>A straightforward finite-basis treatment evolves expansion coefficients through the matrix Schrödinger equation. In the length gauge, with \(H_{mn}^{(0)}=E_n\delta_{mn}\), the equations read</p>
+<div class="equation" role="math" aria-label="Finite basis matrix time dependent Schrodinger equation">
+\[
+i\hbar\,\frac{d\mathbf a(t)}{dt}
+=\left[\operatorname{diag}(E_n)-
+\mathbf d\cdot\mathbf E(t)\right]\mathbf a(t),
+\]
+</div>
+<p>where \(\mathbf d\) denotes the matrix of dipole elements in the chosen basis. A reliable calculation must specify its state space, basis cutoff, field units, time step, final time, and boundary treatment. Check norm conservation for a Hermitian closed-system Hamiltonian, convergence against a larger basis and smaller time step, and agreement between gauges in the converged regime.</p>
+<p>For the full hydrogen problem, spatial-grid and partial-wave approaches can treat continuum channels more faithfully. Extract excitation probabilities, bound-state populations, dipole expectation values, and—only with an appropriately represented continuum—ionization observables.</p>
+<p class="inline-note"><strong>Possible later extension.</strong> A hydrogen atom subject to structured optical fields or to confinement in a toroidal domain would require a precisely specified geometry, self-adjoint boundary conditions, and a justified coupling between the applied field and the confined electron. Such a problem is an exploratory research direction, not an established result of the equations above.</p>
+</section>
+
+<section id="references">
+<h2>7. Exercises and references</h2>
+<div class="exercise"><strong>Exercises.</strong> (i) Derive the length-gauge interaction from the stated unitary transformation; verify the sign of the electron charge. (ii) Evaluate the \(1s\rightarrow2p,m=0\) dipole integral starting from the radial hydrogen functions. (iii) Fourier-transform the pulse constructed from \(\mathbf A(t)\); identify how its bandwidth changes with \(\sigma\). (iv) Numerically compare a two-level prediction with a larger basis as the pulse shortens.</div>
+<h3>Selected references</h3>
+<ol>
+<li id="ref-nist">NIST, <a href="https://www.nist.gov/pml/atomic-spectroscopy-compendium-basic-ideas-notation-data-and-formulas/atomic-spectroscopy">Atomic Spectroscopy: Spectral Lines and Selection Rules</a>. Authoritative reference for electric-dipole transition constraints.</li>
+<li>P. B. Corkum and F. Krausz, <a id="ref-attosecond" href="https://doi.org/10.1038/nphys620">Attosecond science</a>, <em>Nature Physics</em> <strong>3</strong>, 381–387 (2007). Review of attosecond electron dynamics.</li>
+<li><a href="https://physics.nist.gov/asd">NIST Atomic Spectra Database</a>, measured and evaluated atomic levels and spectral lines.</li>
+<li>W. E. Lamb, R. R. Schlicher and M. O. Scully, <a href="https://doi.org/10.1103/PhysRevA.36.2763">Matter-field interaction in atomic physics and quantum optics</a>, <em>Physical Review A</em> <strong>36</strong>, 2763–2772 (1987). Discussion of matter–field representations.</li>
+</ol>
+<p class="status">These notes adopt a nonrelativistic, prescribed classical field and the electric-dipole approximation in most derivations. Other regimes require appropriate refinements. Any original calculations or findings should be documented separately with reproducible methods, uncertainty checks, and explicit claims.</p>
+</section>
+</main>
+<footer><a href="../">← Back to Kumar Azad's personal website</a><p>Light–Matter Interaction · Expository mathematical physics notes · 2026</p></footer>
+</body>
+</html>
