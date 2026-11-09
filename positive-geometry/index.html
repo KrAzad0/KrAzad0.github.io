@@ -6,12 +6,64 @@
 <meta name="description" content="Expository notes on the motivation and development of positive geometry, with canonical forms, worked derivations, the positive Grassmannian and the amplituhedron.">
 <style>
 *{box-sizing:border-box}html{background:white;color:#171717;scroll-behavior:smooth}body{counter-reset:equation;max-width:780px;margin:auto;padding:28px 32px 56px;font:18px/1.72 Georgia,'Times New Roman',serif}a{color:#174a80;text-decoration:none}a:hover{text-decoration:underline}a:focus-visible{outline:2px solid #174a80;outline-offset:4px}.skip-link{position:absolute;top:-100px;background:white;padding:10px}.skip-link:focus{top:8px}.section-nav{font:13px/1.6 Arial,sans-serif;display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid #ccc;padding-bottom:16px}header{text-align:center;padding:44px 0 24px}h1{font-size:34px;line-height:1.25;font-weight:normal;margin:12px 0 16px}header p{margin:8px 0}.eyebrow{font:12px/1.5 Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;color:#555}.subtitle{font-size:21px}.author{margin-top:24px}h2{font-size:23px;line-height:1.35;margin:42px 0 16px}h3{font-size:19px;margin:28px 0 12px}p{margin:16px 0}main>nav{border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding-bottom:14px;font-size:16px}main>nav h2{font-size:19px;margin-top:20px}li{margin:7px 0}.abstract{font-size:16px;margin:0 28px 28px}.abstract h2{text-align:center;font-size:18px;margin:12px}.note{font-size:15px;color:#444;margin:24px 0;padding:0;background:none;border:0}.equation{font:19px/1.8 Cambria,Georgia,serif;text-align:center;overflow-x:auto;padding:16px 0;margin:24px 0;counter-increment:equation}.equation:after{content:'(' counter(equation) ')';display:block;text-align:right;font-size:15px}figure{margin:28px 0;padding:0}figure svg{display:block;width:100%;max-width:460px;height:auto;margin:auto}figcaption{font-size:15px;line-height:1.55;margin:14px 20px}footer{margin-top:40px;padding-top:18px;border-top:1px solid #ccc;font-size:14px}#reading ol{font-size:16px}section{scroll-margin-top:20px}@media(max-width:520px){body{padding:20px;font-size:17px}h1{font-size:28px}.abstract{margin:0 0 24px}.section-nav{font-size:12px}h2{font-size:22px}.equation{font-size:17px}figcaption{margin:12px 0}}@media print{body{max-width:none;padding:0;font-size:11pt}.section-nav,.skip-link{display:none}a{color:inherit}header{padding-top:0}figure,.equation{break-inside:avoid}h2,h3{break-after:avoid}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+:root{--ink:#15223a;--accent:#126e79;--accent-dark:#0b4d58;--line:#d7e2e7;--soft:#f3f8fa;--muted:#526577}
+html{background:#f5f8fa;color:var(--ink)}
+body{max-width:920px;background:#fff;min-height:100vh;border-left:1px solid var(--line);border-right:1px solid var(--line);box-shadow:0 18px 70px rgba(20,45,60,.06);padding:30px clamp(20px,5vw,68px) 64px;font-size:17px;line-height:1.77}
+a{color:var(--accent-dark)}a:hover{color:#0b747b}
+.section-nav{align-items:center;font:600 13px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+header{padding:46px 0 26px;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(36px,5vw,54px);letter-spacing:-.035em;font-weight:600;color:#101d32}
+h2{color:#122c43;font-size:25px;letter-spacing:-.014em}
+h3{color:#243b52}p{max-width:75ch}
+.subtitle{font-size:20px;color:#435a70}
+.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.14em}
+.author{font-weight:600}
+.abstract{background:var(--soft);border-left:4px solid var(--accent);margin:24px 0 28px;padding:16px 24px;border-radius:0 9px 9px 0}
+.abstract h2{text-align:left;margin:4px 0 8px}
+main>nav{background:#fafcfd;border:1px solid var(--line);padding:10px 22px 16px;border-radius:12px}
+main>nav ol{margin:4px 0 4px;padding-left:25px;columns:2;column-gap:28px}
+main>nav li{break-inside:avoid;margin:5px 0}
+.note{background:#f5f8fa;padding:15px 18px;border-left:3px solid #9bc3c7;border-radius:0 6px 6px 0}
+.equation{font:inherit;margin:22px 0 9px;padding:14px 8px 10px;overflow-x:auto;overflow-y:hidden;text-align:center}
+.equation::after{color:#718293;font:13px/1.2 system-ui,-apple-system,Segoe UI,sans-serif}
+.equation mjx-container{max-width:100%;margin:0 auto!important}
+.latex-source{margin:0 0 24px;border:1px solid var(--line);border-radius:7px;overflow:hidden;font:13px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}
+.latex-source summary{cursor:pointer;padding:8px 12px;color:var(--accent-dark);background:#fafcfd;font-weight:600}
+.latex-source pre{margin:0;padding:12px 14px;white-space:pre;overflow-x:auto;background:#eef4f6;color:#20394b}
+.header-actions{margin-top:21px}
+.source-link{display:inline-block;border:1px solid var(--accent);border-radius:7px;padding:8px 13px;font:600 13px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+.source-link:hover{background:var(--soft);text-decoration:none}
+figure{border:1px solid var(--line);background:#fcfefe;border-radius:10px;padding:14px 10px 8px}
+figure svg{max-width:520px}
+figcaption{color:#526577;text-align:center}
+#reading ol{padding-left:26px}
+.math-exercise{background:#f6fafb;border:1px solid #d6e5e8;padding:15px 18px;border-radius:9px}
+footer{color:#526577}
+@media(max-width:620px){body{border:none;box-shadow:none;padding:20px 18px 40px;font-size:16px}header{padding:30px 0 22px}main>nav ol{columns:1}.equation{padding:10px 0}figure{padding:8px 0}.abstract{padding:12px 16px}.subtitle{font-size:18px}}
+@media print{body{box-shadow:none;border:0}.latex-source,.header-actions{display:none}main>nav{background:white}.abstract{background:white}}
+
 </style>
+
+<meta name="theme-color" content="#f5f8fa">
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['\\(', '\\)']],
+      displayMath: [['\\[', '\\]']],
+      processEscapes: true
+    },
+    chtml: { scale: 1.02 },
+    options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
+  };
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
 </head>
 <body class="notes-page">
 <a class="skip-link" href="#content">Skip to main content</a>
 <nav class="section-nav" aria-label="Site navigation"><a href="../">← Kumar Azad · Home</a></nav>
-<header><p class="eyebrow">Expository notes · Mathematical physics</p><h1>Positive Geometry</h1><p class="subtitle">Motivation, construction, and the path to the amplituhedron</p><p class="author">Kumar Azad</p><p><small>Learning notes · Revised 9 November 2026</small></p></header>
+<header><p class="eyebrow">Expository notes · Mathematical physics</p><h1>Positive Geometry</h1><p class="subtitle">Motivation, construction, and the path to the amplituhedron</p><p class="author">Kumar Azad</p><p><small>Learning notes · Revised 9 November 2026</small></p><p class="header-actions"><a class="source-link" href="positive-geometry-notes.tex" download>Download complete LaTeX source (.tex)</a></p></header>
 <main id="content">
 <section class="abstract" aria-labelledby="abstract-title"><h2 id="abstract-title">Abstract</h2><p>Why should scattering amplitudes be related to geometry? These notes follow the questions that make the connection natural: why diagrammatic calculations hide simplicity, how positivity organizes on-shell data, and why boundary residues suggest a canonical differential form. Elementary interval and triangle calculations illustrate the mechanism before the Grassmannian and amplituhedron constructions are introduced.</p></section>
 <p class="note"><em>Status.</em> An educational synthesis of the cited literature, not an original research paper or an arXiv submission. The motivating questions below are a pedagogical reconstruction of the published ideas, not quotations or claims about the authors’ private thought processes.</p>
@@ -23,35 +75,106 @@
 <h3>1.4 Extract the general mathematical principle</h3><p>In 2017, Arkani-Hamed, Bai, and Lam formulated positive geometries and canonical forms as mathematical objects in their own right. The organizing principle is recursive: the form has logarithmic singularities on boundaries, and each boundary residue is its own canonical form. The framework includes examples beyond amplituhedra. <a href="#ref-1">[1]</a></p><p>The historical sequence and the teaching sequence differ. We now start with an interval, where the boundary rule can be derived explicitly, and then return to the more elaborate constructions.</p></section>
 <section id="idea"><h2>2. From boundaries to a definition</h2>
 <p>Start with a region such as a closed interval or a triangle. Instead of asking only for its size, ask for a differential form that records its boundaries. A <em>canonical form</em> has simple logarithmic poles at those boundaries; taking a residue produces the canonical form of the boundary itself.</p>
-<p>More precisely, a positive geometry is a pair (X, X<sub>≥0</sub>): a complex projective algebraic variety defined over the reals, together with a suitable oriented, closed semialgebraic region of its real points. The definition recursively requires a unique rational top-degree form with the prescribed boundary residues and no other poles. Not every region satisfies these conditions. See <a href="#ref-1">[1]</a> for the technical hypotheses.</p>
-<div class="equation" role="math" aria-label="The residue of the canonical form along a boundary equals the canonical form of that boundary">Res<sub>B</sub> Ω(X, X<sub>≥0</sub>) = Ω(B, B<sub>≥0</sub>)</div>
-<p>Locally near a boundary t = 0, the form looks like (dt/t) ∧ Ω<sub>B</sub> plus terms regular there. This explains the word “logarithmic”: dt/t = d log t. Orientations determine the residue signs; a zero-dimensional oriented point has canonical form +1 or −1.</p>
+<p>More precisely, a positive geometry is a pair \((X,X_{\geq 0})\): a complex projective algebraic variety defined over the reals, together with a suitable oriented, closed semialgebraic region of its real points. The definition recursively requires a unique rational top-degree form with the prescribed boundary residues and no other poles. Not every region satisfies these conditions. See <a href="#ref-1">[1]</a> for the technical hypotheses.</p>
+<div class="equation" role="math" aria-label="Typeset mathematical equation">\[
+\boxed{\operatorname{Res}_{B}\Omega(X,X_{\geq 0})
+=\Omega(B,B_{\geq 0}).}
+\]</div>
+<details class="latex-source"><summary>View LaTeX source for equation</summary><pre><code>\[
+\boxed{\operatorname{Res}_{B}\Omega(X,X_{\geq 0})
+=\Omega(B,B_{\geq 0}).}
+\]</code></pre></details>
+<p>Locally near a boundary \(t=0\), the form looks like \(\frac{dt}{t}\wedge\Omega_B\) plus terms regular there. This explains the word “logarithmic”: \(\frac{dt}{t}=d\log t\). Orientations determine the residue signs; a zero-dimensional oriented point has canonical form +1 or −1.</p>
 </section>
 <section id="examples"><h2>3. Deriving the elementary examples</h2><h3>The interval</h3>
 <p>Suppose the region is the interval a ≤ x ≤ b, with a &lt; b. We want simple endpoint poles, unit-magnitude residues, and no pole at infinity. The ansatz A dx/[(x − a)(b − x)] has residue A/(b − a) at a; setting it to +1 fixes A = b − a. Thus, with the chosen sign convention,</p>
-<div class="equation" role="math" aria-label="Omega equals b minus a times d x over the product x minus a and b minus x">Ω<sub>[a,b]</sub> = (b − a) dx / [(x − a)(b − x)]<br>= dx/(x − a) + dx/(b − x)<br>= d log[(x − a)/(b − x)].</div>
+<div class="equation" role="math" aria-label="Typeset mathematical equation">\[
+\begin{aligned}
+\Omega_{[a,b]}(x)
+&=\frac{(b-a)\,dx}{(x-a)(b-x)}\\[3pt]
+&=\frac{dx}{x-a}+\frac{dx}{b-x}\\[3pt]
+&=d\log\!\left(\frac{x-a}{b-x}\right).
+\end{aligned}
+\]</div>
+<details class="latex-source"><summary>View LaTeX source for equation</summary><pre><code>\[
+\begin{aligned}
+\Omega_{[a,b]}(x)
+&amp;=\frac{(b-a)\,dx}{(x-a)(b-x)}\\[3pt]
+&amp;=\frac{dx}{x-a}+\frac{dx}{b-x}\\[3pt]
+&amp;=d\log\!\left(\frac{x-a}{b-x}\right).
+\end{aligned}
+\]</code></pre></details>
 <figure><svg viewBox="0 0 520 130" role="img" aria-labelledby="interval-title interval-desc"><title id="interval-title">An oriented closed interval</title><desc id="interval-desc">A black segment from a to b, with an arrow indicating increasing x and logarithmic poles at both endpoints.</desc><path d="M50 60H470" stroke="#222" stroke-width="5"/><path d="M250 60H290l-12-9m12 9-12 9" fill="none" stroke="#222" stroke-width="3"/><g fill="#222"><circle cx="50" cy="60" r="7"/><circle cx="470" cy="60" r="7"/></g><g fill="#222" font-size="19" text-anchor="middle"><text x="50" y="100">a</text><text x="470" y="100">b</text><text x="265" y="30">a &lt; x &lt; b</text></g></svg><figcaption>Both endpoints are boundaries. The form has residues +1 at a and −1 at b in the usual complex-residue convention.</figcaption></figure>
 <p>The numerator fixes the normalization. At infinity the two terms cancel their apparent pole. This is a differential form with boundary singularities, not a probability density with a finite integral over the closed interval.</p>
 <h3>The standard triangle</h3><p>Consider the region Δ = {(x,y): x ≥ 0, y ≥ 0, x + y ≤ 1}, with orientation dx ∧ dy. To encode the three edges, try a denominator xy(1 − x − y). Requiring the residue on x = 0 to be the unit interval form fixes the constant numerator to 1. The resulting canonical form is</p>
-<div class="equation" role="math" aria-label="Omega of triangle equals d x wedge d y over x times y times one minus x minus y">Ω<sub>Δ</sub> = (dx ∧ dy) / [xy(1 − x − y)].</div>
+<div class="equation" role="math" aria-label="Typeset mathematical equation">\[
+\boxed{\Omega_{\Delta}
+=\frac{dx\wedge dy}{x\,y\,(1-x-y)}.}
+\]</div>
+<details class="latex-source"><summary>View LaTeX source for equation</summary><pre><code>\[
+\boxed{\Omega_{\Delta}
+=\frac{dx\wedge dy}{x\,y\,(1-x-y)}.}
+\]</code></pre></details>
 <figure><svg viewBox="0 0 520 320" role="img" aria-labelledby="triangle-title triangle-desc"><title id="triangle-title">The standard two-dimensional simplex</title><desc id="triangle-desc">A triangle with vertices zero zero, one zero and zero one. Its three edges are x equals zero, y equals zero, and x plus y equals one.</desc><path d="M95 250L390 250L95 45Z" fill="#222" fill-opacity=".04" stroke="#222" stroke-width="3"/><g fill="#222" font-size="17"><text x="48" y="280">(0,0)</text><text x="367" y="280">(1,0)</text><text x="48" y="30">(0,1)</text><text x="200" y="283">y = 0</text><text x="15" y="155">x = 0</text><text x="263" y="135">x + y = 1</text><text x="130" y="200">Δ</text></g></svg><figcaption>Each denominator factor corresponds to one edge. The corners are boundaries of those edges.</figcaption></figure>
-<p>Along x = 0, write Ω<sub>Δ</sub> = (dx/x) ∧ dy/[y(1 − x − y)]. Its residue is dy/[y(1 − y)], the canonical form of the unit interval. This is the boundary recursion in a concrete calculation.</p>
+<p>Along x = 0, write Ω<sub>Δ</sub> = (dx/x) ∧ dy/[y(1 − x − y)]. Its residue is \(\operatorname{Res}_{x=0}\Omega_{\Delta}=\frac{dy}{y(1-y)}\), the canonical form of the unit interval, with the induced boundary orientation. This is the boundary recursion in a concrete calculation.</p>
 <p>For a polygon, triangulation gives another useful principle: add the canonical forms of consistently oriented triangles. Contributions on internal diagonals cancel, leaving only poles on the polygon’s actual boundary. <a href="#ref-1">[1]</a></p></section>
 <section id="grassmannian"><h2>4. Why the positive Grassmannian?</h2>
 <p>Why move from polygons to spaces of planes? A Grassmannian packages linear relations while removing dependence on a choice of basis. Positivity then selects a structured region whose boundaries can be tracked through minors. This makes it a natural setting for the on-shell constructions discussed above. <a href="#ref-4">[4]</a></p>
 <p>The real Grassmannian Gr(k,n) parametrizes k-dimensional linear subspaces of ℝ<sup>n</sup>. Represent one by the row span of a full-rank k × n matrix C; invertible row operations do not change the subspace.</p>
-<div class="equation" role="math" aria-label="Ordered maximal minors of C are positive">Δ<sub>I</sub>(C) = det(C<sub>i₁</sub>, …, C<sub>iₖ</sub>) &gt; 0<br>for every I = {i₁ &lt; ⋯ &lt; iₖ}.</div>
+<div class="equation" role="math" aria-label="Typeset mathematical equation">\[
+\Delta_I(C)=\det(C_{i_1},\ldots,C_{i_k})>0,
+\qquad I=\{i_1<\cdots<i_k\}\subset\{1,\ldots,n\}.
+\]</div>
+<details class="latex-source"><summary>View LaTeX source for equation</summary><pre><code>\[
+\Delta_I(C)=\det(C_{i_1},\ldots,C_{i_k})&gt;0,
+\qquad I=\{i_1&lt;\cdots&lt;i_k\}\subset\{1,\ldots,n\}.
+\]</code></pre></details>
 <p>The <strong>positive Grassmannian</strong> Gr<sub>&gt;0</sub>(k,n) consists of subspaces admitting a representative whose ordered maximal minors are all positive. Its closure is the <strong>nonnegative Grassmannian</strong> Gr<sub>≥0</sub>(k,n), where those minors may vanish. Positivity concerns these determinants, not positivity of every matrix entry. The choice of positive representative is preserved by row transformations of positive determinant.</p>
-<p>For example, take C with rows (1,1,1) and (0,1,2). Its ordered 2 × 2 minors are Δ<sub>12</sub> = 1, Δ<sub>13</sub> = 2 and Δ<sub>23</sub> = 1, so it represents a point of Gr<sub>&gt;0</sub>(2,3). The dimension of Gr(k,n) is k(n − k).</p>
-<p>Patterns of vanishing minors organize the nonnegative Grassmannian into <em>positroid cells</em>. Planar networks and plabic graphs provide powerful ways to describe and parametrize these cells. Postnikov’s paper is a foundational reference. <a href="#ref-2">[2]</a></p></section>
+<p>For example, the following matrix has positive ordered maximal minors:
+<div class="equation" role="math" aria-label="Example of a positive two-plane represented by a matrix">
+\[
+C=\begin{pmatrix}1&1&1\\0&1&2\end{pmatrix},
+\qquad
+(\Delta_{12},\Delta_{13},\Delta_{23})=(1,2,1)>0.
+\]
+</div>
+Thus \([C]\in\operatorname{Gr}_{>0}(2,3)\). In general, \(\dim \operatorname{Gr}(k,n)=k(n-k)\).</p>
+<p>The minors are not independent. In \(\operatorname{Gr}(2,4)\), for example, the Plücker coordinates satisfy
+<div class="equation" role="math" aria-label="Plucker relation in Gr two four">
+\[
+\Delta_{12}\Delta_{34}-\Delta_{13}\Delta_{24}
++\Delta_{14}\Delta_{23}=0.
+\]
+</div>
+This identity follows by expanding the \(2\times2\) minors of a \(2\times4\) representative; it is an algebraic constraint on the Grassmannian, not an additional positivity assumption.
+Patterns of vanishing minors organize the nonnegative Grassmannian into <em>positroid cells</em>. Planar networks and plabic graphs provide powerful ways to describe and parametrize these cells. Postnikov’s paper is a foundational reference. <a href="#ref-2">[2]</a></p></section>
 <section id="amplituhedron"><h2>5. From positive data to the amplituhedron</h2>
 <p>The tree amplituhedron is an image of a nonnegative Grassmannian under a map determined by positive external data. With an n × (k + m) matrix Z whose ordered maximal minors are positive, the map is</p>
-<div class="equation" role="math" aria-label="Y equals C Z; the amplituhedron is the image of the nonnegative Grassmannian">Y = CZ ∈ Gr(k, k + m),<br>𝒜<sub>n,k,m</sub>(Z) = {rowspan(CZ) : C ∈ Gr<sub>≥0</sub>(k,n)}.</div>
-<p>Here n ≥ k + m; C is a k × n representative, and the notation uses the conventional closure of the positive image. For m = 2 and k = 1, this gives a convex polygon in projective two-space, a useful elementary model. The physics application uses m = 4.</p>
+<div class="equation" role="math" aria-label="Typeset mathematical equation">\[
+\begin{gathered}
+Y=\operatorname{rowspan}(CZ)\in\operatorname{Gr}(k,k+m),\\
+\boxed{\mathcal A_{n,k,m}(Z)=
+\bigl\{\operatorname{rowspan}(CZ):[C]\in\operatorname{Gr}_{\geq0}(k,n)\bigr\}.}
+\end{gathered}
+\]</div>
+<details class="latex-source"><summary>View LaTeX source for equation</summary><pre><code>\[
+\begin{gathered}
+Y=\operatorname{rowspan}(CZ)\in\operatorname{Gr}(k,k+m),\\
+\boxed{\mathcal A_{n,k,m}(Z)=
+\bigl\{\operatorname{rowspan}(CZ):[C]\in\operatorname{Gr}_{\geq0}(k,n)\bigr\}.}
+\end{gathered}
+\]</code></pre></details>
+<p>Here \(n\geq k+m\); \(C\) is a \(k\times n\) representative, and \(Z\) is an \(n\times(k+m)\) matrix with strictly positive ordered maximal minors. The formula uses the nonnegative Grassmannian, including its boundary. For m = 2 and k = 1, this gives a convex polygon in projective two-space, a useful elementary model. The physics application uses m = 4.</p>
 <p>In planar <strong>𝒩 = 4 supersymmetric Yang–Mills theory</strong>, amplituhedron canonical forms encode scattering-amplitude data: tree amplitudes and, in the loop generalization, loop integrands. Recovering the physical superamplitude involves the appropriate kinematic and supersymmetric translation. <a href="#ref-3">[3]</a></p>
 <aside class="note"><strong>Scope matters.</strong> This construction belongs to a special quantum field theory and a planar limit. It is not a general formula for QCD scattering or all quantum field theories. Loop integrands also differ from amplitudes after loop integration.</aside>
 </section>
-<section id="reading"><h2>6. Further study and references</h2><ol><li><strong>Build the prerequisites:</strong> determinants, differential forms, residues, and elementary projective geometry.</li><li><strong>Work through the examples:</strong> verify the interval residues and the triangle’s boundary form; then triangulate a square.</li><li><strong>Study positivity:</strong> compute small Grassmannian minors before exploring positroid cells and networks.</li><li><strong>Connect to physics:</strong> learn color ordering, planar amplitudes, and momentum twistors before the m = 4 amplituhedron.</li></ol>
+<section id="reading"><h2>6. Further study and references</h2>
+<div class="math-exercise">
+<strong>Suggested exercise.</strong> Starting from
+\(\Omega_{\Delta}=\frac{dx\wedge dy}{xy(1-x-y)}\), compute the residue at \(y=0\).
+Explain why it is the negative of \(\frac{dx}{x(1-x)}\) in the ambient coordinate convention and how the induced boundary orientation resolves the sign. For additional practice, calculate every ordered \(2\times2\) minor of a general \(2\times4\) matrix and verify the Plücker identity.
+</div>
+<p>For a compiled-paper workflow, the <a href="positive-geometry-notes.tex" download>standalone LaTeX manuscript source</a> reproduces the principal definitions and derivations using <code>amsmath</code>, <code>amssymb</code>, and <code>hyperref</code>.</p><ol><li><strong>Build the prerequisites:</strong> determinants, differential forms, residues, and elementary projective geometry.</li><li><strong>Work through the examples:</strong> verify the interval residues and the triangle’s boundary form; then triangulate a square.</li><li><strong>Study positivity:</strong> compute small Grassmannian minors before exploring positroid cells and networks.</li><li><strong>Connect to physics:</strong> learn color ordering, planar amplitudes, and momentum twistors before the m = 4 amplituhedron.</li></ol>
 <h3>References</h3><ol><li id="ref-1">N. Arkani-Hamed, Y. Bai and T. Lam, <a href="https://arxiv.org/abs/1703.04541">Positive Geometries and Canonical Forms</a> (2017), JHEP 11 (2017) 039. Definitions, residues, and geometric examples.</li><li id="ref-2">A. Postnikov, <a href="https://arxiv.org/abs/math/0609764">Total positivity, Grassmannians, and networks</a> (2006). Nonnegative Grassmannians and their cell structure.</li><li id="ref-3">N. Arkani-Hamed and J. Trnka, <a href="https://arxiv.org/abs/1312.2007">The Amplituhedron</a> (2013), JHEP 10 (2014) 030. The original amplituhedron proposal.</li><li id="ref-4">N. Arkani-Hamed, J. L. Bourjaily, F. Cachazo, A. B. Goncharov, A. Postnikov and J. Trnka, <a href="https://arxiv.org/abs/1212.5605">Scattering Amplitudes and the Positive Grassmannian</a> (2012; revised 2014). On-shell diagrams, positive cells, and logarithmic measures.</li></ol>
 <p class="note">These notes summarize established material. Any future original work should be separately identified with its methods, results, limitations, and a citable manuscript.</p></section>
 </main><footer><a href="../">← Back to Kumar Azad’s personal webpage</a><p>Learning notes · Kumar Azad · 2026</p></footer>
