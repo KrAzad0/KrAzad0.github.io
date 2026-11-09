@@ -322,6 +322,63 @@
       .research-note-card:focus-visible { transform: none; }
     }
 
+  
+    /* Coursework programs ordered by degree level */
+    .academic-coursework .coursework-intro { margin: 8px 0 18px; }
+    .coursework-program {
+      border: 1px solid #29415e;
+      border-radius: 9px;
+      background: var(--card-bg);
+      margin: 12px 0;
+      overflow: hidden;
+    }
+    .coursework-program[open] { border-color: #3b6b79; }
+    .coursework-program summary {
+      cursor: pointer;
+      display: list-item;
+      padding: 19px 22px;
+      color: var(--heading);
+      font-weight: 600;
+      list-style-position: inside;
+    }
+    .coursework-program summary::marker { color: var(--secondary); }
+    .coursework-program summary:focus-visible { outline: 2px solid var(--secondary); outline-offset: -4px; }
+    .coursework-degree { display: inline-block; font-size: 1.07rem; margin-left: 5px; }
+    .coursework-subtitle {
+      display: block;
+      margin: 5px 0 0 22px;
+      font-size: 0.88rem;
+      font-weight: 400;
+      color: var(--text);
+    }
+    .coursework-body { padding: 0 22px 22px; border-top: 1px solid #29415e; }
+    .coursework-body .degree { margin-top: 17px; }
+    .coursework-body p { font-size: .94rem; }
+    .coursework-note { font-size: .83rem!important; color: var(--text); }
+    .coursework-table-wrap { overflow-x: auto; margin: 13px 0; }
+    .coursework-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .85rem;
+      min-width: 580px;
+      text-align: left;
+    }
+    .coursework-table th,
+    .coursework-table td {
+      border-bottom: 1px solid #29415e;
+      padding: 10px 9px;
+      vertical-align: top;
+    }
+    .coursework-table th { color: var(--heading); font-weight: 600; }
+    .coursework-table td { color: #bac7dc; }
+    .coursework-table th:nth-child(n+3),.coursework-table td:nth-child(n+3) { text-align: center; }
+    .coursework-table tfoot th,.coursework-table tfoot td { color: var(--secondary); font-weight: 700; }
+    @media(max-width:680px) {
+      .coursework-program summary { padding: 16px; }
+      .coursework-body { padding: 0 16px 17px; }
+      .coursework-subtitle { margin-left: 19px; }
+    }
+
   </style>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6osY3jOSr5unUDtXOa6CMyLro8jAa6g7nxIQmQK87IbHPXI9YWyYstNt70kaRTQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="academic.css">
@@ -535,31 +592,67 @@
     </div>
 
 
-    <div class="section">
- <h3>SRMIST Coursework</h3>
- <div class="education-item" id="srmist-semester-i">
- <div class="degree">M.Sc. Physics (Quantum Technology) - Semester I Coursework</div>
- <div class="university">SRM Institute of Science and Technology (SRMIST)</div>
- <div class="stats">Semester I | 6 Courses</div>
- <p style="margin-top: 15px; font-size: 0.95rem;">
- <strong>Core Physics:</strong> Mathematical Physics - I, Classical Mechanics, Quantum Mechanics - I
- </p>
- <p style="margin-top: 10px; font-size: 0.95rem;">
- <strong>Electronics:</strong> Electronic Devices and Applications
- </p>
- <p style="margin-top: 10px; font-size: 0.95rem;">
- <strong>Laboratory &amp; Practical:</strong> Physics and Electronics Laboratory
- </p>
- <p style="margin-top: 10px; font-size: 0.95rem;">
- <strong>Quantitative &amp; Logical Reasoning:</strong> Comprehensive Skills in Quantitative and Logical Reasoning
- </p>
- </div>
- </div>
 
- <div class="section">
- <h3>Coursework</h3>
- <div class="education-item">
- <div class="degree">B.Sc. Physics (Honours) - Completed Coursework</div>
+    <section class="section academic-coursework" id="academic-coursework" aria-labelledby="academic-coursework-heading">
+      <h3 id="academic-coursework-heading">Academic Coursework</h3>
+      <p class="coursework-intro">Graduate studies first, followed by undergraduate coursework. Select a program to view its courses.</p>
+      <details class="coursework-program" open id="srmist-coursework">
+        <summary><span class="coursework-degree">M.Sc. Physics (Quantum Technology)</span><span class="coursework-subtitle">Current · SRM Institute of Science and Technology (SRMIST)</span></summary>
+        <div class="coursework-body">
+          
+          <p class="coursework-intro">Semester I curriculum · 6 courses · <strong>19 credits</strong> · 24 scheduled L/T/P hours per week.</p>
+          <div class="coursework-table-wrap">
+            <table class="coursework-table">
+              <thead><tr><th scope="col">Course code</th><th scope="col">Course</th><th scope="col">L</th><th scope="col">T</th><th scope="col">P</th><th scope="col">Credits</th></tr></thead>
+              <tbody>
+                <tr><td>PPY25101J</td><td>Mathematical Physics – I</td><td>2</td><td>0</td><td>2</td><td>3</td></tr>
+                <tr><td>PPY25102T</td><td>Classical Mechanics</td><td>4</td><td>0</td><td>0</td><td>4</td></tr>
+                <tr><td>PPY25103J</td><td>Quantum Mechanics – I</td><td>3</td><td>0</td><td>2</td><td>4</td></tr>
+                <tr><td>PPY25104T</td><td>Electronic Devices and Applications</td><td>3</td><td>0</td><td>0</td><td>3</td></tr>
+                <tr><td>PPY25S01L</td><td>Physics and Electronics Laboratory</td><td>0</td><td>0</td><td>6</td><td>3</td></tr>
+                <tr><td>PCD25AE1T</td><td>Comprehensive Skills in Quantitative and Logical Reasoning</td><td>2</td><td>0</td><td>0</td><td>2</td></tr>
+              </tbody>
+              <tfoot><tr><th scope="row" colspan="2">Semester I total</th><td>14</td><td>0</td><td>10</td><td>19</td></tr></tfoot>
+            </table>
+          </div>
+          <p class="coursework-note">L = Lecture, T = Tutorial, P = Practical. Additional semesters will be listed under this M.Sc. when available.</p>
+        </div>
+      </details>
+      <details class="coursework-program" id="mathematics-coursework">
+        <summary><span class="coursework-degree">M.Sc. Mathematics</span><span class="coursework-subtitle">Completed coursework · Mangalayatan University (Online)</span></summary>
+        <div class="coursework-body">
+          <div class="degree">M.Sc. Mathematics - Completed Coursework</div>
+ <div class="university">Mangalayatan University (Online)</div>
+ <div class="stats">Completed | Percentage: 63.17%</div>
+ <p style="margin-top: 15px; font-size: 0.95rem;">
+ <strong>Core Mathematics:</strong> Real Analysis, Abstract Algebra, Partial Differential Equations, Differential Geometry, Classical Mechanics, Complex Analysis, General Topology
+ </p>
+ <p style="margin-top: 10px; font-size: 0.95rem;">
+ <strong>Applied & Computational:</strong> Numerical Methods, Operations Research
+ </p>
+ <p style="margin-top: 10px; font-size: 0.95rem;">
+ <strong>Programming & Practical:</strong> Programming in C, Programming in C Lab
+ </p>
+        </div>
+      </details>
+      <details class="coursework-program" id="applied-physics-coursework">
+        <summary><span class="coursework-degree">M.Sc. Applied Physics</span><span class="coursework-subtitle">Prior coursework; program withdrawn · Amity University, Gurugram</span></summary>
+        <div class="coursework-body">
+          <div class="degree">M.Sc. Applied Physics — Prior Coursework (Withdrawn)</div>
+ <div class="university">Amity University, Gurugram</div>
+ <div class="stats">Started September 2024 · One year of coursework completed · Program withdrawn</div>
+ <p style="margin-top: 15px; font-size: 0.95rem;">
+ <strong>Semester 1 Courses:</strong> Classical Mechanics, Quantum Mechanics, Electronics, Mathematical Physics, MATLAB, Integrated Physics Lab-I, Japanese-I, Basics of Communication, Behavioural Science
+ </p>
+ <p style="margin-top: 10px; font-size: 0.95rem;">
+ <strong>Semester 2 Courses:</strong> Quantum Mechanics II, Electrodynamics, Atomic and Molecular Physics, Statistical Physics, Condensed Matter Physics-I, Integrated Physics Lab-II, Japanese-II, Workshop on Communication Skills and Psychological Behaviour Skills
+ </p>
+        </div>
+      </details>
+      <details class="coursework-program" id="bsc-coursework">
+        <summary><span class="coursework-degree">B.Sc. Physics (Honours)</span><span class="coursework-subtitle">Completed · SRM University, Andhra Pradesh · 2021–2024</span></summary>
+        <div class="coursework-body">
+          <div class="degree">B.Sc. Physics (Honours) - Completed Coursework</div>
  <div class="university">SRM University, Andhra Pradesh</div>
  <div class="stats">2021-2024 | 46 Courses Completed</div>
  <p style="margin-top: 15px; font-size: 0.95rem;">
@@ -577,41 +670,9 @@
  <p style="margin-top: 10px; font-size: 0.95rem;">
  <strong>General Education:</strong> Introduction to Communicative English, Psychology for Everyday Living, Critical Thinking, Idea of India, Introduction to Environmental Science
  </p>
- </div>
- </div>
-
-    <div class="section">
- <h3>Mathematics Coursework</h3>
- <div class="education-item">
- <div class="degree">M.Sc. Mathematics - Completed Coursework</div>
- <div class="university">Mangalayatan University (Online)</div>
- <div class="stats">Completed | Percentage: 63.17%</div>
- <p style="margin-top: 15px; font-size: 0.95rem;">
- <strong>Core Mathematics:</strong> Real Analysis, Abstract Algebra, Partial Differential Equations, Differential Geometry, Classical Mechanics, Complex Analysis, General Topology
- </p>
- <p style="margin-top: 10px; font-size: 0.95rem;">
- <strong>Applied & Computational:</strong> Numerical Methods, Operations Research
- </p>
- <p style="margin-top: 10px; font-size: 0.95rem;">
- <strong>Programming & Practical:</strong> Programming in C, Programming in C Lab
- </p>
- </div>
- </div>
-
-    <div class="section">
- <h3>Applied Physics Coursework</h3>
- <div class="education-item">
- <div class="degree">M.Sc. Applied Physics - Completed Coursework</div>
- <div class="university">Amity University, Gurugram</div>
- <div class="stats">September 2024 - Present (1 year completed, withdrawn)</div>
- <p style="margin-top: 15px; font-size: 0.95rem;">
- <strong>Semester 1 Courses:</strong> Classical Mechanics, Quantum Mechanics, Electronics, Mathematical Physics, MATLAB, Integrated Physics Lab-I, Japanese-I, Basics of Communication, Behavioural Science
- </p>
- <p style="margin-top: 10px; font-size: 0.95rem;">
- <strong>Semester 2 Courses:</strong> Quantum Mechanics II, Electrodynamics, Atomic and Molecular Physics, Statistical Physics, Condensed Matter Physics-I, Integrated Physics Lab-II, Japanese-II, Workshop on Communication Skills and Psychological Behaviour Skills
- </p>
- </div>
- </div>
+        </div>
+      </details>
+    </section>
 
     <div class="section">
       <h3>Research Experience</h3>
