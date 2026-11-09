@@ -1,0 +1,192 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\hypersetup{colorlinks=true,urlcolor=blue,linkcolor=blue}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\Res}{\operatorname{Res}}
+\newcommand{\dd}{\,d}
+\title{Positive Geometry: Canonical Forms, Positivity, and the Amplituhedron\\[4pt]\large Expository Learning Notes}
+\author{Kumar Azad}
+\date{9 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+These expository notes develop the elementary mathematical foundation
+of positive geometry through boundary residues and canonical forms.
+Worked examples include the oriented interval and standard triangle,
+followed by the positive Grassmannian and the tree amplituhedron map.
+The material summarizes established literature and makes no claim of
+original research.
+\end{abstract}
+\tableofcontents
+
+\section{Definition and boundary recursion}
+A positive geometry is, under suitable technical hypotheses,
+a pair $(X,X_{\geq0})$, where $X$ is a complex projective
+algebraic variety defined over $\mathbb R$ and $X_{\geq0}$
+is a suitably oriented closed semialgebraic region of its real points.
+It admits a unique nonzero rational top-degree form $\Omega(X,X_{\geq0})$
+having only logarithmic singularities on boundaries, such that
+\begin{equation}
+\boxed{\Res_{B}\Omega(X,X_{\geq0})=\Omega(B,B_{\geq0}).}
+\label{eq:recursion}
+\end{equation}
+Locally near a boundary specified by $t=0$, the polar part has the form
+\begin{equation}
+\Omega=\frac{dt}{t}\wedge\Omega_B+
+\text{terms regular along }t=0.
+\end{equation}
+The induced orientation controls signs. An oriented point has
+canonical form $+1$ or $-1$. See \cite{ABL} for the precise definition.
+
+\section{An oriented interval}
+Let $a<b$, with the interval oriented by increasing $x$.
+We seek a one-form with only simple poles at $a$ and $b$.
+Try
+\begin{equation}
+\Omega_{[a,b]}=\frac{A\,dx}{(x-a)(b-x)}.
+\end{equation}
+The complex residue at $x=a$ equals $A/(b-a)$.
+Normalizing it to $+1$ gives $A=b-a$. Therefore
+\begin{equation}
+\begin{aligned}
+\boxed{\Omega_{[a,b]}(x)}
+&=\frac{(b-a)\,dx}{(x-a)(b-x)}\\
+&=\frac{dx}{x-a}+\frac{dx}{b-x}\\
+&=d\log\left(\frac{x-a}{b-x}\right).
+\end{aligned}
+\label{eq:interval}
+\end{equation}
+The residues at $x=a$ and $x=b$ are $+1$ and $-1$,
+respectively, in the usual complex-residue convention.
+There is no additional pole at infinity.
+
+\section{The standard triangle}
+Define the standard simplex by
+\[
+\Delta=\{(x,y)\in\mathbb R^2:x\geq0,\quad
+y\geq0,\quad x+y\leq1\}.
+\]
+Choose ambient orientation $dx\wedge dy$.
+A rational two-form with logarithmic poles on all three facets
+is
+\begin{equation}
+\boxed{\Omega_\Delta=
+\frac{dx\wedge dy}{x\,y\,(1-x-y)}.}
+\label{eq:triangle}
+\end{equation}
+The boundary $x=0$ provides the normalization:
+\[
+\Omega_\Delta=\frac{dx}{x}\wedge
+\frac{dy}{y(1-x-y)},\qquad
+\Res_{x=0}\Omega_\Delta=\frac{dy}{y(1-y)}.
+\]
+This is exactly the interval form on that edge.
+Along the boundary $y=0$, rearranging the wedge gives
+\[
+\Omega_\Delta=\frac{dy}{y}\wedge
+\left(-\frac{dx}{x(1-x-y)}\right),\qquad
+\Res_{y=0}\Omega_\Delta=-\frac{dx}{x(1-x)}.
+\]
+The sign is consistent with the induced boundary orientation.
+Canonical forms on polygons can also be evaluated by
+triangulation: the poles on interior diagonals cancel in
+an oriented sum \cite{ABL}.
+
+\section{The positive Grassmannian}
+The real Grassmannian $\Gr(k,n)$ parameterizes $k$-planes
+in $\mathbb R^n$.
+A point is represented by the row span of a full-rank
+$k\times n$ matrix $C$, up to invertible row transformations.
+For ordered columns $I=\{i_1<\cdots<i_k\}$, define the Pl\"ucker
+coordinate (maximal minor)
+\begin{equation}
+\Delta_I(C)=\det(C_{i_1},\ldots,C_{i_k}).
+\end{equation}
+The \emph{positive} Grassmannian $\Gr_{>0}(k,n)$ consists of
+points admitting a representative with every ordered maximal
+minor strictly positive. Its closure is the \emph{nonnegative}
+Grassmannian $\Gr_{\geq0}(k,n)$. The real dimension is
+$\dim\Gr(k,n)=k(n-k)$.
+
+\subsection{A $2\times3$ example}
+Consider
+\[
+C=\begin{pmatrix}1&1&1\\0&1&2\end{pmatrix}.
+\]
+The ordered maximal minors are
+\[
+(\Delta_{12},\Delta_{13},\Delta_{23})=(1,2,1)>0,
+\]
+so $[C]\in\Gr_{>0}(2,3)$.
+
+\subsection{A Pl\"ucker relation}
+For $[C]\in\Gr(2,4)$, the coordinates obey the identity
+\begin{equation}
+\Delta_{12}\Delta_{34}
+-\Delta_{13}\Delta_{24}
++\Delta_{14}\Delta_{23}=0.
+\label{eq:plucker}
+\end{equation}
+This polynomial relation expresses the fact that the maximal
+minors are constrained, rather than independent coordinates.
+The boundary-cell structure of $\Gr_{\geq0}(k,n)$ is described
+by positroid cells \cite{Postnikov}.
+
+\section{The tree amplituhedron}
+Fix $n\geq k+m$ and an $n\times(k+m)$ matrix $Z$
+whose ordered maximal minors are strictly positive.
+For $[C]\in\Gr_{\geq0}(k,n)$, define
+\begin{equation}
+Y=\operatorname{rowspan}(CZ)\in\Gr(k,k+m).
+\end{equation}
+The tree amplituhedron is the image
+\begin{equation}
+\boxed{\mathcal A_{n,k,m}(Z)=
+\left\{\operatorname{rowspan}(CZ):
+[C]\in\Gr_{\geq0}(k,n)\right\}.}
+\label{eq:amplituhedron}
+\end{equation}
+When $k=1$ and $m=2$, positive external data lead
+to a convex polygon in projective two-space, illustrating the idea
+in elementary terms. The $m=4$ construction is relevant
+to planar $\mathcal N=4$ supersymmetric Yang--Mills theory.
+The relationship between canonical forms and scattering
+amplitudes is more subtle than identifying a form with a
+physical amplitude without additional kinematic and
+supersymmetric steps \cite{AT,ABCGPT}.
+This special framework is not a general formula for QCD amplitudes.
+
+\section{Exercises}
+\begin{enumerate}[label=\arabic*.]
+\item Re-derive \eqref{eq:interval} from the endpoint residues.
+\item Compute all three triangle facet residues and verify
+the orientation signs.
+\item Calculate the maximal minors of a general $2\times4$
+matrix and verify \eqref{eq:plucker}.
+\item Compare the dimension $k(n-k)$ of $\Gr(k,n)$ with
+the dimension $km$ of the target $\Gr(k,k+m)$.
+\end{enumerate}
+
+\begin{thebibliography}{9}
+\bibitem{ABL} N. Arkani-Hamed, Y. Bai, T. Lam,
+\emph{Positive Geometries and Canonical Forms},
+JHEP 11 (2017) 039.
+\url{https://arxiv.org/abs/1703.04541}
+\bibitem{Postnikov} A. Postnikov,
+\emph{Total positivity, Grassmannians, and networks},
+2006. \url{https://arxiv.org/abs/math/0609764}
+\bibitem{AT} N. Arkani-Hamed, J. Trnka,
+\emph{The Amplituhedron},
+JHEP 10 (2014) 030.
+\url{https://arxiv.org/abs/1312.2007}
+\bibitem{ABCGPT} N. Arkani-Hamed, J.~L. Bourjaily,
+F. Cachazo, A.~B. Goncharov, A. Postnikov, J. Trnka,
+\emph{Scattering Amplitudes and the Positive Grassmannian}.
+\url{https://arxiv.org/abs/1212.5605}
+\end{thebibliography}
+\end{document}
