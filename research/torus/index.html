@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An evolving theoretical and computational study of hydrogenic quantum dynamics in toroidal confinement under attosecond laser excitation by Kumar Azad and Vivek S. Babu.">
+  <meta name="author" content="Kumar Azad; Vivek S. Babu">
+  <title>Hydrogenic Quantum Dynamics in Toroidal Confinement | Kumar Azad</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <style>
+    :root{--bg:#07111f;--panel:#0e1c2e;--panel2:#12243a;--line:#233b56;--ink:#e8f0fb;--muted:#a5b5c9;--cyan:#68e0d0;--blue:#8cb8ff;--amber:#f3c879;--green:#9ed6ad;--max:1120px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 "DM Sans",sans-serif}
+    a{color:var(--cyan);text-decoration:none}a:hover{text-decoration:underline} .wrap{max-width:var(--max);margin:auto;padding:0 26px}
+    .top{border-bottom:1px solid var(--line);background:#081625}.nav{height:66px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{font:600 14px "DM Mono",monospace;letter-spacing:.04em;color:var(--ink)}.navlinks{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+    .hero{padding:76px 0 54px;border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 85% 15%,rgba(104,224,208,.12),transparent 38%),radial-gradient(ellipse at 15% 80%,rgba(140,184,255,.09),transparent 35%)}
+    .eyebrow,.mono{font:12px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--cyan)}h1,h2,h3{font-family:"Space Grotesk",sans-serif;line-height:1.18}h1{font-size:clamp(34px,5vw,58px);max-width:920px;margin:18px 0}h2{font-size:29px;margin:0 0 20px}h3{font-size:19px;margin:28px 0 10px}
+    .subtitle{font-size:19px;color:#c2d1e3;max-width:850px}.authors{margin:28px 0 8px;font-weight:600}.affil{font-size:14px;color:var(--muted)}.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:25px}.pill{border:1px solid var(--line);border-radius:99px;padding:5px 11px;color:#c7d5e7;font:11px "DM Mono",monospace}
+    .notice{margin:24px 0 0;padding:15px 18px;border:1px solid #6a5632;background:rgba(243,200,121,.07);border-radius:9px;color:#e9d9b8;font-size:14px;max-width:900px}
+    .layout{display:grid;grid-template-columns:235px minmax(0,1fr);gap:48px;padding:48px 0}.toc{position:sticky;top:22px;align-self:start;border:1px solid var(--line);background:var(--panel);border-radius:12px;padding:18px}.toc strong{display:block;font:12px "DM Mono",monospace;color:var(--cyan);margin-bottom:10px}.toc a{display:block;color:var(--muted);font-size:13px;padding:5px 0}.toc a:hover{color:var(--ink)}
+    main section{padding:0 0 38px;margin:0 0 38px;border-bottom:1px solid var(--line);scroll-margin-top:24px}p{color:#c1cede;margin:12px 0}.lead{font-size:17px;color:#d5e1ef}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:18px}.card h3{margin:0 0 8px}.card p{font-size:14px;margin:0}.eq{overflow-x:auto;background:#091827;border:1px solid var(--line);border-radius:10px;padding:17px 20px;margin:17px 0;color:#eaf2ff}.caption{font-size:12px;color:var(--muted);margin-top:6px}
+    .tag{display:inline-block;border-radius:4px;padding:3px 7px;font:10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.04em}.tag.recorded{color:var(--green);background:rgba(158,214,173,.1);border:1px solid rgba(158,214,173,.3)}.tag.proposed{color:var(--amber);background:rgba(243,200,121,.08);border:1px solid rgba(243,200,121,.3)}.tag.open{color:var(--blue);background:rgba(140,184,255,.09);border:1px solid rgba(140,184,255,.3)}
+    table{width:100%;border-collapse:collapse;margin:16px 0;font-size:14px}th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{font:11px "DM Mono",monospace;color:var(--cyan);text-transform:uppercase}td{color:#c6d3e2}.small{font-size:13px;color:var(--muted)}ul{color:#c6d3e2;padding-left:22px}li{margin:7px 0}.timeline{border-left:1px solid #41617e;margin:20px 0 0 7px;padding-left:22px}.step{position:relative;margin:0 0 22px}.step:before{content:"";position:absolute;left:-28px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px var(--bg)}.step h3{margin:0 0 5px}.step p{margin:0;font-size:14px}
+    .footer{border-top:1px solid var(--line);padding:28px 0 42px;color:var(--muted);font-size:13px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.btn{display:inline-block;border:1px solid var(--cyan);border-radius:7px;padding:10px 15px;font-size:13px;font-weight:600}.btn.secondary{border-color:var(--line);color:var(--muted)}
+    @media(max-width:850px){.layout{grid-template-columns:1fr;gap:24px}.toc{position:static;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 12px}.toc strong{grid-column:1/-1}.grid2{grid-template-columns:1fr}}
+    @media(max-width:560px){.wrap{padding:0 18px}.hero{padding:54px 0 38px}.nav{height:auto;padding:15px 0;align-items:flex-start;flex-direction:column}.navlinks{gap:12px}.toc{grid-template-columns:1fr 1fr}table{font-size:12px}th,td{padding:8px 6px}}
+  </style>
+</head>
+<body>
+<header class="top"><div class="wrap nav"><a class="brand" href="../../">KUMAR AZAD / RESEARCH</a><nav class="navlinks"><a href="../../">Portfolio</a><a href="https://github.com/KrAzad0/Toroidal-hydrogen-attosecond" target="_blank" rel="noopener">Source repository</a><a href="#references">References</a></nav></div></header>
+<div class="hero"><div class="wrap">
+  <div class="eyebrow">Independent theoretical & computational study · Ongoing</div>
+  <h1>Hydrogenic Quantum Dynamics in Toroidal Confinement</h1>
+  <p class="subtitle">A study of quantum confinement, Coulomb-bound states and ultrafast electron dynamics in a toroidal domain under attosecond laser excitation.</p>
+  <p class="authors">Kumar Azad<sup>1</sup> and Vivek S. Babu<sup>2</sup></p>
+  <p class="affil"><sup>1</sup> Independent student researcher · <sup>2</sup> Co-author on the earlier project manuscript. Author roles and affiliations should be finalized with both authors before formal submission.</p>
+  <div class="pills"><span class="pill">QUANTUM MECHANICS</span><span class="pill">TOROIDAL GEOMETRY</span><span class="pill">TDSE</span><span class="pill">ATTOSECOND PHYSICS</span><span class="pill">NUMERICAL METHODS</span></div>
+  <div class="notice"><strong>Research-status note.</strong> This page is a transparent project record, not a claim of a completed or peer-reviewed result. Previously recorded calculations are identified as preliminary computational outputs. Proposed extensions and quantities that still require verification are labelled separately.</div>
+</div></div>
+<div class="wrap layout">
+  <aside class="toc"><strong>ON THIS PAGE</strong>
+    <a href="#abstract">Abstract</a><a href="#motivation">Motivation</a><a href="#geometry">Geometry & model</a><a href="#thin">Thin-torus model</a><a href="#volume">3D volume model</a><a href="#numerics">Numerical workflow</a><a href="#results">Recorded results</a><a href="#pulse">Attosecond excitation</a><a href="#observables">Observables</a><a href="#timeline">Development history</a><a href="#limits">Limitations</a><a href="#future">Future directions</a><a href="#references">References</a>
+  </aside>
+  <main>
+    <section id="abstract"><div class="eyebrow">01 / Overview</div><h2>Abstract</h2>
+      <p class="lead">This project investigates a hydrogen-like quantum system confined to a toroidal region and explores how the nontrivial geometry of the domain affects bound-state structure and time-dependent response to an ultrashort laser pulse.</p>
+      <p>The work has developed through two related descriptions: (i) an idealized particle constrained to a toroidal surface, where differential geometry enters through the Laplace–Beltrami operator and a curvature-induced potential; and (ii) a three-dimensional toroidal volume with hard-wall boundaries and a Coulomb attraction centred near the torus. The latter provides a route toward sparse-matrix eigenvalue calculations and time propagation with a time-dependent electric field.</p>
+      <p>The computational record includes exploratory two- and three-dimensional discretizations, preliminary ground-state energy estimates, and an initial attosecond-pulse modelling plan. The current objective is to consolidate these models, make each numerical configuration reproducible, and distinguish verified calculations from future physical interpretation.</p>
+      <div class="grid2">
+        <div class="card"><span class="tag recorded">Work recorded</span><h3>Model development</h3><p>Toroidal coordinates and domain, Coulomb interaction, hard-wall confinement, sparse Hamiltonian construction.</p></div>
+        <div class="card"><span class="tag proposed">Under development</span><h3>Ultrafast response</h3><p>Converged TDSE propagation, gauge checks, density/current analysis and harmonic spectra.</p></div>
+      </div>
+    </section>
+    <section id="motivation"><div class="eyebrow">02 / Research question</div><h2>Motivation and questions</h2>
+      <p>Most textbook hydrogen problems use spherical symmetry. Toroidal confinement changes the topology and boundary geometry of the allowed region, breaks the full rotational symmetry of free space, and can introduce nontrivial couplings between spatial directions. An external ultrashort pulse then probes the confined system away from its stationary states.</p>
+      <h3>Central question</h3><p class="lead">How do toroidal geometry, Coulomb binding and hard-wall confinement jointly shape the stationary and time-dependent quantum behaviour of a hydrogenic electron?</p>
+      <ul><li>How do the eigenenergies and probability densities depend on the major radius and tube radius?</li><li>How does a Coulomb centre positioned within the toroidal region affect localization and spectral structure?</li><li>What changes when the system is driven by a short, linearly or elliptically polarized electric-field pulse?</li><li>Which observables can distinguish geometric confinement effects from ordinary laser-driven dynamics?</li></ul>
+    </section>
+    <section id="geometry"><div class="eyebrow">03 / Mathematical setup</div><h2>Toroidal geometry and physical model</h2>
+      <p>Let \(R\) denote the major radius and \(a\) the tube radius, with \(R&gt;a&gt;0\). In Cartesian coordinates, the solid torus is represented by</p>
+      <div class="eq">\[\Omega=\left\{(x,y,z):\left(\sqrt{x^2+y^2}-R\right)^2+z^2&lt;a^2\right\}.\]</div>
+      <p>Equivalently, with cylindrical radius \(\rho=\sqrt{x^2+y^2}\), the boundary is the zero level set of</p>
+      <div class="eq">\[B(\rho,z)=a^2-(\rho-R)^2-z^2,\qquad \Omega=\{B&gt;0\}.\]</div>
+      <p>The earlier model places the Coulomb centre near the point \(\mathbf r_p=(R,0,0)\), on the central circular axis of the torus. In atomic units (\(\hbar=m_e=e=4\pi\epsilon_0=1\)), the field-free Hamiltonian is written as</p>
+      <div class="eq">\[H_0=-\frac{1}{2}\nabla^2-\frac{Z}{|\mathbf r-\mathbf r_p|},\qquad \mathbf r\in\Omega,\]</div>
+      <p>with a hard-wall (Dirichlet) condition \(\psi|_{\partial\Omega}=0\). Here \(Z=1\) for a hydrogenic proton. This is a model definition; the precise Coulomb-centre placement and treatment of the singularity must be stated explicitly in any reproducible calculation.</p>
+      <div class="card"><h3>Geometric parameters</h3><p><strong>Major radius \(R\):</strong> distance from the symmetry axis to the centre of the tube. <strong>Minor radius \(a\):</strong> radius of the tube cross-section. Their ratio \(R/a\) controls the shape of the torus.</p></div>
+    </section>
+    <section id="thin"><div class="eyebrow">04 / Surface approximation</div><h2>Thin-torus constrained-particle model</h2>
+      <span class="tag recorded">Analytical model explored</span>
+      <p>A separate idealization constrains the particle to the toroidal surface. A standard parametrization is</p>
+      <div class="eq">\[\mathbf X(\theta,\phi)=\big((R+a\cos\theta)\cos\phi,\ (R+a\cos\theta)\sin\phi,\ a\sin\theta\big),\]</div>
+      <p>with \(0\leq\theta,\phi&lt;2\pi\). The induced metric is \(ds^2=a^2d\theta^2+(R+a\cos\theta)^2d\phi^2\), and the surface area element is \(a(R+a\cos\theta)\,d\theta\,d\phi\).</p>
+      <p>The kinetic operator for a particle intrinsically moving on the surface is the Laplace–Beltrami operator</p>
+      <div class="eq">\[\Delta_{\!LB}=\frac{1}{a(R+a\cos\theta)}\frac{\partial}{\partial\theta}\!\left(\frac{R+a\cos\theta}{a}\frac{\partial}{\partial\theta}\right)+\frac{1}{(R+a\cos\theta)^2}\frac{\partial^2}{\partial\phi^2}.\]</div>
+      <p>For a particle confined to a curved surface by a strong normal potential, thin-layer quantization also produces the da Costa geometric potential</p>
+      <div class="eq">\[V_{\mathrm{geom}}=-\frac{\hbar^2}{2m}\left(M^2-K\right),\]</div>
+      <p>where \(M\) and \(K\) are the mean and Gaussian curvatures, respectively. This surface theory is not identical to the three-dimensional hard-wall volume model; it is a distinct approximation and should not be mixed with its numerical eigenvalues.</p>
+    </section>
+    <section id="volume"><div class="eyebrow">05 / Volume formulation</div><h2>Three-dimensional toroidal confinement</h2>
+      <span class="tag recorded">Numerical formulation explored</span>
+      <p>The volume model retains all three spatial degrees of freedom inside \(\Omega\). The time-independent eigenproblem is</p>
+      <div class="eq">\[H_0\psi_n(\mathbf r)=E_n\psi_n(\mathbf r),\qquad \psi_n|_{\partial\Omega}=0.\]</div>
+      <p>In Cartesian coordinates, the kinetic term is the standard Laplacian. In cylindrical coordinates it is</p>
+      <div class="eq">\[\nabla^2=\frac{1}{\rho}\frac{\partial}{\partial\rho}\!\left(\rho\frac{\partial}{\partial\rho}\right)+\frac{1}{\rho^2}\frac{\partial^2}{\partial\phi^2}+\frac{\partial^2}{\partial z^2}.\]</div>
+      <p>The finite computational domain is represented by a grid or mesh, retaining points that satisfy the torus inequality. The hard-wall boundary is imposed by excluding points outside the domain or by an equivalent boundary treatment. The exact discretization, grid spacings, boundary stencil and Coulomb regularization need to accompany every reported spectrum.</p>
+    </section>
+    <section id="numerics"><div class="eyebrow">06 / Computational approach</div><h2>Numerical workflow</h2>
+      <div class="timeline">
+        <div class="step"><h3>1. Construct the domain</h3><p>Generate a Cartesian grid and retain nodes satisfying \(B(\rho,z)&gt;0\). Record \(R\), \(a\), grid dimensions and spacings.</p></div>
+        <div class="step"><h3>2. Assemble the Hamiltonian</h3><p>Discretize the kinetic operator, add the Coulomb potential, and impose the Dirichlet boundary. Store the resulting operator sparsely.</p></div>
+        <div class="step"><h3>3. Solve the stationary problem</h3><p>Use a sparse eigensolver to obtain low-lying eigenpairs. Check residual norms, normalization and stability under grid refinement.</p></div>
+        <div class="step"><h3>4. Prepare the initial state</h3><p>Use a normalized stationary eigenstate, normally the ground state, as the initial condition for time propagation.</p></div>
+        <div class="step"><h3>5. Propagate under a pulse</h3><p>Introduce the time-dependent field and propagate the TDSE with a norm-stable method. Verify time-step and spatial-grid convergence.</p></div>
+        <div class="step"><h3>6. Analyse observables</h3><p>Evaluate density, energy, dipole response and probability current; only then calculate spectra and interpret the dynamics.</p></div>
+      </div>
+      <div class="eq">\[i\frac{\partial}{\partial t}\psi(\mathbf r,t)=H(t)\psi(\mathbf r,t).\]</div>
+      <p class="small">Implementation note: a sparse Hamiltonian and an eigensolver were explored in the earlier computational work. A complete, public, reproducible code release and convergence report are still required before the numerical study can be independently reproduced.</p>
+    </section>
+    <section id="results"><div class="eyebrow">07 / Computational record</div><h2>Previously recorded numerical outputs</h2>
+      <p>The following values are transcribed from project-development notes. They are presented as historical outputs, not as a converged spectrum or a set of mutually comparable physical predictions. Model parameters and numerical settings differ between runs.</p>
+      <table><thead><tr><th>Model / run</th><th>Recorded discretization</th><th>Recorded output</th><th>Status</th></tr></thead><tbody>
+        <tr><td>Two-dimensional exploratory calculation</td><td>\(64\times64\) grid; 4,096 nominal points</td><td>Eigenvalue noted near \(-0.13536\) a.u.</td><td><span class="tag open">Needs setup metadata</span></td></tr>
+        <tr><td>Three-dimensional run A</td><td>\(33\times33\times25\) nominal grid; 7,504 retained nodes; sparse matrix noted with 48,112 nonzero entries</td><td>Ground-state energy \(E_0\approx-0.3268\) a.u.</td><td><span class="tag open">Preliminary</span></td></tr>
+        <tr><td>Three-dimensional run B</td><td>\(31\times31\times23\) nominal grid; 4,668 retained nodes; \(\Delta x=\Delta y=0.9\), \(\Delta z=0.5\) (as recorded)</td><td>Ground-state energy \(E_0\approx-0.55182670\) a.u.</td><td><span class="tag open">Preliminary</span></td></tr>
+      </tbody></table>
+      <p class="small">The 7,504 and 4,668 figures are retained domain nodes, not the products of the nominal grid dimensions. The energy values must not be compared directly until the geometry, Coulomb-centre location, units, discretization, boundary implementation and convergence are matched.</p>
+      <h3>What is needed to validate these values?</h3>
+      <ul><li>Archive the exact source code and parameter file for each run.</li><li>Report \(R\), \(a\), Coulomb-centre coordinates, grid spacings and boundary treatment.</li><li>Check Hermiticity and eigenpair residuals, and verify wavefunction normalization.</li><li>Repeat at multiple grid resolutions and compare low-lying eigenvalues and densities.</li><li>Compare limiting cases with analytically tractable or independently benchmarked systems.</li></ul>
+    </section>
+    <section id="pulse"><div class="eyebrow">08 / Ultrafast driving</div><h2>Attosecond laser excitation</h2>
+      <span class="tag recorded">Pulse model explored</span>
+      <p>The time-dependent stage introduces an external electric field. In the length gauge and dipole approximation, a common Hamiltonian is</p>
+      <div class="eq">\[H(t)=H_0+\mathbf E(t)\cdot\mathbf r,\]</div>
+      <p>for an electron of charge \(-e\), with the sign convention depending on whether the interaction is written in terms of the electron charge or the field coupling. The convention must be fixed consistently in code and manuscript.</p>
+      <p>A Gaussian-envelope carrier pulse may be written as</p>
+      <div class="eq">\[\mathbf E(t)=\mathbf E_0\,f(t)\cos(\omega t+\varphi_{\mathrm{CEP}})\,\hat{\boldsymbol\epsilon},\qquad f(t)=\exp\!\left[-4\ln2\,\frac{(t-t_0)^2}{T^2}\right],\]</div>
+      <p>where \(T\) is the intensity-envelope full width at half maximum under this convention, \(\omega\) is the carrier frequency and \(\varphi_{\mathrm{CEP}}\) is the carrier-envelope phase. The pulse shape, polarization and gauge are modelling choices, not yet a fully benchmarked result.</p>
+      <div class="card"><h3>Pulse parameters in the development notes</h3><p>A pulse duration of approximately 200 attoseconds was explored, recorded as \(\tau=8.3\) atomic units \(\approx200.77\) as. Other notes mention a 1,200 as pulse and a photon energy near 30 eV (\(\omega\approx1.1025\) a.u.). These refer to different exploratory parameter choices and should not be interpreted as one finalized simulation.</p></div>
+    </section>
+    <section id="observables"><div class="eyebrow">09 / Analysis plan</div><h2>Observables and diagnostics</h2>
+      <div class="grid2">
+        <div class="card"><h3>Probability density</h3><p>\(\rho(\mathbf r,t)=|\psi(\mathbf r,t)|^2\). Visualize localization, redistribution and boundary effects.</p></div>
+        <div class="card"><h3>Probability current</h3><p>\(\mathbf j=(\hbar/m)\operatorname{Im}(\psi^*\nabla\psi)\) in the field-free Schrödinger representation; gauge-covariant form is needed with vector potentials.</p></div>
+        <div class="card"><h3>Energy expectation</h3><p>\(\langle H(t)\rangle=\langle\psi(t)|H(t)|\psi(t)\rangle\). Track energy exchange and numerical drift.</p></div>
+        <div class="card"><h3>Dipole response</h3><p>\(\langle\mathbf r(t)\rangle\) and its acceleration provide a route to analysing the emitted spectrum.</p></div>
+      </div>
+      <p>Additional quantities under consideration include angular-momentum expectation values, spin-resolved dynamics when spin interactions are explicitly included, ionization probability, high-harmonic spectra and phase-sensitive response. These are analysis targets, not established findings at this stage.</p>
+    </section>
+    <section id="timeline"><div class="eyebrow">10 / Project evolution</div><h2>Development history</h2>
+      <div class="timeline">
+        <div class="step"><h3>Initial research direction · 2024</h3><p>Exploration of electron dynamics in toroidal confinement and attosecond laser-matter interaction, associated in the earlier portfolio record with the WiSILS research programme at IIT Jodhpur.</p></div>
+        <div class="step"><h3>Geometry and model definition</h3><p>Development of the solid-torus domain, hard-wall boundary function and Coulomb-centre model near \((R,0,0)\).</p></div>
+        <div class="step"><h3>Surface-constrained formulation</h3><p>Exploration of the toroidal surface metric, Laplace–Beltrami kinetic operator and curvature-induced potential as a separate thin-layer model.</p></div>
+        <div class="step"><h3>Two-dimensional numerical exploration</h3><p>Initial \(64\times64\) discretization and preliminary eigenvalue notes.</p></div>
+        <div class="step"><h3>Three-dimensional sparse calculations</h3><p>Expansion to masked 3D grids, sparse Hamiltonian construction and preliminary ground-state energy estimates across more than one discretization.</p></div>
+        <div class="step"><h3>Time-dependent extension · ongoing</h3><p>Formulation of Gaussian attosecond driving and planning of TDSE propagation, observables and spectral analysis. Full convergence and validation remain open tasks.</p></div>
+      </div>
+    </section>
+    <section id="limits"><div class="eyebrow">11 / Scientific transparency</div><h2>Current limitations and open checks</h2>
+      <ul><li><strong>Reproducibility:</strong> the historical energy values do not yet have a complete, publicly archived run configuration attached to them.</li><li><strong>Convergence:</strong> systematic grid-refinement, time-step and solver-tolerance studies are still needed.</li><li><strong>Coulomb singularity:</strong> the numerical treatment near the proton must be documented and tested for stability.</li><li><strong>Model distinction:</strong> the surface-constrained and 3D-volume models describe different physical assumptions; their outputs must remain separate.</li><li><strong>Laser propagation:</strong> norm conservation, gauge consistency, pulse calibration and time-step stability must be demonstrated.</li><li><strong>Interpretation:</strong> claims about tunnelling, ionization, spin dynamics, Berry phase or high-harmonic generation require corresponding calculations and diagnostics before being reported as findings.</li></ul>
+    </section>
+    <section id="future"><div class="eyebrow">12 / Next research steps</div><h2>Proposed extensions</h2>
+      <p>These directions are prospective. They are not claimed as completed results.</p>
+      <div class="grid2">
+        <div class="card"><span class="tag proposed">Proposed</span><h3>Convergence and benchmarks</h3><p>Rebuild the numerical pipeline with reproducible inputs, grid refinement, residual tests and reference limits.</p></div>
+        <div class="card"><span class="tag proposed">Proposed</span><h3>Parameter maps</h3><p>Study the dependence of energies and localization on \(R/a\), Coulomb-centre displacement and confinement strength.</p></div>
+        <div class="card"><span class="tag proposed">Proposed</span><h3>TDSE and spectra</h3><p>Implement stable propagation, compare gauges, and calculate dipole response and high-harmonic spectra.</p></div>
+        <div class="card"><span class="tag proposed">Proposed</span><h3>Geometric and topological effects</h3><p>Investigate magnetic flux, Aharonov–Bohm phases and Berry phases where the Hamiltonian and parameter cycle support them.</p></div>
+        <div class="card"><span class="tag proposed">Proposed</span><h3>Spin and interactions</h3><p>Add spin-orbit or magnetic interactions only with an explicitly defined Hamiltonian and suitable numerical basis.</p></div>
+        <div class="card"><span class="tag proposed">Proposed</span><h3>Physical realizations</h3><p>Explore whether toroidal nanostructures or quantum-ring systems can motivate realistic parameter regimes and experimental observables.</p></div>
+      </div>
+    </section>
+    <section id="references"><div class="eyebrow">13 / Background literature</div><h2>Selected references</h2>
+      <ol>
+        <li>R. C. T. da Costa, “Quantum mechanics of a constrained particle,” <em>Physical Review A</em> <strong>23</strong>, 1982–1987 (1981). <a href="https://doi.org/10.1103/PhysRevA.23.1982" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevA.23.1982</a>.</li>
+        <li>F. Krausz and M. Ivanov, “Attosecond physics,” <em>Reviews of Modern Physics</em> <strong>81</strong>, 163–234 (2009). <a href="https://doi.org/10.1103/RevModPhys.81.163" target="_blank" rel="noopener">https://doi.org/10.1103/RevModPhys.81.163</a>.</li>
+        <li>P. B. Corkum, “Plasma perspective on strong field multiphoton ionization,” <em>Physical Review Letters</em> <strong>71</strong>, 1994–1997 (1993). <a href="https://doi.org/10.1103/PhysRevLett.71.1994" target="_blank" rel="noopener">https://doi.org/10.1103/PhysRevLett.71.1994</a>.</li>
+      </ol>
+      <p class="small">These are foundational background references for constrained quantum motion and attosecond/strong-field physics. A project-specific literature review on toroidal confinement, numerical TDSE methods and relevant quantum-ring systems should be added as the model is finalized.</p>
+      <div class="actions"><a class="btn" href="https://github.com/KrAzad0/Toroidal-hydrogen-attosecond" target="_blank" rel="noopener">View project repository ↗</a><a class="btn secondary" href="../../">Back to portfolio</a></div>
+    </section>
+  </main>
+</div>
+<footer class="footer"><div class="wrap">© 2026 Kumar Azad · Project authors: Kumar Azad and Vivek S. Babu · Ongoing research documentation. Numerical values are preliminary unless explicitly validated and documented.</div></footer>
+</body>
+</html>
