@@ -312,6 +312,46 @@
       font-size: .91rem;
       line-height: 1.6;
     }
+    .research-notes-intro {
+      margin: 0 0 23px;
+      max-width: 670px;
+      color: #b4c0d9;
+      font-size: 0.97rem;
+      line-height: 1.7;
+    }
+    .research-note-title {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 15px;
+      color: var(--heading);
+      font-weight: 700;
+      font-size: clamp(1.10rem, 1.8vw, 1.24rem);
+      line-height: 1.32;
+      letter-spacing: -0.015em;
+    }
+    .research-note-title-text { min-width: 0; overflow-wrap: normal; }
+    .research-note-arrow {
+      flex: none;
+      font-size: 1.15rem;
+      font-weight: 400;
+      line-height: 1.25;
+      color: var(--secondary);
+    }
+    .research-note-eyebrow {
+      font-size: 0.69rem;
+      line-height: 1.55;
+      letter-spacing: .045em;
+      overflow-wrap: anywhere;
+    }
+    .research-note-description {
+      font-size: 0.91rem;
+      line-height: 1.65;
+    }
+    @media(max-width: 680px) {
+      .research-notes-intro { font-size: 0.93rem; }
+      .research-note-title { font-size: 1.17rem; }
+    }
     @media (max-width: 940px) {
       .research-notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
@@ -434,27 +474,40 @@
 
     <main id="main">
     <section class="section research-notes" aria-labelledby="research-notes-heading">
-      <h3 id="research-notes-heading">Mathematical Physics Notes</h3>
+      <h3 id="research-notes-heading">Theoretical Physics &amp; Mathematical Methods</h3>
+      <p class="research-notes-intro">Graduate-level study notes with mathematical derivations, worked examples, and exploratory research questions.</p>
       <div class="research-notes-grid">
-        <a class="research-note-card" href="mathematical-physics/" aria-label="Open Mathematical Physics foundations from one to five dimensions">
-          <span class="research-note-eyebrow">Foundations · Dimensions 1–5</span>
-          <span class="research-note-title">Mathematical Physics <span aria-hidden="true">↗</span></span>
-          <span class="research-note-description">Vectors, differential operators, hyperspheres, and quantum equations in up to five dimensions.</span>
+        <a class="research-note-card" href="mathematical-physics/" aria-label="Read Mathematical Physics notes on methods and spatial dimensions one through five">
+          <span class="research-note-eyebrow">Mathematical Foundations · 1D–5D</span>
+          <span class="research-note-title">
+            <span class="research-note-title-text">Mathematical Physics: Foundations</span>
+            <span class="research-note-arrow" aria-hidden="true">↗</span>
+          </span>
+          <span class="research-note-description">Vector spaces, differential operators, hyperspherical geometry, and quantum equations in one to five spatial dimensions.</span>
         </a>
-        <a class="research-note-card" href="quantum-mechanics/" aria-label="Open Quantum Mechanics MSc syllabus, rigorous derivations and research ideas">
-          <span class="research-note-eyebrow">Quantum Theory · M.Sc. Study Notes</span>
-          <span class="research-note-title">Quantum Mechanics <span aria-hidden="true">↗</span></span>
-          <span class="research-note-description">Formalism, wells, harmonic oscillator, hydrogen, spin and research project ideas.</span>
+        <a class="research-note-card" href="quantum-mechanics/" aria-label="Read Quantum Mechanics notes with worked derivations and research questions">
+          <span class="research-note-eyebrow">Quantum Theory · M.Sc. Course Notes</span>
+          <span class="research-note-title">
+            <span class="research-note-title-text">Quantum Mechanics: Theory &amp; Methods</span>
+            <span class="research-note-arrow" aria-hidden="true">↗</span>
+          </span>
+          <span class="research-note-description">Hilbert spaces, operators, exactly solvable systems, hydrogen, angular momentum, and spin.</span>
         </a>
-        <a class="research-note-card" href="positive-geometry/" aria-label="Open Positive Geometry mathematical physics notes">
+        <a class="research-note-card" href="positive-geometry/" aria-label="Read Positive Geometry and Scattering Amplitudes notes">
           <span class="research-note-eyebrow">Geometry · Scattering Amplitudes</span>
-          <span class="research-note-title">Positive Geometry <span aria-hidden="true">↗</span></span>
-          <span class="research-note-description">Canonical forms, positive Grassmannians, and the amplituhedron.</span>
+          <span class="research-note-title">
+            <span class="research-note-title-text">Positive Geometry &amp; Amplitudes</span>
+            <span class="research-note-arrow" aria-hidden="true">↗</span>
+          </span>
+          <span class="research-note-description">Canonical differential forms, positive Grassmannians, and the amplituhedron construction.</span>
         </a>
-        <a class="research-note-card" href="light-matter-interaction/" aria-label="Open Light–Matter Interaction mathematical physics notes">
-          <span class="research-note-eyebrow">Quantum Mechanics · Ultrafast Physics</span>
-          <span class="research-note-title">Light–Matter Interaction <span aria-hidden="true">↗</span></span>
-          <span class="research-note-description">Hamiltonians, gauges, dipole transitions, hydrogen, and attosecond fields.</span>
+        <a class="research-note-card" href="light-matter-interaction/" aria-label="Read Light–Matter Interaction notes on quantum and attosecond dynamics">
+          <span class="research-note-eyebrow">Atomic Physics · Ultrafast Dynamics</span>
+          <span class="research-note-title">
+            <span class="research-note-title-text">Light–Matter Interaction</span>
+            <span class="research-note-arrow" aria-hidden="true">↗</span>
+          </span>
+          <span class="research-note-description">Electromagnetic coupling, gauge choices, dipole transitions, and attosecond-driven atomic dynamics.</span>
         </a>
       </div>
     </section>
