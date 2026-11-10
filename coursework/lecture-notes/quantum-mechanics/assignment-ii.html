@@ -1,0 +1,395 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Uncertainty relations, wells and tunneling"><title>Assignment II — Complete Solutions | Kumar Azad</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],tags:'ams',processEscapes:true,macros:{"dd":"\\mathrm{d}","iu":"\\mathrm{i}","ee":"\\mathrm{e}","Hil":"\\mathcal H","Dom":"\\mathcal D","R":"\\mathbb R","C":"\\mathbb C","id":"\\mathbb I","avg":["\\langle #1\\rangle",1],"pmean":["\\langle #1\\rangle",1],"Var":"\\operatorname{Var}","Cov":"\\operatorname{Cov}","bra":["\\langle #1|",1],"ket":["|#1\\rangle",1],"braket":["\\langle #1|#2\\rangle",2],"ip":["\\langle #1|#2\\rangle",2],"norm":["\\lVert #1\\rVert",1],"abs":["\\lvert #1\\rvert",1],"p":"\\partial","Hh":"\\mathcal H","eps":"\\varepsilon_0","lap":"\\nabla^2","aH":"a_{\\mathrm H}","mH":"\\mu_{\\mathrm H}","Lop":"\\hat{\\mathbf L}","op":["\\hat{#1}",1],"HH":"\\mathcal H","UU":"\\hat U","PP":"\\hat{\\mathcal P}","grad":"\\boldsymbol\\nabla","tr":"\\operatorname{tr}","half":"\\tfrac12"}},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><div class="wrap"><nav class="nav"><a href="../../../">← Personal Homepage</a><a href="./">All 100 problems</a><a href="../../">Lecture Notes</a><a href="../../../quantum-mechanics/">Theory notes</a></nav><header><p class="eyebrow">Coursework / Lecture Notes / Quantum Mechanics</p><h1>Assignment II</h1><p class="lead">Uncertainty relations, wells and tunneling. Each original question is followed by its full mathematical derivation, assumptions and examination conclusions.</p><p class="meta">Kumar Azad · M.Sc. Physics · SRMIST · Part A (5) + Part B (7) · November 2026</p></header><div class="actions"><a class="pill" href="./">Browse all assignments</a><a class="pill" href="sources/assignment-ii.tex">Download editable LaTeX</a><a class="pill" href="../../../quantum-mechanics/">Concept notes</a></div><aside class="notice">Select any problem below to display its complete worked solution. Mathematics is typeset with MathJax. The original LaTeX file preserves figure code and equation labels. For a full printable document, use “Expand all” and then “Print / Save as PDF.”</aside><h2>Problem index</h2><div class="grid"><a class="item" href="#a1"><span class="tiny">Part A · Problem 1</span><strong>Verify Cauchy–Schwarz for two Legendre functions</strong></a>
+<a class="item" href="#a2"><span class="tiny">Part A · Problem 2</span><strong>Compatibility of momentum and Hamiltonian for a free particle</strong></a>
+<a class="item" href="#a3"><span class="tiny">Part A · Problem 3</span><strong>Finding the particle in the central half of an infinite box</strong></a>
+<a class="item" href="#a4"><span class="tiny">Part A · Problem 4</span><strong>Equal superposition of two infinite-well eigenstates</strong></a>
+<a class="item" href="#a5"><span class="tiny">Part A · Problem 5</span><strong>Griffiths Problem 3.27 — verified second-edition interpretation</strong></a>
+<a class="item" href="#b1"><span class="tiny">Part B · Problem 1</span><strong>Generalized uncertainty relation and position–momentum application</strong></a>
+<a class="item" href="#b2"><span class="tiny">Part B · Problem 2</span><strong>Potential step: energy above the step (\(E>V_0\))</strong></a>
+<a class="item" href="#b3"><span class="tiny">Part B · Problem 3</span><strong>Semi-infinite potential step: energy below the step (\(E<V_0\))</strong></a>
+<a class="item" href="#b4"><span class="tiny">Part B · Problem 4</span><strong>Exact tunneling through a finite rectangular barrier</strong></a>
+<a class="item" href="#b5"><span class="tiny">Part B · Problem 5</span><strong>Infinite square well: eigenenergies and normalized eigenfunctions</strong></a>
+<a class="item" href="#b6"><span class="tiny">Part B · Problem 6</span><strong>Verify \(\Delta x\,\Delta p_x\geq\hbar/2\) in the \(n\)th infinite-well state</strong></a>
+<a class="item" href="#b7"><span class="tiny">Part B · Problem 7</span><strong>Finite symmetric square well: exact bound-state equations and plots</strong></a></div><div class="controls"><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button><button id="print" type="button">Print / Save as PDF</button></div><main><section><h2>Part A · 5 problems</h2><details class="problem" id="a1"><summary><span class="num">A1</span><span>Verify Cauchy–Schwarz for two Legendre functions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Verify the Schwarz inequality on \([-1,1]\) for \(f_1(x)=x\) and \(f_2(x)=\tfrac12(3x^2-1)\).</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Set up the inner product.</strong> Use \(\langle f,g\rangle=\int_{-1}^{1}f^*(x)g(x)\,\dd x\). The Cauchy–Schwarz inequality is</p>
+<div class="display-math">\[\abs{\langle f_1,f_2\rangle}^2\leq\langle f_1,f_1\rangle\langle f_2,f_2\rangle.\]</div>
+<p><strong>Step 2: Compute each norm exactly.</strong></p>
+<div class="display-math">\[\begin{aligned}\langle f_1,f_1\rangle&amp;=\int_{-1}^{1}x^2\,\dd x=\left[\frac{x^3}{3}\right]_{-1}^{1}=\frac23,\\
+\langle f_2,f_2\rangle&amp;=\frac14\int_{-1}^{1}(9x^4-6x^2+1)\,\dd x\nonumber\\
+&amp;=\frac14\left(9\cdot\frac25-6\cdot\frac23+2\right)=\frac25.\end{aligned}\]</div>
+<p><strong>Step 3: Compute the mixed scalar product.</strong></p>
+<div class="display-math">\[\langle f_1,f_2\rangle=\frac12\int_{-1}^{1}(3x^3-x)\,\dd x=0,\]</div>
+<p>because the integrand is odd on a symmetric interval. Consequently</p>
+<div class="display-math">\[\abs{\langle f_1,f_2\rangle}^2=0\leq \frac23\cdot\frac25=\frac4{15}.\]</div>
+<div class="answer-box">\[\boxed{0\leq 4/15\quad\text{(verified).}}\]</div>
+<p><strong>Interpretation.</strong> \(f_1=P_1\) and \(f_2=P_2\) are distinct Legendre polynomials. Their orthogonality is a special case of \(\int_{-1}^{1}P_\ell P_j\,\dd x=2\delta_{\ell j}/(2\ell+1)\). Equality in Cauchy–Schwarz would require linear dependence; these nonzero functions are linearly independent, so the inequality is strict.</p><p class="small"><a href="#a1">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a2"><summary><span class="num">A2</span><span>Compatibility of momentum and Hamiltonian for a free particle</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that for a free particle in one dimension momentum and Hamiltonian are compatible observables, whereas position and Hamiltonian are not.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Write the differential operators.</strong> For a free particle on the full real line,</p>
+<div class="display-math">\[\hat p=-\iu\hbar\frac{\dd}{\dd x},\quad \hat x=x,\quad\hat H=\frac{\hat p^2}{2m}=-\frac{\hbar^2}{2m}\frac{\dd^2}{\dd x^2}.\]</div>
+<p><strong>Step 2: Calculate \([\hat p,\hat H]\) directly.</strong> On a smooth test function \(\phi\),</p>
+<div class="display-math">\[\begin{aligned}\hat p\hat H\phi&amp;=(-\iu\hbar)\left(-\frac{\hbar^2}{2m}\right)\phi'''=\frac{\iu\hbar^3}{2m}\phi''',\\
+\hat H\hat p\phi&amp;=-\frac{\hbar^2}{2m}(-\iu\hbar\phi')''=\frac{\iu\hbar^3}{2m}\phi'''.\end{aligned}\]</div>
+<p>Thus \([\hat p,\hat H]\phi=0\) and</p>
+<div class="display-math">\[\boxed{[\hat p,\hat H]=0.}\]</div>
+<p>As \(\hat H=p^2/(2m)\) in the momentum representation, \(\hat H\) and \(\hat p\) are simultaneously diagonalized by the Fourier transform. Their generalized common eigenfunctions \(\ee^{\iu px/\hbar}\) have \(E=p^2/(2m)\); the energy \(E>0\) corresponds to \(p=\pm\sqrt{2mE}\).</p>
+<p><strong>Step 3: Calculate \([\hat x,\hat H]\).</strong> The product rule gives</p>
+<div class="display-math">\[\begin{aligned}\hat x\hat H\phi&amp;=-\frac{\hbar^2}{2m}x\phi'',\\
+\hat H\hat x\phi&amp;=-\frac{\hbar^2}{2m}(x\phi)''=-\frac{\hbar^2}{2m}(2\phi'+x\phi'').\end{aligned}\]</div>
+<p>Subtract:</p>
+<div class="display-math">\[[\hat x,\hat H]\phi=\frac{\hbar^2}{m}\phi'=\frac{\iu\hbar}{m}\hat p\phi.\]</div>
+<p>Therefore,</p>
+<div class="answer-box">\[\boxed{[\hat p,\hat H]=0,\qquad[\hat x,\hat H]=\frac{\iu\hbar}{m}\hat p\neq0.}\]</div>
+<p><strong>Step 4: Physical meaning.</strong> Momentum and energy are compatible observables for free motion, while position and energy generally are not. The Heisenberg equations reinforce this result:</p>
+<div class="display-math">\[\frac{\dd\hat p}{\dd t}=\frac{1}{\iu\hbar}[\hat p,\hat H]=0,\qquad
+\frac{\dd\hat x}{\dd t}=\frac{1}{\iu\hbar}[\hat x,\hat H]=\frac{\hat p}{m}.\]</div>
+<p>The first is momentum conservation; the second is the quantum analog of uniform rectilinear motion.</p><p class="small"><a href="#a2">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a3"><summary><span class="num">A3</span><span>Finding the particle in the central half of an infinite box</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Find the probability of detecting a particle between \(x=L/4\) and \(x=3L/4\) in the ground state and the first excited state of a one-dimensional infinite square well.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Derive the stationary eigenfunctions.</strong> For \(V=0\) in \((0,L)\), the Schrödinger{} equation reads \(\psi''+k^2\psi=0\). The general solution \(A\sin kx+B\cos kx\) obeys \(\psi(0)=0\), forcing \(B=0\), and \(\psi(L)=0\), forcing \(kL=n\pi\) for \(n\geq1\). Normalization follows from</p>
+<div class="display-math">\[1=\abs{A}^2\int_0^L\sin^2(n\pi x/L)\,\dd x=\abs A^2\frac L2.\]</div>
+<p>Therefore</p>
+<div class="display-math">\[\psi_n(x)=\sqrt{\frac2L}\sin\frac{n\pi x}{L},\quad 0&lt;x&lt;L;\qquad E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}.\]</div>
+<p><strong>Step 2: Apply Born's probability rule.</strong> The probability of the specified interval is</p>
+<div class="display-math">\[P_n=\int_{L/4}^{3L/4}\abs{\psi_n(x)}^2\,\dd x=\frac2L\int_{L/4}^{3L/4}\sin^2\frac{n\pi x}{L}\,\dd x.\]</div>
+<p>Using \(2\sin^2\theta=1-\cos 2\theta\) gives the antiderivative</p>
+<div class="display-math">\[P_n=\left[\frac{x}{L}-\frac{\sin(2n\pi x/L)}{2n\pi}\right]_{L/4}^{3L/4}
+=\frac12-\frac{\sin(3n\pi/2)-\sin(n\pi/2)}{2n\pi}.\]</div>
+<p><strong>Step 3: Ground state \(n=1\).</strong> Since \(\sin(3\pi/2)=-1\) and \(\sin(\pi/2)=1\),</p>
+<div class="display-math">\[P_1=\frac12-\frac{-1-1}{2\pi}=\boxed{\frac12+\frac1\pi\simeq0.81831}.\]</div>
+<p><strong>Step 4: First excited state \(n=2\).</strong> Since \(\sin(3\pi)=\sin\pi=0\),</p>
+<div class="display-math">\[P_2=\frac12-\frac{0-0}{4\pi}=\boxed{\frac12}.\]</div>
+<div class="answer-box">\[\boxed{P_{\text{ground}}=81.83\%,\qquad P_{\text{first excited}}=50\%.}\]</div>
+<p>The ground-state density peaks at \(L/2\), whereas the first excited state has a node there, explaining the different central-interval probabilities.</p><p class="small"><a href="#a3">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a4"><summary><span class="num">A4</span><span>Equal superposition of two infinite-well eigenstates</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>A particle in an infinite square well of length \(L\) is in the state \(\psi(x)=A[\psi_1(x)+\psi_2(x)]\). Determine \(A\), \(\langle H\rangle\) and the energy uncertainty \(\sigma_H\).</p></aside><h3>Detailed worked solution</h3><p>The normalized eigenstates satisfy \(\langle\psi_m,\psi_n\rangle=\delta_{mn}\) and \(\hat H\psi_n=E_n\psi_n\), with \(E_n=n^2\pi^2\hbar^2/(2mL^2)\). <strong>Step 1: Normalization.</strong></p>
+<div class="display-math">\[\begin{aligned}1&amp;=\langle\psi,\psi\rangle
+=\abs A^2\left(\langle\psi_1,\psi_1\rangle+\langle\psi_1,\psi_2\rangle+\langle\psi_2,\psi_1\rangle+\langle\psi_2,\psi_2\rangle\right)\\
+&amp;=2\abs A^2.\end{aligned}\]</div>
+<p>Thus \(\abs A=1/\sqrt2\); choosing the arbitrary global phase to be zero, \(A=1/\sqrt2\). <strong>Step 2: Expectation of energy.</strong> Using \(\hat H\psi_n=E_n\psi_n\),</p>
+<div class="display-math">\[\begin{aligned}\langle H\rangle&amp;=\frac12\langle\psi_1+\psi_2,\hat H(\psi_1+\psi_2)\rangle\\
+&amp;=\frac12\langle\psi_1+\psi_2,E_1\psi_1+E_2\psi_2\rangle=\frac{E_1+E_2}{2}.\end{aligned}\]</div>
+<p>Since \(E_2=4E_1\),</p>
+<div class="display-math">\[\boxed{\langle H\rangle=\frac52E_1=\frac{5\pi^2\hbar^2}{4mL^2}.}\]</div>
+<p><strong>Step 3: Second moment and variance.</strong> Acting twice with the Hamiltonian gives \(\hat H^2\psi_n=E_n^2\psi_n\), hence</p>
+<div class="display-math">\[\begin{aligned}\langle H^2\rangle&amp;=\frac{E_1^2+E_2^2}{2}=\frac{17}{2}E_1^2=\frac{17\pi^4\hbar^4}{8m^2L^4},\\
+\sigma_H^2&amp;=\langle H^2\rangle-\langle H\rangle^2=\left(\frac{17}{2}-\frac{25}{4}\right)E_1^2=\frac94E_1^2.\end{aligned}\]</div>
+<p>The nonnegative standard deviation is \(\sigma_H=(3/2)E_1\).</p>
+<div class="answer-box">\[\boxed{A=\frac1{\sqrt2},\qquad\langle H\rangle=\frac{5\pi^2\hbar^2}{4mL^2},\qquad\sigma_H=\frac{3\pi^2\hbar^2}{4mL^2}.}\]</div>
+<p><strong>Interpretation.</strong> The energy probabilities are \(P(E_1)=P(E_2)=1/2\), so \(\sigma_H=(E_2-E_1)/2\). For the time-evolving superposition</p>
+<div class="display-math">\[\Psi(x,t)=\frac{\psi_1(x)\ee^{-\iu E_1t/\hbar}+\psi_2(x)\ee^{-\iu E_2t/\hbar}}{\sqrt2},\]</div>
+<p>the position probability density oscillates through interference, but the energy distribution and its standard deviation remain time independent.</p><p class="small"><a href="#a4">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a5"><summary><span class="num">A5</span><span>Griffiths Problem 3.27 — verified second-edition interpretation</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>The assignment reads only ``Problem 3.27 Griffiths,'' without stating the edition. Here we solve the verified <em>second-edition (2005)</em> version on sequential measurements. A full solution to the distinct first-edition and third-edition versions is supplied in \Cref{app:griffiths_variants}.</p></aside><h3>Detailed worked solution</h3><p><strong>Edition note.</strong> The second-edition printed problem is titled ``Sequential measurements'' and uses the two bases and coefficients below (see references). The first edition instead asks for Gaussian-function Gram–Schmidt orthonormalization (see references); the third edition asks for spectral decomposition of operators and operator exponentials (see references). No edition can be established solely from the uploaded assignment.</p>
+<p>Let the nondegenerate eigenbases of the observables \(\hat A\) and \(\hat B\) be \(\{\ket{\psi_1},\ket{\psi_2}\}\) and \(\{\ket{\phi_1},\ket{\phi_2}\}\), with</p>
+<div class="display-math">\[\ket{\psi_1}=\frac35\ket{\phi_1}+\frac45\ket{\phi_2},\qquad
+\ket{\psi_2}=\frac45\ket{\phi_1}-\frac35\ket{\phi_2}.\]</div>
+<p><strong>Step 1: Postmeasurement state of \(A\).</strong> If the ideal projective measurement of \(A\) produces \(a_1\), then immediately afterward the state is \(\boxed{\ket{\psi_1}}\).</p>
+<p><strong>Step 2: Measurement of \(B\).</strong> From Born's rule and orthonormality of the \(B\)-basis,</p>
+<div class="display-math">\[\begin{aligned}P(b_1\mid a_1)&amp;=\abs{\braket{\phi_1}{\psi_1}}^2=\left(\frac35\right)^2=\frac9{25},\\
+P(b_2\mid a_1)&amp;=\abs{\braket{\phi_2}{\psi_1}}^2=\left(\frac45\right)^2=\frac{16}{25}.\end{aligned}\]</div>
+<p><strong>Step 3: Reverse the basis transformation.</strong> In matrix form, \(U=\frac15\bigl(\begin{smallmatrix}3&4\\4&-3\end{smallmatrix}\bigr)\); one checks \(U^\dagger U=I\) and \(U^{-1}=U\). Thus</p>
+<div class="display-math">\[\ket{\phi_1}=\frac35\ket{\psi_1}+\frac45\ket{\psi_2},\qquad
+\ket{\phi_2}=\frac45\ket{\psi_1}-\frac35\ket{\psi_2}.\]</div>
+<p>If the unreported \(B\)-outcome was \(b_1\), the final probability of \(a_1\) is \(9/25\); if it was \(b_2\), that conditional probability is \(16/25\). Because the \(B\) measurement actually occurred, its unrecorded alternatives add as probabilities, not probability amplitudes:</p>
+<div class="display-math">\[\begin{aligned}P(a_1\text{ on final }A\mid a_1\text{ initially})
+&amp;=\frac9{25}\cdot\frac9{25}+\frac{16}{25}\cdot\frac{16}{25}\\
+&amp;=\frac{81+256}{625}=\boxed{\frac{337}{625}=0.5392}.\end{aligned}\]</div>
+<p><strong>Density-operator verification.</strong> The intermediate unread measurement produces</p>
+<div class="display-math">\[\rho_B=\frac9{25}\ket{\phi_1}\bra{\phi_1}+\frac{16}{25}\ket{\phi_2}\bra{\phi_2},
+\quad P(a_1)=\langle\psi_1|\rho_B|\psi_1\rangle=\frac{337}{625}.\]</div>
+<p>If the measurement of \(B\) had been omitted entirely, an immediate repeat measurement of \(A\) would instead yield \(a_1\) with probability one. The intermediate measurement disturbs the state.</p><p class="small"><a href="#a5">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details></section><section><h2>Part B · 7 problems</h2><details class="problem" id="b1"><summary><span class="num">B1</span><span>Generalized uncertainty relation and position–momentum application</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the generalized uncertainty relation. Apply it to the position and momentum operators in one dimension.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Define centered observables and variances.</strong> Let \(\hat A\) and \(\hat B\) be self-adjoint observables in a normalized state \(\ket\psi\). Define</p>
+<div class="display-math">\[\delta\hat A=\hat A-\langle A\rangle\id,\quad \delta\hat B=\hat B-\langle B\rangle\id,\qquad
+(\Delta A)^2=\langle(\delta\hat A)^2\rangle,\quad(\Delta B)^2=\langle(\delta\hat B)^2\rangle.\]</div>
+<p>For observables with finite variances, these expressions are nonnegative because they are squared Hilbert-space norms.</p>
+<p><strong>Step 2: Apply Cauchy–Schwarz to fluctuation vectors.</strong> Let</p>
+<div class="display-math">\[\ket u=\delta\hat A\ket\psi,\qquad \ket v=\delta\hat B\ket\psi.\]</div>
+<p>The Cauchy–Schwarz inequality states \(\langle u,u\rangle\langle v,v\rangle\geq\abs{\langle u,v\rangle}^2\). Therefore</p>
+<div class="display-math">\[\label{eq:cs_unc}
+\boxed{(\Delta A)^2(\Delta B)^2\geq\abs{\langle\delta\hat A\,\delta\hat B\rangle}^2.}\]</div>
+<p><strong>Step 3: Separate symmetric and antisymmetric operator products.</strong> Define the commutator and anticommutator</p>
+<div class="display-math">\[[\hat A,\hat B]=\hat A\hat B-\hat B\hat A,\qquad\{\hat A,\hat B\}=\hat A\hat B+\hat B\hat A.\]</div>
+<p>Then</p>
+<div class="display-math">\[\delta\hat A\delta\hat B=\frac12\{\delta\hat A,\delta\hat B\}+\frac12[\delta\hat A,\delta\hat B]
+=\frac12\{\delta\hat A,\delta\hat B\}+\frac12[\hat A,\hat B].\]</div>
+<p>Self-adjointness of the centered observables implies that \(\{\delta\hat A,\delta\hat B\}\) is Hermitian (real expectation) and \([\hat A,\hat B]\) is anti-Hermitian (purely imaginary expectation). Thus the two pieces are orthogonal as real and imaginary components of a complex number:</p>
+<div class="display-math">\[\begin{aligned}\abs{\langle\delta\hat A\delta\hat B\rangle}^2
+=\frac14\abs{\langle\{\delta\hat A,\delta\hat B\}\rangle}^2
++\frac14\abs{\langle[\hat A,\hat B]\rangle}^2.\end{aligned}\]</div>
+<p><strong>Step 4: Obtain the Schr&amp;quot;odinger–Robertson inequality.</strong> Substitution into (see \(\LaTeX\) source: eq:cs_unc) gives</p>
+<div class="display-math">\[\label{eq:SR}
+\boxed{(\Delta A)^2(\Delta B)^2\geq\frac14\abs{\langle[\hat A,\hat B]\rangle}^2+
+\frac14\abs{\langle\{\delta\hat A,\delta\hat B\}\rangle}^2.}\]</div>
+<p>The second term is the square of the symmetrized covariance, \(\Cov(A,B)=\tfrac12\langle\{\delta\hat A,\delta\hat B\}\rangle\). Omitting this nonnegative term gives the more familiar Robertson relation</p>
+<div class="display-math">\[\label{eq:robertson}
+\boxed{\Delta A\,\Delta B\geq\frac12\abs{\langle[\hat A,\hat B]\rangle}.}\]</div>
+<p><strong>Step 5: Calculate the canonical commutator.</strong> In one dimension,</p>
+<div class="display-math">\[\hat x\phi=x\phi,\qquad\hat p\phi=-\iu\hbar\phi',\]</div>
+<p>so on a smooth test function</p>
+<div class="display-math">\[\begin{aligned}[\hat x,\hat p]\phi&amp;=x(-\iu\hbar\phi')-[-\iu\hbar(x\phi)']\\
+&amp;=-\iu\hbar x\phi'+\iu\hbar(\phi+x\phi')=\iu\hbar\phi.\end{aligned}\]</div>
+<p>Hence \([\hat x,\hat p]=\iu\hbar\id\). Apply (see \(\LaTeX\) source: eq:robertson):</p>
+<div class="display-math">\[\Delta x\,\Delta p\geq\frac12\abs{\langle\iu\hbar\id\rangle}=\frac\hbar2.\]</div>
+<div class="answer-box">\[\boxed{\Delta x\,\Delta p\geq\frac\hbar2,\qquad
+(\Delta x)^2(\Delta p)^2\geq\frac{\hbar^2}4+\Cov(x,p)^2.}\]</div>
+<p><strong>Step 6: Exhibit a minimum-uncertainty state.</strong> For \(\sigma>0\), consider</p>
+<div class="display-math">\[\psi(x)=\frac{1}{(2\pi\sigma^2)^{1/4}}\exp\left[-\frac{(x-x_0)^2}{4\sigma^2}+\frac{\iu p_0 x}{\hbar}\right].\]</div>
+<p>Its Gaussian probability density has \(\langle x\rangle=x_0\), \(\Delta x=\sigma\), and direct differentiation yields</p>
+<div class="display-math">\[(\hat p-p_0)\psi=\frac{\iu\hbar(x-x_0)}{2\sigma^2}\psi,\quad
+\langle p\rangle=p_0,\quad (\Delta p)^2=\frac{\hbar^2}{4\sigma^2}.\]</div>
+<p>Thus \(\Delta x\Delta p=\hbar/2\): the lower bound is attainable for a suitable Gaussian state. Equality in the full Schr&amp;quot;odinger–Robertson inequality occurs exactly when the two centered fluctuation vectors are linearly dependent; equality in the simpler Robertson form additionally requires zero symmetrized covariance.</p><p class="small"><a href="#b1">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b2"><summary><span class="num">B2</span><span>Potential step: energy above the step (\(E>V_0\))</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the reflection and transmission probabilities for a particle with \(E>V_0\) incident on a potential step of height \(V_0\) at the origin.</p></aside><h3>Detailed worked solution</h3><p>Let \(V(x)=0\) for \(x<0\) and \(V(x)=V_0>0\) for \(x\geq0\). With \(E>V_0\), both regional kinetic energies are positive. Define</p>
+<div class="display-math">\[k_1=\frac{\sqrt{2mE}}{\hbar},\qquad k_2=\frac{\sqrt{2m(E-V_0)}}{\hbar}.\]</div>
+<p>\textbf{Step 1: Solve the two regional Schrödinger{} equations.} In Region I, \(\psi_I''+k_1^2\psi_I=0\); in Region II, \(\psi_{II}''+k_2^2\psi_{II}=0\). An incident wave from the left has the form</p>
+<div class="display-math">\[\psi_I=A\ee^{\iu k_1x}+B\ee^{-\iu k_1x},\qquad
+\psi_{II}=C\ee^{\iu k_2x}.\]</div>
+<p>The coefficient of \(\ee^{-\iu k_2x}\) is zero because there is no incoming particle from the right.</p>
+<p><strong>Step 2: Match the wavefunction and derivative.</strong> The potential is finite at \(x=0\), so both \(\psi\) and \(\psi'\) are continuous:</p>
+<div class="display-math">\[A+B=C,\qquad \iu k_1(A-B)=\iu k_2C.\]</div>
+<p>Eliminate \(C\) using \(C=A+B\):</p>
+<div class="display-math">\[k_1(A-B)=k_2(A+B)\quad\Longrightarrow\quad(k_1-k_2)A=(k_1+k_2)B.\]</div>
+<p>Thus the reflection and transmission <em>amplitude ratios</em> are</p>
+<div class="display-math">\[\boxed{r=\frac BA=\frac{k_1-k_2}{k_1+k_2},\qquad t=\frac CA=1+r=\frac{2k_1}{k_1+k_2}.}\]</div>
+<p><strong>Step 3: Derive current coefficients.</strong> From the probability continuity equation,</p>
+<div class="display-math">\[\label{eq:current}
+j=\frac{\hbar}{2m\iu}\left(\psi^*\psi'-\psi(\psi^*)'\right).\]</div>
+<p>For a right-moving plane wave \(F\ee^{\iu kx}\), \(j=(\hbar k/m)\abs F^2\); for a left-moving plane wave, \(j=-(\hbar k/m)\abs F^2\). Thus</p>
+<div class="display-math">\[j_{\rm inc}=\frac{\hbar k_1}{m}\abs A^2,\quad
+j_{\rm ref}=-\frac{\hbar k_1}{m}\abs B^2,\quad
+j_{\rm tr}=\frac{\hbar k_2}{m}\abs C^2.\]</div>
+<p>The <em>probabilities</em> are ratios of the magnitudes of outgoing currents to incoming current:</p>
+<div class="display-math">\[\begin{aligned}R&amp;=\frac{\abs{j_{\rm ref}}}{j_{\rm inc}}=\abs{\frac BA}^2=\boxed{\frac{(k_1-k_2)^2}{(k_1+k_2)^2}},\\
+T&amp;=\frac{j_{\rm tr}}{j_{\rm inc}}=\frac{k_2}{k_1}\abs{\frac CA}^2=\boxed{\frac{4k_1k_2}{(k_1+k_2)^2}}.\end{aligned}\]</div>
+<p><strong>Step 4: Write the results in energy variables.</strong> The common factor \(\sqrt{2m}/\hbar\) cancels:</p>
+<div class="display-math">\[\boxed{R=\left(\frac{\sqrt E-\sqrt{E-V_0}}{\sqrt E+\sqrt{E-V_0}}\right)^2,\quad
+T=\frac{4\sqrt{E(E-V_0)}}{(\sqrt E+\sqrt{E-V_0})^2}.}\]</div>
+<p><strong>Step 5: Verify flux conservation.</strong></p>
+<div class="display-math">\[R+T=\frac{(k_1-k_2)^2+4k_1k_2}{(k_1+k_2)^2}=\frac{(k_1+k_2)^2}{(k_1+k_2)^2}=1.\]</div>
+<div class="answer-box">\[\boxed{R+T=1.}\]</div>
+<p><strong>Interpretation and limits.</strong> Quantum reflection persists for \(E>V_0\) if \(k_1\ne k_2\), in contrast to a classical particle. If \(V_0\to0\), \(R\to0,T\to1\); if \(E\to V_0^+\), \(R\to1,T\to0\). In the high-energy limit, \(R\simeq V_0^2/(16E^2)\). Crucially, \(T\ne\abs t^2\) when incident and transmitted velocities differ.</p><p class="small"><a href="#b2">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b3"><summary><span class="num">B3</span><span>Semi-infinite potential step: energy below the step (\(E<V_0\))</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Calculate the reflection and transmission probabilities for a particle with \(E<V_0\) incident on a potential step of height \(V_0\) at the origin.</p></aside><h3>Detailed worked solution</h3><p>Here \(V(x)=0\) on \(x<0\) and \(V(x)=V_0\) on \(x\geq0\), with \(0<E<V_0\). Define</p>
+<div class="display-math">\[k=\frac{\sqrt{2mE}}{\hbar},\qquad\kappa=\frac{\sqrt{2m(V_0-E)}}{\hbar}.\]</div>
+<p><strong>Step 1: Regional differential equations.</strong> For \(x<0\), \(\psi_I''+k^2\psi_I=0\), hence \(\psi_I=A\ee^{\iu kx}+B\ee^{-\iu kx}\). For \(x>0\), \(\psi_{II}''-\kappa^2\psi_{II}=0\), hence generally \(C\ee^{-\kappa x}+D\ee^{\kappa x}\). Boundedness as \(x\to+\infty\) requires \(D=0\). Therefore</p>
+<div class="display-math">\[\boxed{\psi_I=A\ee^{\iu kx}+B\ee^{-\iu kx},\qquad\psi_{II}=C\ee^{-\kappa x}.}\]</div>
+<p><strong>Step 2: Match at the origin.</strong></p>
+<div class="display-math">\[A+B=C,\qquad \iu k(A-B)=-\kappa C.\]</div>
+<p>Substituting the first condition into the second yields</p>
+<div class="display-math">\[(\iu k+\kappa)A=(\iu k-\kappa)B,\]</div>
+<p>so</p>
+<div class="display-math">\[\boxed{r=\frac BA=\frac{k-\iu\kappa}{k+\iu\kappa},\qquad \frac CA=1+r=\frac{2k}{k+\iu\kappa}.}\]</div>
+<p><strong>Step 3: Reflection probability.</strong> Using the same incident and reflected velocities,</p>
+<div class="display-math">\[R=\abs r^2=\frac{\abs{k-\iu\kappa}^2}{\abs{k+\iu\kappa}^2}=\frac{k^2+\kappa^2}{k^2+\kappa^2}=\boxed{1}.\]</div>
+<p><strong>Step 4: Transmission current.</strong> For \(\psi_{II}=C\ee^{-\kappa x}\), its derivative is \(\psi_{II}'=-\kappa\psi_{II}\), with real \(\kappa\). Equation (see \(\LaTeX\) source: eq:current) gives</p>
+<div class="display-math">\[j_{II}=\frac{\hbar}{2m\iu}[-\kappa\abs{\psi_{II}}^2+\kappa\abs{\psi_{II}}^2]=0.\]</div>
+<p>Hence \(T=j_{II}/j_{\rm inc}=0\), despite \(C\ne0\).</p>
+<div class="answer-box">\[\boxed{R=1,\qquad T=0,\qquad R+T=1.}\]</div>
+<p><strong>Step 5: Penetration depth.</strong> The amplitude decays as \(\ee^{-\kappa x}\). Its \(1/e\) amplitude penetration depth is</p>
+<div class="display-math">\[\boxed{\delta=\frac1\kappa=\frac\hbar{\sqrt{2m(V_0-E)}}};\qquad
+\abs{\psi_{II}(x)}^2=\abs C^2\ee^{-2\kappa x}.\]</div>
+<p>The probability-density decay length is \(1/(2\kappa)\). The amplitude ratio \(\abs{C/A}^2=4E/V_0\) is not a transmission probability; it can exceed unity because it is not a flux ratio. The finite forbidden-region case with nonzero transmission is treated next.</p><p class="small"><a href="#b3">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b4"><summary><span class="num">B4</span><span>Exact tunneling through a finite rectangular barrier</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the tunneling probability for a particle with \(0<E<V_0\) incident on a finite potential barrier of height \(V_0\) and width \(a\).</p></aside><h3>Detailed worked solution</h3><p>The potential is \(V(x)=0\) for \(x<0\), \(V_0\) for \(0<x<a\), and \(0\) for \(x>a\). Define</p>
+<div class="display-math">\[k=\frac{\sqrt{2mE}}{\hbar},\qquad \kappa=\frac{\sqrt{2m(V_0-E)}}{\hbar},\qquad k,\kappa&gt;0.\]</div>
+<aside class="hint">The original LaTeX source contains the accompanying figure and its code.</aside>
+<p><strong>Step 1: Solve the regional equations.</strong> The Schrödinger{} equation gives propagating solutions outside and exponential solutions inside:</p>
+<div class="display-math">\[\label{eq:barrier_waves}
+\boxed{\begin{aligned}
+\psi_I&amp;=A\ee^{\iu kx}+B\ee^{-\iu kx}&amp;&amp;(x&lt;0),\\
+\psi_{II}&amp;=C\ee^{\kappa x}+D\ee^{-\kappa x}&amp;&amp;(0&lt;x&lt;a),\\
+\psi_{III}&amp;=F\ee^{\iu kx}&amp;&amp;(x&gt;a).
+\end{aligned}}\]</div>
+<p>The \(\ee^{-\iu kx}\) term is absent in Region III because there is no incidence from the right. <em>Both</em> exponentials must be retained in Region II: there are two interfaces to match.</p>
+<p><strong>Step 2: Write the four boundary equations.</strong> Matching \(\psi\) and \(\psi'\) at \(x=0\) gives</p>
+<div class="display-math">\[A+B=C+D,\qquad \iu k(A-B)=\kappa(C-D).\]</div>
+<p>At \(x=a\) this gives</p>
+<div class="display-math">\[C\ee^{\kappa a}+D\ee^{-\kappa a}=F\ee^{\iu ka},\quad
+\kappa(C\ee^{\kappa a}-D\ee^{-\kappa a})=\iu kF\ee^{\iu ka}.\]</div>
+<p><strong>Step 3: Solve the interface at \(a\).</strong> Add and subtract the last equations to isolate \(C\ee^{\kappa a}\) and \(D\ee^{-\kappa a}\):</p>
+<div class="display-math">\[\begin{aligned}C&amp;=\frac F2\ee^{\iu ka-\kappa a}\left(1+\frac{\iu k}{\kappa}\right),\\
+D&amp;=\frac F2\ee^{\iu ka+\kappa a}\left(1-\frac{\iu k}{\kappa}\right).\end{aligned}\]</div>
+<p>This produces the hyperbolic representation inside the barrier,</p>
+<div class="display-math">\[\label{eq:barrier_hyperbolic}
+\psi_{II}(x)=F\ee^{\iu ka}\left[\cosh\kappa(x-a)+\frac{\iu k}{\kappa}\sinh\kappa(x-a)\right].\]</div>
+<p><strong>Step 4: Evaluate at \(x=0\).</strong> The function and its derivative there are</p>
+<div class="display-math">\[\begin{aligned}A+B&amp;=F\ee^{\iu ka}\left[\cosh(\kappa a)-\frac{\iu k}{\kappa}\sinh(\kappa a)\right],\\
+\iu k(A-B)&amp;=F\ee^{\iu ka}\left[-\kappa\sinh(\kappa a)+\iu k\cosh(\kappa a)\right].\end{aligned}\]</div>
+<p>Dividing the latter by \(\iu k\) and adding to the former eliminates \(B\):</p>
+<div class="display-math">\[\begin{aligned}2A&amp;=F\ee^{\iu ka}\left[2\cosh(\kappa a)+\iu\left(\frac\kappa k-\frac k\kappa\right)\sinh(\kappa a)\right].\end{aligned}\]</div>
+<p>Thus the exact transmission amplitude is</p>
+<div class="display-math">\[\label{eq:tbarrier}
+\boxed{t=\frac FA=\frac{\ee^{-\iu ka}}{\cosh(\kappa a)+\iu\dfrac{\kappa^2-k^2}{2k\kappa}\sinh(\kappa a)}}.\]</div>
+<p>Subtracting the boundary equations similarly gives the reflection amplitude</p>
+<div class="display-math">\[\boxed{r=\frac BA=\frac{-\iu\dfrac{k^2+\kappa^2}{2k\kappa}\sinh(\kappa a)}{\cosh(\kappa a)+\iu\dfrac{\kappa^2-k^2}{2k\kappa}\sinh(\kappa a)}}.\]</div>
+<p><strong>Step 5: Calculate flux ratios.</strong> Because the potential is zero on both sides, incident and transmitted waves have the same wave number \(k\):</p>
+<div class="display-math">\[j_{\rm inc}=\frac{\hbar k}{m}\abs A^2,\qquad j_{\rm tr}=\frac{\hbar k}{m}\abs F^2,\qquad T=\frac{j_{\rm tr}}{j_{\rm inc}}=\abs t^2.\]</div>
+<p>Taking the modulus squared of (see \(\LaTeX\) source: eq:tbarrier), noting \(\abs{\ee^{-\iu ka}}^2=1\), yields</p>
+<div class="display-math">\[T=\left[\cosh^2(\kappa a)+\frac{(\kappa^2-k^2)^2}{4k^2\kappa^2}\sinh^2(\kappa a)\right]^{-1}.\]</div>
+<p>Use \(\cosh^2 y=1+\sinh^2y\) and the identity</p>
+<div class="display-math">\[4k^2\kappa^2+(\kappa^2-k^2)^2=(k^2+\kappa^2)^2\]</div>
+<p>to get</p>
+<div class="display-math">\[T=\left[1+\frac{(k^2+\kappa^2)^2}{4k^2\kappa^2}\sinh^2(\kappa a)\right]^{-1}.\]</div>
+<p>Since \(k^2+\kappa^2=2mV_0/\hbar^2\) and \(4k^2\kappa^2=16m^2E(V_0-E)/\hbar^4\),</p>
+<div class="display-math">\[\label{eq:Tbarrier}
+\boxed{T=\left[1+\frac{V_0^2}{4E(V_0-E)}\sinh^2\left(\frac{a\sqrt{2m(V_0-E)}}\hbar\right)\right]^{-1}.}\]</div>
+<p><strong>Step 6: Obtain \(R\) and verify conservation.</strong> Let \(Q=(k^2+\kappa^2)^2\sinh^2(\kappa a)/(4k^2\kappa^2)\). The reflection amplitude gives \(R=Q/(1+Q)\) while \(T=1/(1+Q)\). Thus \(R+T=1\). Explicitly,</p>
+<div class="display-math">\[\boxed{R=\frac{V_0^2\sinh^2(\kappa a)}{4E(V_0-E)+V_0^2\sinh^2(\kappa a)},\qquad R+T=1.}\]</div>
+<p>Even inside the forbidden region, a superposition of exponentials can carry flux:</p>
+<div class="display-math">\[\psi_{II}=C\ee^{\kappa x}+D\ee^{-\kappa x}\implies
+j_{II}=\frac{2\hbar\kappa}{m}\operatorname{Im}(CD^*)=\frac{\hbar k}{m}\abs F^2.\]</div>
+<p><strong>Step 7: Thick-barrier approximation.</strong> For \(\kappa a\gg1\), \(\sinh^2(\kappa a)\simeq\ee^{2\kappa a}/4\); the exponential term dominates the denominator in (see \(\LaTeX\) source: eq:Tbarrier), so</p>
+<div class="display-math">\[\boxed{T\simeq\frac{16E(V_0-E)}{V_0^2}\ee^{-2\kappa a}
+=\frac{16E(V_0-E)}{V_0^2}\exp\left(-\frac{2a\sqrt{2m(V_0-E)}}{\hbar}\right).}\]</div>
+<p><strong>Checks.</strong> At \(a\to0\), \(T\to1\). At \(a\to\infty\) with \(E<V_0\), \(T\to0\). At \(E\to V_0^-\), use \(\sinh(\kappa a)\sim\kappa a\) to obtain the finite limit \(T\to[1+mV_0a^2/(2\hbar^2)]^{-1}\). The thick-barrier expansion is <em>not</em> valid near this last limit. The exponent is consistent with the WKB action \(2\hbar^{-1}\int_0^a\sqrt{2m(V_0-E)}\,\dd x=2\kappa a\).</p><p class="small"><a href="#b4">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b5"><summary><span class="num">B5</span><span>Infinite square well: eigenenergies and normalized eigenfunctions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive (i) the energy eigenvalues and (ii) the normalized eigenfunctions for a particle trapped in an infinite square well of length \(L\).</p></aside><h3>Detailed worked solution</h3><p>Let \(V=0\) on \((0,L)\) and \(V=+\infty\) outside. For an ideal infinite well the appropriate boundary conditions are \(\psi(0)=\psi(L)=0\). Inside,</p>
+<div class="display-math">\[\hat H=-\frac{\hbar^2}{2m}\frac{\dd^2}{\dd x^2},\qquad-\frac{\hbar^2}{2m}\psi''=E\psi.\]</div>
+<p><strong>Step 1: Prove positivity of nontrivial eigenenergies.</strong> Multiply by \(\psi^*\), integrate over \((0,L)\), and integrate by parts:</p>
+<div class="display-math">\[\begin{aligned}E\int_0^L\abs\psi^2\,\dd x
+&amp;=-\frac{\hbar^2}{2m}\int_0^L\psi^*\psi''\,\dd x\\
+&amp;=\frac{\hbar^2}{2m}\int_0^L\abs{\psi'}^2\,\dd x,\end{aligned}\]</div>
+<p>where the boundary term \([\psi^*\psi']_0^L\) is zero. For a nonzero function satisfying both Dirichlet conditions, the integral of \(\abs{\psi'}^2\) is positive, hence \(E>0\).</p>
+<p><strong>Step 2: Solve the Sturm–Liouville equation.</strong> Put \(k=\sqrt{2mE}/\hbar\), so</p>
+<div class="display-math">\[\psi''+k^2\psi=0,\qquad\psi=A\sin kx+B\cos kx.\]</div>
+<p>The left condition gives \(B=0\). The right condition gives \(A\sin kL=0\). Since \(A\ne0\), \(\sin kL=0\), i.e. \(kL=n\pi\). Nontrivial states require \(n=1,2,\ldots\), so</p>
+<div class="display-math">\[\boxed{k_n=\frac{n\pi}{L},\qquad E_n=\frac{\hbar^2k_n^2}{2m}=\frac{n^2\pi^2\hbar^2}{2mL^2}=\frac{n^2h^2}{8mL^2}.}\]</div>
+<p>In wavelength language, the wavefunction fits \(n\) half-wavelengths: \(L=n\lambda_n/2\), or \(\lambda_n=2L/n\). The energies are not equally spaced:</p>
+<div class="display-math">\[E_{n+1}-E_n=(2n+1)\frac{\pi^2\hbar^2}{2mL^2}.\]</div>
+<p><strong>Step 3: Normalize.</strong> With \(\psi_n=A_n\sin(n\pi x/L)\),</p>
+<div class="display-math">\[\begin{aligned}1&amp;=\abs{A_n}^2\int_0^L\sin^2\frac{n\pi x}{L}\,\dd x
+=\frac{\abs{A_n}^2}{2}\left[x-\frac{L}{2n\pi}\sin\frac{2n\pi x}{L}\right]_0^L
+=\frac{\abs{A_n}^2L}{2}.\end{aligned}\]</div>
+<p>Choosing \(A_n>0\) yields \(A_n=\sqrt{2/L}\), therefore</p>
+<div class="display-math">\[\label{eq:infinite_eigen}
+\boxed{\psi_n(x)=\begin{cases}\sqrt{2/L}\,\sin(n\pi x/L),&amp;0&lt;x&lt;L,\\0,&amp;\text{otherwise},\end{cases}\quad n=1,2,\ldots.}\]</div>
+<p>The full stationary state is \(\Psi_n(x,t)=\psi_n(x)\ee^{-\iu E_nt/\hbar}\).</p>
+<p><strong>Step 4: Check orthogonality explicitly.</strong> For \(m\ne n\), use \(2\sin\alpha\sin\beta=\cos(\alpha-\beta)-\cos(\alpha+\beta)\):</p>
+<div class="display-math">\[\begin{aligned}\langle\psi_m,\psi_n\rangle&amp;=\frac2L\int_0^L\sin\frac{m\pi x}{L}\sin\frac{n\pi x}{L}\,\dd x\\
+&amp;=\frac1L\left[\frac{L\sin[(m-n)\pi x/L]}{(m-n)\pi}
+-\frac{L\sin[(m+n)\pi x/L]}{(m+n)\pi}\right]_0^L=0.\end{aligned}\]</div>
+<p>With normalization for \(m=n\) we obtain \(\boxed{\langle\psi_m,\psi_n\rangle=\delta_{mn}}\).</p>
+<p><strong>Step 5: Completeness and arbitrary states.</strong> The Fourier sine theorem establishes that the normalized eigenfunctions form a complete orthonormal basis of \(L^2(0,L)\). Thus, for any \(f\in L^2(0,L)\),</p>
+<div class="display-math">\[f(x)=\sum_{n=1}^{\infty}c_n\psi_n(x)\quad\text{in }L^2,\qquad c_n=\sqrt{\frac2L}\int_0^L f(x)\sin\frac{n\pi x}{L}\,\dd x.\]</div>
+<p>The distributional resolution of the identity is</p>
+<div class="display-math">\[\sum_{n=1}^{\infty}\psi_n(x)\psi_n^*(x')=\delta(x-x'),\qquad 0&lt;x,x'&lt;L.\]</div>
+<p>An arbitrary initial normalized state evolves as \(\Psi(x,t)=\sum_nc_n\psi_n(x)\ee^{-\iu E_nt/\hbar}\), with energy outcome probabilities \(\abs{c_n}^2\).</p>
+<p><strong>Step 6: Parity.</strong> Because the well is centered at \(L/2\), the relevant reflection maps \(x\mapsto L-x\), not \(x\mapsto-x\). By trigonometry,</p>
+<div class="display-math">\[\psi_n(L-x)=\sqrt{2/L}\sin[n\pi-n\pi x/L]=(-1)^{n+1}\psi_n(x).\]</div>
+<p>Hence odd \(n\) states are even under reflection about \(L/2\), even \(n\) states are odd, and the \(n\)th wavefunction has \(n-1\) interior nodes.</p>
+<p><strong>Step 7: Zero-point energy and rigor.</strong> The \(n=0\) sine solution is identically zero. Directly at \(E=0\), the solution \(\psi=Ax+B\) with \(\psi(0)=\psi(L)=0\) also forces \(A=B=0\). Consequently</p>
+<div class="display-math">\[\boxed{E_1=\frac{\pi^2\hbar^2}{2mL^2}&gt;0.}\]</div>
+<p>The sharp Poincar\'e inequality \(\int_0^L\abs{\psi'}^2\,\dd x\geq(\pi^2/L^2)\int_0^L\abs\psi^2\,\dd x\) gives the variational bound \(\langle H\rangle\geq E_1\) for any normalized \(\psi\in H_0^1(0,L)\). The self-adjoint Dirichlet Hamiltonian has operator domain \(H^2(0,L)\cap H_0^1(0,L)\); all its spectral eigenvalues are positive, discrete, and simple.</p><p class="small"><a href="#b5">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b6"><summary><span class="num">B6</span><span>Verify \(\Delta x\,\Delta p_x\geq\hbar/2\) in the \(n\)th infinite-well state</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Verify the position–momentum uncertainty relation for the \(n\)th eigenstate of a particle trapped in an infinite square well of length \(L\).</p></aside><h3>Detailed worked solution</h3><p>Take the normalized real eigenfunction \(\psi_n=\sqrt{2/L}\sin(n\pi x/L)\) on \((0,L)\), with \(n\geq1\). Compute</p>
+<div class="display-math">\[(\Delta x)^2=\langle x^2\rangle-\langle x\rangle^2,\qquad
+(\Delta p)^2=\langle p^2\rangle-\langle p\rangle^2.\]</div>
+<p><strong>Step 1: Mean position.</strong> Using \(2\sin^2\theta=1-\cos2\theta\) and setting \(\alpha=2n\pi/L\),</p>
+<div class="display-math">\[\begin{aligned}\langle x\rangle&amp;=\frac2L\int_0^Lx\sin^2\frac{n\pi x}{L}\,\dd x\\
+&amp;=\frac1L\int_0^Lx\bigl(1-\cos\alpha x\bigr)\,\dd x
+=\frac1L\left[\frac{L^2}{2}-\left(\frac{x\sin\alpha x}{\alpha}+\frac{\cos\alpha x}{\alpha^2}\right)_0^L\right]\\
+&amp;=\boxed{\frac L2},\end{aligned}\]</div>
+<p>because \(\sin\alpha L=0\) and \(\cos\alpha L=1\).</p>
+<p><strong>Step 2: Mean squared position.</strong></p>
+<div class="display-math">\[\langle x^2\rangle=\frac1L\left[\int_0^Lx^2\,\dd x-\int_0^Lx^2\cos\alpha x\,\dd x\right].\]</div>
+<p>The second integral is evaluated by two integrations by parts:</p>
+<div class="display-math">\[\begin{aligned}\int x^2\cos\alpha x\,\dd x&amp;=\frac{x^2\sin\alpha x}{\alpha}-\frac2\alpha\int x\sin\alpha x\,\dd x,\\
+\int x\sin\alpha x\,\dd x&amp;=-\frac{x\cos\alpha x}{\alpha}+\frac{\sin\alpha x}{\alpha^2}.\end{aligned}\]</div>
+<p>Evaluate at \(0,L\) to obtain</p>
+<div class="display-math">\[\int_0^Lx^2\cos\alpha x\,\dd x=\frac{2L}{\alpha^2}=\frac{L^3}{2n^2\pi^2}.\]</div>
+<p>Since \(\int_0^Lx^2\,\dd x=L^3/3\),</p>
+<div class="display-math">\[\boxed{\langle x^2\rangle=L^2\left(\frac13-\frac1{2n^2\pi^2}\right).}\]</div>
+<p><strong>Step 3: Position variance.</strong> Subtract \(\langle x\rangle^2=L^2/4\):</p>
+<div class="display-math">\[\boxed{(\Delta x)^2=L^2\left(\frac1{12}-\frac1{2n^2\pi^2}\right),\qquad
+\Delta x=L\sqrt{\frac1{12}-\frac1{2n^2\pi^2}}.}\]</div>
+<p><strong>Step 4: Mean momentum.</strong> Using \(\hat p=-\iu\hbar\,\dd/\dd x\),</p>
+<div class="display-math">\[\begin{aligned}\langle p\rangle&amp;=-\iu\hbar\int_0^L\psi_n(x)\psi_n'(x)\,\dd x
+=-\frac{\iu\hbar}{2}\left[\psi_n^2(x)\right]_0^L=\boxed{0}.\end{aligned}\]</div>
+<p><strong>Step 5: Second momentum moment.</strong> The eigenfunctions obey</p>
+<div class="display-math">\[-\hbar^2\psi_n''(x)=\frac{n^2\pi^2\hbar^2}{L^2}\psi_n(x).\]</div>
+<p>The kinetic-energy quadratic form gives</p>
+<div class="display-math">\[\begin{aligned}\langle p^2\rangle&amp;=\hbar^2\int_0^L\abs{\psi_n'}^2\,\dd x
+=-\hbar^2\int_0^L\psi_n^*\psi_n''\,\dd x\\
+&amp;=\frac{n^2\pi^2\hbar^2}{L^2}\int_0^L\abs{\psi_n}^2\,\dd x
+=\boxed{\frac{n^2\pi^2\hbar^2}{L^2}}.\end{aligned}\]</div>
+<p>The boundary term in the integration by parts vanishes by Dirichlet conditions. Therefore</p>
+<div class="display-math">\[\boxed{\Delta p=\frac{n\pi\hbar}{L}.}\]</div>
+<p><strong>Step 6: Uncertainty product.</strong> Multiplication gives</p>
+<div class="display-math">\[\begin{aligned}\Delta x\,\Delta p
+&amp;=\frac{n\pi\hbar}{L}\,L\sqrt{\frac1{12}-\frac1{2n^2\pi^2}}\\
+&amp;=\hbar\sqrt{\frac{n^2\pi^2-6}{12}}
+=\boxed{\frac\hbar2\sqrt{\frac{n^2\pi^2}{3}-2}}.\end{aligned}\]</div>
+<p>For \(n\geq1\), \(n^2\pi^2\geq\pi^2>9\), so \((n^2\pi^2/3)-2>1\). Hence</p>
+<div class="display-math">\[\boxed{\Delta x\,\Delta p&gt;\frac\hbar2\quad\text{for every }n\geq1.}\]</div>
+<p><strong>Step 7: Ground state and semiclassical limit.</strong> At \(n=1\),</p>
+<div class="display-math">\[\Delta x_1\Delta p_1=\hbar\sqrt{\frac{\pi^2-6}{12}}\simeq0.56786\hbar&gt;0.5\hbar.\]</div>
+<p>For \(n\to\infty\) at fixed \(L,\hbar\),</p>
+<div class="display-math">\[\Delta x\longrightarrow\frac{L}{\sqrt{12}},\quad \Delta p\sim\frac{n\pi\hbar}{L},\quad
+\Delta x\Delta p\sim\frac{n\pi\hbar}{\sqrt{12}}.\]</div>
+<p>The first limit equals the standard deviation of a <em>uniform</em> classical position distribution on \((0,L)\), consistent with the rapidly oscillating \(\sin^2(n\pi x/L)\) approaching \(1/2\) under coarse graining. The product grows rather than approaching the lower bound.</p>
+<p><strong>Operator-domain note.</strong> On \(L^2(0,L)\) the Dirichlet differential momentum operator is symmetric but is not itself self-adjoint with that domain. The expression above for \(\langle p^2\rangle\) is rigorously a positive quadratic form. Alternatively extend the wavefunction by zero to \(\R\) and use the self-adjoint full-line momentum operator: the zero extension lies in \(H^1(\R)\), so \(\langle p\rangle\) and \(\|p\psi\|^2\) are meaningful; it need not lie in the domain of the full-line \(p^2\). The usual Heisenberg variance therefore remains well defined. A direct Cauchy–Schwarz verification uses \(u=(x-L/2)\psi_n\) and \(v=-\iu\hbar\psi_n'\); integrating by parts gives \(\langle u,v\rangle=\iu\hbar/2\) and \(\|u\|\|v\|\geq\hbar/2\).</p><p class="small"><a href="#b6">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b7"><summary><span class="num">B7</span><span>Finite symmetric square well: exact bound-state equations and plots</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Solve the time-independent Schrödinger{} equation for a particle trapped in a finite square well of height \(U\) and obtain the wavefunctions. Plot the first three eigenfunctions and their probability densities. Because the assignment specifies no width or energy convention, we choose the standard symmetric well of depth \(U\) and half-width \(a\), and explicitly state the equivalent positive-height convention.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Choose an energy convention.</strong> Let</p>
+<div class="display-math">\[\label{eq:Vfinite}
+\boxed{V(x)=\begin{cases}-U,&amp;\abs x&lt;a,\\0,&amp;\abs x\geq a,\end{cases}\qquad U&gt;0.}\]</div>
+<p>The full well width is \(2a\). Bound states have energy \(-U<E<0\). The convention \(V=0\) for \(\abs x<a\) and \(V=U\) outside differs only by the additive constant \(U\) in energy; eigenfunctions and matching equations do not change.</p>
+<p><strong>Step 2: Solve in three regions.</strong> Introduce</p>
+<div class="display-math">\[k=\frac{\sqrt{2m(E+U)}}\hbar&gt;0,\quad \kappa=\frac{\sqrt{-2mE}}\hbar&gt;0,\quad k^2+\kappa^2=\frac{2mU}{\hbar^2}.\]</div>
+<p>The exterior equations \(\psi''-\kappa^2\psi=0\) have only exponentially decaying admissible tails. The interior equation \(\psi''+k^2\psi=0\) has oscillatory solutions. The general square-integrable form is</p>
+<div class="display-math">\[\psi(x)=\begin{cases}L_0\ee^{\kappa(x+a)},&amp;x&lt;-a,\\B\cos(kx)+C\sin(kx),&amp;\abs x\leq a,\\R_0\ee^{-\kappa(x-a)},&amp;x&gt;a.\end{cases}\]</div>
+<p><strong>Step 3: Classify states by parity.</strong> Since \(V(-x)=V(x)\) and one-dimensional bound eigenvalues are nondegenerate, the eigenfunctions can be chosen even or odd. For an even state, set \(C=0\) and \(L_0=R_0=A_+\cos(ka)\); for an odd state, set \(B=0\), \(L_0=-A_-\sin(ka)\) and \(R_0=A_-\sin(ka)\). Hence</p>
+<div class="display-math">\[\label{eq:finite_even}
+\boxed{\psi_+(x)=A_+\begin{cases}\cos(ka)\ee^{\kappa(x+a)},&amp;x&lt;-a,\\\cos(kx),&amp;\abs x\leq a,\\\cos(ka)\ee^{-\kappa(x-a)},&amp;x&gt;a,\end{cases}}\]</div>
+<div class="display-math">\[\label{eq:finite_odd}
+\boxed{\psi_-(x)=A_-\begin{cases}-\sin(ka)\ee^{\kappa(x+a)},&amp;x&lt;-a,\\\sin(kx),&amp;\abs x\leq a,\\\sin(ka)\ee^{-\kappa(x-a)},&amp;x&gt;a.\end{cases}}\]</div>
+<p><strong>Step 4: Match at \(x=a\).</strong> The boundary-value construction already enforces continuity of \(\psi\); derivative continuity gives</p>
+<div class="display-math">\[\begin{aligned}\text{even:}\quad -A_+k\sin(ka)&amp;=-A_+\kappa\cos(ka)\ \Longrightarrow\ \boxed{k\tan(ka)=\kappa},\\
+\text{odd:}\quad A_-k\cos(ka)&amp;=-A_-\kappa\sin(ka)\ \Longrightarrow\ \boxed{-k\cot(ka)=\kappa}.\end{aligned}\]</div>
+<p>The conditions at \(x=-a\) then follow automatically from parity. The energy eigenvalues cannot generally be written in elementary closed form: they are fixed by roots of these two transcendental equations.</p>
+<p><strong>Step 5: Dimensionless quantization.</strong> Define the dimensionless variables</p>
+<div class="display-math">\[\boxed{z=ka,\quad q=\kappa a,\quad P=\frac{a\sqrt{2mU}}\hbar.}\]</div>
+<p>They satisfy \(z^2+q^2=P^2\), with \(0<z<P\) and \(q=\sqrt{P^2-z^2}\). The allowed roots obey</p>
+<div class="display-math">\[\label{eq:evenodd_finite}
+\boxed{\begin{aligned}z\tan z&amp;=\sqrt{P^2-z^2}&amp;&amp;\text{(even)},\\
+-z\cot z&amp;=\sqrt{P^2-z^2}&amp;&amp;\text{(odd)}.
+\end{aligned}}\]</div>
+<p>For a root \(z_n\), the physical energy is</p>
+<div class="display-math">\[\label{eq:Efinitex}
+\boxed{E_n=-U+\frac{\hbar^2z_n^2}{2ma^2}=-\frac{\hbar^2q_n^2}{2ma^2}.}\]</div>
+<p>With the positive-barrier convention (\(0\) inside, \(U\) outside), the same state has \(E_n'=E_n+U=\hbar^2z_n^2/(2ma^2)\).</p>
+<p><strong>Step 6: Normalize the even states.</strong> From (see \(\LaTeX\) source: eq:finite_even), using evenness of \(\abs\psi^2\),</p>
+<div class="display-math">\[\begin{aligned}1&amp;=2\abs{A_+}^2\left[\int_0^a\cos^2(kx)\,\dd x+\cos^2(ka)\int_a^\infty\ee^{-2\kappa(x-a)}\,\dd x\right]\\
+&amp;=\abs{A_+}^2\left[a+\frac{\sin(2ka)}{2k}+\frac{\cos^2(ka)}{\kappa}\right].\end{aligned}\]</div>
+<p>The even quantization condition gives \(\tan(ka)=\kappa/k\). Thus \(\sin(ka)\cos(ka)=k\kappa/(k^2+\kappa^2)\) and \(\cos^2(ka)=k^2/(k^2+\kappa^2)\), so</p>
+<div class="display-math">\[\frac{\sin(2ka)}{2k}+\frac{\cos^2(ka)}{\kappa}
+=\frac{\kappa}{k^2+\kappa^2}+\frac{k^2}{\kappa(k^2+\kappa^2)}=\frac1\kappa.\]</div>
+<p>Therefore</p>
+<div class="display-math">\[\boxed{A_+=\frac1{\sqrt{a+1/\kappa}}.}\]</div>
+<p><strong>Step 7: Normalize the odd states.</strong> From (see \(\LaTeX\) source: eq:finite_odd),</p>
+<div class="display-math">\[1=\abs{A_-}^2\left[a-\frac{\sin(2ka)}{2k}+\frac{\sin^2(ka)}{\kappa}\right].\]</div>
+<p>The odd condition gives \(\cot(ka)=-\kappa/k\), \(\sin(ka)\cos(ka)=-k\kappa/(k^2+\kappa^2)\), and \(\sin^2(ka)=k^2/(k^2+\kappa^2)\). Hence the bracket is again \(a+1/\kappa\):</p>
+<div class="display-math">\[\boxed{A_-=\frac1{\sqrt{a+1/\kappa}}.}\]</div>
+<p>Both parities are normalized by the same formula when evaluated with the \(\kappa\) of the individual state. For each \(n\) let \(N_n=(a+1/\kappa_n)^{-1/2}\); the <em>fully normalized</em> wavefunctions are then exactly (see \(\LaTeX\) source: eq:finite_even) and (see \(\LaTeX\) source: eq:finite_odd) with \(A_\pm=N_n\).</p>
+<p><strong>Step 8: Count the bound states.</strong> A useful single root equation follows by setting \(z=P\sin\theta\), \(q=P\cos\theta\) for \(0<\theta<\pi/2\). Even roots satisfy \(z+\theta=(2j+1)\pi/2\); odd roots satisfy \(z+\theta=(j+1)\pi\). Ordering both families from the ground state with index \(n=0\) yields</p>
+<div class="display-math">\[\label{eq:unifiedf}
+\boxed{z_n+\arcsin(z_n/P)=\frac{(n+1)\pi}{2},\quad 0&lt;z_n&lt;P,\quad n=0,1,\ldots.}\]</div>
+<p>The left side increases strictly on \((0,P)\) and tends to \(P+\pi/2\) at the right endpoint. Thus the \(n\)th bound state exists if and only if \((n+1)\pi/2<P+\pi/2\), or \(P>n\pi/2\). A threshold with \(q=0\) is excluded because the exterior solution would not decay. The exact number of negative-energy bound states is</p>
+<div class="display-math">\[\boxed{N_{\rm bound}=\left\lceil\frac{2P}{\pi}\right\rceil\qquad(P&gt;0).}\]</div>
+<p>Three bound states exist exactly when</p>
+<div class="display-math">\[\boxed{P&gt;\pi\quad\Longleftrightarrow\quad U&gt;\frac{\pi^2\hbar^2}{2ma^2}.}\]</div>
+<p>Any attractive finite square well in one dimension has at least one bound state.</p>
+<p><strong>Step 9: Numerically determine and plot the first three states.</strong> The assignment supplies no numerical well parameters, so we choose \(P=4\) solely for illustration. This lies in \(\pi<P<3\pi/2\) and supports exactly three bound states. Let \(\varepsilon_0=\hbar^2/(2ma^2)\), so \(U=16\varepsilon_0\). Solve the monotone equation (see \(\LaTeX\) source: eq:unifiedf) for \(n=0,1,2\). The results are listed in \Cref{tab:finite_roots}; the roots were independently checked by direct substitution into the parity equations.</p>
+<details class="latex-table"><summary>View original LaTeX table</summary><pre>\begin{table}[htbp]\centering
+\caption{First three finite-well bound states for $P=4$, with zero energy outside the well. The normalization uses the dimensionless coordinate $u=x/a$.}
+\label{tab:finite_roots}
+\begin{tabular}{@{}llllrr@{}}\toprule
+State &amp; Parity &amp; $z_n=k_na$ &amp; $q_n=\kappa_na$ &amp; $E_n/\varepsilon_0$ &amp; $\sqrt a\,N_n$\\\midrule
+$n=0$ &amp; even &amp; $1.252353$ &amp; $3.798896$ &amp; $-14.431611$ &amp; $0.889730$\\
+$n=1$ &amp; odd  &amp; $2.474577$ &amp; $3.142685$ &amp; $-9.876470$  &amp; $0.870983$\\
+$n=2$ &amp; even &amp; $3.595305$ &amp; $1.753221$ &amp; $-3.073783$  &amp; $0.797991$\\\bottomrule
+\end{tabular}
+\end{table}</pre></details>
+<p>Define \(u=x/a\) and \(\varphi_n(u)=\sqrt a\,\psi_n(au)\). The normalized dimensionless amplitudes are \(\sqrt a\,N_n=(1+1/q_n)^{-1/2}\), and \(\int_\R\abs{\varphi_n(u)}^2\,\dd u=1\). The original vector figures (source: fig:finite_levels)–(source: fig:finite_densities) use the exact piecewise functions with these numerical roots and show both interior oscillations and exterior exponential tails.</p>
+<aside class="hint">The original LaTeX source contains the accompanying figure and its code.</aside>
+<aside class="hint">The original LaTeX source contains the accompanying figure and its code.</aside>
+<aside class="hint">The original LaTeX source contains the accompanying figure and its code.</aside>
+<p><strong>Step 10: Find the exterior detection probability.</strong> From the normalized even or odd tails, the exact probability outside the geometrical well is</p>
+<div class="display-math">\[\begin{aligned}P_{\rm out}^{(+)}&amp;=2N_n^2\cos^2(k_na)\int_a^\infty \ee^{-2\kappa_n(x-a)}\,\dd x=\frac{N_n^2\cos^2(k_na)}{\kappa_n},\\
+P_{\rm out}^{(-)}&amp;=\frac{N_n^2\sin^2(k_na)}{\kappa_n}.\end{aligned}\]</div>
+<p>Since \(N_n^2=1/(a+1/\kappa_n)\), these can be written in dimensionless form as \(\cos^2z_n/(q_n+1)\) (even) or \(\sin^2z_n/(q_n+1)\) (odd). For the \(P=4\) example,</p>
+<div class="display-math">\[\boxed{P_{\rm out,0}\simeq2.04\%,\quad P_{\rm out,1}\simeq9.24\%,\quad P_{\rm out,2}\simeq29.34\%.}\]</div>
+<p>These probabilities grow with increasing energy toward the continuum threshold in this example. A finite well has a <em>finite</em> bound spectrum, in contrast to the infinite well. The plotted eigenfunctions have respectively zero, one, and two interior nodes.</p>
+<p><strong>Step 11: Infinite-well limit.</strong> With fixed \(a,m\) and \(U\to\infty\), the low-lying boundary amplitudes and penetration lengths tend to zero, while the energies measured from the bottom of the well approach the infinite-well values for width \(L=2a\):</p>
+<div class="display-math">\[E_n+U\longrightarrow\frac{n^2\pi^2\hbar^2}{8ma^2},\qquad n=1,2,\ldots\quad\text{(fixed $n$)}.\]</div>
+<p>This reproduces the Dirichlet spectrum of Problem B5 after the appropriate shift in the energy zero.</p><p class="small"><a href="#b7">Link to this solution</a> · <a href="sources/assignment-ii.tex">LaTeX source</a></p></div></details></section></main><section class="ack" id="acknowledgments"><h2>Acknowledgments, references and academic integrity</h2><p>These independent study notes are based on Quantum Mechanics–I coursework question sheets supplied by the Department of Physics &amp; Nanotechnology, SRM Institute of Science and Technology (SRMIST), Kattankulathur. The original problems are acknowledged to the course context and instructors. The expanded explanations and solution manuscripts were compiled for study by Kumar Azad, with AI assistance in drafting and LaTeX typesetting.</p><p>The archive is <strong>not an official SRMIST answer key</strong>, has not been independently certified by instructors, and is neither an arXiv submission nor a peer-reviewed research paper. Mathematical statements should be cross-checked against the question sheets and reference textbooks before reuse or academic submission.</p><p>Useful background reading includes D. J. Griffiths and D. F. Schroeter, <em>Introduction to Quantum Mechanics</em>; J. J. Sakurai and J. Napolitano, <em>Modern Quantum Mechanics</em>; and R. Shankar, <em>Principles of Quantum Mechanics</em>. See each source manuscript for its detailed references and assumptions.</p></section><footer>© 2026 Kumar Azad · Educational material, not an official institutional publication.</footer></div><script>
+const ps=[...document.querySelectorAll('details.problem')];async function typeset(el){if(el.dataset.mathdone)return;const mj=window.MathJax;if(mj?.typesetPromise){await mj.typesetPromise([el]);el.dataset.mathdone='1';}}
+async function expand(){ps.forEach(p=>p.open=true);if(window.MathJax?.typesetPromise)await MathJax.typesetPromise(ps);ps.forEach(p=>p.dataset.mathdone='1');}
+ps.forEach(p=>p.addEventListener('toggle',()=>{if(p.open)typeset(p)}));document.getElementById('expand').onclick=expand;document.getElementById('collapse').onclick=()=>ps.forEach(p=>p.open=false);document.getElementById('print').onclick=async()=>{await expand();window.print()};
+function openHash(){const id=decodeURIComponent(location.hash.slice(1));const p=document.getElementById(id);if(p&&p.matches('details.problem')){p.open=true;typeset(p)}}addEventListener('hashchange',openHash);addEventListener('load',openHash);document.addEventListener('DOMContentLoaded',openHash);
+</script></body></html>

@@ -1,0 +1,507 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Oscillators, ladder operators and time evolution"><title>Assignment III — Complete Solutions | Kumar Azad</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],tags:'ams',processEscapes:true,macros:{"dd":"\\mathrm{d}","iu":"\\mathrm{i}","ee":"\\mathrm{e}","Hil":"\\mathcal H","Dom":"\\mathcal D","R":"\\mathbb R","C":"\\mathbb C","id":"\\mathbb I","avg":["\\langle #1\\rangle",1],"pmean":["\\langle #1\\rangle",1],"Var":"\\operatorname{Var}","Cov":"\\operatorname{Cov}","bra":["\\langle #1|",1],"ket":["|#1\\rangle",1],"braket":["\\langle #1|#2\\rangle",2],"ip":["\\langle #1|#2\\rangle",2],"norm":["\\lVert #1\\rVert",1],"abs":["\\lvert #1\\rvert",1],"p":"\\partial","Hh":"\\mathcal H","eps":"\\varepsilon_0","lap":"\\nabla^2","aH":"a_{\\mathrm H}","mH":"\\mu_{\\mathrm H}","Lop":"\\hat{\\mathbf L}","op":["\\hat{#1}",1],"HH":"\\mathcal H","UU":"\\hat U","PP":"\\hat{\\mathcal P}","grad":"\\boldsymbol\\nabla","tr":"\\operatorname{tr}","half":"\\tfrac12"}},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><div class="wrap"><nav class="nav"><a href="../../../">← Personal Homepage</a><a href="./">All 100 problems</a><a href="../../">Lecture Notes</a><a href="../../../quantum-mechanics/">Theory notes</a></nav><header><p class="eyebrow">Coursework / Lecture Notes / Quantum Mechanics</p><h1>Assignment III</h1><p class="lead">Oscillators, ladder operators and time evolution. Each original question is followed by its full mathematical derivation, assumptions and examination conclusions.</p><p class="meta">Kumar Azad · M.Sc. Physics · SRMIST · Part A (10) + Part B (9) · November 2026</p></header><div class="actions"><a class="pill" href="./">Browse all assignments</a><a class="pill" href="sources/assignment-iii.tex">Download editable LaTeX</a><a class="pill" href="../../../quantum-mechanics/">Concept notes</a></div><aside class="notice">Select any problem below to display its complete worked solution. Mathematics is typeset with MathJax. The original LaTeX file preserves figure code and equation labels. For a full printable document, use “Expand all” and then “Print / Save as PDF.”</aside><h2>Problem index</h2><div class="grid"><a class="item" href="#a1"><span class="tiny">Part A · Problem 1</span><strong>Hermitian conjugates of the ladder operators</strong></a>
+<a class="item" href="#a2"><span class="tiny">Part A · Problem 2</span><strong>Canonical ladder commutator</strong></a>
+<a class="item" href="#a3"><span class="tiny">Part A · Problem 3</span><strong>Why creation raises and annihilation lowers energy</strong></a>
+<a class="item" href="#a4"><span class="tiny">Part A · Problem 4</span><strong>Harmonic oscillator Hamiltonian in terms of the number operator</strong></a>
+<a class="item" href="#a5"><span class="tiny">Part A · Problem 5</span><strong>Hermiticity and self-adjointness of the number operator</strong></a>
+<a class="item" href="#a6"><span class="tiny">Part A · Problem 6</span><strong>Asymptotic form of the oscillator energy eigenfunctions</strong></a>
+<a class="item" href="#a7"><span class="tiny">Part A · Problem 7</span><strong>Equality of expectation values in Schr&amp;quot;odinger and Heisenberg pictures</strong></a>
+<a class="item" href="#a8"><span class="tiny">Part A · Problem 8</span><strong>State and prove Ehrenfest's theorem</strong></a>
+<a class="item" href="#a9"><span class="tiny">Part A · Problem 9</span><strong>Time-evolution operator, unitarity, and the exponential formula</strong></a>
+<a class="item" href="#a10"><span class="tiny">Part A · Problem 10</span><strong>Bloch's theorem for a one-dimensional periodic potential</strong></a>
+<a class="item" href="#b1"><span class="tiny">Part B · Problem 1</span><strong>Ground-state energy and eigenfunction by the algebraic method</strong></a>
+<a class="item" href="#b2"><span class="tiny">Part B · Problem 2</span><strong>Position–momentum uncertainty in the n-th oscillator eigenstate</strong></a>
+<a class="item" href="#b3"><span class="tiny">Part B · Problem 3</span><strong>Kinetic, potential, and total energy expectations</strong></a>
+<a class="item" href="#b4"><span class="tiny">Part B · Problem 4</span><strong>Rate of change of the expectation value of an observable</strong></a>
+<a class="item" href="#b5"><span class="tiny">Part B · Problem 5</span><strong>Free-particle expectation-value equations</strong></a>
+<a class="item" href="#b6"><span class="tiny">Part B · Problem 6</span><strong>Force operator of the one-dimensional harmonic oscillator</strong></a>
+<a class="item" href="#b7"><span class="tiny">Part B · Problem 7</span><strong>The Schr&amp;quot;odinger picture of time evolution</strong></a>
+<a class="item" href="#b8"><span class="tiny">Part B · Problem 8</span><strong>The Heisenberg picture and its general equation of motion</strong></a>
+<a class="item" href="#b9"><span class="tiny">Part B · Problem 9</span><strong>Exact Heisenberg evolution of position and momentum for a 1D SHO</strong></a></div><div class="controls"><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button><button id="print" type="button">Print / Save as PDF</button></div><main><section><h2>Part A · 10 problems</h2><details class="problem" id="a1"><summary><span class="num">A1</span><span>Hermitian conjugates of the ladder operators</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Find the Hermitian conjugate of \(\hat a_\pm\).</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Define the operators.</strong> For the one-dimensional harmonic oscillator,</p>
+<div class="display-math">\[\hat a_- = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat x+\frac{\iu}{m\omega}\hat p\right),\qquad
+\hat a_+ = \sqrt{\frac{m\omega}{2\hbar}}\left(\hat x-\frac{\iu}{m\omega}\hat p\right).\]</div>
+<p>The position and momentum observables are self-adjoint: \(\hat x^\dagger=\hat x\), \(\hat p^\dagger=\hat p\). The coefficient \(\sqrt{m\omega/(2\hbar)}\) is real.</p>
+<p><strong>Step 2: Take the adjoint term by term.</strong> Using \((cA)^\dagger=c^*A^\dagger\), \((A+B)^\dagger=A^\dagger+B^\dagger\), and \(\iu^*=-\iu\),</p>
+<div class="display-math">\[\begin{aligned}\hat a_-^\dagger
+&amp;=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x^\dagger-\frac{\iu}{m\omega}\hat p^\dagger\right)\\
+&amp;=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x-\frac{\iu\hat p}{m\omega}\right)=\hat a_+.\end{aligned}\]</div>
+<p>Similarly,</p>
+<div class="display-math">\[\hat a_+^\dagger=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x+\frac{\iu\hat p}{m\omega}\right)=\hat a_-.\]</div>
+<div class="answer-box">\[\boxed{\hat a_-^\dagger=\hat a_+,\qquad\hat a_+^\dagger=\hat a_-.}\]</div>
+<p><strong>Check in position space.</strong> Since \(\hat p=-\iu\hbar\partial_x\), the lowering operator becomes \(\hat a_-=\sqrt{\frac{m\omega}{2\hbar}}\left(x+\frac{\hbar}{m\omega}\partial_x\right)\). On square-integrable functions decaying so that integration-by-parts surface terms vanish, \((\partial_x)^\dagger=-\partial_x\); hence its formal adjoint is the raising operator. These formulas are adjoint relations on the appropriate oscillator domains, not statements that each operator is individually Hermitian.</p>
+<p><strong>Exam-ready conclusion.</strong> The ladder operators are mutual Hermitian adjoints, <em>not</em> individually Hermitian: \(\hat a_+\neq \hat a_+^\dagger\) and \(\hat a_-\neq\hat a_-^\dagger\) in general.</p><p class="small"><a href="#a1">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a2"><summary><span class="num">A2</span><span>Canonical ladder commutator</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \([\hat a_-,\hat a_+]=1\).</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Introduce a convenient coefficient.</strong> Let \(c=\sqrt{m\omega/(2\hbar)}\) and \(d=1/(m\omega)\). Then</p>
+<div class="display-math">\[\hat a_-=c(\hat x+\iu d\hat p),\qquad \hat a_+=c(\hat x-\iu d\hat p).\]</div>
+<p><strong>Step 2: Expand the commutator.</strong></p>
+<div class="display-math">\[\begin{aligned}[\hat a_-,\hat a_+]
+&amp;=c^2[\hat x+\iu d\hat p,\hat x-\iu d\hat p]\\
+&amp;=c^2\left(-\iu d[\hat x,\hat p]+\iu d[\hat p,\hat x]\right).\end{aligned}\]</div>
+<p>The terms \([\hat x,\hat x]\) and \([\hat p,\hat p]\) vanish. Use \([\hat x,\hat p]=\iu\hbar\id\) and \([\hat p,\hat x]=-\iu\hbar\id\):</p>
+<div class="display-math">\[\begin{aligned}[\hat a_-,\hat a_+]
+&amp;=c^2\left[-\iu d(\iu\hbar)+\iu d(-\iu\hbar)\right]\id\\
+&amp;=2c^2d\hbar\id
+=2\left(\frac{m\omega}{2\hbar}\right)\frac{\hbar}{m\omega}\id=\id.\end{aligned}\]</div>
+<div class="answer-box">\[\boxed{[\hat a_-,\hat a_+]=\hat I.}\]</div>
+<p>Equivalently \(\hat a_-\hat a_+=\hat a_+\hat a_-+\hat I\). This noncommutativity is ultimately inherited from \([\hat x,\hat p]=\iu\hbar\hat I\).</p><p class="small"><a href="#a2">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a3"><summary><span class="num">A3</span><span>Why creation raises and annihilation lowers energy</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain why \(\hat a_+\) and \(\hat a_-\) are called raising and lowering operators respectively.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Define the number operator.</strong> Set \(\hat N=\hat a_+\hat a_-\). The commutator identity \([AB,C]=A[B,C]+[A,C]B\) gives</p>
+<div class="display-math">\[\begin{aligned}[\hat N,\hat a_-]&amp;=\hat a_+[\hat a_-,\hat a_-]+[\hat a_+,\hat a_-]\hat a_-=-\hat a_-,\\
+[\hat N,\hat a_+]&amp;=\hat a_+[\hat a_-,\hat a_+]+[\hat a_+,\hat a_+]\hat a_-=\hat a_+.\end{aligned}\]</div>
+<p><strong>Step 2: Act on a number eigenstate.</strong> If \(\hat N\ket n=n\ket n\), then</p>
+<div class="display-math">\[\begin{aligned}\hat N(\hat a_+\ket n)&amp;=(\hat a_+\hat N+[\hat N,\hat a_+])\ket n=(n+1)\hat a_+\ket n,\\
+\hat N(\hat a_-\ket n)&amp;=(\hat a_-\hat N+[\hat N,\hat a_-])\ket n=(n-1)\hat a_-\ket n.\end{aligned}\]</div>
+<p>So \(\hat a_+\ket n\) lies in the \(n+1\) sector and \(\hat a_-\ket n\) in the \(n-1\) sector (unless the latter vanishes at \(n=0\)).</p>
+<p><strong>Step 3: Determine the coefficients by normalization.</strong> Write \(\hat a_-\ket n=c_n\ket{n-1}\). Taking the squared norm,</p>
+<div class="display-math">\[|c_n|^2=\bra n\hat a_+\hat a_-\ket n=\bra n\hat N\ket n=n.\]</div>
+<p>Choosing the standard real positive phase convention gives \(c_n=\sqrt n\). Similarly,</p>
+<div class="display-math">\[\norm{\hat a_+\ket n}^2=\bra n\hat a_-\hat a_+\ket n=\bra n(\hat N+\id)\ket n=n+1.\]</div>
+<p>Thus,</p>
+<div class="answer-box">\[\boxed{\hat a_+\ket n=\sqrt{n+1}\ket{n+1},\qquad\hat a_-\ket n=\sqrt n\ket{n-1}.}\]</div>
+<p>The energy is \(E_n=\hbar\omega(n+1/2)\), so the energy steps are \(E_{n+1}-E_n=\hbar\omega\). The lowering operator terminates at \(\hat a_-\ket0=0\).</p><p class="small"><a href="#a3">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a4"><summary><span class="num">A4</span><span>Harmonic oscillator Hamiltonian in terms of the number operator</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Express the Hamiltonian of a one-dimensional simple harmonic oscillator in terms of the number operator.</p></aside><h3>Detailed worked solution</h3><p>The harmonic oscillator Hamiltonian is \(\hat H=\hat p^2/(2m)+m\omega^2\hat x^2/2\). From the operator definitions,</p>
+<div class="display-math">\[\begin{aligned}\hat a_+\hat a_-
+&amp;=\frac{m\omega}{2\hbar}\left(\hat x-\frac{\iu\hat p}{m\omega}\right)\left(\hat x+\frac{\iu\hat p}{m\omega}\right)\\
+&amp;=\frac{m\omega}{2\hbar}\left[\hat x^2+\frac{\hat p^2}{m^2\omega^2}+\frac{\iu}{m\omega}(\hat x\hat p-\hat p\hat x)\right].\end{aligned}\]</div>
+<p>Using \([\hat x,\hat p]=\iu\hbar\hat I\),</p>
+<div class="display-math">\[\begin{aligned}\hat N=\hat a_+\hat a_-&amp;=\frac{m\omega}{2\hbar}\hat x^2+\frac{\hat p^2}{2m\hbar\omega}-\frac12\hat I\\
+&amp;=\frac{\hat H}{\hbar\omega}-\frac12\hat I.\end{aligned}\]</div>
+<p>Rearrange:</p>
+<div class="answer-box">\[\boxed{\hat H=\hbar\omega\left(\hat N+\frac12\hat I\right),\qquad\hat N=\hat a_+\hat a_-.}\]</div>
+<p>Because \(\hat N\ket n=n\ket n\), the exact energies are \(E_n=\hbar\omega(n+1/2)\), with ground energy \(\hbar\omega/2\).</p><p class="small"><a href="#a4">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a5"><summary><span class="num">A5</span><span>Hermiticity and self-adjointness of the number operator</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the number operator \(\hat N\) is Hermitian.</p></aside><h3>Detailed worked solution</h3><p>Using \(\hat N=\hat a_+\hat a_-\) and \((AB)^\dagger=B^\dagger A^\dagger\),</p>
+<div class="display-math">\[\begin{aligned}\hat N^\dagger&amp;=(\hat a_+\hat a_-)^\dagger=\hat a_-^\dagger\hat a_+^\dagger=\hat a_+\hat a_-=\hat N.\end{aligned}\]</div>
+<div class="answer-box">\[\boxed{\hat N^\dagger=\hat N.}\]</div>
+<p>Furthermore, for states in the natural domain,</p>
+<div class="display-math">\[\bra\psi\hat N\ket\psi=\bra\psi\hat a_-^\dagger\hat a_-\ket\psi=\norm{\hat a_-\ket\psi}^2\ge0,\]</div>
+<p>so \(\hat N\) is positive semidefinite.</p>
+<p><strong>Operator-domain qualification.</strong> The bare formal identity does not by itself prove equality of full adjoint domains for arbitrary products of unbounded operators. For the oscillator, the number operator is rigorously self-adjoint in the Fock basis on</p>
+<div class="display-math">\[D(\hat N)=\left\{\psi=\sum_{n=0}^{\infty}c_n\ket n:\ \sum_{n=0}^{\infty}n^2|c_n|^2&lt;\infty\right\},\]</div>
+<p>with \(\hat N\psi=\sum_nnc_n\ket n\). Its spectrum is \(0,1,2,\ldots\), consistent with the operator's nonnegativity.</p><p class="small"><a href="#a5">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a6"><summary><span class="num">A6</span><span>Asymptotic form of the oscillator energy eigenfunctions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the asymptotic form of the simple harmonic oscillator (SHO) energy eigenfunctions.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Write the stationary equation.</strong> With \(V(x)=m\omega^2x^2/2\),</p>
+<div class="display-math">\[-\frac{\hbar^2}{2m}\psi''(x)+\frac12m\omega^2x^2\psi(x)=E\psi(x).\]</div>
+<p>Introduce the dimensionless coordinate \(\xi=\sqrt{m\omega/\hbar}\,x\) and \(\epsilon=E/(\hbar\omega)\). The equation becomes</p>
+<div class="display-math">\[\frac{\dd^2\psi}{\dd\xi^2}+(2\epsilon-\xi^2)\psi=0.\]</div>
+<p><strong>Step 2: Determine the dominant large-\(|\xi|\) behavior.</strong> For \(|\xi|\gg1\), the \(-\xi^2\) term dominates, and the leading equation is \(\psi''-\xi^2\psi\simeq0\). Its exponential leading terms are \(\psi\sim\exp(\pm\xi^2/2)\). Square-integrability excludes the growing branch \(\exp(+\xi^2/2)\), leaving</p>
+<div class="display-math">\[\psi(\xi)\sim \ee^{-\xi^2/2}\times\text{polynomial/algebraic factor}.\]</div>
+<p><strong>Step 3: Obtain the polynomial factor.</strong> Put \(\psi(\xi)=h(\xi)\ee^{-\xi^2/2}\). Differentiating twice,</p>
+<div class="display-math">\[\psi''=\ee^{-\xi^2/2}\left(h''-2\xi h'+(\xi^2-1)h\right).\]</div>
+<p>Substitution yields</p>
+<div class="display-math">\[h''-2\xi h'+(2\epsilon-1)h=0.\]</div>
+<p>For bound-state solutions, termination of the appropriate power series produces a Hermite polynomial \(H_n(\xi)\), where \(2\epsilon-1=2n\) and \(\epsilon=n+1/2\), \(n\in\mathbb N_0\).</p>
+<p>The exact normalized eigenfunctions are</p>
+<div class="display-math">\[\psi_n(x)=\frac{1}{\sqrt{2^nn!}}\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}
+H_n\!\left(\sqrt{\frac{m\omega}{\hbar}}x\right)\ee^{-m\omega x^2/(2\hbar)}.\]</div>
+<p>Since \(H_n(\xi)=2^n\xi^n+O(\xi^{n-2})\) as \(|\xi|\to\infty\) for \(n\ge2\), the leading tail is</p>
+<div class="answer-box">\[\boxed{\psi_n(x)\sim C_nx^n\exp\!\left(-\frac{m\omega x^2}{2\hbar}\right),\quad |x|\to\infty.}\]</div>
+<p>Here \(C_n\neq0\) is the appropriate \(n\)-dependent constant. The Gaussian suppression dominates the power \(x^n\), so the eigenfunctions are square-integrable.</p><p class="small"><a href="#a6">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a7"><summary><span class="num">A7</span><span>Equality of expectation values in Schr&amp;quot;odinger and Heisenberg pictures</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the expectation value of an observable is the same in both Schr&amp;quot;odinger and Heisenberg pictures of time evolution: \(\langle\hat A\rangle_S=\langle\hat A\rangle_H\).</p></aside><h3>Detailed worked solution</h3><p>In the Schr&amp;quot;odinger picture, the state is \(\ket{\psi_S(t)}=\hat U(t,t_0)\ket{\psi_S(t_0)}\). In the Heisenberg picture, define the fixed state \(\ket{\psi_H}=\ket{\psi_S(t_0)}\) and the evolved observable</p>
+<div class="display-math">\[\hat A_H(t)=\hat U^\dagger(t,t_0)\hat A_S(t)\hat U(t,t_0).\]</div>
+<p>The Schr&amp;quot;odinger expectation value is</p>
+<div class="display-math">\[\begin{aligned}\avg{\hat A}_S(t)&amp;=\bra{\psi_S(t)}\hat A_S(t)\ket{\psi_S(t)}\\
+&amp;=\bra{\psi_H}\hat U^\dagger\hat A_S(t)\hat U\ket{\psi_H}\\
+&amp;=\bra{\psi_H}\hat A_H(t)\ket{\psi_H}=\avg{\hat A}_H(t).\end{aligned}\]</div>
+<div class="answer-box">\[\boxed{\avg{\hat A}_S(t)=\avg{\hat A}_H(t).}\]</div>
+<p>This is an exact unitary equivalence, including the case of an explicitly time-dependent observable. If \(\hat P_S\) is a spectral projector for a measurement event, its corresponding \(\hat P_H=\hat U^\dagger\hat P_S\hat U\) gives the same probability, proving equality of the complete measurement statistics.</p>
+<p><strong>Example.</strong> For a harmonic oscillator with \(\tau=t-t_0\), \(\hat x_H(t)=\hat x\cos\omega\tau+\hat p\sin\omega\tau/(m\omega)\). Thus, in the fixed initial state,</p>
+<div class="display-math">\[\avg{x}_H(t)=x_0\cos(\omega\tau)+\frac{p_0}{m\omega}\sin(\omega\tau),\]</div>
+<p>which agrees with the Schr&amp;quot;odinger result obtained from \(\hat U\ket{\psi(t_0)}\).</p><p class="small"><a href="#a7">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a8"><summary><span class="num">A8</span><span>State and prove Ehrenfest's theorem</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>State Ehrenfest's theorem.</p></aside><h3>Detailed worked solution</h3><p><strong>Statement.</strong> Let \(\hat A_S(t)\) be an observable for which all relevant derivatives and expectations exist. Then</p>
+<div class="answer-box">\[\boxed{\frac{\dd}{\dd t}\avg{\hat A}=\frac{\iu}{\hbar}\avg{[\hat H,\hat A]}+\avg{\frac{\partial\hat A}{\partial t}}.}\]</div>
+<p><strong>Proof.</strong> Start with \(\avg{\hat A}=\bra\psi\hat A\ket\psi\). Differentiating the bra, observable and ket,</p>
+<div class="display-math">\[\frac{\dd}{\dd t}\avg{\hat A}=\bra{\dot\psi}\hat A\ket\psi+\bra\psi\partial_t\hat A\ket\psi+\bra\psi\hat A\ket{\dot\psi}.\]</div>
+<p>The Schr&amp;quot;odinger equation \(\iu\hbar\ket{\dot\psi}=\hat H\ket\psi\) and its adjoint give \(\ket{\dot\psi}=-\iu\hat H\ket\psi/\hbar\) and \(\bra{\dot\psi}=+\iu\bra\psi\hat H/\hbar\). Hence</p>
+<div class="display-math">\[\begin{aligned}\frac{\dd}{\dd t}\avg{\hat A}
+&amp;=\frac{\iu}{\hbar}\bra\psi\hat H\hat A\ket\psi-\frac{\iu}{\hbar}\bra\psi\hat A\hat H\ket\psi+\avg{\partial_t\hat A}\\
+&amp;=\frac{\iu}{\hbar}\avg{[\hat H,\hat A]}+\avg{\partial_t\hat A}.\end{aligned}\]</div>
+<p><strong>Position example.</strong> For \(\hat H=\hat p^2/(2m)+V(\hat x,t)\), the identities \([\hat p^2,\hat x]=-2\iu\hbar\hat p\) and \([V(\hat x,t),\hat p]=\iu\hbar V'(\hat x,t)\) yield</p>
+<div class="display-math">\[\boxed{\frac{\dd\avg{x}}{\dd t}=\frac{\avg p}{m},\qquad\frac{\dd\avg p}{\dd t}=-\avg{V'(\hat x,t)}.}\]</div>
+<p>Thus \(m\ddot{\avg x}=-\avg{V'(\hat x,t)}\). For the quadratic oscillator \(V=m\omega^2x^2/2\), the mean follows \(\ddot{\avg x}+\omega^2\avg x=0\) exactly. For a nonlinear \(V\), one cannot generally replace \(\avg{V'(\hat x)}\) by \(V'(\avg x)\).</p><p class="small"><a href="#a8">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a9"><summary><span class="num">A9</span><span>Time-evolution operator, unitarity, and the exponential formula</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Define time evolution operator. Show that it is unitary. Obtain its explicit form for a constant Hamiltonian.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part A Problem 9 rigorously from scratch: define the quantum time-evolution operator \(U(t,t_0)\), derive its differential equation from the Schr&amp;quot;odinger equation, prove unitarity and composition properties, obtain \(U=\exp[-iH(t-t_0)/\hbar]\) for a time-independent self-adjoint Hamiltonian, and provide an examination-ready solution.</p>
+</aside>
+<p><strong>Step 1: Definition and initial condition.</strong> A closed-system propagator maps an initial state to its evolved state:</p>
+<div class="display-math">\[\ket{\psi(t)}=\hat U(t,t_0)\ket{\psi(t_0)},\qquad\hat U(t_0,t_0)=\hat I.\]</div>
+<p>Its composition law is</p>
+<div class="display-math">\[\hat U(t_2,t_1)\hat U(t_1,t_0)=\hat U(t_2,t_0),\qquad\hat U(t,t_0)^{-1}=\hat U(t_0,t).\]</div>
+<p>The first identity follows by evolving an arbitrary state through the intermediate time \(t_1\); the second follows by choosing the intermediate evolution to return to the initial time.</p>
+<p><strong>Step 2: Differential equation.</strong> The time-dependent Schr&amp;quot;odinger equation \(\iu\hbar\partial_t\ket{\psi(t)}=\hat H(t)\ket{\psi(t)}\) becomes, after substitution and cancellation of an arbitrary initial ket,</p>
+<div class="display-math">\[\boxed{\iu\hbar\partial_t\hat U(t,t_0)=\hat H(t)\hat U(t,t_0).}\]</div>
+<p>Thus \(\partial_t\hat U=-\iu\hat H(t)\hat U/\hbar\).</p>
+<p><strong>Step 3: Unitarity.</strong> Taking the adjoint for self-adjoint \(\hat H(t)\) gives \(\partial_t\hat U^\dagger=+\iu\hat U^\dagger\hat H/\hbar\). Therefore,</p>
+<div class="display-math">\[\begin{aligned}\partial_t(\hat U^\dagger\hat U)
+&amp;=(\partial_t\hat U^\dagger)\hat U+\hat U^\dagger\partial_t\hat U\\
+&amp;=\frac{\iu}{\hbar}\hat U^\dagger\hat H\hat U-\frac{\iu}{\hbar}\hat U^\dagger\hat H\hat U=0.\end{aligned}\]</div>
+<p>By the initial condition, \(\hat U^\dagger\hat U=\hat I\). The reversible two-sided propagator supplies \(\hat U^{-1}=\hat U^\dagger\), hence \(\hat U\hat U^\dagger=\hat I\) as well. In infinite-dimensional spaces, the first identity alone would show only isometry; the inverse supplies surjectivity.</p>
+<div class="display-math">\[\boxed{\hat U^\dagger\hat U=\hat U\hat U^\dagger=\hat I.}\]</div>
+<p><strong>Step 4: Constant Hamiltonian.</strong> If \(\hat H(t)=\hat H\), the linear operator ODE with \(\hat U(t_0,t_0)=\hat I\) has the solution</p>
+<div class="answer-box">\[\boxed{\hat U(t,t_0)=\exp\!\left[-\frac{\iu\hat H(t-t_0)}{\hbar}\right].}\]</div>
+<p>For a bounded \(\hat H\) one checks by differentiating its power series. For an unbounded self-adjoint \(\hat H\), the rigorous definition uses spectral calculus:</p>
+<div class="display-math">\[\hat U(t,t_0)=\int_{\R}\ee^{-\iu E(t-t_0)/\hbar}\,\dd\hat P(E).\]</div>
+<p>Every spectral phase has modulus one, proving full unitarity. For a discrete complete energy eigenbasis, \(\hat U=\sum_n\ee^{-\iu E_n\tau/\hbar}\ket n\bra n\), and \(\ket{n,t}=\ee^{-\iu E_n\tau/\hbar}\ket n\).</p>
+<p><strong>Time-dependent qualification.</strong> In general \(\hat U=\mathcal T\exp[-\frac{\iu}{\hbar}\int_{t_0}^t\hat H(s)\dd s]\); the plain exponential requires commuting Hamiltonians at different times.</p><p class="small"><a href="#a9">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a10"><summary><span class="num">A10</span><span>Bloch's theorem for a one-dimensional periodic potential</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>State and prove Bloch's theorem.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part A Problem 10 rigorously from scratch at M.Sc. mathematical physics level: state and prove Bloch's theorem for a periodic one-dimensional potential, establish that the lattice translation operator commutes with the Hamiltonian, derive \(\psi_k(x)=e^{ikx}u_k(x)\) with periodic \(u_k\), explain crystal momentum, reciprocal lattice and Brillouin zones, derive the Bloch boundary condition, and provide a detailed exam-ready proof.</p>
+</aside>
+<p><strong>Theorem.</strong> Let \(\hat H=-\hbar^2\partial_x^2/(2m)+V(x)\) with real periodic \(V(x+a)=V(x)\), \(a>0\). Its generalized energy eigenfunctions can be chosen in the Bloch form</p>
+<div class="answer-box">\[\boxed{\psi_{nk}(x)=\ee^{\iu kx}u_{nk}(x),\qquad u_{nk}(x+a)=u_{nk}(x).}\]</div>
+<p><strong>Step 1: Translation symmetry.</strong> Define \((\hat T_a\psi)(x)=\psi(x+a)\). This is unitary on \(L^2(\R)\), since substituting \(y=x+a\) preserves \(\int|\psi|^2\dd x\), and \(\hat T_a^{-1}=\hat T_{-a}\). For a smooth test function,</p>
+<div class="display-math">\[\begin{aligned}(\hat H\hat T_a\psi)(x)&amp;=-\frac{\hbar^2}{2m}\psi''(x+a)+V(x)\psi(x+a),\\
+(\hat T_a\hat H\psi)(x)&amp;=-\frac{\hbar^2}{2m}\psi''(x+a)+V(x+a)\psi(x+a).\end{aligned}\]</div>
+<p>By periodicity, the expressions coincide and \(\boxed{[\hat H,\hat T_a]=0}\).</p>
+<p><strong>Step 2: Eigenvalue of translation.</strong> For a finite periodic crystal of length \(L=Na\), with Born–von Karman boundary condition \(\psi(x+L)=\psi(x)\), the energy eigenspaces admit simultaneous eigenvectors of the commuting unitary translation. Write</p>
+<div class="display-math">\[\hat T_a\psi_k=\lambda\psi_k,\qquad\psi_k(x+a)=\lambda\psi_k(x).\]</div>
+<p>Because \(\hat T_a\) is unitary, \(|\lambda|=1\), so \(\lambda=\ee^{\iu ka}\) with real \(k\). The translation equation is</p>
+<div class="display-math">\[\boxed{\psi_k(x+a)=\ee^{\iu ka}\psi_k(x).}\]</div>
+<p><strong>Step 3: Periodic factor.</strong> Define \(u_k(x)=\ee^{-\iu kx}\psi_k(x)\). Then</p>
+<div class="display-math">\[\begin{aligned}u_k(x+a)&amp;=\ee^{-\iu k(x+a)}\psi_k(x+a)\\
+&amp;=\ee^{-\iu kx}\ee^{-\iu ka}\ee^{\iu ka}\psi_k(x)=u_k(x).\end{aligned}\]</div>
+<p>Hence \(\psi_k(x)=\ee^{\iu kx}u_k(x)\), with \(u_k(x+a)=u_k(x)\): Bloch's theorem.</p>
+<p><strong>Boundary conditions on one cell.</strong> For a sufficiently regular potential, the quasiperiodic boundary conditions are</p>
+<div class="display-math">\[\boxed{\psi_k(a)=\ee^{\iu ka}\psi_k(0),\qquad \psi_k'(a)=\ee^{\iu ka}\psi_k'(0).}\]</div>
+<p>For \(u_k\), these become ordinary periodic conditions \(u_k(a)=u_k(0)\) and \(u_k'(a)=u_k'(0)\).</p>
+<p><strong>Crystal momentum.</strong> Since \(\ee^{\iu(k+G)a}=\ee^{\iu ka}\) for reciprocal vectors \(G=2\pi j/a\), \(j\in\mathbb Z\), \(k\) is defined modulo \(G\). The quantity \(\hbar k\) is crystal momentum (quasimomentum), generally distinct from mechanical momentum \(\hat p\). A convenient first Brillouin zone is \(-\pi/a\le k<\pi/a\). For \(N\) periodic cells, \(\hat T_a^N=\hat I\) implies \(\ee^{\iu kNa}=1\) and</p>
+<div class="display-math">\[\boxed{k_j=\frac{2\pi j}{Na};\qquad N\text{ distinct values per Brillouin zone}.}\]</div>
+<p><strong>Unit-cell equation.</strong> Substituting \(\psi_k=\ee^{\iu kx}u_k\) into the stationary Schr&amp;quot;odinger equation produces</p>
+<div class="display-math">\[\boxed{\left[\frac{(-\iu\hbar\partial_x+\hbar k)^2}{2m}+V(x)\right]u_{nk}(x)=E_n(k)u_{nk}(x).}\]</div>
+<p>The resulting band functions satisfy \(E_n(k+G)=E_n(k)\) with consistent band labeling. Infinite-crystal Bloch waves are generalized eigenfunctions; the complete rigorous framework is Bloch–Floquet direct-integral theory.</p><p class="small"><a href="#a10">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details></section><section><h2>Part B · 9 problems</h2><details class="problem" id="b1"><summary><span class="num">B1</span><span>Ground-state energy and eigenfunction by the algebraic method</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the ground-state energy eigenfunction (up to the normalization constant) and eigenvalue for a SHO in 1D using algebraic method.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 1 rigorously from scratch at M.Sc. mathematical physics level: derive the ground-state energy eigenfunction (up to normalization) and eigenvalue of the one-dimensional quantum simple harmonic oscillator using the algebraic ladder-operator method, establish \(a_-|0\rangle=0\), solve the resulting differential equation, explain zero-point energy, and give a detailed 15-mark exam-ready solution.</p>
+</aside>
+<p><strong>Step 1: Factorize the Hamiltonian.</strong> The oscillator Hamiltonian is</p>
+<div class="display-math">\[\hat H=\frac{\hat p^2}{2m}+\frac12m\omega^2\hat x^2.\]</div>
+<p>The lowering and raising operators are</p>
+<div class="display-math">\[\hat a_-=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x+\frac{\iu\hat p}{m\omega}\right),\quad
+\hat a_+=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x-\frac{\iu\hat p}{m\omega}\right).\]</div>
+<p>Using \([\hat x,\hat p]=\iu\hbar\id\), their product is</p>
+<div class="display-math">\[\begin{aligned}\hat a_+\hat a_-&amp;=\frac{m\omega}{2\hbar}\left[\hat x^2+\frac{\hat p^2}{m^2\omega^2}+\frac{\iu}{m\omega}[\hat x,\hat p]\right]\\
+&amp;=\frac{\hat H}{\hbar\omega}-\frac12\hat I.\end{aligned}\]</div>
+<p>Thus,</p>
+<div class="display-math">\[\boxed{\hat H=\hbar\omega\left(\hat a_-^\dagger\hat a_-+\frac12\hat I\right).}\]</div>
+<p><strong>Step 2: Prove the energy lower bound.</strong> For every normalized state in the form domain,</p>
+<div class="display-math">\[\begin{aligned}\avg{H}_\psi&amp;=\hbar\omega\bra\psi\hat a_-^\dagger\hat a_-\ket\psi+\frac12\hbar\omega\\
+&amp;=\hbar\omega\norm{\hat a_-\ket\psi}^2+\frac12\hbar\omega\ge\frac12\hbar\omega.\end{aligned}\]</div>
+<p>Equality requires \(\norm{\hat a_-\ket\psi}=0\), so the energy-minimizing state \(\ket0\) must obey</p>
+<div class="display-math">\[\boxed{\hat a_-\ket0=0.}\]</div>
+<p>A square-integrable solution will establish that this bound is attained, hence \(E_0=\hbar\omega/2\).</p>
+<p><strong>Step 3: Convert the ground-state condition into an ODE.</strong> In the position representation \(\hat p=-\iu\hbar\partial_x\), so</p>
+<div class="display-math">\[\begin{aligned}\hat a_-\psi_0(x)&amp;=\sqrt{\frac{m\omega}{2\hbar}}\left(x+\frac{\hbar}{m\omega}\frac{\dd}{\dd x}\right)\psi_0(x)=0.\end{aligned}\]</div>
+<p>Cancel the nonzero prefactor:</p>
+<div class="display-math">\[\boxed{\frac{\dd\psi_0}{\dd x}=-\frac{m\omega}{\hbar}x\psi_0.}\]</div>
+<p>Separate variables and integrate:</p>
+<div class="display-math">\[\begin{aligned}\frac{\dd\psi_0}{\psi_0}&amp;=-\frac{m\omega}{\hbar}x\,\dd x,\\
+\ln\psi_0&amp;=-\frac{m\omega}{2\hbar}x^2+C.\end{aligned}\]</div>
+<p>Exponentiate and absorb \(\ee^C\) into \(A_0\):</p>
+<div class="answer-box">\[\boxed{\psi_0(x)=A_0\exp\!\left(-\frac{m\omega x^2}{2\hbar}\right),\qquad E_0=\frac12\hbar\omega.}\]</div>
+<p>The Gaussian is square integrable and has no nodes; as the first-order ODE determines its solution up to a scalar, the ground state is nondegenerate.</p>
+<p><strong>Step 4: Normalize.</strong> Imposing \(1=\int_{-\infty}^{\infty}|\psi_0(x)|^2\,\dd x\) and the Gaussian integral \(\int\ee^{-\alpha x^2}\dd x=\sqrt{\pi/\alpha}\) on \(\R\),</p>
+<div class="display-math">\[1=|A_0|^2\sqrt{\frac{\pi\hbar}{m\omega}},\quad
+\boxed{A_0=\left(\frac{m\omega}{\pi\hbar}\right)^{1/4}}\]</div>
+<p>with overall phase chosen zero.</p>
+<p><strong>Step 5: Verify in the original Schr&amp;quot;odinger equation.</strong> Write \(\beta=m\omega/\hbar\). Then \(\psi'_0=-\beta x\psi_0\) and \(\psi''_0=(\beta^2x^2-\beta)\psi_0\). Hence</p>
+<div class="display-math">\[\begin{aligned}\hat H\psi_0&amp;=\left[-\frac{\hbar^2}{2m}(\beta^2x^2-\beta)+\frac12m\omega^2x^2\right]\psi_0\\
+&amp;=\frac12\hbar\omega\psi_0,\end{aligned}\]</div>
+<p>confirming the eigenvalue.</p>
+<p><strong>Zero-point energy.</strong> The uncertainty relation prevents simultaneous sharp position and momentum at the classical equilibrium point. The normalized ground state has \(\avg{x}_0=\avg p_0=0\), \((\Delta x)^2_0=\hbar/(2m\omega)\), and \((\Delta p)^2_0=m\hbar\omega/2\); hence \(\Delta x\Delta p=\hbar/2\). Its nonzero minimum energy is \(\hbar\omega/2\), shared equally between kinetic and potential expectation values.</p><p class="small"><a href="#b1">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b2"><summary><span class="num">B2</span><span>Position–momentum uncertainty in the n-th oscillator eigenstate</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Verify the position–momentum uncertainty relation for the \(n\)-th eigenstate of a SHO in 1D.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 2 rigorously from scratch: verify the position–momentum uncertainty relation for the \(n\)-th energy eigenstate of the 1D quantum harmonic oscillator using ladder operators; derive \(\langle x\rangle\), \(\langle x^2\rangle\), \(\langle p\rangle\), \(\langle p^2\rangle\), their uncertainties, show \(\Delta x\Delta p=\hbar(n+1/2)\ge\hbar/2\), explain the ground state and provide a detailed 15-mark exam-ready solution.</p>
+</aside>
+<p>Let \(\hat N\ket n=n\ket n\), \(\hat a_-\ket n=\sqrt n\ket{n-1}\), \(\hat a_+\ket n=\sqrt{n+1}\ket{n+1}\), and \(\braket mn=\delta_{mn}\). Define</p>
+<div class="display-math">\[\hat x=c(\hat a_-+\hat a_+),\quad c=\sqrt{\frac{\hbar}{2m\omega}},\qquad
+\hat p=\iu d(\hat a_+-\hat a_-),\quad d=\sqrt{\frac{m\hbar\omega}{2}}.\]</div>
+<p><strong>First moments.</strong> From orthogonality of distinct number states,</p>
+<div class="display-math">\[\begin{aligned}\avg x_n&amp;=c\left(\bra n\hat a_-\ket n+\bra n\hat a_+\ket n\right)=0,\\
+\avg p_n&amp;=\iu d\left(\bra n\hat a_+\ket n-\bra n\hat a_-\ket n\right)=0.\end{aligned}\]</div>
+<p><strong>Position second moment.</strong> Noncommutativity requires the ordered expansion</p>
+<div class="display-math">\[\hat x^2=c^2\left(\hat a_-^2+\hat a_-\hat a_++\hat a_+\hat a_-+\hat a_+^2\right).\]</div>
+<p>The double raising/lowering terms connect \(\ket n\) with orthogonal states \(\ket{n\pm2}\), so their diagonal expectations vanish. Moreover,</p>
+<div class="display-math">\[\bra n\hat a_+\hat a_-\ket n=n,\qquad\bra n\hat a_-\hat a_+\ket n=n+1.\]</div>
+<p>Therefore,</p>
+<div class="display-math">\[\boxed{\avg{x^2}_n=c^2(2n+1)=\frac{\hbar}{2m\omega}(2n+1).}\]</div>
+<p><strong>Momentum second moment.</strong> Squaring \(\hat p\) gives</p>
+<div class="display-math">\[\hat p^2=d^2\left(-\hat a_+^2+\hat a_+\hat a_-+\hat a_-\hat a_+-\hat a_-^2\right).\]</div>
+<p>Only the mixed terms survive in \(\ket n\), hence</p>
+<div class="display-math">\[\boxed{\avg{p^2}_n=d^2(2n+1)=\frac{m\hbar\omega}{2}(2n+1).}\]</div>
+<p><strong>Variances and product.</strong> Since both first moments vanish,</p>
+<div class="display-math">\[\begin{aligned}(\Delta x)_n&amp;=\sqrt{\avg{x^2}_n-\avg x_n^2}=\sqrt{\frac{\hbar}{2m\omega}(2n+1)},\\
+(\Delta p)_n&amp;=\sqrt{\avg{p^2}_n-\avg p_n^2}=\sqrt{\frac{m\hbar\omega}{2}(2n+1)}.\end{aligned}\]</div>
+<p>Multiplying,</p>
+<div class="answer-box">\[\boxed{(\Delta x)_n(\Delta p)_n=\frac{\hbar}{2}(2n+1)=\hbar\left(n+\frac12\right)\ge\frac\hbar2.}\]</div>
+<p>For \(n=0\) equality holds: the Gaussian ground state is a minimum-uncertainty state. Excited number states \(n>0\) have strictly larger product. This is a statement about the number-state family; coherent and suitable squeezed Gaussian states also saturate the Heisenberg bound.</p>
+<p><strong>General uncertainty proof (for context).</strong> For normalized \(\psi\), set \(f=(\hat x-\avg x)\psi\), \(g=(\hat p-\avg p)\psi\). Cauchy–Schwarz gives \((\Delta x)^2(\Delta p)^2\ge|\langle f,g\rangle|^2\ge[\operatorname{Im}\langle f,g\rangle]^2\). The imaginary part is \(\avg{[\hat x,\hat p]}/(2\iu)=\hbar/2\), so \(\Delta x\Delta p\ge\hbar/2\) on suitable domains.</p><p class="small"><a href="#b2">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b3"><summary><span class="num">B3</span><span>Kinetic, potential, and total energy expectations</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Evaluate \(\langle T\rangle\), \(\langle V\rangle\) and \(\langle H\rangle\) for the \(n\)-th eigenstate of a 1D SHO. Show that \(\langle H\rangle=\langle T\rangle+\langle V\rangle\).</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 3 rigorously from scratch using ladder operators: calculate \(\langle T\rangle\), \(\langle V\rangle\) and \(\langle H\rangle\) for the \(n\)-th 1D harmonic oscillator energy eigenstate, prove \(\langle T\rangle=\langle V\rangle=\hbar\omega(n+1/2)/2\), show \(\langle H\rangle=\langle T\rangle+\langle V\rangle\), relate the result to the quantum virial theorem, and provide a complete 15-mark exam-ready derivation.</p>
+</aside>
+<p><strong>Step 1: Algebraic expressions.</strong> With \(\hat x=\sqrt{\hbar/(2m\omega)}(\hat a_-+\hat a_+)\) and \(\hat p=\iu\sqrt{m\hbar\omega/2}(\hat a_+-\hat a_-)\), the energies are</p>
+<div class="display-math">\[\begin{aligned}\hat T=\frac{\hat p^2}{2m}&amp;=\frac{\hbar\omega}{4}\left[-\hat a_+^2+\hat a_+\hat a_-+\hat a_-\hat a_+-\hat a_-^2\right],\\
+\hat V=\frac12m\omega^2\hat x^2&amp;=\frac{\hbar\omega}{4}\left[\hat a_-^2+\hat a_-\hat a_++\hat a_+\hat a_-+\hat a_+^2\right].\end{aligned}\]</div>
+<p>Using \(\hat a_+\hat a_-=\hat N\) and \(\hat a_-\hat a_+=\hat N+\hat I\),</p>
+<div class="display-math">\[\begin{aligned}\hat T&amp;=\frac{\hbar\omega}{4}\left(2\hat N+\hat I-\hat a_-^2-\hat a_+^2\right),\\
+\hat V&amp;=\frac{\hbar\omega}{4}\left(2\hat N+\hat I+\hat a_-^2+\hat a_+^2\right).\end{aligned}\]</div>
+<p><strong>Step 2: Expectations.</strong> The diagonal expectations of \(\hat a_\pm^2\) in \(\ket n\) vanish by orthogonality, and \(\avg N_n=n\). Therefore,</p>
+<div class="display-math">\[\begin{aligned}\avg T_n&amp;=\frac{\hbar\omega}{4}(2n+1)=\frac{\hbar\omega}{2}\left(n+\frac12\right),\\
+\avg V_n&amp;=\frac{\hbar\omega}{4}(2n+1)=\frac{\hbar\omega}{2}\left(n+\frac12\right).\end{aligned}\]</div>
+<p>Adding the two operator expressions cancels the pair terms: \(\hat H=\hbar\omega(\hat N+\hat I/2)\), so</p>
+<div class="display-math">\[\boxed{\avg H_n=\hbar\omega\left(n+\frac12\right)=\avg T_n+\avg V_n.}\]</div>
+<div class="answer-box">\[\boxed{\avg T_n=\avg V_n=\frac12\avg H_n=\frac{\hbar\omega}{4}(2n+1).}\]</div>
+<p>For \(n=0\), \(\avg T_0=\avg V_0=\hbar\omega/4\), sharing the ground-state zero-point energy.</p>
+<p><strong>Step 3: Prove the quantum virial relation.</strong> Define the symmetrized virial operator \(\hat G=(\hat x\hat p+\hat p\hat x)/2\). Direct commutators give</p>
+<div class="display-math">\[[\hat T,\hat G]=-2\iu\hbar\hat T,\qquad[\hat V,\hat G]=\iu\hbar\hat x V'(\hat x).\]</div>
+<p>Ehrenfest's theorem thus implies</p>
+<div class="display-math">\[\frac{\dd\avg G}{\dd t}=\frac{\iu}{\hbar}\avg{[\hat H,\hat G]}=2\avg T-\avg{xV'(\hat x)}.\]</div>
+<p>In a stationary bound state, the left-hand side is zero, provided the virial expectation and its derivative are well-defined. Therefore</p>
+<div class="display-math">\[\boxed{2\avg T=\avg{xV'(\hat x)}.}\]</div>
+<p>For the oscillator, \(xV'(x)=m\omega^2x^2=2V(x)\), implying \(\avg T_n=\avg V_n\) independently of ladder algebra. For arbitrary nonstationary states \(\avg T\) and \(\avg V\) need not be equal at each instant.</p>
+<p>\Needspace{12\baselineskip}</p><p class="small"><a href="#b3">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b4"><summary><span class="num">B4</span><span>Rate of change of the expectation value of an observable</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the expression for rate of change of expectation value of an observable.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 4 rigorously from scratch at M.Sc. mathematical physics level: derive the general rate of change of the expectation value of an observable from the time-dependent Schr&amp;quot;odinger equation, prove \(d\langle A\rangle/dt=(i/\hbar)\langle[H,A]\rangle+\langle\partial A/\partial t\rangle\), discuss explicitly time-dependent operators and conserved observables, provide examples, and give a detailed 15-mark exam-ready solution.</p>
+</aside>
+<p><strong>Step 1: Time-dependent Schr&amp;quot;odinger equation.</strong> Let \(\ket{\psi(t)}\) be a normalized state, \(\hat H(t)\) a self-adjoint Hamiltonian, and \(\hat A(t)\) an observable. Then</p>
+<div class="display-math">\[\iu\hbar\frac{\dd}{\dd t}\ket{\psi(t)}=\hat H(t)\ket{\psi(t)},\qquad\avg{\hat A}(t)=\bra{\psi(t)}\hat A(t)\ket{\psi(t)}.\]</div>
+<p>The ket and bra equations are</p>
+<div class="display-math">\[\ket{\dot\psi}=-\frac{\iu}{\hbar}\hat H\ket\psi,\qquad\bra{\dot\psi}=\frac{\iu}{\hbar}\bra\psi\hat H.\]</div>
+<p>The opposite signs come from complex conjugation of \(\iu\) and self-adjointness of \(\hat H\).</p>
+<p><strong>Step 2: Differentiate all three factors.</strong> The product rule gives</p>
+<div class="display-math">\[\begin{aligned}\frac{\dd}{\dd t}\avg{\hat A}&amp;=\bra{\dot\psi}\hat A\ket\psi+\bra\psi\frac{\partial\hat A}{\partial t}\ket\psi+\bra\psi\hat A\ket{\dot\psi}\\
+&amp;=\frac{\iu}{\hbar}\bra\psi\hat H\hat A\ket\psi+\avg{\partial_t\hat A}-\frac{\iu}{\hbar}\bra\psi\hat A\hat H\ket\psi\\
+&amp;=\frac{\iu}{\hbar}\avg{\hat H\hat A-\hat A\hat H}+\avg{\partial_t\hat A}.\end{aligned}\]</div>
+<p>Thus</p>
+<div class="answer-box">\[\boxed{\frac{\dd}{\dd t}\avg{\hat A}=\frac{\iu}{\hbar}\avg{[\hat H,\hat A]}+\avg{\frac{\partial\hat A}{\partial t}}.}\]</div>
+<p>The first term is the change caused by the state dynamics; the second is the explicit operator time dependence. Omitting the second term is incorrect whenever \(\hat A_S(t)\) is externally time dependent.</p>
+<p><strong>Step 3: Conserved observables.</strong> If \(\partial_t\hat A=0\) and \([\hat H(t),\hat A]=0\) at every time, the expectation is conserved in every state. More generally, the operator-level sufficient conservation condition is</p>
+<div class="display-math">\[\boxed{\partial_t\hat A+\frac{\iu}{\hbar}[\hat H,\hat A]=0.}\]</div>
+<p>A zero derivative in one special state is weaker than an operator identity.</p>
+<p><strong>Step 4: Position and momentum examples.</strong> For \(\hat H=\hat p^2/(2m)+V(\hat x,t)\), \([\hat H,\hat x]=-\iu\hbar\hat p/m\) and \([\hat H,\hat p]=\iu\hbar\,\partial_xV(\hat x,t)\). Therefore</p>
+<div class="display-math">\[\boxed{\frac{\dd\avg x}{\dd t}=\frac{\avg p}{m},\qquad\frac{\dd\avg p}{\dd t}=-\avg{\partial_xV}.}\]</div>
+<p>For the oscillator \(V=m\omega^2x^2/2\), one obtains the exact mean equation \(\ddot{\avg x}+\omega^2\avg x=0\).</p>
+<p><strong>Step 5: Explicitly time-dependent example.</strong> Let \(\hat A(t)=f(t)\hat x\) with real differentiable \(f\). Then \(\partial_t\hat A=f'(t)\hat x\), while \([\hat H,f\hat x]=f[\hat H,\hat x]\). Hence</p>
+<div class="display-math">\[\boxed{\frac{\dd}{\dd t}\avg{f(t)\hat x}=f'(t)\avg x+\frac{f(t)}m\avg p,}\]</div>
+<p>which matches the ordinary product rule. Taking \(\hat A=\hat H(t)\) yields \(\dd\avg H/\dd t=\avg{\partial_t\hat H}\). For \(\hat H(t)=\hat p^2/(2m)+\kappa(t)\hat x^2/2\), this becomes \(\dd\avg H/\dd t=\dot\kappa(t)\avg{x^2}/2\).</p>
+<p><strong>Coordinate-space check.</strong> Differentiating \(\int\psi^*(\hat A\psi)\dd x\) creates the same three terms. Substituting the Schr&amp;quot;odinger equation and its conjugate, and using self-adjointness to move \(\hat H\) between bra and ket, gives the displayed commutator formula. Boundary and domain terms must vanish or be accounted for.</p><p class="small"><a href="#b4">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b5"><summary><span class="num">B5</span><span>Free-particle expectation-value equations</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Prove the following relations for a free particle in 1D: (i) \(\frac{\dd\langle\hat p\rangle}{\dd t}=0\); (ii) \(\frac{\dd\langle\hat x\rangle}{\dd t}=\frac{\langle\hat p\rangle}{m}\).</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 5 rigorously from scratch: for a one-dimensional free particle derive \(d\langle p\rangle/dt=0\) and \(d\langle x\rangle/dt=\langle p\rangle/m\) using Hamiltonian commutators and Ehrenfest's theorem; integrate the equations, demonstrate the result using Heisenberg operators, explain free-particle wavepacket motion, and provide a detailed 15-mark exam-ready solution.</p>
+</aside>
+<p><strong>Step 1: Free Hamiltonian and Ehrenfest's equation.</strong> For \(V(x)=0\), the Hamiltonian is \(\hat H=\hat p^2/(2m)\). For time-independent \(\hat p\) and \(\hat x\),</p>
+<div class="display-math">\[\frac{\dd\avg A}{\dd t}=\frac{\iu}{\hbar}\avg{[\hat H,\hat A]}.\]</div>
+<p><strong>Step 2: Momentum.</strong> Since \(\hat p\) commutes with its powers,</p>
+<div class="display-math">\[[\hat H,\hat p]=\frac1{2m}[\hat p^2,\hat p]=\frac1{2m}(\hat p^3-\hat p^3)=0.\]</div>
+<p>Hence</p>
+<div class="display-math">\[\boxed{\frac{\dd\avg p}{\dd t}=0,\qquad\avg p(t)=p_0.}\]</div>
+<p><strong>Step 3: Position.</strong> The commutator product identity gives</p>
+<div class="display-math">\[\begin{aligned}[\hat p^2,\hat x]&amp;=\hat p[\hat p,\hat x]+[\hat p,\hat x]\hat p\\
+&amp;=\hat p(-\iu\hbar)+(-\iu\hbar)\hat p=-2\iu\hbar\hat p.\end{aligned}\]</div>
+<p>Therefore,</p>
+<div class="display-math">\[\begin{aligned}\frac{\dd\avg x}{\dd t}&amp;=\frac{\iu}{\hbar}\avg{[\hat H,\hat x]}=\frac{\iu}{2m\hbar}\avg{-2\iu\hbar\hat p}=\frac{\avg p}{m}.\end{aligned}\]</div>
+<p>Integrating from \(t_0\) yields</p>
+<div class="answer-box">\[\boxed{\avg p(t)=p_0,\qquad\avg x(t)=x_0+\frac{p_0}{m}(t-t_0).}\]</div>
+<p>This is uniform motion of the <em>mean</em>, not a sharply defined particle trajectory.</p>
+<p><strong>Step 4: Heisenberg verification.</strong> The operator equations are \(\dot{\hat p}_H=0\) and \(\dot{\hat x}_H=\hat p_H/m\). Therefore</p>
+<div class="display-math">\[\boxed{\hat p_H(t)=\hat p,\qquad\hat x_H(t)=\hat x+\frac{t-t_0}{m}\hat p.}\]</div>
+<p>Taking expectations in the fixed initial Heisenberg state exactly reproduces the preceding equations.</p>
+<p><strong>Step 5: Wavepacket motion.</strong> A normalized momentum-space state evolves as</p>
+<div class="display-math">\[\phi(p,t)=\phi(p,t_0)\ee^{-\iu p^2(t-t_0)/(2m\hbar)},\]</div>
+<p>so \(|\phi(p,t)|^2=|\phi(p,t_0)|^2\): the momentum distribution is time independent. Yet its position distribution can spread as the various momentum components accumulate different phases. In fact, with \(\tau=t-t_0\), Heisenberg evolution gives the exact variance law</p>
+<div class="display-math">\[\boxed{\Delta x^2(t)=\Delta x_0^2+\frac{2\tau}{m}\operatorname{Cov}_{\mathrm{sym}}(x,p)_0+\frac{\tau^2}{m^2}\Delta p_0^2,}\]</div>
+<p>where \(\operatorname{Cov}_{\mathrm{sym}}(x,p)=\avg{\delta\hat x\delta\hat p+\delta\hat p\delta\hat x}/2\). For an initially unchirped minimum-uncertainty Gaussian with \(\Delta x_0=\sigma_0\), \(\Delta p_0=\hbar/(2\sigma_0)\), and zero covariance,</p>
+<div class="display-math">\[\boxed{\Delta x(t)=\sigma_0\sqrt{1+\left[\frac{\hbar\tau}{2m\sigma_0^2}\right]^2}.}\]</div>
+<p>A free packet's center is uniformly translating even while its spatial width grows. Individual ideal plane waves are not normalizable on \(\R\) and do not have a finite position expectation.</p><p class="small"><a href="#b5">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b6"><summary><span class="num">B6</span><span>Force operator of the one-dimensional harmonic oscillator</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(\hat F=-k\hat x\) for a 1D SHO.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 6 rigorously from scratch: show that the force operator for a one-dimensional simple harmonic oscillator is \(\hat F=-k\hat x\), where \(k=m\omega^2\); derive it from the potential and from the Heisenberg equation for momentum, explain the quantum operator form of Hooke's law and Ehrenfest's theorem, and provide a detailed 15-mark examination-ready solution.</p>
+</aside>
+<p><strong>Step 1: Potential gradient.</strong> The oscillator potential is \(V(x)=kx^2/2\), with \(k=m\omega^2>0\). The force associated with a conservative scalar potential is \(F(x)=-V'(x)=-kx\). Functional calculus promotes this to the operator</p>
+<div class="answer-box">\[\boxed{\hat F=-V'(\hat x)=-k\hat x=-m\omega^2\hat x.}\]</div>
+<p>In position representation, \((\hat F\psi)(x)=-kx\psi(x)\). The sign is restoring: positive displacement gives force toward negative \(x\), and vice versa. Since \(\hat x\) is self-adjoint and \(k\) real, \(\hat F\) is self-adjoint on \(D(\hat x)\).</p>
+<p><strong>Step 2: Independent Heisenberg derivation.</strong> For \(\hat H=\hat p^2/(2m)+k\hat x^2/2\), the Heisenberg equation is \(\dot{\hat p}_H=(\iu/\hbar)[\hat H,\hat p_H]\). Expanding,</p>
+<div class="display-math">\[\begin{aligned}[\hat H,\hat p_H]&amp;=\frac1{2m}[\hat p_H^2,\hat p_H]+\frac{k}{2}[\hat x_H^2,\hat p_H]\\
+&amp;=\frac{k}{2}\left(\hat x_H[\hat x_H,\hat p_H]+[\hat x_H,\hat p_H]\hat x_H\right)\\
+&amp;=\frac{k}{2}(2\iu\hbar\hat x_H)=\iu\hbar k\hat x_H.\end{aligned}\]</div>
+<p>Therefore,</p>
+<div class="display-math">\[\boxed{\frac{\dd\hat p_H}{\dd t}=\frac{\iu}{\hbar}(\iu\hbar k\hat x_H)=-k\hat x_H\equiv\hat F_H.}\]</div>
+<p><strong>Step 3: Recover the oscillator equation.</strong> The position commutator gives \(\dot{\hat x}_H=\hat p_H/m\). Differentiating and substituting the force,</p>
+<div class="display-math">\[\boxed{\ddot{\hat x}_H+\omega^2\hat x_H=0,\qquad\omega^2=k/m.}\]</div>
+<p>This is an exact operator equation, not merely a semiclassical approximation.</p>
+<p><strong>Step 4: Ehrenfest's theorem.</strong> Taking expectations,</p>
+<div class="display-math">\[\boxed{\frac{\dd\avg p}{\dd t}=\avg F=-k\avg x,\qquad\ddot{\avg x}+\omega^2\avg x=0.}\]</div>
+<p>The equality \(\avg{V'(\hat x)}=V'(\avg x)\) holds exactly because the harmonic restoring force is linear. It is not generally true for nonlinear potentials.</p>
+<p><strong>Step 5: Ladder-operator representation.</strong> Since \(\hat x=\sqrt{\hbar/(2m\omega)}(\hat a_-+\hat a_+)\),</p>
+<div class="display-math">\[\boxed{\hat F=-\sqrt{\frac{m\hbar\omega^3}{2}}(\hat a_-+\hat a_+).}\]</div>
+<p>Acting on a number state,</p>
+<div class="display-math">\[\hat F\ket n=-\sqrt{\frac{m\hbar\omega^3}{2}}\left(\sqrt n\ket{n-1}+\sqrt{n+1}\ket{n+1}\right).\]</div>
+<p>By orthogonality, \(\avg F_n=0\) for every stationary number eigenstate. Yet the force variance need not vanish:</p>
+<div class="display-math">\[(\Delta F)_n^2=k^2(\Delta x)_n^2=k^2\frac{\hbar}{m\omega}\left(n+\frac12\right).\]</div>
+<p>Thus zero mean force does not imply zero force fluctuations.</p><p class="small"><a href="#b6">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b7"><summary><span class="num">B7</span><span>The Schr&amp;quot;odinger picture of time evolution</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain the Schr&amp;quot;odinger picture of time evolution of a quantum system.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 7 rigorously from scratch at M.Sc. mathematical physics level: explain the Schr&amp;quot;odinger picture of quantum time evolution, derive the time-dependent Schr&amp;quot;odinger equation, time-evolution operator and its unitarity, discuss state evolution, operator expectation values, stationary states and superpositions, provide an explicit harmonic-oscillator example, and give a detailed 15-mark examination-ready solution.</p>
+</aside>
+<p><strong>Definition.</strong> In the Schr&amp;quot;odinger picture, the physical state carries dynamical time dependence. Observable operators are fixed unless they depend explicitly on time. The normalized state \(\ket{\psi_S(t)}\in\Hil\) obeys the fundamental Schr&amp;quot;odinger dynamical postulate,</p>
+<div class="display-math">\[\boxed{\iu\hbar\frac{\dd}{\dd t}\ket{\psi_S(t)}=\hat H_S(t)\ket{\psi_S(t)}.}\]</div>
+<p><strong>Derivation from an infinitesimal propagator.</strong> Continuous unitary dynamics with self-adjoint generator \(\hat H_S(t)\) has, on suitable states,</p>
+<div class="display-math">\[\hat U(t+\dd t,t)=\hat I-\frac{\iu}{\hbar}\hat H_S(t)\dd t+o(\dd t).\]</div>
+<p>Then \(\ket{\psi_S(t+\dd t)}=\hat U(t+\dd t,t)\ket{\psi_S(t)}\); subtracting \(\ket{\psi_S(t)}\), dividing by \(\dd t\), and taking the limit recovers the Schr&amp;quot;odinger equation. This is a derivation <em>conditional on choosing the Hamiltonian as the generator</em>; the dynamical law itself is a quantum postulate, not deduced from Hilbert-space axioms alone.</p>
+<p><strong>Time evolution.</strong> Define</p>
+<div class="display-math">\[\boxed{\ket{\psi_S(t)}=\hat U(t,t_0)\ket{\psi_S(t_0)},\qquad\hat U(t_0,t_0)=\hat I.}\]</div>
+<p>Differentiating for arbitrary initial states yields</p>
+<div class="display-math">\[\boxed{\iu\hbar\partial_t\hat U(t,t_0)=\hat H_S(t)\hat U(t,t_0).}\]</div>
+<p>For a time-independent self-adjoint Hamiltonian,</p>
+<div class="display-math">\[\boxed{\hat U(t,t_0)=\exp\!\left[-\frac{\iu\hat H(t-t_0)}{\hbar}\right].}\]</div>
+<p>For general time dependence, the solution is the appropriately defined time-ordered exponential.</p>
+<p><strong>Unitarity.</strong> The differential equation and its adjoint give \(\dot{\hat U}=-\iu\hat H_S\hat U/\hbar\), \(\dot{\hat U}^\dagger=+\iu\hat U^\dagger\hat H_S/\hbar\). Therefore</p>
+<div class="display-math">\[\begin{aligned}\frac{\dd}{\dd t}(\hat U^\dagger\hat U)&amp;=\frac{\iu}{\hbar}\hat U^\dagger\hat H_S\hat U-\frac{\iu}{\hbar}\hat U^\dagger\hat H_S\hat U=0.\end{aligned}\]</div>
+<p>The initial condition and reversibility imply \(\hat U^\dagger\hat U=\hat U\hat U^\dagger=\hat I\), preserving \(\norm{\ket\psi}\) and all inner products.</p>
+<p><strong>Position-space form.</strong> For a single particle with \(\hat H_S(t)=\hat p^2/(2m)+V(\hat x,t)\), projection on the position basis yields</p>
+<div class="display-math">\[\boxed{\iu\hbar\partial_t\psi_S(x,t)=-\frac{\hbar^2}{2m}\partial_x^2\psi_S(x,t)+V(x,t)\psi_S(x,t).}\]</div>
+<p>For a real potential, combining this with its conjugate gives the continuity equation</p>
+<div class="display-math">\[\boxed{\partial_t\rho+\partial_xj=0,\quad\rho=|\psi_S|^2,\quad j=\frac{\hbar}{2m\iu}(\psi_S^*\partial_x\psi_S-\psi_S\partial_x\psi_S^*).}\]</div>
+<p>Integration across space with vanishing boundary flux proves probability conservation.</p>
+<p><strong>Expectation values.</strong> For any observable, possibly explicitly time dependent,</p>
+<div class="display-math">\[\boxed{\avg A_S(t)=\bra{\psi_S(t)}\hat A_S(t)\ket{\psi_S(t)}.}\]</div>
+<p>Differentiating all three factors and using the Schr&amp;quot;odinger equation yields</p>
+<div class="display-math">\[\boxed{\frac{\dd\avg A}{\dd t}=\frac{\iu}{\hbar}\avg{[\hat H_S,\hat A_S]}+\avg{\partial_t\hat A_S}.}\]</div>
+<p>The operator \(\hat x_S=x\) may remain fixed in this picture while \(\avg{x}_S(t)\) varies through the evolving state.</p>
+<p><strong>Stationary states.</strong> For \(\hat H\ket n=E_n\ket n\),</p>
+<div class="display-math">\[\boxed{\ket{n,t}=\ee^{-\iu E_n\tau/\hbar}\ket n.}\]</div>
+<p>This differs from \(\ket n\) by a common phase and has time-independent position probability density \(|\phi_n(x)|^2\). A general discrete energy superposition evolves as</p>
+<div class="display-math">\[\boxed{\ket{\psi_S(t)}=\sum_nc_n\ee^{-\iu E_n\tau/\hbar}\ket n.}\]</div>
+<p>Its relative phases \(\exp[-\iu(E_m-E_n)\tau/\hbar]\) can produce oscillatory expectation values:</p>
+<div class="display-math">\[\avg A(t)=\sum_{m,n}c_m^*c_n\ee^{\iu(E_m-E_n)\tau/\hbar}\bra m\hat A\ket n.\]</div>
+<p><strong>Harmonic oscillator example.</strong> Let \(t_0=0\), \(\hat H=\hbar\omega(\hat N+1/2)\), and \(\ket{\psi(0)}=(\ket0+\ket1)/\sqrt2\). Then</p>
+<div class="display-math">\[\boxed{\ket{\psi_S(t)}=\frac1{\sqrt2}\left(\ee^{-\iu\omega t/2}\ket0+\ee^{-3\iu\omega t/2}\ket1\right).}\]</div>
+<p>With \(\hat x=\sqrt{\hbar/(2m\omega)}(\hat a_-+\hat a_+)\) and \(\hat p=\iu\sqrt{m\hbar\omega/2}(\hat a_+-\hat a_-)\), only the off-diagonal \(0\leftrightarrow1\) matrix elements contribute. The exact results are</p>
+<div class="display-math">\[\boxed{\avg{x}(t)=\sqrt{\frac{\hbar}{2m\omega}}\cos(\omega t),\qquad
+\avg p(t)=-\sqrt{\frac{m\hbar\omega}{2}}\sin(\omega t).}\]</div>
+<p>They satisfy Ehrenfest's equations. The interference changes while the average energy stays constant. The Heisenberg picture reproduces these expectation values exactly.</p><p class="small"><a href="#b7">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b8"><summary><span class="num">B8</span><span>The Heisenberg picture and its general equation of motion</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain the Heisenberg picture of time evolution. Derive the equation of motion in Heisenberg's picture.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 8 rigorously from scratch at M.Sc. mathematical physics level: explain the Heisenberg picture of quantum time evolution, derive \(A_H(t)=U^\dagger A_S(t)U\), prove the general Heisenberg equation \(dA_H/dt=(i/\hbar)[H_H,A_H]+(\partial A_S/\partial t)_H\), explain fixed states and time-evolving operators, show equivalence with the Schr&amp;quot;odinger picture, include examples for position and momentum, and give a detailed 15-mark examination-ready solution.</p>
+</aside>
+<p><strong>Step 1: Fix the state by a unitary transformation.</strong> Start with \(\ket{\psi_S(t)}=\hat U(t,t_0)\ket{\psi_S(t_0)}\). Define \(\ket{\psi_H}=\hat U^\dagger\ket{\psi_S(t)}\). Unitarity gives</p>
+<div class="display-math">\[\boxed{\ket{\psi_H}=\ket{\psi_S(t_0)},\qquad\frac{\dd}{\dd t}\ket{\psi_H}=0.}\]</div>
+<p>This transfers the dynamical time dependence from the state to the observable operators.</p>
+<p><strong>Step 2: Transform an observable.</strong> In the Schr&amp;quot;odinger picture,</p>
+<div class="display-math">\[\avg A_S(t)=\bra{\psi_S(t)}\hat A_S(t)\ket{\psi_S(t)}.\]</div>
+<p>Inserting \(\ket{\psi_S(t)}=\hat U\ket{\psi_H}\) and its adjoint gives</p>
+<div class="display-math">\[\begin{aligned}\avg A_S(t)&amp;=\bra{\psi_H}\hat U^\dagger\hat A_S(t)\hat U\ket{\psi_H}.\end{aligned}\]</div>
+<p>This identifies the Heisenberg-picture observable as</p>
+<div class="answer-box">\[\boxed{\hat A_H(t)=\hat U^\dagger(t,t_0)\hat A_S(t)\hat U(t,t_0).}\]</div>
+<p>At the reference time \(t_0\), the pictures agree: \(\hat A_H(t_0)=\hat A_S(t_0)\).</p>
+<p><strong>Step 3: Differentiate all three factors.</strong> Since \(\iu\hbar\dot{\hat U}=\hat H_S(t)\hat U\),</p>
+<div class="display-math">\[\dot{\hat U}=-\frac{\iu}{\hbar}\hat H_S\hat U,\qquad
+\dot{\hat U}^\dagger=\frac{\iu}{\hbar}\hat U^\dagger\hat H_S.\]</div>
+<p>Differentiating \(\hat A_H=\hat U^\dagger\hat A_S\hat U\) gives</p>
+<div class="display-math">\[\begin{aligned}\dot{\hat A}_H&amp;=\dot{\hat U}^\dagger\hat A_S\hat U+\hat U^\dagger(\partial_t\hat A_S)\hat U+\hat U^\dagger\hat A_S\dot{\hat U}\\
+&amp;=\frac{\iu}{\hbar}\hat U^\dagger\hat H_S\hat A_S\hat U-\frac{\iu}{\hbar}\hat U^\dagger\hat A_S\hat H_S\hat U+\hat U^\dagger\partial_t\hat A_S\hat U\\
+&amp;=\frac{\iu}{\hbar}\hat U^\dagger[\hat H_S,\hat A_S]\hat U+\hat U^\dagger\partial_t\hat A_S\hat U.\end{aligned}\]</div>
+<p>Define \(\hat H_H=\hat U^\dagger\hat H_S\hat U\) and \((\partial_t\hat A_S)_H=\hat U^\dagger(\partial_t\hat A_S)\hat U\). Since \(\hat U\hat U^\dagger=\hat I\), unitary conjugation preserves commutators:</p>
+<div class="display-math">\[\hat U^\dagger[\hat H_S,\hat A_S]\hat U=[\hat H_H,\hat A_H].\]</div>
+<p>Therefore,</p>
+<div class="answer-box">\[\boxed{\frac{\dd\hat A_H}{\dd t}=\frac{\iu}{\hbar}[\hat H_H,\hat A_H]+\left(\frac{\partial\hat A_S}{\partial t}\right)_H.}\]</div>
+<p>The derivative of the explicit Schr&amp;quot;odinger operator is not generally the entire Heisenberg derivative. If \(\partial_t\hat A_S=0\), the last term vanishes; if \(\hat H_S\) is also time independent, then \(\hat H_H=\hat H_S=\hat H\).</p>
+<p><strong>Step 4: Position and momentum.</strong> For \(\hat H=\hat p^2/(2m)+V(\hat x)\),</p>
+<div class="display-math">\[\begin{aligned}\dot{\hat x}_H&amp;=\frac{\iu}{\hbar}[\hat H,\hat x_H]=\frac{\hat p_H}{m},\\
+\dot{\hat p}_H&amp;=\frac{\iu}{\hbar}[\hat H,\hat p_H]=-V'(\hat x_H).\end{aligned}\]</div>
+<p>The commutators follow from \([\hat p_H^2,\hat x_H]=-2\iu\hbar\hat p_H\) and \([V(\hat x_H),\hat p_H]=\iu\hbar V'(\hat x_H)\). Hence</p>
+<div class="display-math">\[\boxed{m\ddot{\hat x}_H=-V'(\hat x_H).}\]</div>
+<p>For a free particle, \(V=0\) gives \(\hat p_H(t)=\hat p\), \(\hat x_H(t)=\hat x+\tau\hat p/m\). For a harmonic oscillator, the solution is sinusoidal and is derived fully in B9.</p>
+<p><strong>Step 5: Physical equivalence.</strong> The expectation in the Heisenberg picture is</p>
+<div class="display-math">\[\begin{aligned}\avg A_H(t)&amp;=\bra{\psi_H}\hat A_H(t)\ket{\psi_H}\\
+&amp;=\bra{\psi_S(t_0)}\hat U^\dagger\hat A_S(t)\hat U\ket{\psi_S(t_0)}\\
+&amp;=\bra{\psi_S(t)}\hat A_S(t)\ket{\psi_S(t)}=\avg A_S(t).\end{aligned}\]</div>
+<p>Thus the two pictures give identical expectation values and, by transforming spectral projectors, identical measurement probabilities.</p>
+<p><strong>Step 6: Constants of motion.</strong> If \(\partial_t\hat A_S=0\) and \([\hat H_S(t),\hat A_S]=0\) for all \(t\), then \(\dot{\hat A}_H=0\). For \(\hat A_S(t)=\hat H_S(t)\),</p>
+<div class="display-math">\[\boxed{\dot{\hat H}_H=\hat U^\dagger(\partial_t\hat H_S)\hat U.}\]</div>
+<p>In particular, energy is conserved for a time-independent Hamiltonian. For unbounded operators, the equations are interpreted on appropriate common domains or through matrix elements.</p><p class="small"><a href="#b8">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b9"><summary><span class="num">B9</span><span>Exact Heisenberg evolution of position and momentum for a 1D SHO</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the time evolution of position \([\hat x_H(t)]\) and momentum operator \([\hat p_H(t)]\) of a 1D SHO in Heisenberg's picture.</p></aside><h3>Detailed worked solution</h3><aside class="hint">
+<p>Solve Assignment III Part B Problem 9 rigorously from scratch at M.Sc. mathematical physics level: derive the exact time evolution of the Heisenberg position and momentum operators for a one-dimensional quantum harmonic oscillator, both by solving the coupled Heisenberg equations and by evolving annihilation/creation operators; verify the canonical commutator, derive expectation values, discuss stationary number states and coherent states, and give a complete 15-mark exam-ready solution.</p>
+</aside>
+<p><strong>Set-up.</strong> The time-independent harmonic oscillator Hamiltonian is</p>
+<div class="display-math">\[\boxed{\hat H=\frac{\hat p^2}{2m}+\frac12m\omega^2\hat x^2,\qquad[\hat x,\hat p]=\iu\hbar\hat I.}\]</div>
+<p>Define \(\tau=t-t_0\), \(\hat x_H(t_0)=\hat x\), and \(\hat p_H(t_0)=\hat p\). As \(\hat H\) is time independent, \(\hat H_H=\hat H\); the Heisenberg equation is \(\dot{\hat A}_H=(\iu/\hbar)[\hat H,\hat A_H]\).</p>
+<h4>Method I: Coupled equations and initial conditions</h4>
+<p><strong>Step 1: Position commutator.</strong> Using the canonical relation,</p>
+<div class="display-math">\[\begin{aligned}[\hat p_H^2,\hat x_H]&amp;=\hat p_H[\hat p_H,\hat x_H]+[\hat p_H,\hat x_H]\hat p_H=-2\iu\hbar\hat p_H,\\
+[\hat H,\hat x_H]&amp;=\frac1{2m}[\hat p_H^2,\hat x_H]=-\frac{\iu\hbar}{m}\hat p_H.\end{aligned}\]</div>
+<p>Thus</p>
+<div class="display-math">\[\boxed{\dot{\hat x}_H=\frac{\hat p_H}{m}.}\]</div>
+<p><strong>Step 2: Momentum commutator.</strong> Similarly,</p>
+<div class="display-math">\[\begin{aligned}[\hat x_H^2,\hat p_H]&amp;=\hat x_H[\hat x_H,\hat p_H]+[\hat x_H,\hat p_H]\hat x_H=2\iu\hbar\hat x_H,\\
+[\hat H,\hat p_H]&amp;=\frac{m\omega^2}{2}[\hat x_H^2,\hat p_H]=\iu\hbar m\omega^2\hat x_H.\end{aligned}\]</div>
+<p>Therefore</p>
+<div class="display-math">\[\boxed{\dot{\hat p}_H=-m\omega^2\hat x_H.}\]</div>
+<p><strong>Step 3: Decouple.</strong> Differentiating the position equation and inserting the momentum equation,</p>
+<div class="display-math">\[\ddot{\hat x}_H=\frac1m\dot{\hat p}_H=-\omega^2\hat x_H,\qquad\boxed{\ddot{\hat x}_H+\omega^2\hat x_H=0.}\]</div>
+<p><strong>Step 4: Solve as an operator-valued ODE.</strong> The general solution is</p>
+<div class="display-math">\[\hat x_H(t)=\hat C\cos(\omega\tau)+\hat D\sin(\omega\tau).\]</div>
+<p>At \(\tau=0\), \(\hat C=\hat x\). Differentiating, \(\dot{\hat x}_H(t_0)=\omega\hat D\). By \(\dot{\hat x}_H(t_0)=\hat p/m\), we get \(\hat D=\hat p/(m\omega)\). Therefore,</p>
+<div class="answer-box">\[\boxed{\hat x_H(t)=\hat x\cos(\omega\tau)+\frac{\hat p}{m\omega}\sin(\omega\tau).}\]</div>
+<p>Now apply \(\hat p_H=m\dot{\hat x}_H\):</p>
+<div class="answer-box">\[\boxed{\hat p_H(t)=\hat p\cos(\omega\tau)-m\omega\hat x\sin(\omega\tau).}\]</div>
+<p><strong>Direct differential check.</strong> Differentiating these formulas produces \(\dot{\hat x}_H=\hat p_H/m\) and \(\dot{\hat p}_H=-m\omega^2\hat x_H\), and the equations reduce to \(\hat x\), \(\hat p\) at \(\tau=0\). Thus both the equations and their initial conditions are satisfied.</p>
+<h4>Method II: Time evolution of the ladder operators</h4>
+<p><strong>Step 1: Ladder representation.</strong> Define</p>
+<div class="display-math">\[\begin{aligned}\hat a_-&amp;=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x+\frac{\iu\hat p}{m\omega}\right),\\
+\hat a_+&amp;=\sqrt{\frac{m\omega}{2\hbar}}\left(\hat x-\frac{\iu\hat p}{m\omega}\right).\end{aligned}\]</div>
+<p>Then \([\hat a_-,\hat a_+]=\hat I\), \(\hat N=\hat a_+\hat a_-\), and</p>
+<div class="display-math">\[\boxed{\hat H=\hbar\omega\left(\hat N+\frac12\hat I\right).}\]</div>
+<p><strong>Step 2: Hamiltonian commutators.</strong> Using \([AB,C]=A[B,C]+[A,C]B\),</p>
+<div class="display-math">\[[\hat N,\hat a_-]=-\hat a_-,\qquad[\hat N,\hat a_+]=\hat a_+.\]</div>
+<p>Therefore,</p>
+<div class="display-math">\[\boxed{[\hat H,\hat a_-]=-\hbar\omega\hat a_-,\qquad[\hat H,\hat a_+]=+\hbar\omega\hat a_+.}\]</div>
+<p><strong>Step 3: Solve their Heisenberg equations.</strong> The equations are</p>
+<div class="display-math">\[\frac{\dd\hat a_{-,H}}{\dd t}=-\iu\omega\hat a_{-,H},\qquad\frac{\dd\hat a_{+,H}}{\dd t}=+\iu\omega\hat a_{+,H}.\]</div>
+<p>With \(\hat a_{\pm,H}(t_0)=\hat a_\pm\), the solutions are</p>
+<div class="display-math">\[\boxed{\hat a_{-,H}(t)=\hat a_-\ee^{-\iu\omega\tau},\qquad\hat a_{+,H}(t)=\hat a_+\ee^{+\iu\omega\tau}.}\]</div>
+<p>The opposite phases preserve the adjoint relation and the ladder commutator.</p>
+<p><strong>Step 4: Reconstruct position and momentum.</strong> Recall</p>
+<div class="display-math">\[\hat x=\sqrt{\frac{\hbar}{2m\omega}}(\hat a_-+\hat a_+),\quad\hat p=\iu\sqrt{\frac{m\hbar\omega}{2}}(\hat a_+-\hat a_-).\]</div>
+<p>Then</p>
+<div class="display-math">\[\begin{aligned}\hat x_H(t)&amp;=\sqrt{\frac{\hbar}{2m\omega}}\left(\hat a_-\ee^{-\iu\omega\tau}+\hat a_+\ee^{\iu\omega\tau}\right),\\
+\hat p_H(t)&amp;=\iu\sqrt{\frac{m\hbar\omega}{2}}\left(\hat a_+\ee^{\iu\omega\tau}-\hat a_-\ee^{-\iu\omega\tau}\right).\end{aligned}\]</div>
+<p>Using \(\ee^{\pm\iu\theta}=\cos\theta\pm\iu\sin\theta\) and the original expressions for \(\hat x\) and \(\hat p\), these become</p>
+<div class="display-math">\[\boxed{\hat x_H(t)=\hat x\cos\omega\tau+\frac{\hat p}{m\omega}\sin\omega\tau,\quad\hat p_H(t)=\hat p\cos\omega\tau-m\omega\hat x\sin\omega\tau.}\]</div>
+<p>The second independent derivation agrees exactly with Method I.</p>
+<h4>Canonical commutator and conservation of energy</h4>
+<p>Let \(C=\cos\omega\tau\) and \(S=\sin\omega\tau\). From \(\hat x_H=C\hat x+(S/(m\omega))\hat p\) and \(\hat p_H=C\hat p-m\omega S\hat x\),</p>
+<div class="display-math">\[\begin{aligned}[\hat x_H,\hat p_H]
+&amp;=C^2[\hat x,\hat p]-S^2[\hat p,\hat x]\\
+&amp;=\iu\hbar(C^2+S^2)\hat I=\iu\hbar\hat I.\end{aligned}\]</div>
+<div class="answer-box">\[\boxed{[\hat x_H(t),\hat p_H(t)]=\iu\hbar\hat I.}\]</div>
+<p>The number operator is also invariant:</p>
+<div class="display-math">\[\hat N_H(t)=\hat a_{+,H}(t)\hat a_{-,H}(t)=\hat a_+\hat a_-\ee^{\iu\omega\tau}\ee^{-\iu\omega\tau}=\hat N.\]</div>
+<p>Thus \(\hat H_H=\hbar\omega(\hat N_H+1/2)=\hat H\), showing energy conservation.</p>
+<h4>Expectation values for an arbitrary initial state</h4>
+<p>Let \(x_0=\bra{\psi_H}\hat x\ket{\psi_H}\) and \(p_0=\bra{\psi_H}\hat p\ket{\psi_H}\). Taking expectations gives</p>
+<div class="display-math">\[\boxed{\begin{aligned}
+\avg x(t)&amp;=x_0\cos\omega\tau+\frac{p_0}{m\omega}\sin\omega\tau,\\
+\avg p(t)&amp;=p_0\cos\omega\tau-m\omega x_0\sin\omega\tau.
+\end{aligned}}\]</div>
+<p>Differentiation verifies \(\dot{\avg x}=\avg p/m\), \(\dot{\avg p}=-m\omega^2\avg x\), and \(\ddot{\avg x}+\omega^2\avg x=0\). These results are exact for all states with finite first moments, not just near-classical wavepackets.</p>
+<h4>Stationary number states</h4>
+<p>For \(\hat N\ket n=n\ket n\), ladder orthogonality gives \(\bra n\hat a_\pm\ket n=0\). Thus the Heisenberg operators have zero mean in a number eigenstate:</p>
+<div class="display-math">\[\boxed{\avg x_n(t)=\avg p_n(t)=0.}\]</div>
+<p>This does not mean zero fluctuations. From B2,</p>
+<div class="display-math">\[\boxed{\Delta x_n^2=\frac{\hbar}{m\omega}\left(n+\frac12\right),\qquad\Delta p_n^2=m\hbar\omega\left(n+\frac12\right).}\]</div>
+<p>The variances are constant because \(\ket n\) is stationary up to a phase in the Schr&amp;quot;odinger picture. Their product is \(\hbar(n+1/2)\); only \(n=0\) among number states saturates \(\hbar/2\).</p>
+<h4>Coherent states and classical-like motion</h4>
+<p>Define a normalized coherent state \(\ket\alpha\), \(\alpha\in\mathbb C\), by</p>
+<div class="display-math">\[\boxed{\hat a_-\ket\alpha=\alpha\ket\alpha,\qquad\ket\alpha=\ee^{-|\alpha|^2/2}\sum_{n=0}^{\infty}\frac{\alpha^n}{\sqrt{n!}}\ket n.}\]</div>
+<p>To verify its eigenvalue equation, act with \(\hat a_-\), use \(\hat a_-\ket n=\sqrt n\ket{n-1}\), and relabel \(r=n-1\); the factor \(\alpha\) emerges from every term. Normalization follows from \(\sum_{n\ge0}|\alpha|^{2n}/n!=\ee^{|\alpha|^2}\).</p>
+<p>In the fixed Heisenberg state \(\ket\alpha\), \(\avg{\hat a_-}=\alpha\) and \(\avg{\hat a_+}=\alpha^*\). Consequently,</p>
+<div class="display-math">\[\begin{aligned}\avg x_\alpha(t)&amp;=\sqrt{\frac{\hbar}{2m\omega}}\left(\alpha\ee^{-\iu\omega\tau}+\alpha^*\ee^{\iu\omega\tau}\right)\\
+&amp;=\sqrt{\frac{2\hbar}{m\omega}}\operatorname{Re}(\alpha\ee^{-\iu\omega\tau}),\\
+\avg p_\alpha(t)&amp;=\iu\sqrt{\frac{m\hbar\omega}{2}}\left(\alpha^*\ee^{\iu\omega\tau}-\alpha\ee^{-\iu\omega\tau}\right)\\
+&amp;=\sqrt{2m\hbar\omega}\operatorname{Im}(\alpha\ee^{-\iu\omega\tau}).\end{aligned}\]</div>
+<p>Writing \(\alpha=|\alpha|\ee^{\iu\phi}\), with \(A=\sqrt{2\hbar/(m\omega)}|\alpha|\), gives</p>
+<div class="display-math">\[\boxed{\avg x_\alpha(t)=A\cos(\omega\tau-\phi),\qquad\avg p_\alpha(t)=-m\omega A\sin(\omega\tau-\phi).}\]</div>
+<p>These mean values follow a classical harmonic orbit. In the Schr&amp;quot;odinger picture the coherent state evolves as</p>
+<div class="display-math">\[\boxed{\hat U(t,t_0)\ket\alpha=\ee^{-\iu\omega\tau/2}\ket{\alpha\ee^{-\iu\omega\tau}}.}\]</div>
+<p>Using \(\avg{\hat a_-^2}=\alpha^2\), \(\avg{\hat a_+^2}=(\alpha^*)^2\), \(\avg{\hat a_+\hat a_-}=|\alpha|^2\), and \(\avg{\hat a_-\hat a_+}=|\alpha|^2+1\), one finds</p>
+<div class="display-math">\[\boxed{\Delta x_\alpha^2=\frac{\hbar}{2m\omega},\quad\Delta p_\alpha^2=\frac{m\hbar\omega}{2},\quad\Delta x_\alpha\Delta p_\alpha=\frac\hbar2.}\]</div>
+<p>The coherent state remains minimum-uncertainty at all times and has mean energy</p>
+<div class="display-math">\[\boxed{\avg H_\alpha=\hbar\omega\left(|\alpha|^2+\frac12\right).}\]</div>
+<h4>Symplectic form of the evolution</h4>
+<p>The exact operator evolution is linear and may be written</p>
+<div class="display-math">\[\boxed{\begin{pmatrix}\hat x_H(t)\\\hat p_H(t)\end{pmatrix}
+=\begin{pmatrix}\cos\omega\tau&amp;\dfrac{\sin\omega\tau}{m\omega}\\[4pt]-m\omega\sin\omega\tau&amp;\cos\omega\tau\end{pmatrix}
+\begin{pmatrix}\hat x\\\hat p\end{pmatrix}.}\]</div>
+<p>The matrix has determinant one and satisfies \(M^TJM=J\), where \(J=\bigl(\begin{smallmatrix}0&1\\-1&0\end{smallmatrix}\bigr)\). This symplectic property is the classical counterpart of exact canonical commutator preservation. The simple closed form relies on the quadratic Hamiltonian; general nonlinear potentials do not give the same linear closed system.</p>
+<p><strong>Fifteen-mark exam-ready conclusion.</strong> From \(\dot{\hat x}_H=(\iu/\hbar)[\hat H,\hat x_H]=\hat p_H/m\) and \(\dot{\hat p}_H=(\iu/\hbar)[\hat H,\hat p_H]=-m\omega^2\hat x_H\), deduce \(\ddot{\hat x}_H+\omega^2\hat x_H=0\). Apply \(\hat x_H(t_0)=\hat x\), \(\hat p_H(t_0)=\hat p\) to obtain the two boxed sinusoidal operators. Alternatively, \([\hat H,\hat a_\mp]=\mp\hbar\omega\hat a_\mp\) gives opposite ladder phases; substituting into \(\hat x\) and \(\hat p\) reproduces both results. The explicit commutator calculation yields \([\hat x_H,\hat p_H]=\iu\hbar\hat I\). This completes the exact derivation.</p><p class="small"><a href="#b9">Link to this solution</a> · <a href="sources/assignment-iii.tex">LaTeX source</a></p></div></details></section></main><section class="ack" id="acknowledgments"><h2>Acknowledgments, references and academic integrity</h2><p>These independent study notes are based on Quantum Mechanics–I coursework question sheets supplied by the Department of Physics &amp; Nanotechnology, SRM Institute of Science and Technology (SRMIST), Kattankulathur. The original problems are acknowledged to the course context and instructors. The expanded explanations and solution manuscripts were compiled for study by Kumar Azad, with AI assistance in drafting and LaTeX typesetting.</p><p>The archive is <strong>not an official SRMIST answer key</strong>, has not been independently certified by instructors, and is neither an arXiv submission nor a peer-reviewed research paper. Mathematical statements should be cross-checked against the question sheets and reference textbooks before reuse or academic submission.</p><p>Useful background reading includes D. J. Griffiths and D. F. Schroeter, <em>Introduction to Quantum Mechanics</em>; J. J. Sakurai and J. Napolitano, <em>Modern Quantum Mechanics</em>; and R. Shankar, <em>Principles of Quantum Mechanics</em>. See each source manuscript for its detailed references and assumptions.</p></section><footer>© 2026 Kumar Azad · Educational material, not an official institutional publication.</footer></div><script>
+const ps=[...document.querySelectorAll('details.problem')];async function typeset(el){if(el.dataset.mathdone)return;const mj=window.MathJax;if(mj?.typesetPromise){await mj.typesetPromise([el]);el.dataset.mathdone='1';}}
+async function expand(){ps.forEach(p=>p.open=true);if(window.MathJax?.typesetPromise)await MathJax.typesetPromise(ps);ps.forEach(p=>p.dataset.mathdone='1');}
+ps.forEach(p=>p.addEventListener('toggle',()=>{if(p.open)typeset(p)}));document.getElementById('expand').onclick=expand;document.getElementById('collapse').onclick=()=>ps.forEach(p=>p.open=false);document.getElementById('print').onclick=async()=>{await expand();window.print()};
+function openHash(){const id=decodeURIComponent(location.hash.slice(1));const p=document.getElementById(id);if(p&&p.matches('details.problem')){p.open=true;typeset(p)}}addEventListener('hashchange',openHash);addEventListener('load',openHash);document.addEventListener('DOMContentLoaded',openHash);
+</script></body></html>

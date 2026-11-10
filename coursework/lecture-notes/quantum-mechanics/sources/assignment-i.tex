@@ -1,0 +1,943 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{top=25mm,bottom=27mm,left=24mm,right=24mm}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,longtable,enumitem,multicol}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage{xcolor}
+\usepackage[bookmarks=false]{hyperref}
+\usepackage{cleveref}
+\usepackage{titlesec}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,positioning}
+\definecolor{navy}{HTML}{142C47}
+\definecolor{teal}{HTML}{147E8B}
+\definecolor{ink}{HTML}{243447}
+\definecolor{pale}{HTML}{EDF4F7}
+\definecolor{line}{HTML}{CBD9E2}
+\hypersetup{colorlinks=true,linkcolor=navy,citecolor=teal,urlcolor=teal,pdftitle={Quantum Mechanics I: Assignment I, Complete Worked Solutions},pdfauthor={MSc Physics Study Notes},pdfsubject={Mathematical quantum mechanics assignment solutions}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\emergencystretch=2em
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\textsf{QUANTUM MECHANICS I \textbar{} ASSIGNMENT I}}
+\fancyhead[R]{\small\textsf{M.Sc. PHYSICS}}
+\fancyfoot[L]{\small\textsf{Worked solutions \textbullet{} educational manuscript}}
+\fancyfoot[R]{\small\thepage\ / \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.3pt}
+\titleformat{\section}{\Large\bfseries\color{navy}}{\thesection.}{0.7em}{}
+\titleformat{\subsection}{\large\bfseries\color{navy}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\normalsize\bfseries\color{teal}}{}{0pt}{}
+\titlespacing*{\section}{0pt}{17pt}{9pt}
+\titlespacing*{\subsection}{0pt}{14pt}{6pt}
+\tcbset{colback=pale,colframe=line,arc=1.2mm,boxrule=0.6pt,left=8pt,right=8pt,top=7pt,bottom=7pt}
+\newtcolorbox{questionbox}{title={\footnotesize\sffamily ORIGINAL ASSIGNMENT QUESTION},fonttitle=\bfseries,colback=white,colframe=teal,coltitle=teal,boxed title style={colback=white,colframe=white},attach boxed title to top left={yshift=-2mm,xshift=5mm}}
+\newtcolorbox{resultbox}{colback=pale,colframe=teal,boxrule=.7pt}
+\newcommand{\key}[1]{\begin{resultbox}\centering\displaystyle #1\end{resultbox}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\iu}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\Hil}{\mathcal H}
+\newcommand{\Dom}{\mathcal D}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\id}{\mathbb I}
+\newcommand{\pmean}[1]{\langle #1\rangle}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Var}{\operatorname{Var}}
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Sch}{Schr\"odinger}
+\newcommand{\half}{\tfrac12}
+\newcommand{\qnumber}[1]{\textbf{Problem #1.}\quad}
+\allowdisplaybreaks[2]
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+\vspace*{21mm}
+{\color{teal}\rule{\textwidth}{1.4pt}}\\[11mm]
+{\sffamily\fontsize{27}{31}\selectfont\bfseries Quantum Mechanics--I:\\[2mm] Assignment I}\par
+\vspace{5mm}
+{\sffamily\Large Complete Worked Solutions from First Principles}\par
+\vspace{12mm}
+{\large\textbf{21 problems \textbullet{} Part A (15) and Part B (6)}}\par
+\vspace{8mm}
+\begin{tcolorbox}[colback=pale,colframe=teal]
+\textbf{Course basis:} Department of Physics \& Nanotechnology, SRM Institute of Science and Technology, Kattankulathur; M.Sc. Physics / M.Sc. Applied Physics, Semester I; Quantum Mechanics--I (PPY25103J), \emph{Assignment--I}.\\[4pt]
+\textbf{Scope:} Blackbody radiation, photoelectric effect, matter-wave duality, wave packets, quantum probability, operators and commutators, postulates, Hamiltonian eigenvalue problems, free-particle solutions, and quantum uncertainties.
+\end{tcolorbox}
+\vfill
+{\large\textbf{Mathematical-physics study manuscript}}\\[5pt]
+{\normalsize arXiv-compatible \LaTeX{} article format \textbullet{} November 2026}\\[7pt]
+{\small\color{ink}Pedagogical solutions to an existing course assignment; not a claim of new research, peer review, or arXiv submission.}\par
+\vspace{8mm}
+{\color{teal}\rule{\textwidth}{1.4pt}}
+\end{titlepage}
+
+\begin{abstract}
+This self-contained teaching manuscript develops detailed solutions to all fifteen short questions and six extended questions in Quantum Mechanics--I, Assignment I, for first-semester M.Sc. students. The presentation begins with blackbody radiation and experimental foundations of wave--particle duality, then develops the Hilbert-space description of quantum states, the properties of unbounded differential operators, canonical commutation, and the \Sch{} equation. Special attention is given to mathematical subtleties frequently obscured in elementary treatments: frequency-versus-wavelength spectral densities, the energy convention behind matter-wave phase velocity, the distinction between symmetric and self-adjoint operators, generalized momentum eigenfunctions versus normalizable wave packets, and the interpretation of uncertainties for discontinuous states. Derivations are presented step by step with physical interpretation and concise boxed results. The text is intended for study and examination preparation, not as an original research article.
+\end{abstract}
+\tableofcontents
+\clearpage
+
+\section{Conventions, mathematical setting, and scope}
+Throughout, $h=2\pi\hbar$, $c$ is the speed of light in vacuum, $k_B$ is Boltzmann's constant, $m$ is particle mass, $e>0$ is the magnitude of electron charge, and $\iu^2=-1$. Unless otherwise stated, the nonrelativistic Hamiltonian of a particle in one dimension is
+\begin{equation}\label{eq:Hgeneral}
+\hat H=\frac{\hat p_x^2}{2m}+V(x),\qquad \hat p_x=-\iu\hbar\frac{\dd}{\dd x}.
+\end{equation}
+The position-space inner product is $\langle\phi,\psi\rangle=\int_{\R}\phi^*(x)\psi(x)\,\dd x$. The natural Hilbert space for one particle on a line is $L^2(\R)$; physical states are normalized rays, while plane waves are generalized vectors outside $L^2(\R)$. For operator manipulations involving derivatives and multiplication by $x$, the Schwartz space $\mathcal S(\R)$ is a convenient common dense domain. Self-adjointness requires equality of operator domains as well as the usual formal adjoint identity.\par
+The problem statements below follow the uploaded Assignment--I source in meaning and ordering. Additional clarifications and derivations are the authorship of these study notes, not statements made by the assignment sheet. A general background may be found in \cite{griffiths,shankar,sakurai,reed_simon}.
+
+\section{Part A --- short problems (1--15)}
+\subsection{A1. Planck's blackbody law in frequency and wavelength units}
+\begin{questionbox}Express Planck's blackbody radiation formula in both frequency and wavelength units.\end{questionbox}
+\textbf{Step 1: Quantized mode and its average energy.} A cavity electromagnetic mode of frequency $\nu$ has excitation energies $E_n=nh\nu$ after omitting the temperature-independent zero-point contribution. The canonical partition function is
+\begin{equation}
+Z=\sum_{n=0}^\infty e^{-\beta nh\nu}=\frac{1}{1-e^{-\beta h\nu}},\qquad \beta=(k_BT)^{-1}.
+\end{equation}
+The thermal mean mode energy is
+\begin{align}
+\overline E&=-\frac{\partial\ln Z}{\partial\beta}
+=\frac{h\nu}{e^{\beta h\nu}-1}.
+\end{align}
+\textbf{Step 2: Count cavity modes.} Including the two photon polarizations, the density of modes per unit volume in the frequency range $(\nu,\nu+\dd\nu)$ is
+\begin{equation}
+g(\nu)\,\dd\nu=\frac{8\pi\nu^2}{c^3}\,\dd\nu.
+\end{equation}
+Multiplication gives the \emph{spectral energy density per unit frequency}:
+\begin{equation}\label{eq:plancknu}
+\boxed{u_\nu(T)=\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/(k_BT)}-1}},\qquad u(T)=\int_0^\infty u_\nu(T)\,\dd\nu.
+\end{equation}
+Here the left symbol in the integral is the \emph{total energy density} $u(T)$; it must not be confused with $u_\nu$.\par
+\textbf{Step 3: Convert density, not just the variable.} Since $\nu=c/\lambda$,
+\begin{equation}
+\left|\frac{\dd\nu}{\dd\lambda}\right|=\frac{c}{\lambda^2},\qquad u_\lambda\,\dd\lambda=u_\nu\,|\dd\nu|.
+\end{equation}
+Thus
+\begin{equation}\label{eq:plancklam}
+\boxed{u_\lambda(T)=\frac{8\pi hc}{\lambda^5}\frac{1}{e^{hc/(\lambda k_BT)}-1}}.
+\end{equation}
+The corresponding \emph{spectral radiances} of an isotropic blackbody field, often denoted $B_\nu$ and $B_\lambda$, follow from $B=cu/(4\pi)$:
+\begin{equation}
+\boxed{B_\nu(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/(k_BT)}-1}},\qquad
+\boxed{B_\lambda(T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/(\lambda k_BT)}-1}}.
+\end{equation}
+\textbf{Units and caution.} $u_\nu$ is in $\mathrm{J\,m^{-3}\,Hz^{-1}}$ and $u_\lambda$ is in $\mathrm{J\,m^{-4}}$ (with SI wavelength). The numerical values of $u_\nu$ and $u_\lambda$ at $\nu=c/\lambda$ are \emph{not} equal: the Jacobian is essential. Consequently, their spectral maxima correspond to different wavelengths.
+
+\subsection{A2. Low- and high-frequency limits of Planck's law}
+\begin{questionbox}Show that Planck's blackbody radiation formula agrees with experimental results both at low-frequency and high-frequency limits.\end{questionbox}
+Write the spectral radiance as
+\begin{equation}
+B_\nu(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^x-1},\qquad x=\frac{h\nu}{k_BT}.
+\end{equation}
+\textbf{Low-frequency limit ($x\ll1$).} The Taylor expansion is $e^x-1=x+x^2/2+\cdots$, so to leading order $e^x-1\simeq x$. Therefore
+\begin{align}
+B_\nu(T)&\simeq\frac{2h\nu^3}{c^2}\frac{k_BT}{h\nu}
+=\boxed{\frac{2k_BT\nu^2}{c^2}},\\
+u_\nu(T)&\simeq\boxed{\frac{8\pi k_BT\nu^2}{c^3}}.
+\end{align}
+These are the \emph{Rayleigh--Jeans laws}. They reproduce the observed long-wavelength, low-frequency behavior but diverge if extrapolated to all frequencies (the ultraviolet catastrophe).
+\par\textbf{High-frequency limit ($x\gg1$).} Here $e^x-1\simeq e^x$, hence
+\begin{align}
+B_\nu(T)&\simeq\boxed{\frac{2h\nu^3}{c^2}e^{-h\nu/(k_BT)}},\\
+u_\nu(T)&\simeq\boxed{\frac{8\pi h\nu^3}{c^3}e^{-h\nu/(k_BT)}}.
+\end{align}
+These are the \emph{Wien high-frequency limits}. The exponential suppression is consistent with the observed falloff of blackbody intensity at high frequencies. Planck's formula interpolates between both regimes and gives a finite total radiated energy density.
+\par\textbf{Spectral-variable warning.} The analogous wavelength limits are obtained by taking $hc/(\lambda k_BT)\ll1$ or $\gg1$ in $B_\lambda$; one must not simply replace $\nu$ by $c/\lambda$ in $B_\nu$ without the Jacobian.
+
+\subsection{A3. Einstein's explanation of the photoelectric effect}
+\begin{questionbox}Explain Einstein's theory of photoelectric effect in brief.\end{questionbox}
+\textbf{Experimental facts.} Above a material-dependent threshold frequency, illuminating a clean metal can liberate electrons. Their maximum kinetic energy depends on incident light frequency, rather than light intensity; increasing intensity primarily increases the emission rate. Electron emission can occur without a detectable classical energy-accumulation delay.\par
+\textbf{Photon hypothesis.} Einstein proposed that light of frequency $\nu$ exchanges energy in packets (photons), each with
+\begin{equation}E_\gamma=h\nu.
+\end{equation}
+Let $\Phi$ be the work function: the minimum energy required to remove an electron from the surface. Conservation of energy for an emitted electron gives
+\begin{equation}\label{eq:photoeq}
+h\nu=\Phi+K_{\max},\qquad \boxed{K_{\max}=h\nu-\Phi}.
+\end{equation}
+Consequently, the threshold frequency and wavelength are
+\begin{equation}
+\boxed{\nu_0=\frac{\Phi}{h}},\qquad \boxed{\lambda_0=\frac{hc}{\Phi}}.
+\end{equation}
+If $\nu<\nu_0$, single-photon photoemission does not occur, regardless of intensity within the ordinary linear regime. At fixed frequency above threshold, more incident photons generally cause more emitted photoelectrons, while $K_{\max}$ remains governed by $\nu$.\par
+\textbf{Stopping potential.} If a reverse voltage $V_s>0$ just stops the fastest photoelectrons,
+\begin{equation}
+eV_s=K_{\max}=h\nu-\Phi,\qquad
+\boxed{V_s=\frac{h}{e}\nu-\frac{\Phi}{e}}.
+\end{equation}
+Thus a graph of stopping potential against frequency has slope $h/e$ and intercept $-\Phi/e$. This quantitatively explains the observed dependence and supports the photon picture of light.
+
+\subsection{A4. Davisson--Germer electron-diffraction experiment}
+\begin{questionbox}Describe the Davisson--Germer experiment in brief and the significance of its results.\end{questionbox}
+\textbf{Arrangement.} Electrons emitted by a heated filament are accelerated through a known voltage $V$, collimated, and directed at a single-crystal nickel target in vacuum. A movable collector measures scattered-electron intensity versus angle. Instead of a smooth particle-like angular distribution, strong intensity maxima occur at angles consistent with crystal diffraction.
+\par\textbf{Theory.} Acceleration through $V$ gives $p^2/(2m_e)=eV$ in the nonrelativistic regime; therefore the de Broglie wavelength is
+\begin{equation}\label{eq:dgb}
+\lambda_{\rm dB}=\frac{h}{p}=\frac{h}{\sqrt{2m_eeV}}.
+\end{equation}
+The ordered crystal planes behave as a diffraction grating. Constructive interference satisfies Bragg's law
+\begin{equation}\label{eq:bragg}
+\boxed{n\lambda=2d\sin\theta_B},
+\end{equation}
+with $d$ the plane spacing and $\theta_B$ the Bragg angle measured relative to the reflecting planes.
+\par\textbf{Characteristic observation.} A well-known maximum occurs for accelerating voltage about $54\,\mathrm{V}$. The corresponding de Broglie estimate is $\lambda_{\rm dB}\approx1.67\,\text{\AA}$, consistent with the wavelength inferred from nickel diffraction geometry (about $1.65\,\text{\AA}$ in textbook analyses). The geometric angle conventions for electron scattering and for $\theta_B$ must not be confused.
+\par\textbf{Significance.} The experiment furnished direct evidence for electron matter waves and verified $\lambda=h/p$, a cornerstone of quantum mechanics. It demonstrated that a localized electron detection pattern is nevertheless governed statistically by wave interference.
+
+\subsection{A5. Electron de Broglie wavelength after acceleration through $V$ volts}
+\begin{questionbox}Show that the de Broglie wavelength of an electron accelerated by $V$ volts is $\lambda=12.3/\sqrt V\,\text{\AA}$.\end{questionbox}
+\textbf{Step 1: Energy conservation.} Starting approximately from rest, an electron accelerated through the potential difference $V>0$ gains kinetic energy
+\begin{equation}K=eV=\frac{p^2}{2m_e}.
+\end{equation}
+It follows that
+\begin{equation}p=\sqrt{2m_e eV}.
+\end{equation}
+\textbf{Step 2: Apply de Broglie's relation.}
+\begin{equation}
+\lambda=\frac hp=\frac{h}{\sqrt{2m_e eV}}.
+\end{equation}
+Using $h=6.62607015\times10^{-34}\,\mathrm{J\,s}$, $m_e\simeq9.10938\times10^{-31}\,\mathrm{kg}$, $e=1.602176634\times10^{-19}\,\mathrm C$, and $1\,\text{\AA}=10^{-10}\,\mathrm m$ gives
+\begin{equation}
+\boxed{\lambda\simeq\frac{12.27}{\sqrt{V/(1\,\mathrm V)}}\,\text{\AA}
+\ \approx\ \frac{12.3}{\sqrt{V\text{ (volts)}}}\,\text{\AA}.}
+\end{equation}
+\textbf{Example:} At $V=150\,\mathrm V$, $\lambda\simeq12.27/\sqrt{150}\simeq1.00\,\text{\AA}$.\par
+\textbf{Range of validity.} The approximation assumes $eV\ll m_ec^2=511\,\mathrm{keV}$. The relativistically improved expression is
+\begin{equation}
+\boxed{\lambda=\frac h{\sqrt{2m_e eV\left(1+\frac{eV}{2m_ec^2}\right)}}}.
+\end{equation}
+
+\subsection{A6. Wave--particle duality}
+\begin{questionbox}Explain the principle of duality in brief.\end{questionbox}
+Wave--particle duality is the principle that quantum objects exhibit phenomena associated with both localized particles and coherent waves; neither classical model alone describes all experiments.\par
+\textbf{Wave-related evidence:} interference and diffraction in double-slit experiments, electron diffraction from crystals, and interference of photons or atoms. \textbf{Particle-related evidence:} localized detections, quantized energy transfer $E=h\nu$, photon counting, and the photoelectric and Compton effects.\par
+For photons,
+\begin{equation}E=h\nu,\qquad p=\frac h\lambda.
+\end{equation}
+For material particles,
+\begin{equation}\boxed{\lambda_{\rm dB}=\frac hp}.
+\end{equation}
+The complex wavefunction $\psi$ predicts interference through probability amplitudes, while detection outcomes occur as individual events with probabilities given by $|\psi|^2$. In a which-path experiment, path distinguishability and interference visibility are complementary: acquiring reliable path information generally diminishes fringe visibility.\par
+\textbf{Interpretive caution.} Quantum mechanics does not claim that an electron is literally a classical wave and a classical point particle simultaneously. Rather, quantum states and quantum measurements require a framework beyond either classical picture.
+
+\subsection{A7. Phase velocity is one-half the particle speed under the kinetic-energy convention}
+\begin{questionbox}Show that the wave (phase) velocity is equal to half of the particle velocity.\end{questionbox}
+For a monochromatic matter wave $\psi\propto e^{i(kx-\omega t)}$, surfaces of constant phase obey $kx-\omega t=\text{constant}$; differentiating gives
+\begin{equation}v_{\rm ph}=\frac{\dd x}{\dd t}=\frac\omega k.
+\end{equation}
+Using the nonrelativistic kinetic energy $E=p^2/(2m)$, de Broglie's $p=\hbar k$, and $E=\hbar\omega$ \emph{for this choice of wave-phase energy},
+\begin{equation}
+\frac\omega k=\frac{E/\hbar}{p/\hbar}=\frac Ep=\frac{p^2/(2m)}p=\frac p{2m}.
+\end{equation}
+Since $v=p/m$,
+\begin{equation}
+\boxed{v_{\rm ph}=\frac v2}.
+\end{equation}
+\textbf{Important qualification.} This result uses $E=K=p^2/(2m)$ with the rest-energy phase removed from the nonrelativistic \Sch{} wavefunction. For a relativistic matter wave built from total energy $E_{\rm tot}=\gamma mc^2$ and momentum $p=\gamma mv$, $E_{\rm tot}/p=c^2/v$, not $v/2$. A constant shift of the nonrelativistic Hamiltonian changes its phase frequency and therefore the nominal phase velocity, but not the group velocity or physical probability predictions.
+
+\subsection{A8. Why a free-particle plane wave is not normalizable}
+\begin{questionbox}Show that $\Psi(x,t)=Ae^{i(kx-\omega t)}$ is not normalizable.\end{questionbox}
+For a quantum state on $\R$ to admit ordinary probability normalization,
+\begin{equation}\int_{-\infty}^{\infty}|\Psi(x,t)|^2\,\dd x=1.
+\end{equation}
+But for a plane wave with real $k,\omega$,
+\begin{align}
+|\Psi(x,t)|^2&=\Psi^*\Psi
+=A^*e^{-i(kx-\omega t)}Ae^{i(kx-\omega t)}=|A|^2,\\
+\int_{-\infty}^{\infty}|\Psi|^2\,\dd x&=|A|^2\int_{-\infty}^{\infty}\dd x=\infty\quad(A\ne0).
+\end{align}
+The choice $A=0$ gives the zero function, not a normalized physical state. Hence
+\begin{equation}\boxed{e^{i(kx-\omega t)}\not\in L^2(\R).}
+\end{equation}
+A plane wave is a \emph{generalized} momentum eigenfunction. One may use (i) periodic box normalization on $[0,L]$, $\psi_k=L^{-1/2}e^{ikx}$ for $k=2\pi n/L$, or (ii) Dirac normalization on the line, $\langle p'|p\rangle=\delta(p-p')$, with $\langle x|p\rangle=(2\pi\hbar)^{-1/2}e^{ipx/\hbar}$. Actual localized states are normalizable superpositions of plane waves.
+
+\subsection{A9. Group velocity equals particle velocity}
+\begin{questionbox}Show that the group velocity is equal to the particle velocity.\end{questionbox}
+Two nearby wave numbers with close frequencies produce an interference envelope. For $\psi=e^{i(k_1x-\omega_1t)}+e^{i(k_2x-\omega_2t)}$, the identity $e^{ia}+e^{ib}=2e^{i(a+b)/2}\cos[(a-b)/2]$ yields an envelope traveling at
+\begin{equation}
+v_g=\lim_{\Delta k\to0}\frac{\Delta\omega}{\Delta k}=\frac{\dd\omega}{\dd k}.
+\end{equation}
+For a free nonrelativistic particle, $E=p^2/(2m)$, $E=\hbar\omega$, and $p=\hbar k$, hence
+\begin{equation}
+\omega(k)=\frac{\hbar k^2}{2m},\qquad
+v_g=\frac{\dd}{\dd k}\frac{\hbar k^2}{2m}=\frac{\hbar k}m=\frac pm.
+\end{equation}
+Therefore
+\begin{equation}\boxed{v_g=v_{\rm particle}.}\end{equation}
+The same idea works relativistically using $v_g=\dd E/\dd p=pc^2/E=v$. In general, group velocity describes the motion of a narrow wave-packet envelope in the absence of strong distortion.
+
+\subsection{A10. Definition and mathematical representation of a wave packet}
+\begin{questionbox}What is a wave packet? Give its mathematical representation.\end{questionbox}
+A \emph{wave packet} is a superposition of waves with different wave numbers or momenta, chosen so that their interference produces a spatially localized probability amplitude. The linearity of the \Sch{} equation allows such superposition.\par
+For a free particle on the line, choose the Fourier convention
+\begin{equation}
+\boxed{\Psi(x,t)=\frac1{\sqrt{2\pi}}\int_{-\infty}^\infty
+\widetilde\psi(k) e^{i[kx-\omega(k)t]}\,\dd k},\qquad
+\omega(k)=\frac{\hbar k^2}{2m}.
+\end{equation}
+Alternatively, with momentum amplitudes $a(p)$,
+\begin{equation}\label{eq:packet}
+\boxed{\Psi(x,t)=\frac1{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty
+a(p)\,e^{\frac i\hbar(px-\frac{p^2t}{2m})}\,\dd p}.
+\end{equation}
+Here $a(p)=\langle p|\psi(0)\rangle$, and Plancherel's theorem gives
+\begin{equation}
+\int_{\R}|\Psi(x,t)|^2\,\dd x=\int_{\R}|a(p)|^2\,\dd p.
+\end{equation}
+A normalized packet has $\int|a(p)|^2\dd p=1$. A Gaussian momentum amplitude produces a Gaussian spatial packet. The wave-number spread and spatial spread obey a Fourier uncertainty relation, which becomes $\Delta x\,\Delta p\ge\hbar/2$. For a free massive particle, distinct $k$ components have different group velocities, causing typical packets to spread in time.
+
+\subsection{A11. Max Born's interpretation of the wavefunction}
+\begin{questionbox}Explain Max Born's interpretation of the wave function.\end{questionbox}
+Born's rule assigns a probability interpretation to the squared modulus of the wavefunction. In one dimension,
+\begin{equation}
+\boxed{\rho(x,t)=|\Psi(x,t)|^2},\qquad
+\boxed{\Pr(a\le X\le b)=\int_a^b|\Psi(x,t)|^2\,\dd x}.
+\end{equation}
+For an ordinary normalized pure state,
+\begin{equation}
+\boxed{\int_{-\infty}^{\infty}|\Psi(x,t)|^2\,\dd x=1}.
+\end{equation}
+The complex amplitude $\Psi$ is not itself a probability; its phase affects interference and current. The expectation of a well-defined observable $\hat A$ in a normalized state is $\langle A\rangle=\langle\Psi|\hat A|\Psi\rangle$.
+\par\textbf{Example.} In a box $(0,L)$, the normalized ground state is $\psi_1(x)=\sqrt{2/L}\sin(\pi x/L)$. The chance to find the particle between $L/4$ and $3L/4$ is
+\begin{align}
+P&=\frac{2}{L}\int_{L/4}^{3L/4}\sin^2\!\left(\frac{\pi x}L\right)\dd x
+=\left[\frac xL-\frac{\sin(2\pi x/L)}{2\pi}\right]_{L/4}^{3L/4}\\
+&=\boxed{\frac12+\frac1\pi\approx0.8183}.
+\end{align}
+The rule predicts statistical frequencies over repeated identically prepared experiments, not a definite hidden trajectory for each detection.
+
+\subsection{A12. Properties of well-behaved wavefunctions}
+\begin{questionbox}What are the properties of well-behaved wave functions?\end{questionbox}
+A textbook ``well-behaved'' Schr\"odinger wavefunction for a regular potential has the following properties.
+\begin{enumerate}[leftmargin=*,itemsep=3pt]
+\item \textbf{Single-valuedness.} At a given $x,t$, a wavefunction assigns a definite complex amplitude $\Psi(x,t)$; a symbolic multivalued expression requires an actual branch choice. The overall global phase is unobservable.
+\item \textbf{Finiteness and local regularity.} For ordinary smooth bound states, $\Psi$ is finite and sufficiently regular to solve the differential equation. Abstract $L^2$ equivalence classes need not be pointwise bounded everywhere.
+\item \textbf{Continuity.} For standard finite nonsingular potential steps, $\psi(x_0^-)=\psi(x_0^+)$.
+\item \textbf{Derivative matching.} For a potential finite near $x_0$, $\psi'(x_0^-)=\psi'(x_0^+)$. Integrate $-\hbar^2\psi''/(2m)+(V-E)\psi=0$ from $x_0-\epsilon$ to $x_0+\epsilon$:
+\begin{equation}
+\psi'(x_0^+)-\psi'(x_0^-)=\frac{2m}{\hbar^2}\lim_{\epsilon\to0}\int_{x_0-\epsilon}^{x_0+\epsilon}(V-E)\psi\,\dd x=0.
+\end{equation}
+A delta potential $V(x)=g\delta(x-x_0)$ instead imposes $\psi'(x_0^+)-\psi'(x_0^-)=2mg\psi(x_0)/\hbar^2$.
+\item \textbf{Square integrability for bound states.} $\int_{\R}|\psi|^2\dd x<\infty$ with nonzero norm, and rescale to $\int_{\R}|\psi|^2\dd x=1$. Scattering plane waves use generalized normalization.
+\item \textbf{Appropriate boundary conditions.} Bound eigenfunctions normally decay at spatial infinity; impenetrable walls impose vanishing values at the walls, while periodic or other boundary conditions arise in different geometries. Operator domains determine which derivatives and endpoint conditions are admissible.
+\end{enumerate}
+\textbf{Caveat:} It is incorrect to demand globally continuous first derivatives for \emph{all} potentials or to demand global $C^2$ regularity of every Hilbert-space state. The correct requirements depend on the Hamiltonian and its domain.
+
+\subsection{A13. The differential operator $\dd/\dd x$ is not Hermitian}
+\begin{questionbox}Show that the operator $\dd/\dd x$ is not Hermitian.\end{questionbox}
+Write $D=\dd/\dd x$. For rapidly decaying smooth $\phi,\psi$ (e.g. in $\mathcal S(\R)$),
+\begin{align}
+\langle\phi,D\psi\rangle
+&=\int_{\R}\phi^*(x)\psi'(x)\,\dd x\\
+&=\left[\phi^*(x)\psi(x)\right]_{-\infty}^{\infty}
+-\int_{\R}\phi'^*(x)\psi(x)\,\dd x\\
+&= -\langle D\phi,\psi\rangle.
+\end{align}
+Thus $D$ is \emph{skew-symmetric}, not symmetric:
+\begin{equation}\boxed{D^\dagger=-D\quad\text{on its standard skew-adjoint domain}}.
+\end{equation}
+To be precise, the closed derivative $D:H^1(\R)\subset L^2(\R)\to L^2(\R)$ is skew-adjoint; its adjoint domain is also $H^1(\R)$. By contrast, the derivative on $C_c^\infty(\R)$ is only skew-symmetric until closure.\par
+\textbf{Counterexample.} Take $\phi=e^{-x^2}$ and $\psi=xe^{-x^2}$. Then
+\begin{equation}
+\langle\phi,D\psi\rangle=\int(1-2x^2)e^{-2x^2}\,\dd x=\half\sqrt{\frac\pi2},
+\end{equation}
+while
+\begin{equation}
+\langle D\phi,\psi\rangle=\int(-2x^2)e^{-2x^2}\,\dd x=-\half\sqrt{\frac\pi2}.
+\end{equation}
+The two are unequal. On finite intervals, the boundary contribution $[\phi^*\psi]_a^b$ must be analyzed separately.
+
+\subsection{A14. The momentum operator is Hermitian on a suitable domain}
+\begin{questionbox}Show that the momentum operator is Hermitian.\end{questionbox}
+For $\hat p=-i\hbar D$ and smooth rapidly decaying $\phi,\psi$,
+\begin{align}
+\langle\phi,\hat p\psi\rangle
+&=-i\hbar\int_{\R}\phi^*\psi'\,\dd x\\
+&=-i\hbar[\phi^*\psi]_{-\infty}^{\infty}+i\hbar\int_{\R}\phi'^*\psi\,\dd x\\
+&=\int_{\R}(-i\hbar\phi')^*\psi\,\dd x
+=\langle\hat p\phi,\psi\rangle.
+\end{align}
+The boundary term vanishes; hence the operator is symmetric. Since $D^\dagger=-D$ on $H^1(\R)$,
+\begin{equation}
+\hat p^\dagger=(-i\hbar D)^\dagger=(i\hbar)(-D)=-i\hbar D=\hat p.
+\end{equation}
+It follows that
+\begin{equation}\boxed{\hat p=-i\hbar\frac{\dd}{\dd x}\text{ is self-adjoint on }H^1(\R).}\end{equation}
+For a second proof, take the unitary Fourier transform, under which $\mathcal F\hat p\mathcal F^{-1}$ is multiplication by the real variable $p$, a self-adjoint multiplication operator on its natural maximal domain.\par
+\textbf{Boundary issue.} On an interval $[a,b]$,
+\begin{equation}
+\langle\phi,p\psi\rangle-\langle p\phi,\psi\rangle=-i\hbar[\phi^*\psi]_a^b.
+\end{equation}
+Periodic (or quasi-periodic $\psi(b)=e^{i\theta}\psi(a)$) boundary conditions allow self-adjoint momentum realizations. Simply demanding $\psi(a)=\psi(b)=0$ gives a symmetric momentum operator, but not a self-adjoint one on that domain.
+
+\subsection{A15. Canonical position--momentum commutator}
+\begin{questionbox}Show that $[\hat x,\hat p_x]=i\hbar$.\end{questionbox}
+The commutator is $[A,B]=AB-BA$. On a smooth test wavefunction $\psi\in\mathcal S(\R)$,
+\begin{align}
+[\hat x,\hat p]\psi
+&=x\left(-i\hbar\psi'\right)-(-i\hbar)\frac{\dd}{\dd x}(x\psi)\\
+&=-i\hbar x\psi'+i\hbar(\psi+x\psi')\\
+&=i\hbar\psi.
+\end{align}
+Since this holds for all $\psi$ in the chosen dense invariant domain,
+\begin{equation}\boxed{[\hat x,\hat p_x]=i\hbar\id.}\end{equation}
+The nonzero commutator means the observables are incompatible in the sense of not possessing a joint sharp spectral description. The Robertson inequality then gives
+\begin{equation}
+\Delta x\,\Delta p\ge\half\left|\langle[x,p]\rangle\right|=\boxed{\frac\hbar2}.
+\end{equation}
+The operator domains matter: the commutator is an identity on a suitable common domain, not a bounded-operator identity on all of $L^2(\R)$.
+
+\section{Part B --- extended derivations (1--6)}
+\subsection{B1. Fundamental postulates of quantum mechanics}
+\begin{questionbox}Explain the fundamental postulates of quantum mechanics in detail.\end{questionbox}
+There is no universally fixed count of ``the'' postulates: textbooks sometimes combine measurement and state-update axioms, or separate pure and mixed states. The following six-part formulation is conventional and self-contained.
+
+\subsubsection{Postulate 1: State space and superposition}
+To a quantum system is assigned a complex separable Hilbert space $\Hil$. A pure state is a \emph{ray} of $\Hil$: a normalized nonzero vector $|\psi\rangle$ represents the same state as $e^{i\alpha}|\psi\rangle$. Normalization requires
+\begin{equation}\boxed{\langle\psi|\psi\rangle=1}.
+\end{equation}
+For an orthonormal discrete basis $\{|n\rangle\}$, completeness gives
+\begin{equation}
+\id=\sum_n|n\rangle\langle n|,\qquad
+|\psi\rangle=\sum_n c_n|n\rangle,\qquad c_n=\langle n|\psi\rangle,
+\end{equation}
+and $\sum_n|c_n|^2=1$. This is the \emph{superposition principle}: complex linear combinations are allowed, subject to normalization. In position representation $\psi(x)=\langle x|\psi\rangle$ and the normalization is $\int_{\R}|\psi(x)|^2\dd x=1$.
+\par\textbf{Mixed states.} Statistical ensembles are described by a density operator $\rho=\rho^\dagger\ge0$, $\tr\rho=1$. A pure state has $\rho=|\psi\rangle\langle\psi|$ and $\rho^2=\rho$; a mixed state typically has $\rho^2\ne\rho$. This extension matters when preparation is probabilistic or only a subsystem is described.
+\par\textbf{Example: spin-$1/2$.} In $\Hil=\C^2$, $|\psi\rangle=\alpha|\uparrow\rangle+\beta|\downarrow\rangle$ with $|\alpha|^2+|\beta|^2=1$.
+
+\subsubsection{Postulate 2: Physical observables and their spectral structure}
+A sharp physical observable is represented by a self-adjoint operator $A$ on a specified dense domain $\Dom(A)\subset\Hil$, satisfying $A=A^\dagger$ with equal domains. A self-adjoint operator has a real spectrum and a projection-valued spectral measure $P_A(\Delta)$, where $\Delta$ is a Borel set of measured values. The spectral theorem writes
+\begin{equation}
+\boxed{A=\int_{\R}\lambda\,\dd P_A(\lambda)}.
+\end{equation}
+For a purely discrete finite-dimensional spectrum this simplifies to $A=\sum_a aP_a$; if nondegenerate, $P_a=|a\rangle\langle a|$. The eigenvalue equation is
+\begin{equation}A|a\rangle=a|a\rangle,\qquad a\in\R.
+\end{equation}
+\textbf{Examples:} $x$ acts by multiplication, $p=-i\hbar\partial_x$, and $H=p^2/(2m)+V(x)$ for a suitable potential and domain. An operator's mathematical domain is not an optional technicality: $p$ and $H$ are unbounded.
+
+\subsubsection{Postulate 3: Outcomes and Born probabilities}
+A measurement of $A$ yields values in its spectrum. For a pure state $|\psi\rangle$, the probability of a result in a set $\Delta$ is
+\begin{equation}
+\boxed{\Pr(A\in\Delta)=\langle\psi|P_A(\Delta)|\psi\rangle}.
+\end{equation}
+For a density operator $\rho$ this becomes $\Pr(A\in\Delta)=\tr[\rho P_A(\Delta)]$. In a discrete nondegenerate eigenbasis,
+\begin{equation}
+\Pr(a_n)=|\langle a_n|\psi\rangle|^2=|c_n|^2.
+\end{equation}
+For a degenerate outcome, $\Pr(a)=\langle\psi|P_a|\psi\rangle$; using only one eigenvector would be incorrect. The expectation and variance are
+\begin{equation}
+\boxed{\langle A\rangle=\langle\psi|A|\psi\rangle},\qquad
+\boxed{(\Delta A)^2=\langle A^2\rangle-\langle A\rangle^2}
+\end{equation}
+when the relevant moments exist. For a position measurement, $\Pr(x\in[a,b])=\int_a^b|\psi(x)|^2\dd x$.
+\par\textbf{Spin example.} If $|\psi\rangle=(\sqrt3/2)|\uparrow\rangle+(1/2)|\downarrow\rangle$, then measuring $S_z=(\hbar/2)\sigma_z$ gives $+\hbar/2$ with probability $3/4$ and $-\hbar/2$ with probability $1/4$. The expectation is $\langle S_z\rangle=\hbar/4$, which is an average, not a possible individual $S_z$ measurement result.
+
+\subsubsection{Postulate 4: State update under ideal projective measurement}
+For an ideal \emph{selective} projective measurement producing eigenvalue $a$ with $p_a=\langle\psi|P_a|\psi\rangle>0$, the Lüders update is
+\begin{equation}
+\boxed{|\psi\rangle\longmapsto\frac{P_a|\psi\rangle}{\sqrt{p_a}}}.
+\end{equation}
+For density operators, $\rho\mapsto P_a\rho P_a/\tr(P_a\rho)$. When the outcome is discarded (nonselective measurement), $\rho\mapsto\sum_aP_a\rho P_a$. A repeated measurement of the same ideal observable, immediately and without intervening dynamics, returns the selected value with probability one. General quantum instruments and POVMs extend the projective model and need not obey this specific projection rule.
+
+\subsubsection{Postulate 5: Dynamical evolution}
+An isolated quantum system evolves by unitary maps. With a self-adjoint Hamiltonian $H(t)$, the state satisfies
+\begin{equation}
+\boxed{i\hbar\frac{\dd}{\dd t}|\psi(t)\rangle=H(t)|\psi(t)\rangle}.
+\end{equation}
+For a time-independent Hamiltonian,
+\begin{equation}
+\boxed{|\psi(t)\rangle=U(t,t_0)|\psi(t_0)\rangle},\qquad
+\boxed{U(t,t_0)=e^{-iH(t-t_0)/\hbar}}.
+\end{equation}
+By self-adjointness, $U^\dagger U=\id$, so $\|\psi(t)\|=\|\psi(t_0)\|$. If $H|n\rangle=E_n|n\rangle$, then $|n,t\rangle=e^{-iE_nt/\hbar}|n\rangle$. For explicitly time-dependent $H(t)$ the evolution operator is generally time-ordered rather than the naive single exponential. A density operator evolves by $i\hbar\dot\rho=[H,\rho]$ for closed systems.
+
+\subsubsection{Postulate 6: Composition and entanglement}
+For distinguishable subsystems $A$ and $B$, the joint state space is
+\begin{equation}
+\boxed{\Hil_{AB}=\Hil_A\otimes\Hil_B}.
+\end{equation}
+Not every joint pure state is a product. For two spins, the singlet is
+\begin{equation}
+\boxed{|\Psi^-\rangle=\frac{1}{\sqrt2}\big(|\uparrow\downarrow\rangle-|\downarrow\uparrow\rangle\big)}.
+\end{equation}
+This state is entangled: there are no two single-spin vectors whose tensor product gives $|\Psi^-\rangle$. If the joint density operator is $\rho_{AB}$, the state accessible to subsystem $A$ is the partial trace $\rho_A=\tr_B\rho_{AB}$. Identical particles have additional bosonic symmetric or fermionic antisymmetric exchange restrictions.
+
+\subsubsection{Derived consistency conditions and interpretation}
+The state and measurement postulates require nonnegative normalized probabilities. Self-adjointness gives real spectra and unitary dynamics. Noncommuting operators, e.g. $[x,p]=i\hbar\id$, imply preparation uncertainty $\Delta x\Delta p\ge\hbar/2$. These implications organize the core framework: states determine amplitudes, observable operators determine outcomes, Born's rule determines probabilities, projective measurement provides an ideal update, and Schr\"odinger dynamics determines evolution between interventions.
+
+\subsection{B2. Hermitian operators: definition and proofs of their properties}
+\begin{questionbox}Define a Hermitian operator. State and prove its properties.\end{questionbox}
+\textbf{Definition.} An operator $A$ is symmetric (often called Hermitian in elementary courses) on a domain $\Dom(A)$ when
+\begin{equation}\label{eq:hermitian}
+\langle\phi,A\psi\rangle=\langle A\phi,\psi\rangle
+\quad\forall\phi,\psi\in\Dom(A).
+\end{equation}
+It is \emph{self-adjoint} if $A=A^\dagger$ including $\Dom(A)=\Dom(A^\dagger)$. These notions coincide for Hermitian matrices in finite dimensions, the setting of the elementary algebraic proofs below. An operator that is only symmetric can fail to possess a suitable spectral resolution or unique unitary dynamics.
+
+\subsubsection{Property 1: Every eigenvalue is real}
+Suppose $A|a\rangle=a|a\rangle$, $|a\rangle\ne0$. Using symmetry,
+\begin{equation}
+ a\langle a|a\rangle=\langle a|A a\rangle
+=\langle A a|a\rangle=a^*\langle a|a\rangle.
+\end{equation}
+Since $\langle a|a\rangle>0$, $a=a^*$; thus $\boxed{a\in\R}$. More generally a self-adjoint operator has entirely real spectrum, including continuous components.
+
+\subsubsection{Property 2: Eigenvectors for distinct eigenvalues are orthogonal}
+If $A|a_m\rangle=a_m|a_m\rangle$ and $A|a_n\rangle=a_n|a_n\rangle$, then
+\begin{align}
+a_n\langle a_m|a_n\rangle
+&=\langle a_m|A a_n\rangle
+=\langle A a_m|a_n\rangle
+=a_m\langle a_m|a_n\rangle.
+\end{align}
+Consequently,
+\begin{equation}
+(a_n-a_m)\langle a_m|a_n\rangle=0.
+\end{equation}
+If $a_n\ne a_m$, then $\boxed{\langle a_m|a_n\rangle=0}$. In a degenerate eigenspace, orthonormal vectors may be chosen by Gram--Schmidt.
+
+\subsubsection{Property 3: Every defined expectation value is real}
+For normalized $\psi$ in the operator domain,
+\begin{equation}
+\langle A\rangle^*=\langle\psi|A|\psi\rangle^*
+=\langle A\psi|\psi\rangle
+=\langle\psi|A\psi\rangle=\langle A\rangle.
+\end{equation}
+Therefore $\boxed{\langle A\rangle\in\R}$. This makes self-adjoint operators appropriate for observed numerical quantities.
+
+\subsubsection{Property 4: Hermitian matrix elements obey $A_{mn}=A_{nm}^*$}
+In an orthonormal basis, $A_{mn}=\langle m|A|n\rangle$. Hence
+\begin{equation}
+A_{mn}^*=\langle n|A^\dagger|m\rangle
+=\langle n|A|m\rangle=A_{nm}.
+\end{equation}
+Thus $\boxed{A_{mn}=A_{nm}^*}$; in particular $A_{nn}$ is real. Off-diagonal elements need not be real: $\left(\begin{smallmatrix}2&-i\\i&3\end{smallmatrix}\right)$ is Hermitian.
+
+\subsubsection{Property 5: Orthonormal diagonalization and spectral decomposition}
+For a Hermitian $N\times N$ matrix, the finite-dimensional spectral theorem guarantees an orthonormal eigenbasis $\{|a_n\rangle\}_{n=1}^N$ including appropriately chosen vectors in degenerate eigenspaces. Form the matrix $U=(|a_1\rangle,\ldots,|a_N\rangle)$, for which $U^\dagger U=I$. Collecting the eigenvalue equations gives $AU=UD$, where $D=\operatorname{diag}(a_1,\ldots,a_N)$. Multiplying by $U^\dagger$ yields
+\begin{equation}
+\boxed{U^\dagger A U=D},\qquad
+\boxed{A=\sum_n a_n|a_n\rangle\langle a_n|}.
+\end{equation}
+In infinite dimensions, the precise spectral theorem uses projection-valued measures and allows continuous spectra: $A=\int\lambda\,\dd P_A(\lambda)$.
+
+\subsubsection{Property 6: Positivity of the square and of variance}
+For a Hermitian matrix or self-adjoint operator $A$ and any $\psi\in\Dom(A^2)$,
+\begin{equation}
+\boxed{\langle\psi|A^2|\psi\rangle=\langle A\psi|A\psi\rangle=\|A\psi\|^2\ge0}.
+\end{equation}
+Applied to $A-\langle A\rangle I$,
+\begin{equation}
+\boxed{(\Delta A)^2=\langle A^2\rangle-\langle A\rangle^2\ge0}.
+\end{equation}
+These formulas hold for states with finite second moment.
+
+\subsubsection{Property 7: Closure under real linear combinations}
+For Hermitian matrices $A,B$ and real $a,b$,
+\begin{equation}
+(aA+bB)^\dagger=aA^\dagger+bB^\dagger=aA+bB.
+\end{equation}
+Thus $\boxed{aA+bB\text{ is Hermitian}}$. For unbounded self-adjoint operators the same formal identity is insufficient on its own: the sum's domain and self-adjointness must be checked separately.
+
+\subsubsection{Property 8: The product $AB$ is Hermitian iff Hermitian matrices commute}
+For Hermitian matrices $A,B$,
+\begin{equation}
+(AB)^\dagger=B^\dagger A^\dagger=BA.
+\end{equation}
+Therefore $(AB)^\dagger=AB$ exactly when $\boxed{AB=BA}$. Example: Pauli matrices $\sigma_x$ and $\sigma_y$ are Hermitian, but $\sigma_x\sigma_y=i\sigma_z$ is skew-Hermitian, since the matrices do not commute. Infinite-dimensional products again require domain care.
+
+\subsubsection{Property 9: Trace and determinant are real}
+In finite dimension, the eigenvalues are real, hence $\tr A=\sum_n a_n\in\R$ and $\det A=\prod_n a_n\in\R$. Neither need be positive.\par
+\textbf{Additional consequence:} If $H$ is self-adjoint, Stone's theorem gives the unitary family $U(t)=e^{-iHt/\hbar}$, preserving norms.
+
+\subsubsection{Fully worked $2\times2$ example}
+Take
+\begin{equation}
+A=\begin{pmatrix}2&-i\\i&2\end{pmatrix}=A^\dagger.
+\end{equation}
+The characteristic equation is
+\begin{equation}
+\det(A-\lambda I)=(2-\lambda)^2-1=0,
+\end{equation}
+so the eigenvalues are $\lambda_+=3$ and $\lambda_-=1$. Corresponding normalized eigenvectors are
+\begin{equation}
+v_+=\frac1{\sqrt2}\begin{pmatrix}1\\i\end{pmatrix},\qquad
+v_-=\frac1{\sqrt2}\begin{pmatrix}1\\-i\end{pmatrix},\qquad v_+^\dagger v_-=0.
+\end{equation}
+With
+\begin{equation}
+U=\frac1{\sqrt2}\begin{pmatrix}1&1\\i&-i\end{pmatrix},
+\end{equation}
+we obtain $U^\dagger U=I$ and
+\begin{equation}
+\boxed{U^\dagger AU=\begin{pmatrix}3&0\\0&1\end{pmatrix}}.
+\end{equation}
+This concretely verifies real eigenvalues, orthogonal eigenvectors, and unitary diagonalization.
+\par\textbf{Exam conclusion.} Hermitian/self-adjoint structure guarantees real measurement values, orthogonal spectral subspaces, real expectation values, and the existence of a spectral representation; for unbounded physical operators, a correct domain is indispensable.
+
+\subsection{B3. Derivation of the time-independent Schr\"odinger equation and time factor}
+\begin{questionbox}Derive the time-independent Schr\"odinger equation from the time-dependent Schr\"odinger equation. Derive the expression for time-dependence of the wave function.\end{questionbox}
+\textbf{Step 1: Begin with the dynamics.} For a spinless particle in $\R^3$ with a time-independent scalar potential $V(\mathbf r)$,
+\begin{equation}\label{eq:TDSE}
+\boxed{i\hbar\frac{\partial\Psi(\mathbf r,t)}{\partial t}
+=\left[-\frac{\hbar^2}{2m}\nabla^2+V(\mathbf r)\right]\Psi(\mathbf r,t)}.
+\end{equation}
+This is the time-dependent \Sch{} equation, with $\nabla^2=\partial_x^2+\partial_y^2+\partial_z^2$.\par
+\textbf{Step 2: Seek separated solutions.} Assume a nontrivial product $\Psi(\mathbf r,t)=\psi(\mathbf r)T(t)$. Substitution yields
+\begin{equation}
+i\hbar\psi\frac{\dd T}{\dd t}
+=-\frac{\hbar^2}{2m}T\nabla^2\psi+VT\psi.
+\end{equation}
+Dividing by $\psi T$ wherever nonzero,
+\begin{equation}\label{eq:separation}
+i\hbar\frac{T'}T
+=-\frac{\hbar^2}{2m}\frac{\nabla^2\psi}{\psi}+V(\mathbf r).
+\end{equation}
+The left side depends only on $t$, while the right side only on $\mathbf r$. Therefore both equal a constant $E$. For the standard self-adjoint time-independent Hamiltonian the separation constant is real and represents energy.\par
+\textbf{Step 3: Obtain the spatial eigenvalue equation.}
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{\nabla^2\psi}{\psi}+V=E
+\quad\Longrightarrow\quad
+\boxed{\left[-\frac{\hbar^2}{2m}\nabla^2+V(\mathbf r)\right]\psi(\mathbf r)=E\psi(\mathbf r)}.
+\end{equation}
+This is the time-independent \Sch{} equation $H\psi=E\psi$. In one dimension it is
+\begin{equation}
+\boxed{-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x)},
+\quad\text{or}\quad
+\boxed{\psi''+\frac{2m}{\hbar^2}(E-V)\psi=0}.
+\end{equation}
+Only those $E$ values admitting solutions satisfying the appropriate boundary conditions belong to the spectrum. Bound states in confining potentials often form a discrete sequence, while free-particle energies are continuous.\par
+\textbf{Step 4: Solve the temporal equation.} From $i\hbar T'/T=E$,
+\begin{equation}
+\frac{\dd T}{T}=-\frac{iE}{\hbar}\dd t.
+\end{equation}
+Integration gives $\ln T=-iEt/\hbar+\text{constant}$, hence
+\begin{equation}
+\boxed{T(t)=C e^{-iEt/\hbar}}.
+\end{equation}
+The constant $C$ is absorbed into $\psi$. The final separated wavefunction is therefore
+\begin{equation}\label{eq:stationary}
+\boxed{\Psi_E(\mathbf r,t)=\psi_E(\mathbf r)e^{-iEt/\hbar}}.
+\end{equation}
+\textbf{Step 5: Why ``stationary''?} Since $E$ is real,
+\begin{equation}
+|\Psi_E(\mathbf r,t)|^2=|\psi_E(\mathbf r)|^2|e^{-iEt/\hbar}|^2=|\psi_E(\mathbf r)|^2,
+\end{equation}
+so its position probability density is time independent. The state need not have zero current or zero momentum. Its energy variance is zero if it is a normalized eigenstate: $\langle H\rangle=E$ and $\langle H^2\rangle=E^2$.
+\par\textbf{Step 6: General initial states.} If $\{\psi_n\}$ is a complete discrete energy eigenbasis, an arbitrary normalized initial wavefunction is $\Psi(\mathbf r,0)=\sum_n c_n\psi_n(\mathbf r)$ with $c_n=\langle\psi_n|\Psi(0)\rangle$. Linearity gives
+\begin{equation}\label{eq:generalt}
+\boxed{\Psi(\mathbf r,t)=\sum_n c_n\psi_n(\mathbf r)e^{-iE_nt/\hbar}},\qquad \sum_n|c_n|^2=1.
+\end{equation}
+Add a continuum integral if the Hamiltonian has continuous-spectrum states. The cross terms in $|\Psi|^2$ carry phases $e^{-i(E_n-E_m)t/\hbar}$; a superposition of different energies need not be stationary. The operator formulation is $|\Psi(t)\rangle=e^{-iHt/\hbar}|\Psi(0)\rangle$.
+\par\textbf{Illustrative energy quantization.} In an infinite well $0<x<L$, $V=0$ inside and $\psi(0)=\psi(L)=0$. The equation $\psi''+k^2\psi=0$ has $\psi=A\sin kx+B\cos kx$. Boundary conditions force $B=0$, $k_n=n\pi/L$, and normalization gives
+\begin{equation}
+\boxed{E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}},\qquad
+\boxed{\Psi_n(x,t)=\sqrt{\frac2L}\sin\frac{n\pi x}{L}\,e^{-iE_nt/\hbar}}.
+\end{equation}
+The phase is time-dependent even though $|\Psi_n|^2$ is not. This completes both requested derivations.
+
+\subsection{B4. Free particle in one dimension: stationary equation and full $x,t$ solution}
+\begin{questionbox}Solve the time-independent Schr\"odinger's equation for the case of a free particle in 1D and obtain the wave function as a function of both space and time.\end{questionbox}
+\textbf{Step 1: Hamiltonian.} A free particle on the line experiences $V(x)=0$, so
+\begin{equation}
+H=\frac{p^2}{2m}=-\frac{\hbar^2}{2m}\frac{\dd^2}{\dd x^2}.
+\end{equation}
+The TISE is
+\begin{equation}
+-\frac{\hbar^2}{2m}\frac{\dd^2\psi}{\dd x^2}=E\psi,
+\quad\Longrightarrow\quad \psi''+k^2\psi=0,\quad k=\frac{\sqrt{2mE}}\hbar.
+\end{equation}
+\textbf{Step 2: Characteristic equation.} Trying $\psi=e^{rx}$ gives $r^2+k^2=0$, so $r=\pm ik$ and
+\begin{equation}\label{eq:free_spatial}
+\boxed{\psi_E(x)=Ae^{ikx}+Be^{-ikx}},\qquad E=\frac{\hbar^2k^2}{2m},\quad k>0.
+\end{equation}
+Equivalently, $\psi=C\cos kx+D\sin kx$. Both components have the same $E>0$. For $E=0$, solutions are $A+Bx$; no nonzero such solution is square integrable on the line. There is no negative-energy spectrum for this Hamiltonian on $L^2(\R)$.
+\par\textbf{Step 3: Restore time.} The time equation $i\hbar T'=ET$ gives $T=e^{-iEt/\hbar}=e^{-i\omega t}$, $\omega=\hbar k^2/(2m)$. The full fixed-energy solution is
+\begin{equation}\label{eq:free_full}
+\boxed{\Psi_E(x,t)=[Ae^{ikx}+Be^{-ikx}]e^{-i\hbar k^2t/(2m)}}
+\end{equation}
+or
+\begin{equation}
+\boxed{\Psi_E(x,t)=Ae^{i(kx-\omega t)}+Be^{-i(kx+\omega t)}}.
+\end{equation}
+\textbf{Step 4: Interpret the terms.} Applying $p=-i\hbar\partial_x$,
+\begin{equation}
+p\,e^{ikx}=+\hbar k\,e^{ikx},\qquad p\,e^{-ikx}=-\hbar k\,e^{-ikx}.
+\end{equation}
+Thus the $A$ wave has momentum $+\hbar k$ and propagates to the right; the $B$ wave has momentum $-\hbar k$ and propagates to the left. Their identical energy $E=\hbar^2k^2/(2m)$ makes the positive-energy continuum doubly degenerate in direction.
+\par\textbf{Step 5: Normalization.} A single plane wave has $|\Psi|^2=|A|^2$, so $\int_{\R}|\Psi|^2\dd x$ diverges unless $A=0$. Such plane waves are generalized eigenfunctions. Momentum-normalized states use
+\begin{equation}
+\langle x|p\rangle=\frac1{\sqrt{2\pi\hbar}}e^{ipx/\hbar},\qquad
+\langle p'|p\rangle=\delta(p-p').
+\end{equation}
+Physical normalized free states are superpositions,
+\begin{equation}
+\boxed{\Psi(x,t)=\frac1{\sqrt{2\pi\hbar}}\int_{\R} a(p)
+\exp\left[\frac i\hbar\left(px-\frac{p^2t}{2m}\right)\right]\dd p},
+\quad\int_{\R}|a(p)|^2\dd p=1.
+\end{equation}
+\textbf{Step 6: Probability current.} Starting from the TDSE and its conjugate one derives
+\begin{equation}
+\frac{\partial\rho}{\partial t}+\frac{\partial j}{\partial x}=0,\qquad
+\rho=|\Psi|^2,\quad j=\frac\hbar{2mi}(\Psi^*\Psi'-\Psi\Psi'^*).
+\end{equation}
+For a single $Ae^{i(kx-\omega t)}$,
+\begin{equation}
+\boxed{j_+=\frac{\hbar k}{m}|A|^2},\qquad
+\boxed{j_-=-\frac{\hbar k}{m}|B|^2},
+\end{equation}
+while the fixed-energy $A/B$ superposition gives $j=(\hbar k/m)(|A|^2-|B|^2)$. This current measures probability transport and has the sign of the net particle flow.
+\par\textbf{Step 7: Dispersion and wave-packet motion.} The dispersion relation is
+\begin{equation}
+\boxed{\omega(k)=\frac{\hbar k^2}{2m}}.
+\end{equation}
+Thus $v_{\rm phase}=\omega/k=\hbar k/(2m)=v/2$ under the kinetic-energy phase convention, whereas $v_g=\dd\omega/\dd k=\hbar k/m=p/m=v$. Since $\dd^2\omega/\dd k^2=\hbar/m\ne0$, free localized wave packets generally disperse.\par
+\textbf{Result.} Equation \eqref{eq:free_full} is the requested space-time solution at fixed $E>0$; the Fourier superposition is the normalized physical solution for general initial data.
+
+\subsection{B5. Position uncertainty for a constant wavefunction on $[-a,a]$}
+\begin{questionbox}A particle in 1D is described by a wave function $\psi(x)=A$ from $-a$ to $a$. Calculate its uncertainty in position ($\sigma_x$).\end{questionbox}
+Let $a>0$ and
+\begin{equation}
+\psi(x)=\begin{cases}A,&-a\le x\le a,\\0,&\text{otherwise.}\end{cases}
+\end{equation}
+\textbf{Step 1: Normalize.} Born's condition gives
+\begin{equation}
+1=\int_{-\infty}^{\infty}|\psi|^2\dd x
+=|A|^2\int_{-a}^a\dd x=2a|A|^2.
+\end{equation}
+Choose an irrelevant overall phase so $A>0$. Then
+\begin{equation}
+\boxed{A=\frac1{\sqrt{2a}}},\qquad
+\boxed{\rho(x)=|\psi|^2=\frac1{2a}\quad(|x|\le a)}.
+\end{equation}
+\textbf{Step 2: Compute the mean.} Because the normalized density is even, the integrand $x\rho(x)$ is odd:
+\begin{equation}
+\langle x\rangle=\frac1{2a}\int_{-a}^a x\,\dd x=\boxed{0}.
+\end{equation}
+\textbf{Step 3: Compute the second moment.}
+\begin{align}
+\langle x^2\rangle&=\int_{-\infty}^\infty x^2\rho(x)\dd x
+=\frac1{2a}\int_{-a}^a x^2\dd x\\
+&=\frac1{2a}\left[\frac{x^3}{3}\right]_{-a}^a
+=\frac1{2a}\frac{2a^3}{3}=\boxed{\frac{a^2}{3}}.
+\end{align}
+\textbf{Step 4: Variance and standard deviation.}
+\begin{align}
+\sigma_x^2&=\langle x^2\rangle-\langle x\rangle^2=\frac{a^2}{3},\\
+\boxed{\sigma_x=\Delta x=\frac{a}{\sqrt3}}&\qquad(a>0).
+\end{align}
+\textbf{Interpretation.} The position outcome is uniformly distributed over an interval of width $2a$; its average is the center $0$, while its standard deviation is $a/\sqrt3\simeq0.577a$. This is a \emph{statistical spread}, not a statement that the particle is certainly located at the origin.\par
+\textbf{M.Sc. domain subtlety.} The rectangular $\psi$ jumps at $x=\pm a$. It is a perfectly legitimate normalized $L^2(\R)$ position state with finite $\Delta x$, but it does not lie in the standard $H^1(\R)$ domain of free momentum. Its momentum-space amplitude is proportional to $\sin(ap/\hbar)/p$, so $|a(p)|^2\sim p^{-2}$ along its envelope. Its momentum variance is therefore infinite; a formal derivative inside the interval alone would incorrectly suggest zero momentum uncertainty. The assignment requests only $\sigma_x$, which is well-defined.
+
+\subsection{B6. Position--momentum uncertainties of a free particle in 1D}
+\begin{questionbox}Evaluate position and momentum uncertainties for a free particle in 1D.\end{questionbox}
+\textbf{Why the preparation matters.} The Hamiltonian $H=p^2/(2m)$ fixes the dynamics, not the initial state. Without specifying the state, no unique pair $(\Delta x,\Delta p)$ exists. We distinguish an ideal generalized momentum eigenstate from a normalized wave packet, then work out a Gaussian state completely.
+
+\subsubsection{Case 1: Generalized plane-wave eigenstate}
+For $\phi_p(x)=(2\pi\hbar)^{-1/2}e^{ipx/\hbar}$, $\hat p\phi_p=p\phi_p$. In generalized eigenstate language momentum is sharp, so formally $\Delta p=0$. But $\phi_p\notin L^2(\R)$ and therefore does not define an ordinary normalized position probability distribution. Its $\langle x\rangle$, $\langle x^2\rangle$, and $\Delta x$ are not ordinary well-defined moments. Calling it ``$\Delta x=\infty$'' is a heuristic delocalization statement, not a standard deviation calculated from a normalized vector.
+
+\subsubsection{Case 2: Initial Gaussian packet and normalization}
+Choose a normalized Gaussian centered at $x_0$ with central momentum $p_0$ and positive width parameter $\sigma_0$:
+\begin{equation}\label{eq:gauss0}
+\boxed{\psi(x,0)=\frac1{(2\pi\sigma_0^2)^{1/4}}
+\exp\left[-\frac{(x-x_0)^2}{4\sigma_0^2}+\frac{ip_0(x-x_0)}\hbar\right]}.
+\end{equation}
+Its probability density is
+\begin{equation}
+\rho(x,0)=\frac1{\sqrt{2\pi}\sigma_0}
+\exp\left[-\frac{(x-x_0)^2}{2\sigma_0^2}\right].
+\end{equation}
+Let $y=x-x_0$. The Gaussian integrals
+\begin{equation}\label{eq:gaussints}
+\int_{\R}e^{-ay^2}\dd y=\sqrt{\frac\pi a},\quad
+\int_{\R}ye^{-ay^2}\dd y=0,\quad
+\int_{\R}y^2e^{-ay^2}\dd y=\frac{\sqrt\pi}{2a^{3/2}}
+\end{equation}
+for $a>0$ verify $\int\rho\dd x=1$, $\langle y\rangle=0$, and $\langle y^2\rangle=\sigma_0^2$. Thus
+\begin{equation}
+\boxed{\langle x\rangle_0=x_0},\quad
+\boxed{\langle x^2\rangle_0=x_0^2+\sigma_0^2},\quad
+\boxed{\Delta x(0)=\sigma_0}.
+\end{equation}
+
+\subsubsection{Calculate the momentum moments explicitly}
+Differentiate \eqref{eq:gauss0}:
+\begin{equation}
+\psi'(x,0)=\left[-\frac{x-x_0}{2\sigma_0^2}+\frac{ip_0}{\hbar}\right]\psi(x,0).
+\end{equation}
+Acting with $p=-i\hbar\partial_x$,
+\begin{equation}\label{eq:p_on_gauss}
+\boxed{p\psi=\left[p_0+\frac{i\hbar(x-x_0)}{2\sigma_0^2}\right]\psi}.
+\end{equation}
+Integrating against $\psi^*$ and using $\langle x-x_0\rangle=0$ gives
+\begin{equation}\boxed{\langle p\rangle_0=p_0}.
+\end{equation}
+For the second central moment, avoid a cumbersome second derivative by using self-adjointness and the norm:
+\begin{align}
+(\Delta p(0))^2
+&=\langle(p-p_0)^2\rangle_0
+=\|(p-p_0)\psi\|^2\\
+&=\int_{\R}\frac{\hbar^2(x-x_0)^2}{4\sigma_0^4}|\psi|^2\,\dd x
+=\frac{\hbar^2}{4\sigma_0^4}\sigma_0^2.
+\end{align}
+Therefore,
+\begin{equation}\label{eq:gaussunc0}
+\boxed{\langle p^2\rangle_0=p_0^2+\frac{\hbar^2}{4\sigma_0^2}},\qquad
+\boxed{\Delta p(0)=\frac{\hbar}{2\sigma_0}}.
+\end{equation}
+Multiplying the two uncertainties,
+\begin{equation}\label{eq:initialUP}
+\boxed{\Delta x(0)\,\Delta p(0)=\sigma_0\frac{\hbar}{2\sigma_0}=\frac\hbar2}.
+\end{equation}
+The initial Gaussian saturates the Heisenberg--Robertson bound and is an \emph{unchirped minimum-uncertainty state}.
+
+\subsubsection{Derive time-dependent uncertainties via Heisenberg operators}
+For free evolution, the Heisenberg equation is $\dd A_H/\dd t=(i/\hbar)[H,A_H]$ for operators with no explicit time dependence. Since $H=p^2/(2m)$,
+\begin{equation}
+[H,p]=0,\qquad [H,x]=-\frac{i\hbar}{m}p.
+\end{equation}
+Thus
+\begin{equation}\label{eq:hex}
+\boxed{p_H(t)=p(0)},\qquad
+\boxed{x_H(t)=x(0)+\frac{p(0)}m t}.
+\end{equation}
+Taking means gives $\langle p\rangle_t=p_0$ and $\langle x\rangle_t=x_0+p_0t/m$. Taking centered squares carefully,
+\begin{equation}\label{eq:genericvariance}
+\boxed{\Delta x(t)^2=\Delta x(0)^2+\frac{2t}{m}\Cov(x,p)_0+\frac{t^2}{m^2}\Delta p(0)^2},
+\end{equation}
+where $\Cov(x,p)=\frac12\langle (x-\langle x\rangle)(p-\langle p\rangle)+(p-\langle p\rangle)(x-\langle x\rangle)\rangle$.\par
+For the real-envelope Gaussian \eqref{eq:gauss0}, this initial symmetrized covariance vanishes. For example, $\langle(x-x_0)(p-p_0)\rangle=i\hbar/2$ by \eqref{eq:p_on_gauss}, while the symmetric real part is zero. Therefore \eqref{eq:genericvariance} becomes
+\begin{equation}\label{eq:gausstime}
+\boxed{\Delta x(t)=\sigma_0\sqrt{1+\left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}},\qquad
+\boxed{\Delta p(t)=\frac\hbar{2\sigma_0}}.
+\end{equation}
+Thus
+\begin{equation}\label{eq:prodtime}
+\boxed{\Delta x(t)\Delta p(t)=\frac\hbar2\sqrt{1+\left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}\ \ge\ \frac\hbar2}.
+\end{equation}
+For $t\ne0$, the ordinary Robertson product is strictly larger than $\hbar/2$. Momentum variance stays fixed; position variance grows quadratically because different momenta propagate at different velocities.
+
+\subsubsection{Exact evolved Gaussian and probability density}
+The free particle's general momentum-space solution is $a(p,t)=e^{-ip^2t/(2m\hbar)}a(p,0)$. Fourier transforming the initial Gaussian gives
+\begin{equation}\label{eq:gauss_evolved}
+\boxed{\begin{aligned}
+\Psi(x,t)={}&\frac{(2\pi\sigma_0^2)^{-1/4}}{\sqrt{1+i\tau}}
+\exp\!\left[-\frac{(x-x_0-p_0t/m)^2}{4\sigma_0^2(1+i\tau)}\right]\\
+&\times\exp\!\left[\frac{ip_0(x-x_0)}\hbar-\frac{ip_0^2t}{2m\hbar}\right],
+\qquad \tau=\frac{\hbar t}{2m\sigma_0^2}.
+\end{aligned}}
+\end{equation}
+Direct substitution into the free TDSE verifies the expression; at $t=0$ it reduces to \eqref{eq:gauss0}. Because $|1+i\tau|=\sqrt{1+\tau^2}$, its density is
+\begin{equation}
+\boxed{|\Psi(x,t)|^2=\frac1{\sqrt{2\pi}\sigma(t)}
+\exp\left[-\frac{(x-x_0-p_0t/m)^2}{2\sigma(t)^2}\right]},\quad
+\sigma(t)=\sigma_0\sqrt{1+\tau^2}.
+\end{equation}
+The packet remains normalized, its center propagates at $v_0=p_0/m$, and its width grows; this agrees with the operator derivation.
+
+\subsubsection{Uncertainty principle and stronger Schrödinger--Robertson relation}
+On a suitable common domain, the canonical commutator is $[x,p]=i\hbar I$. The Cauchy--Schwarz inequality applied to $(x-\langle x\rangle)|\psi\rangle$ and $(p-\langle p\rangle)|\psi\rangle$ implies
+\begin{equation}
+(\Delta x)^2(\Delta p)^2\ge\Cov(x,p)^2+\frac14|\langle[x,p]\rangle|^2
+=\Cov(x,p)^2+\frac{\hbar^2}{4}.
+\end{equation}
+For the evolved Gaussian, $\Cov(x,p)_t=t\Delta p^2/m=\hbar^2t/(4m\sigma_0^2)$, so
+\begin{equation}
+(\Delta x(t))^2(\Delta p(t))^2-\Cov(x,p)_t^2=\boxed{\frac{\hbar^2}{4}}.
+\end{equation}
+The packet continues to saturate the \emph{stronger} inequality even though $\Delta x(t)\Delta p(t)>\hbar/2$ for $t\ne0$.
+\par\textbf{Conclusion.} A free-particle plane wave has sharp momentum only as an improper, delocalized eigenstate. For a normalizable unchirped Gaussian, initially $\Delta x=\sigma_0$, $\Delta p=\hbar/(2\sigma_0)$, with minimum uncertainty product $\hbar/2$. Free evolution preserves momentum spread and increases position spread according to \eqref{eq:gausstime}. These are state-dependent results, not universal numerical uncertainties assigned by the free-particle Hamiltonian alone.
+
+\section{Key results and examination map}
+The short problems build the concepts required for the extended solutions. The most frequently needed formulas are collected here for rapid revision.
+\begin{longtable}{@{}p{0.33\textwidth}p{0.62\textwidth}@{}}
+\toprule
+\textbf{Concept / assigned problem} & \textbf{Principal result or condition} \\
+\midrule
+\endhead
+Planck law (A1--A2) & $B_\nu=2h\nu^3/[c^2(e^{h\nu/k_BT}-1)]$; low-$\nu$ Rayleigh--Jeans and high-$\nu$ Wien limits.\\
+Photoelectric effect (A3) & $K_{\max}=h\nu-\Phi=eV_s$, threshold $\nu_0=\Phi/h$.\\
+Electron diffraction (A4--A6) & $\lambda=h/p\simeq 12.27\,\text{\AA}/\sqrt{V(\mathrm V)}$; Bragg law $n\lambda=2d\sin\theta_B$.\\
+Phase / group velocities (A7, A9) & $v_{\rm ph}=v/2$ in the nonrelativistic kinetic-energy convention; $v_g=\dd\omega/\dd k=v$.\\
+Wave packets / Born rule (A8, A10--A11) & $\Psi(x,t)=(2\pi\hbar)^{-1/2}\int a(p)e^{i(px-p^2t/2m)/\hbar}\dd p$; $\rho=|\Psi|^2$.\\
+Operators (A12--A15; B2) & $D^\dagger=-D$ and $p^\dagger=p$ on suitable domains; $[x,p]=i\hbar I$.\\
+Postulates (B1) & Hilbert-space state; self-adjoint observables; Born rule; ideal state update; unitary dynamics; tensor products.\\
+Stationary Schr\"odinger equation (B3) & $H\psi_E=E\psi_E$, $\Psi_E(x,t)=\psi_E(x)e^{-iEt/\hbar}$.\\
+Free particle (B4) & $\psi_E=Ae^{ikx}+Be^{-ikx}$, $E=\hbar^2k^2/(2m)$, $j=(\hbar k/m)(|A|^2-|B|^2)$.\\
+Uniform position density (B5) & $\psi=1/\sqrt{2a}$ on $[-a,a]$, $\langle x\rangle=0$, $\Delta x=a/\sqrt3$.\\
+Gaussian uncertainties (B6) & $\Delta x(0)=\sigma_0$, $\Delta p=\hbar/(2\sigma_0)$, $\Delta x(t)=\sigma_0\sqrt{1+[\hbar t/(2m\sigma_0^2)]^2}$.\\
+\bottomrule
+\end{longtable}
+
+\appendix
+\section{Appendix: Operator domains, boundary conditions, and generalized states}
+\subsection{Why differentiating $L^2$ states requires care}
+The space $L^2(\R)$ consists of equivalence classes of square-integrable functions; a generic element need not be differentiable. Defining $p=-i\hbar D$ requires an operator domain. The Sobolev domain
+\begin{equation}
+H^1(\R)=\{\psi\in L^2(\R):\psi'\text{ in the weak sense belongs to }L^2(\R)\}
+\end{equation}
+makes $p$ self-adjoint. The free Hamiltonian $H=p^2/(2m)$ acts naturally on $H^2(\R)$. A rectangular step wavefunction is in $L^2$ but not in $H^1$; its momentum distribution exists via Fourier transform, but the second moment of momentum diverges.\par
+On $[a,b]$ the integration-by-parts boundary form is
+\begin{equation}
+\langle\phi,p\psi\rangle-\langle p\phi,\psi\rangle=-i\hbar[\phi^*(x)\psi(x)]_{a}^{b}.
+\end{equation}
+A one-parameter family of self-adjoint momentum boundary conditions is $\psi(b)=e^{i\theta}\psi(a)$ with $\theta\in[0,2\pi)$. Dirichlet boundary conditions at both endpoints make $p$ symmetric but not self-adjoint. An infinite-well \emph{Hamiltonian} does admit self-adjoint Dirichlet conditions, demonstrating that a domain appropriate for $p^2$ need not provide a self-adjoint realization of $p$ itself.
+
+\subsection{Fourier representation of the rectangular position state}
+For $\psi(x)=1/\sqrt{2a}$ on $[-a,a]$ and zero elsewhere, define the momentum amplitude by
+\begin{equation}
+a(p)=\frac1{\sqrt{2\pi\hbar}}\int_{\R}\psi(x)e^{-ipx/\hbar}\dd x.
+\end{equation}
+Evaluation gives
+\begin{equation}
+a(p)=\frac1{\sqrt{2\pi\hbar\,2a}}\int_{-a}^{a}e^{-ipx/\hbar}\dd x
+=\sqrt{\frac{\hbar}{\pi a}}\,\frac{\sin(ap/\hbar)}p,
+\end{equation}
+with the continuous limit at $p=0$. Therefore,
+\begin{equation}
+\boxed{|a(p)|^2=\frac{\hbar}{\pi a}\frac{\sin^2(ap/\hbar)}{p^2}}.
+\end{equation}
+The $p^{-2}$ tail is integrable, consistent with norm one. But $\int p^2|a(p)|^2\dd p=(\hbar/\pi a)\int\sin^2(ap/\hbar)\dd p$ diverges. This establishes rigorously why the discontinuous state has no finite momentum variance, notwithstanding its finite position variance.
+
+\subsection{Robertson and Schr\"odinger--Robertson uncertainty from Cauchy--Schwarz}
+For normalized $|\psi\rangle$ and self-adjoint $A,B$, let $\tilde A=A-\langle A\rangle I$, $\tilde B=B-\langle B\rangle I$, and $|f\rangle=\tilde A|\psi\rangle$, $|g\rangle=\tilde B|\psi\rangle$. The Cauchy--Schwarz inequality gives
+\begin{equation}
+(\Delta A)^2(\Delta B)^2\ge|\langle f|g\rangle|^2
+=|\langle\tilde A\tilde B\rangle|^2.
+\end{equation}
+The real and imaginary parts are
+\begin{equation}
+\Re\langle\tilde A\tilde B\rangle=\frac12\langle\{\tilde A,\tilde B\}\rangle=\Cov(A,B),
+\end{equation}
+\begin{equation}
+\Im\langle\tilde A\tilde B\rangle=\frac1{2i}\langle[A,B]\rangle.
+\end{equation}
+Thus, assuming the requisite products and moments exist,
+\begin{equation}
+\boxed{(\Delta A)^2(\Delta B)^2\ge\Cov(A,B)^2+\frac14|\langle[A,B]\rangle|^2}.
+\end{equation}
+Dropping the nonnegative covariance term gives the Robertson bound. For $A=x$, $B=p$, the canonical commutator yields $\Delta x\Delta p\ge\hbar/2$.
+
+\section{Appendix: Dimensional and physical checks}
+\begin{enumerate}[leftmargin=*]
+\item $\lambda=h/p$ has dimensions $[\mathrm{J\,s}]/[\mathrm{kg\,m\,s^{-1}}]=\mathrm m$.
+\item $\hbar k^2/(2m)$ has dimensions $\mathrm{s^{-1}}$, as required for $\omega$.
+\item $j=(\hbar k/m)|A|^2$ has dimensions $(\mathrm{m\,s^{-1}})(\mathrm{m^{-1}})=\mathrm{s^{-1}}$ in one dimension; its spatial integral interpretation agrees with probability-flow rates.
+\item $\Delta x\Delta p$ has dimensions $\mathrm{kg\,m^2\,s^{-1}}$, matching action $[\hbar]$.
+\item $\sigma(t)^2=\sigma_0^2+\hbar^2t^2/(4m^2\sigma_0^2)$ has dimensions $\mathrm m^2$ in each term.
+\item A stationary state has constant $|\psi(x,t)|^2$; this does not imply zero probability current or zero microscopic velocity.
+\end{enumerate}
+
+\begin{thebibliography}{9}
+\bibitem{assignment} Department of Physics \& Nanotechnology, SRM Institute of Science and Technology, Kattankulathur, \emph{Quantum Mechanics--I (PPY25103J), Assignment--I}, M.Sc. Physics / M.Sc. Applied Physics, Semester I (course handout provided by the student, 2026). The assignment contains the 21 problem statements solved here.
+\bibitem{griffiths} D. J. Griffiths and D. F. Schroeter, \emph{Introduction to Quantum Mechanics}, 3rd ed. (Cambridge University Press, 2018).
+\bibitem{shankar} R. Shankar, \emph{Principles of Quantum Mechanics}, 2nd ed. (Plenum Press, 1994).
+\bibitem{sakurai} J. J. Sakurai and J. Napolitano, \emph{Modern Quantum Mechanics}, 3rd ed. (Cambridge University Press, 2020).
+\bibitem{reed_simon} M. Reed and B. Simon, \emph{Methods of Modern Mathematical Physics}, Vol. I: \emph{Functional Analysis}, rev. and enlarged ed. (Academic Press, 1980).
+\end{thebibliography}
+
+\end{document}

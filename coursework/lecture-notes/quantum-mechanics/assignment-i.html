@@ -1,0 +1,478 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Foundations, wave–particle duality and operators"><title>Assignment I — Complete Solutions | Kumar Azad</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],tags:'ams',processEscapes:true,macros:{"dd":"\\mathrm{d}","iu":"\\mathrm{i}","ee":"\\mathrm{e}","Hil":"\\mathcal H","Dom":"\\mathcal D","R":"\\mathbb R","C":"\\mathbb C","id":"\\mathbb I","avg":["\\langle #1\\rangle",1],"pmean":["\\langle #1\\rangle",1],"Var":"\\operatorname{Var}","Cov":"\\operatorname{Cov}","bra":["\\langle #1|",1],"ket":["|#1\\rangle",1],"braket":["\\langle #1|#2\\rangle",2],"ip":["\\langle #1|#2\\rangle",2],"norm":["\\lVert #1\\rVert",1],"abs":["\\lvert #1\\rvert",1],"p":"\\partial","Hh":"\\mathcal H","eps":"\\varepsilon_0","lap":"\\nabla^2","aH":"a_{\\mathrm H}","mH":"\\mu_{\\mathrm H}","Lop":"\\hat{\\mathbf L}","op":["\\hat{#1}",1],"HH":"\\mathcal H","UU":"\\hat U","PP":"\\hat{\\mathcal P}","grad":"\\boldsymbol\\nabla","tr":"\\operatorname{tr}","half":"\\tfrac12"}},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><div class="wrap"><nav class="nav"><a href="../../../">← Personal Homepage</a><a href="./">All 100 problems</a><a href="../../">Lecture Notes</a><a href="../../../quantum-mechanics/">Theory notes</a></nav><header><p class="eyebrow">Coursework / Lecture Notes / Quantum Mechanics</p><h1>Assignment I</h1><p class="lead">Foundations, wave–particle duality and operators. Each original question is followed by its full mathematical derivation, assumptions and examination conclusions.</p><p class="meta">Kumar Azad · M.Sc. Physics · SRMIST · Part A (15) + Part B (6) · November 2026</p></header><div class="actions"><a class="pill" href="./">Browse all assignments</a><a class="pill" href="sources/assignment-i.tex">Download editable LaTeX</a><a class="pill" href="../../../quantum-mechanics/">Concept notes</a></div><aside class="notice">Select any problem below to display its complete worked solution. Mathematics is typeset with MathJax. The original LaTeX file preserves figure code and equation labels. For a full printable document, use “Expand all” and then “Print / Save as PDF.”</aside><h2>Problem index</h2><div class="grid"><a class="item" href="#a1"><span class="tiny">Part A · Problem 1</span><strong>Planck's blackbody law in frequency and wavelength units</strong></a>
+<a class="item" href="#a2"><span class="tiny">Part A · Problem 2</span><strong>Low- and high-frequency limits of Planck's law</strong></a>
+<a class="item" href="#a3"><span class="tiny">Part A · Problem 3</span><strong>Einstein's explanation of the photoelectric effect</strong></a>
+<a class="item" href="#a4"><span class="tiny">Part A · Problem 4</span><strong>Davisson–Germer electron-diffraction experiment</strong></a>
+<a class="item" href="#a5"><span class="tiny">Part A · Problem 5</span><strong>Electron de Broglie wavelength after acceleration through \(V\) volts</strong></a>
+<a class="item" href="#a6"><span class="tiny">Part A · Problem 6</span><strong>Wave–particle duality</strong></a>
+<a class="item" href="#a7"><span class="tiny">Part A · Problem 7</span><strong>Phase velocity is one-half the particle speed under the kinetic-energy convention</strong></a>
+<a class="item" href="#a8"><span class="tiny">Part A · Problem 8</span><strong>Why a free-particle plane wave is not normalizable</strong></a>
+<a class="item" href="#a9"><span class="tiny">Part A · Problem 9</span><strong>Group velocity equals particle velocity</strong></a>
+<a class="item" href="#a10"><span class="tiny">Part A · Problem 10</span><strong>Definition and mathematical representation of a wave packet</strong></a>
+<a class="item" href="#a11"><span class="tiny">Part A · Problem 11</span><strong>Max Born's interpretation of the wavefunction</strong></a>
+<a class="item" href="#a12"><span class="tiny">Part A · Problem 12</span><strong>Properties of well-behaved wavefunctions</strong></a>
+<a class="item" href="#a13"><span class="tiny">Part A · Problem 13</span><strong>The differential operator \(\dd/\dd x\) is not Hermitian</strong></a>
+<a class="item" href="#a14"><span class="tiny">Part A · Problem 14</span><strong>The momentum operator is Hermitian on a suitable domain</strong></a>
+<a class="item" href="#a15"><span class="tiny">Part A · Problem 15</span><strong>Canonical position–momentum commutator</strong></a>
+<a class="item" href="#b1"><span class="tiny">Part B · Problem 1</span><strong>Fundamental postulates of quantum mechanics</strong></a>
+<a class="item" href="#b2"><span class="tiny">Part B · Problem 2</span><strong>Hermitian operators: definition and proofs of their properties</strong></a>
+<a class="item" href="#b3"><span class="tiny">Part B · Problem 3</span><strong>Derivation of the time-independent Schr&amp;quot;odinger equation and time factor</strong></a>
+<a class="item" href="#b4"><span class="tiny">Part B · Problem 4</span><strong>Free particle in one dimension: stationary equation and full \(x,t\) solution</strong></a>
+<a class="item" href="#b5"><span class="tiny">Part B · Problem 5</span><strong>Position uncertainty for a constant wavefunction on \([-a,a]\)</strong></a>
+<a class="item" href="#b6"><span class="tiny">Part B · Problem 6</span><strong>Position–momentum uncertainties of a free particle in 1D</strong></a></div><div class="controls"><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button><button id="print" type="button">Print / Save as PDF</button></div><main><section><h2>Part A · 15 problems</h2><details class="problem" id="a1"><summary><span class="num">A1</span><span>Planck's blackbody law in frequency and wavelength units</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Express Planck's blackbody radiation formula in both frequency and wavelength units.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Quantized mode and its average energy.</strong> A cavity electromagnetic mode of frequency \(\nu\) has excitation energies \(E_n=nh\nu\) after omitting the temperature-independent zero-point contribution. The canonical partition function is</p>
+<div class="display-math">\[Z=\sum_{n=0}^\infty e^{-\beta nh\nu}=\frac{1}{1-e^{-\beta h\nu}},\qquad \beta=(k_BT)^{-1}.\]</div>
+<p>The thermal mean mode energy is</p>
+<div class="display-math">\[\begin{aligned}\overline E&amp;=-\frac{\partial\ln Z}{\partial\beta}
+=\frac{h\nu}{e^{\beta h\nu}-1}.\end{aligned}\]</div>
+<p><strong>Step 2: Count cavity modes.</strong> Including the two photon polarizations, the density of modes per unit volume in the frequency range \((\nu,\nu+\dd\nu)\) is</p>
+<div class="display-math">\[g(\nu)\,\dd\nu=\frac{8\pi\nu^2}{c^3}\,\dd\nu.\]</div>
+<p>Multiplication gives the <em>spectral energy density per unit frequency</em>:</p>
+<div class="display-math">\[\label{eq:plancknu}
+\boxed{u_\nu(T)=\frac{8\pi h\nu^3}{c^3}\frac{1}{e^{h\nu/(k_BT)}-1}},\qquad u(T)=\int_0^\infty u_\nu(T)\,\dd\nu.\]</div>
+<p>Here the left symbol in the integral is the <em>total energy density</em> \(u(T)\); it must not be confused with \(u_\nu\).</p>
+<p><strong>Step 3: Convert density, not just the variable.</strong> Since \(\nu=c/\lambda\),</p>
+<div class="display-math">\[\left|\frac{\dd\nu}{\dd\lambda}\right|=\frac{c}{\lambda^2},\qquad u_\lambda\,\dd\lambda=u_\nu\,|\dd\nu|.\]</div>
+<p>Thus</p>
+<div class="display-math">\[\label{eq:plancklam}
+\boxed{u_\lambda(T)=\frac{8\pi hc}{\lambda^5}\frac{1}{e^{hc/(\lambda k_BT)}-1}}.\]</div>
+<p>The corresponding <em>spectral radiances</em> of an isotropic blackbody field, often denoted \(B_\nu\) and \(B_\lambda\), follow from \(B=cu/(4\pi)\):</p>
+<div class="display-math">\[\boxed{B_\nu(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^{h\nu/(k_BT)}-1}},\qquad
+\boxed{B_\lambda(T)=\frac{2hc^2}{\lambda^5}\frac{1}{e^{hc/(\lambda k_BT)}-1}}.\]</div>
+<p><strong>Units and caution.</strong> \(u_\nu\) is in \(\mathrm{J\,m^{-3}\,Hz^{-1}}\) and \(u_\lambda\) is in \(\mathrm{J\,m^{-4}}\) (with SI wavelength). The numerical values of \(u_\nu\) and \(u_\lambda\) at \(\nu=c/\lambda\) are <em>not</em> equal: the Jacobian is essential. Consequently, their spectral maxima correspond to different wavelengths.</p><p class="small"><a href="#a1">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a2"><summary><span class="num">A2</span><span>Low- and high-frequency limits of Planck's law</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that Planck's blackbody radiation formula agrees with experimental results both at low-frequency and high-frequency limits.</p></aside><h3>Detailed worked solution</h3><p>Write the spectral radiance as</p>
+<div class="display-math">\[B_\nu(T)=\frac{2h\nu^3}{c^2}\frac{1}{e^x-1},\qquad x=\frac{h\nu}{k_BT}.\]</div>
+<p><strong>Low-frequency limit (\(x\ll1\)).</strong> The Taylor expansion is \(e^x-1=x+x^2/2+\cdots\), so to leading order \(e^x-1\simeq x\). Therefore</p>
+<div class="display-math">\[\begin{aligned}B_\nu(T)&amp;\simeq\frac{2h\nu^3}{c^2}\frac{k_BT}{h\nu}
+=\boxed{\frac{2k_BT\nu^2}{c^2}},\\
+u_\nu(T)&amp;\simeq\boxed{\frac{8\pi k_BT\nu^2}{c^3}}.\end{aligned}\]</div>
+<p>These are the <em>Rayleigh–Jeans laws</em>. They reproduce the observed long-wavelength, low-frequency behavior but diverge if extrapolated to all frequencies (the ultraviolet catastrophe).</p>
+<p><strong>High-frequency limit (\(x\gg1\)).</strong> Here \(e^x-1\simeq e^x\), hence</p>
+<div class="display-math">\[\begin{aligned}B_\nu(T)&amp;\simeq\boxed{\frac{2h\nu^3}{c^2}e^{-h\nu/(k_BT)}},\\
+u_\nu(T)&amp;\simeq\boxed{\frac{8\pi h\nu^3}{c^3}e^{-h\nu/(k_BT)}}.\end{aligned}\]</div>
+<p>These are the <em>Wien high-frequency limits</em>. The exponential suppression is consistent with the observed falloff of blackbody intensity at high frequencies. Planck's formula interpolates between both regimes and gives a finite total radiated energy density.</p>
+<p><strong>Spectral-variable warning.</strong> The analogous wavelength limits are obtained by taking \(hc/(\lambda k_BT)\ll1\) or \(\gg1\) in \(B_\lambda\); one must not simply replace \(\nu\) by \(c/\lambda\) in \(B_\nu\) without the Jacobian.</p><p class="small"><a href="#a2">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a3"><summary><span class="num">A3</span><span>Einstein's explanation of the photoelectric effect</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain Einstein's theory of photoelectric effect in brief.</p></aside><h3>Detailed worked solution</h3><p><strong>Experimental facts.</strong> Above a material-dependent threshold frequency, illuminating a clean metal can liberate electrons. Their maximum kinetic energy depends on incident light frequency, rather than light intensity; increasing intensity primarily increases the emission rate. Electron emission can occur without a detectable classical energy-accumulation delay.</p>
+<p><strong>Photon hypothesis.</strong> Einstein proposed that light of frequency \(\nu\) exchanges energy in packets (photons), each with</p>
+<div class="display-math">\[E_\gamma=h\nu.\]</div>
+<p>Let \(\Phi\) be the work function: the minimum energy required to remove an electron from the surface. Conservation of energy for an emitted electron gives</p>
+<div class="display-math">\[\label{eq:photoeq}
+h\nu=\Phi+K_{\max},\qquad \boxed{K_{\max}=h\nu-\Phi}.\]</div>
+<p>Consequently, the threshold frequency and wavelength are</p>
+<div class="display-math">\[\boxed{\nu_0=\frac{\Phi}{h}},\qquad \boxed{\lambda_0=\frac{hc}{\Phi}}.\]</div>
+<p>If \(\nu<\nu_0\), single-photon photoemission does not occur, regardless of intensity within the ordinary linear regime. At fixed frequency above threshold, more incident photons generally cause more emitted photoelectrons, while \(K_{\max}\) remains governed by \(\nu\).</p>
+<p><strong>Stopping potential.</strong> If a reverse voltage \(V_s>0\) just stops the fastest photoelectrons,</p>
+<div class="display-math">\[eV_s=K_{\max}=h\nu-\Phi,\qquad
+\boxed{V_s=\frac{h}{e}\nu-\frac{\Phi}{e}}.\]</div>
+<p>Thus a graph of stopping potential against frequency has slope \(h/e\) and intercept \(-\Phi/e\). This quantitatively explains the observed dependence and supports the photon picture of light.</p><p class="small"><a href="#a3">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a4"><summary><span class="num">A4</span><span>Davisson–Germer electron-diffraction experiment</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Describe the Davisson–Germer experiment in brief and the significance of its results.</p></aside><h3>Detailed worked solution</h3><p><strong>Arrangement.</strong> Electrons emitted by a heated filament are accelerated through a known voltage \(V\), collimated, and directed at a single-crystal nickel target in vacuum. A movable collector measures scattered-electron intensity versus angle. Instead of a smooth particle-like angular distribution, strong intensity maxima occur at angles consistent with crystal diffraction.</p>
+<p><strong>Theory.</strong> Acceleration through \(V\) gives \(p^2/(2m_e)=eV\) in the nonrelativistic regime; therefore the de Broglie wavelength is</p>
+<div class="display-math">\[\label{eq:dgb}
+\lambda_{\rm dB}=\frac{h}{p}=\frac{h}{\sqrt{2m_eeV}}.\]</div>
+<p>The ordered crystal planes behave as a diffraction grating. Constructive interference satisfies Bragg's law</p>
+<div class="display-math">\[\label{eq:bragg}
+\boxed{n\lambda=2d\sin\theta_B},\]</div>
+<p>with \(d\) the plane spacing and \(\theta_B\) the Bragg angle measured relative to the reflecting planes.</p>
+<p><strong>Characteristic observation.</strong> A well-known maximum occurs for accelerating voltage about \(54\,\mathrm{V}\). The corresponding de Broglie estimate is \(\lambda_{\rm dB}\approx1.67\,\text{\AA}\), consistent with the wavelength inferred from nickel diffraction geometry (about \(1.65\,\text{\AA}\) in textbook analyses). The geometric angle conventions for electron scattering and for \(\theta_B\) must not be confused.</p>
+<p><strong>Significance.</strong> The experiment furnished direct evidence for electron matter waves and verified \(\lambda=h/p\), a cornerstone of quantum mechanics. It demonstrated that a localized electron detection pattern is nevertheless governed statistically by wave interference.</p><p class="small"><a href="#a4">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a5"><summary><span class="num">A5</span><span>Electron de Broglie wavelength after acceleration through \(V\) volts</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the de Broglie wavelength of an electron accelerated by \(V\) volts is \(\lambda=12.3/\sqrt V\,\text{\AA}\).</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Energy conservation.</strong> Starting approximately from rest, an electron accelerated through the potential difference \(V>0\) gains kinetic energy</p>
+<div class="display-math">\[K=eV=\frac{p^2}{2m_e}.\]</div>
+<p>It follows that</p>
+<div class="display-math">\[p=\sqrt{2m_e eV}.\]</div>
+<p><strong>Step 2: Apply de Broglie's relation.</strong></p>
+<div class="display-math">\[\lambda=\frac hp=\frac{h}{\sqrt{2m_e eV}}.\]</div>
+<p>Using \(h=6.62607015\times10^{-34}\,\mathrm{J\,s}\), \(m_e\simeq9.10938\times10^{-31}\,\mathrm{kg}\), \(e=1.602176634\times10^{-19}\,\mathrm C\), and \(1\,\text{\AA}=10^{-10}\,\mathrm m\) gives</p>
+<div class="display-math">\[\boxed{\lambda\simeq\frac{12.27}{\sqrt{V/(1\,\mathrm V)}}\,\text{\AA}
+\ \approx\ \frac{12.3}{\sqrt{V\text{ (volts)}}}\,\text{\AA}.}\]</div>
+<p><strong>Example:</strong> At \(V=150\,\mathrm V\), \(\lambda\simeq12.27/\sqrt{150}\simeq1.00\,\text{\AA}\).</p>
+<p><strong>Range of validity.</strong> The approximation assumes \(eV\ll m_ec^2=511\,\mathrm{keV}\). The relativistically improved expression is</p>
+<div class="display-math">\[\boxed{\lambda=\frac h{\sqrt{2m_e eV\left(1+\frac{eV}{2m_ec^2}\right)}}}.\]</div><p class="small"><a href="#a5">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a6"><summary><span class="num">A6</span><span>Wave–particle duality</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain the principle of duality in brief.</p></aside><h3>Detailed worked solution</h3><p>Wave–particle duality is the principle that quantum objects exhibit phenomena associated with both localized particles and coherent waves; neither classical model alone describes all experiments.</p>
+<p><strong>Wave-related evidence:</strong> interference and diffraction in double-slit experiments, electron diffraction from crystals, and interference of photons or atoms. <strong>Particle-related evidence:</strong> localized detections, quantized energy transfer \(E=h\nu\), photon counting, and the photoelectric and Compton effects.</p>
+<p>For photons,</p>
+<div class="display-math">\[E=h\nu,\qquad p=\frac h\lambda.\]</div>
+<p>For material particles,</p>
+<div class="display-math">\[\boxed{\lambda_{\rm dB}=\frac hp}.\]</div>
+<p>The complex wavefunction \(\psi\) predicts interference through probability amplitudes, while detection outcomes occur as individual events with probabilities given by \(|\psi|^2\). In a which-path experiment, path distinguishability and interference visibility are complementary: acquiring reliable path information generally diminishes fringe visibility.</p>
+<p><strong>Interpretive caution.</strong> Quantum mechanics does not claim that an electron is literally a classical wave and a classical point particle simultaneously. Rather, quantum states and quantum measurements require a framework beyond either classical picture.</p><p class="small"><a href="#a6">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a7"><summary><span class="num">A7</span><span>Phase velocity is one-half the particle speed under the kinetic-energy convention</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the wave (phase) velocity is equal to half of the particle velocity.</p></aside><h3>Detailed worked solution</h3><p>For a monochromatic matter wave \(\psi\propto e^{i(kx-\omega t)}\), surfaces of constant phase obey \(kx-\omega t=\text{constant}\); differentiating gives</p>
+<div class="display-math">\[v_{\rm ph}=\frac{\dd x}{\dd t}=\frac\omega k.\]</div>
+<p>Using the nonrelativistic kinetic energy \(E=p^2/(2m)\), de Broglie's \(p=\hbar k\), and \(E=\hbar\omega\) <em>for this choice of wave-phase energy</em>,</p>
+<div class="display-math">\[\frac\omega k=\frac{E/\hbar}{p/\hbar}=\frac Ep=\frac{p^2/(2m)}p=\frac p{2m}.\]</div>
+<p>Since \(v=p/m\),</p>
+<div class="display-math">\[\boxed{v_{\rm ph}=\frac v2}.\]</div>
+<p><strong>Important qualification.</strong> This result uses \(E=K=p^2/(2m)\) with the rest-energy phase removed from the nonrelativistic Schrödinger{} wavefunction. For a relativistic matter wave built from total energy \(E_{\rm tot}=\gamma mc^2\) and momentum \(p=\gamma mv\), \(E_{\rm tot}/p=c^2/v\), not \(v/2\). A constant shift of the nonrelativistic Hamiltonian changes its phase frequency and therefore the nominal phase velocity, but not the group velocity or physical probability predictions.</p><p class="small"><a href="#a7">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a8"><summary><span class="num">A8</span><span>Why a free-particle plane wave is not normalizable</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(\Psi(x,t)=Ae^{i(kx-\omega t)}\) is not normalizable.</p></aside><h3>Detailed worked solution</h3><p>For a quantum state on \(\R\) to admit ordinary probability normalization,</p>
+<div class="display-math">\[\int_{-\infty}^{\infty}|\Psi(x,t)|^2\,\dd x=1.\]</div>
+<p>But for a plane wave with real \(k,\omega\),</p>
+<div class="display-math">\[\begin{aligned}|\Psi(x,t)|^2&amp;=\Psi^*\Psi
+=A^*e^{-i(kx-\omega t)}Ae^{i(kx-\omega t)}=|A|^2,\\
+\int_{-\infty}^{\infty}|\Psi|^2\,\dd x&amp;=|A|^2\int_{-\infty}^{\infty}\dd x=\infty\quad(A\ne0).\end{aligned}\]</div>
+<p>The choice \(A=0\) gives the zero function, not a normalized physical state. Hence</p>
+<div class="display-math">\[\boxed{e^{i(kx-\omega t)}\not\in L^2(\R).}\]</div>
+<p>A plane wave is a <em>generalized</em> momentum eigenfunction. One may use (i) periodic box normalization on \([0,L]\), \(\psi_k=L^{-1/2}e^{ikx}\) for \(k=2\pi n/L\), or (ii) Dirac normalization on the line, \(\langle p'|p\rangle=\delta(p-p')\), with \(\langle x|p\rangle=(2\pi\hbar)^{-1/2}e^{ipx/\hbar}\). Actual localized states are normalizable superpositions of plane waves.</p><p class="small"><a href="#a8">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a9"><summary><span class="num">A9</span><span>Group velocity equals particle velocity</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the group velocity is equal to the particle velocity.</p></aside><h3>Detailed worked solution</h3><p>Two nearby wave numbers with close frequencies produce an interference envelope. For \(\psi=e^{i(k_1x-\omega_1t)}+e^{i(k_2x-\omega_2t)}\), the identity \(e^{ia}+e^{ib}=2e^{i(a+b)/2}\cos[(a-b)/2]\) yields an envelope traveling at</p>
+<div class="display-math">\[v_g=\lim_{\Delta k\to0}\frac{\Delta\omega}{\Delta k}=\frac{\dd\omega}{\dd k}.\]</div>
+<p>For a free nonrelativistic particle, \(E=p^2/(2m)\), \(E=\hbar\omega\), and \(p=\hbar k\), hence</p>
+<div class="display-math">\[\omega(k)=\frac{\hbar k^2}{2m},\qquad
+v_g=\frac{\dd}{\dd k}\frac{\hbar k^2}{2m}=\frac{\hbar k}m=\frac pm.\]</div>
+<p>Therefore</p>
+<div class="display-math">\[\boxed{v_g=v_{\rm particle}.}\]</div>
+<p>The same idea works relativistically using \(v_g=\dd E/\dd p=pc^2/E=v\). In general, group velocity describes the motion of a narrow wave-packet envelope in the absence of strong distortion.</p><p class="small"><a href="#a9">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a10"><summary><span class="num">A10</span><span>Definition and mathematical representation of a wave packet</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>What is a wave packet? Give its mathematical representation.</p></aside><h3>Detailed worked solution</h3><p>A <em>wave packet</em> is a superposition of waves with different wave numbers or momenta, chosen so that their interference produces a spatially localized probability amplitude. The linearity of the Schrödinger{} equation allows such superposition.</p>
+<p>For a free particle on the line, choose the Fourier convention</p>
+<div class="display-math">\[\boxed{\Psi(x,t)=\frac1{\sqrt{2\pi}}\int_{-\infty}^\infty
+\widetilde\psi(k) e^{i[kx-\omega(k)t]}\,\dd k},\qquad
+\omega(k)=\frac{\hbar k^2}{2m}.\]</div>
+<p>Alternatively, with momentum amplitudes \(a(p)\),</p>
+<div class="display-math">\[\label{eq:packet}
+\boxed{\Psi(x,t)=\frac1{\sqrt{2\pi\hbar}}\int_{-\infty}^\infty
+a(p)\,e^{\frac i\hbar(px-\frac{p^2t}{2m})}\,\dd p}.\]</div>
+<p>Here \(a(p)=\langle p|\psi(0)\rangle\), and Plancherel's theorem gives</p>
+<div class="display-math">\[\int_{\R}|\Psi(x,t)|^2\,\dd x=\int_{\R}|a(p)|^2\,\dd p.\]</div>
+<p>A normalized packet has \(\int|a(p)|^2\dd p=1\). A Gaussian momentum amplitude produces a Gaussian spatial packet. The wave-number spread and spatial spread obey a Fourier uncertainty relation, which becomes \(\Delta x\,\Delta p\ge\hbar/2\). For a free massive particle, distinct \(k\) components have different group velocities, causing typical packets to spread in time.</p><p class="small"><a href="#a10">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a11"><summary><span class="num">A11</span><span>Max Born's interpretation of the wavefunction</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain Max Born's interpretation of the wave function.</p></aside><h3>Detailed worked solution</h3><p>Born's rule assigns a probability interpretation to the squared modulus of the wavefunction. In one dimension,</p>
+<div class="display-math">\[\boxed{\rho(x,t)=|\Psi(x,t)|^2},\qquad
+\boxed{\Pr(a\le X\le b)=\int_a^b|\Psi(x,t)|^2\,\dd x}.\]</div>
+<p>For an ordinary normalized pure state,</p>
+<div class="display-math">\[\boxed{\int_{-\infty}^{\infty}|\Psi(x,t)|^2\,\dd x=1}.\]</div>
+<p>The complex amplitude \(\Psi\) is not itself a probability; its phase affects interference and current. The expectation of a well-defined observable \(\hat A\) in a normalized state is \(\langle A\rangle=\langle\Psi|\hat A|\Psi\rangle\).</p>
+<p><strong>Example.</strong> In a box \((0,L)\), the normalized ground state is \(\psi_1(x)=\sqrt{2/L}\sin(\pi x/L)\). The chance to find the particle between \(L/4\) and \(3L/4\) is</p>
+<div class="display-math">\[\begin{aligned}P&amp;=\frac{2}{L}\int_{L/4}^{3L/4}\sin^2\!\left(\frac{\pi x}L\right)\dd x
+=\left[\frac xL-\frac{\sin(2\pi x/L)}{2\pi}\right]_{L/4}^{3L/4}\\
+&amp;=\boxed{\frac12+\frac1\pi\approx0.8183}.\end{aligned}\]</div>
+<p>The rule predicts statistical frequencies over repeated identically prepared experiments, not a definite hidden trajectory for each detection.</p><p class="small"><a href="#a11">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a12"><summary><span class="num">A12</span><span>Properties of well-behaved wavefunctions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>What are the properties of well-behaved wave functions?</p></aside><h3>Detailed worked solution</h3><p>A textbook ``well-behaved'' Schr&amp;quot;odinger wavefunction for a regular potential has the following properties.</p>
+<ol><li><p><strong>Single-valuedness.</strong> At a given \(x,t\), a wavefunction assigns a definite complex amplitude \(\Psi(x,t)\); a symbolic multivalued expression requires an actual branch choice. The overall global phase is unobservable.</p></li><li><p><strong>Finiteness and local regularity.</strong> For ordinary smooth bound states, \(\Psi\) is finite and sufficiently regular to solve the differential equation. Abstract \(L^2\) equivalence classes need not be pointwise bounded everywhere.</p></li><li><p><strong>Continuity.</strong> For standard finite nonsingular potential steps, \(\psi(x_0^-)=\psi(x_0^+)\).</p></li><li><p><strong>Derivative matching.</strong> For a potential finite near \(x_0\), \(\psi'(x_0^-)=\psi'(x_0^+)\). Integrate \(-\hbar^2\psi''/(2m)+(V-E)\psi=0\) from \(x_0-\epsilon\) to \(x_0+\epsilon\):</p>
+
+<p>A delta potential \(V(x)=g\delta(x-x_0)\) instead imposes \(\psi'(x_0^+)-\psi'(x_0^-)=2mg\psi(x_0)/\hbar^2\).</p></li><li><p><strong>Square integrability for bound states.</strong> \(\int_{\R}|\psi|^2\dd x<\infty\) with nonzero norm, and rescale to \(\int_{\R}|\psi|^2\dd x=1\). Scattering plane waves use generalized normalization.</p></li><li><p><strong>Appropriate boundary conditions.</strong> Bound eigenfunctions normally decay at spatial infinity; impenetrable walls impose vanishing values at the walls, while periodic or other boundary conditions arise in different geometries. Operator domains determine which derivatives and endpoint conditions are admissible.</p></li></ol>
+<p><strong>Caveat:</strong> It is incorrect to demand globally continuous first derivatives for <em>all</em> potentials or to demand global \(C^2\) regularity of every Hilbert-space state. The correct requirements depend on the Hamiltonian and its domain.</p><p class="small"><a href="#a12">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a13"><summary><span class="num">A13</span><span>The differential operator \(\dd/\dd x\) is not Hermitian</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the operator \(\dd/\dd x\) is not Hermitian.</p></aside><h3>Detailed worked solution</h3><p>Write \(D=\dd/\dd x\). For rapidly decaying smooth \(\phi,\psi\) (e.g. in \(\mathcal S(\R)\)),</p>
+<div class="display-math">\[\begin{aligned}\langle\phi,D\psi\rangle
+&amp;=\int_{\R}\phi^*(x)\psi'(x)\,\dd x\\
+&amp;=\left[\phi^*(x)\psi(x)\right]_{-\infty}^{\infty}
+-\int_{\R}\phi'^*(x)\psi(x)\,\dd x\\
+&amp;= -\langle D\phi,\psi\rangle.\end{aligned}\]</div>
+<p>Thus \(D\) is <em>skew-symmetric</em>, not symmetric:</p>
+<div class="display-math">\[\boxed{D^\dagger=-D\quad\text{on its standard skew-adjoint domain}}.\]</div>
+<p>To be precise, the closed derivative \(D:H^1(\R)\subset L^2(\R)\to L^2(\R)\) is skew-adjoint; its adjoint domain is also \(H^1(\R)\). By contrast, the derivative on \(C_c^\infty(\R)\) is only skew-symmetric until closure.</p>
+<p><strong>Counterexample.</strong> Take \(\phi=e^{-x^2}\) and \(\psi=xe^{-x^2}\). Then</p>
+<div class="display-math">\[\langle\phi,D\psi\rangle=\int(1-2x^2)e^{-2x^2}\,\dd x=\half\sqrt{\frac\pi2},\]</div>
+<p>while</p>
+<div class="display-math">\[\langle D\phi,\psi\rangle=\int(-2x^2)e^{-2x^2}\,\dd x=-\half\sqrt{\frac\pi2}.\]</div>
+<p>The two are unequal. On finite intervals, the boundary contribution \([\phi^*\psi]_a^b\) must be analyzed separately.</p><p class="small"><a href="#a13">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a14"><summary><span class="num">A14</span><span>The momentum operator is Hermitian on a suitable domain</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that the momentum operator is Hermitian.</p></aside><h3>Detailed worked solution</h3><p>For \(\hat p=-i\hbar D\) and smooth rapidly decaying \(\phi,\psi\),</p>
+<div class="display-math">\[\begin{aligned}\langle\phi,\hat p\psi\rangle
+&amp;=-i\hbar\int_{\R}\phi^*\psi'\,\dd x\\
+&amp;=-i\hbar[\phi^*\psi]_{-\infty}^{\infty}+i\hbar\int_{\R}\phi'^*\psi\,\dd x\\
+&amp;=\int_{\R}(-i\hbar\phi')^*\psi\,\dd x
+=\langle\hat p\phi,\psi\rangle.\end{aligned}\]</div>
+<p>The boundary term vanishes; hence the operator is symmetric. Since \(D^\dagger=-D\) on \(H^1(\R)\),</p>
+<div class="display-math">\[\hat p^\dagger=(-i\hbar D)^\dagger=(i\hbar)(-D)=-i\hbar D=\hat p.\]</div>
+<p>It follows that</p>
+<div class="display-math">\[\boxed{\hat p=-i\hbar\frac{\dd}{\dd x}\text{ is self-adjoint on }H^1(\R).}\]</div>
+<p>For a second proof, take the unitary Fourier transform, under which \(\mathcal F\hat p\mathcal F^{-1}\) is multiplication by the real variable \(p\), a self-adjoint multiplication operator on its natural maximal domain.</p>
+<p><strong>Boundary issue.</strong> On an interval \([a,b]\),</p>
+<div class="display-math">\[\langle\phi,p\psi\rangle-\langle p\phi,\psi\rangle=-i\hbar[\phi^*\psi]_a^b.\]</div>
+<p>Periodic (or quasi-periodic \(\psi(b)=e^{i\theta}\psi(a)\)) boundary conditions allow self-adjoint momentum realizations. Simply demanding \(\psi(a)=\psi(b)=0\) gives a symmetric momentum operator, but not a self-adjoint one on that domain.</p><p class="small"><a href="#a14">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a15"><summary><span class="num">A15</span><span>Canonical position–momentum commutator</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \([\hat x,\hat p_x]=i\hbar\).</p></aside><h3>Detailed worked solution</h3><p>The commutator is \([A,B]=AB-BA\). On a smooth test wavefunction \(\psi\in\mathcal S(\R)\),</p>
+<div class="display-math">\[\begin{aligned}[\hat x,\hat p]\psi
+&amp;=x\left(-i\hbar\psi'\right)-(-i\hbar)\frac{\dd}{\dd x}(x\psi)\\
+&amp;=-i\hbar x\psi'+i\hbar(\psi+x\psi')\\
+&amp;=i\hbar\psi.\end{aligned}\]</div>
+<p>Since this holds for all \(\psi\) in the chosen dense invariant domain,</p>
+<div class="display-math">\[\boxed{[\hat x,\hat p_x]=i\hbar\id.}\]</div>
+<p>The nonzero commutator means the observables are incompatible in the sense of not possessing a joint sharp spectral description. The Robertson inequality then gives</p>
+<div class="display-math">\[\Delta x\,\Delta p\ge\half\left|\langle[x,p]\rangle\right|=\boxed{\frac\hbar2}.\]</div>
+<p>The operator domains matter: the commutator is an identity on a suitable common domain, not a bounded-operator identity on all of \(L^2(\R)\).</p><p class="small"><a href="#a15">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details></section><section><h2>Part B · 6 problems</h2><details class="problem" id="b1"><summary><span class="num">B1</span><span>Fundamental postulates of quantum mechanics</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Explain the fundamental postulates of quantum mechanics in detail.</p></aside><h3>Detailed worked solution</h3><p>There is no universally fixed count of ``the'' postulates: textbooks sometimes combine measurement and state-update axioms, or separate pure and mixed states. The following six-part formulation is conventional and self-contained.</p>
+<h4>Postulate 1: State space and superposition</h4>
+<p>To a quantum system is assigned a complex separable Hilbert space \(\Hil\). A pure state is a <em>ray</em> of \(\Hil\): a normalized nonzero vector \(|\psi\rangle\) represents the same state as \(e^{i\alpha}|\psi\rangle\). Normalization requires</p>
+<div class="display-math">\[\boxed{\langle\psi|\psi\rangle=1}.\]</div>
+<p>For an orthonormal discrete basis \(\{|n\rangle\}\), completeness gives</p>
+<div class="display-math">\[\id=\sum_n|n\rangle\langle n|,\qquad
+|\psi\rangle=\sum_n c_n|n\rangle,\qquad c_n=\langle n|\psi\rangle,\]</div>
+<p>and \(\sum_n|c_n|^2=1\). This is the <em>superposition principle</em>: complex linear combinations are allowed, subject to normalization. In position representation \(\psi(x)=\langle x|\psi\rangle\) and the normalization is \(\int_{\R}|\psi(x)|^2\dd x=1\).</p>
+<p><strong>Mixed states.</strong> Statistical ensembles are described by a density operator \(\rho=\rho^\dagger\ge0\), \(\tr\rho=1\). A pure state has \(\rho=|\psi\rangle\langle\psi|\) and \(\rho^2=\rho\); a mixed state typically has \(\rho^2\ne\rho\). This extension matters when preparation is probabilistic or only a subsystem is described.</p>
+<p><strong>Example: spin-\(1/2\).</strong> In \(\Hil=\C^2\), \(|\psi\rangle=\alpha|\uparrow\rangle+\beta|\downarrow\rangle\) with \(|\alpha|^2+|\beta|^2=1\).</p>
+<h4>Postulate 2: Physical observables and their spectral structure</h4>
+<p>A sharp physical observable is represented by a self-adjoint operator \(A\) on a specified dense domain \(\Dom(A)\subset\Hil\), satisfying \(A=A^\dagger\) with equal domains. A self-adjoint operator has a real spectrum and a projection-valued spectral measure \(P_A(\Delta)\), where \(\Delta\) is a Borel set of measured values. The spectral theorem writes</p>
+<div class="display-math">\[\boxed{A=\int_{\R}\lambda\,\dd P_A(\lambda)}.\]</div>
+<p>For a purely discrete finite-dimensional spectrum this simplifies to \(A=\sum_a aP_a\); if nondegenerate, \(P_a=|a\rangle\langle a|\). The eigenvalue equation is</p>
+<div class="display-math">\[A|a\rangle=a|a\rangle,\qquad a\in\R.\]</div>
+<p><strong>Examples:</strong> \(x\) acts by multiplication, \(p=-i\hbar\partial_x\), and \(H=p^2/(2m)+V(x)\) for a suitable potential and domain. An operator's mathematical domain is not an optional technicality: \(p\) and \(H\) are unbounded.</p>
+<h4>Postulate 3: Outcomes and Born probabilities</h4>
+<p>A measurement of \(A\) yields values in its spectrum. For a pure state \(|\psi\rangle\), the probability of a result in a set \(\Delta\) is</p>
+<div class="display-math">\[\boxed{\Pr(A\in\Delta)=\langle\psi|P_A(\Delta)|\psi\rangle}.\]</div>
+<p>For a density operator \(\rho\) this becomes \(\Pr(A\in\Delta)=\tr[\rho P_A(\Delta)]\). In a discrete nondegenerate eigenbasis,</p>
+<div class="display-math">\[\Pr(a_n)=|\langle a_n|\psi\rangle|^2=|c_n|^2.\]</div>
+<p>For a degenerate outcome, \(\Pr(a)=\langle\psi|P_a|\psi\rangle\); using only one eigenvector would be incorrect. The expectation and variance are</p>
+<div class="display-math">\[\boxed{\langle A\rangle=\langle\psi|A|\psi\rangle},\qquad
+\boxed{(\Delta A)^2=\langle A^2\rangle-\langle A\rangle^2}\]</div>
+<p>when the relevant moments exist. For a position measurement, \(\Pr(x\in[a,b])=\int_a^b|\psi(x)|^2\dd x\).</p>
+<p><strong>Spin example.</strong> If \(|\psi\rangle=(\sqrt3/2)|\uparrow\rangle+(1/2)|\downarrow\rangle\), then measuring \(S_z=(\hbar/2)\sigma_z\) gives \(+\hbar/2\) with probability \(3/4\) and \(-\hbar/2\) with probability \(1/4\). The expectation is \(\langle S_z\rangle=\hbar/4\), which is an average, not a possible individual \(S_z\) measurement result.</p>
+<h4>Postulate 4: State update under ideal projective measurement</h4>
+<p>For an ideal <em>selective</em> projective measurement producing eigenvalue \(a\) with \(p_a=\langle\psi|P_a|\psi\rangle>0\), the Lüders update is</p>
+<div class="display-math">\[\boxed{|\psi\rangle\longmapsto\frac{P_a|\psi\rangle}{\sqrt{p_a}}}.\]</div>
+<p>For density operators, \(\rho\mapsto P_a\rho P_a/\tr(P_a\rho)\). When the outcome is discarded (nonselective measurement), \(\rho\mapsto\sum_aP_a\rho P_a\). A repeated measurement of the same ideal observable, immediately and without intervening dynamics, returns the selected value with probability one. General quantum instruments and POVMs extend the projective model and need not obey this specific projection rule.</p>
+<h4>Postulate 5: Dynamical evolution</h4>
+<p>An isolated quantum system evolves by unitary maps. With a self-adjoint Hamiltonian \(H(t)\), the state satisfies</p>
+<div class="display-math">\[\boxed{i\hbar\frac{\dd}{\dd t}|\psi(t)\rangle=H(t)|\psi(t)\rangle}.\]</div>
+<p>For a time-independent Hamiltonian,</p>
+<div class="display-math">\[\boxed{|\psi(t)\rangle=U(t,t_0)|\psi(t_0)\rangle},\qquad
+\boxed{U(t,t_0)=e^{-iH(t-t_0)/\hbar}}.\]</div>
+<p>By self-adjointness, \(U^\dagger U=\id\), so \(\|\psi(t)\|=\|\psi(t_0)\|\). If \(H|n\rangle=E_n|n\rangle\), then \(|n,t\rangle=e^{-iE_nt/\hbar}|n\rangle\). For explicitly time-dependent \(H(t)\) the evolution operator is generally time-ordered rather than the naive single exponential. A density operator evolves by \(i\hbar\dot\rho=[H,\rho]\) for closed systems.</p>
+<h4>Postulate 6: Composition and entanglement</h4>
+<p>For distinguishable subsystems \(A\) and \(B\), the joint state space is</p>
+<div class="display-math">\[\boxed{\Hil_{AB}=\Hil_A\otimes\Hil_B}.\]</div>
+<p>Not every joint pure state is a product. For two spins, the singlet is</p>
+<div class="display-math">\[\boxed{|\Psi^-\rangle=\frac{1}{\sqrt2}\big(|\uparrow\downarrow\rangle-|\downarrow\uparrow\rangle\big)}.\]</div>
+<p>This state is entangled: there are no two single-spin vectors whose tensor product gives \(|\Psi^-\rangle\). If the joint density operator is \(\rho_{AB}\), the state accessible to subsystem \(A\) is the partial trace \(\rho_A=\tr_B\rho_{AB}\). Identical particles have additional bosonic symmetric or fermionic antisymmetric exchange restrictions.</p>
+<h4>Derived consistency conditions and interpretation</h4>
+<p>The state and measurement postulates require nonnegative normalized probabilities. Self-adjointness gives real spectra and unitary dynamics. Noncommuting operators, e.g. \([x,p]=i\hbar\id\), imply preparation uncertainty \(\Delta x\Delta p\ge\hbar/2\). These implications organize the core framework: states determine amplitudes, observable operators determine outcomes, Born's rule determines probabilities, projective measurement provides an ideal update, and Schr&amp;quot;odinger dynamics determines evolution between interventions.</p><p class="small"><a href="#b1">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b2"><summary><span class="num">B2</span><span>Hermitian operators: definition and proofs of their properties</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Define a Hermitian operator. State and prove its properties.</p></aside><h3>Detailed worked solution</h3><p><strong>Definition.</strong> An operator \(A\) is symmetric (often called Hermitian in elementary courses) on a domain \(\Dom(A)\) when</p>
+<div class="display-math">\[\label{eq:hermitian}
+\langle\phi,A\psi\rangle=\langle A\phi,\psi\rangle
+\quad\forall\phi,\psi\in\Dom(A).\]</div>
+<p>It is <em>self-adjoint</em> if \(A=A^\dagger\) including \(\Dom(A)=\Dom(A^\dagger)\). These notions coincide for Hermitian matrices in finite dimensions, the setting of the elementary algebraic proofs below. An operator that is only symmetric can fail to possess a suitable spectral resolution or unique unitary dynamics.</p>
+<h4>Property 1: Every eigenvalue is real</h4>
+<p>Suppose \(A|a\rangle=a|a\rangle\), \(|a\rangle\ne0\). Using symmetry,</p>
+<div class="display-math">\[a\langle a|a\rangle=\langle a|A a\rangle
+=\langle A a|a\rangle=a^*\langle a|a\rangle.\]</div>
+<p>Since \(\langle a|a\rangle>0\), \(a=a^*\); thus \(\boxed{a\in\R}\). More generally a self-adjoint operator has entirely real spectrum, including continuous components.</p>
+<h4>Property 2: Eigenvectors for distinct eigenvalues are orthogonal</h4>
+<p>If \(A|a_m\rangle=a_m|a_m\rangle\) and \(A|a_n\rangle=a_n|a_n\rangle\), then</p>
+<div class="display-math">\[\begin{aligned}a_n\langle a_m|a_n\rangle
+&amp;=\langle a_m|A a_n\rangle
+=\langle A a_m|a_n\rangle
+=a_m\langle a_m|a_n\rangle.\end{aligned}\]</div>
+<p>Consequently,</p>
+<div class="display-math">\[(a_n-a_m)\langle a_m|a_n\rangle=0.\]</div>
+<p>If \(a_n\ne a_m\), then \(\boxed{\langle a_m|a_n\rangle=0}\). In a degenerate eigenspace, orthonormal vectors may be chosen by Gram–Schmidt.</p>
+<h4>Property 3: Every defined expectation value is real</h4>
+<p>For normalized \(\psi\) in the operator domain,</p>
+<div class="display-math">\[\langle A\rangle^*=\langle\psi|A|\psi\rangle^*
+=\langle A\psi|\psi\rangle
+=\langle\psi|A\psi\rangle=\langle A\rangle.\]</div>
+<p>Therefore \(\boxed{\langle A\rangle\in\R}\). This makes self-adjoint operators appropriate for observed numerical quantities.</p>
+<h4>Property 4: Hermitian matrix elements obey \(A_{mn}=A_{nm}^*\)</h4>
+<p>In an orthonormal basis, \(A_{mn}=\langle m|A|n\rangle\). Hence</p>
+<div class="display-math">\[A_{mn}^*=\langle n|A^\dagger|m\rangle
+=\langle n|A|m\rangle=A_{nm}.\]</div>
+<p>Thus \(\boxed{A_{mn}=A_{nm}^*}\); in particular \(A_{nn}\) is real. Off-diagonal elements need not be real: \(\left(\begin{smallmatrix}2&-i\\i&3\end{smallmatrix}\right)\) is Hermitian.</p>
+<h4>Property 5: Orthonormal diagonalization and spectral decomposition</h4>
+<p>For a Hermitian \(N\times N\) matrix, the finite-dimensional spectral theorem guarantees an orthonormal eigenbasis \(\{|a_n\rangle\}_{n=1}^N\) including appropriately chosen vectors in degenerate eigenspaces. Form the matrix \(U=(|a_1\rangle,\ldots,|a_N\rangle)\), for which \(U^\dagger U=I\). Collecting the eigenvalue equations gives \(AU=UD\), where \(D=\operatorname{diag}(a_1,\ldots,a_N)\). Multiplying by \(U^\dagger\) yields</p>
+<div class="display-math">\[\boxed{U^\dagger A U=D},\qquad
+\boxed{A=\sum_n a_n|a_n\rangle\langle a_n|}.\]</div>
+<p>In infinite dimensions, the precise spectral theorem uses projection-valued measures and allows continuous spectra: \(A=\int\lambda\,\dd P_A(\lambda)\).</p>
+<h4>Property 6: Positivity of the square and of variance</h4>
+<p>For a Hermitian matrix or self-adjoint operator \(A\) and any \(\psi\in\Dom(A^2)\),</p>
+<div class="display-math">\[\boxed{\langle\psi|A^2|\psi\rangle=\langle A\psi|A\psi\rangle=\|A\psi\|^2\ge0}.\]</div>
+<p>Applied to \(A-\langle A\rangle I\),</p>
+<div class="display-math">\[\boxed{(\Delta A)^2=\langle A^2\rangle-\langle A\rangle^2\ge0}.\]</div>
+<p>These formulas hold for states with finite second moment.</p>
+<h4>Property 7: Closure under real linear combinations</h4>
+<p>For Hermitian matrices \(A,B\) and real \(a,b\),</p>
+<div class="display-math">\[(aA+bB)^\dagger=aA^\dagger+bB^\dagger=aA+bB.\]</div>
+<p>Thus \(\boxed{aA+bB\text{ is Hermitian}}\). For unbounded self-adjoint operators the same formal identity is insufficient on its own: the sum's domain and self-adjointness must be checked separately.</p>
+<h4>Property 8: The product \(AB\) is Hermitian iff Hermitian matrices commute</h4>
+<p>For Hermitian matrices \(A,B\),</p>
+<div class="display-math">\[(AB)^\dagger=B^\dagger A^\dagger=BA.\]</div>
+<p>Therefore \((AB)^\dagger=AB\) exactly when \(\boxed{AB=BA}\). Example: Pauli matrices \(\sigma_x\) and \(\sigma_y\) are Hermitian, but \(\sigma_x\sigma_y=i\sigma_z\) is skew-Hermitian, since the matrices do not commute. Infinite-dimensional products again require domain care.</p>
+<h4>Property 9: Trace and determinant are real</h4>
+<p>In finite dimension, the eigenvalues are real, hence \(\tr A=\sum_n a_n\in\R\) and \(\det A=\prod_n a_n\in\R\). Neither need be positive.</p>
+<p><strong>Additional consequence:</strong> If \(H\) is self-adjoint, Stone's theorem gives the unitary family \(U(t)=e^{-iHt/\hbar}\), preserving norms.</p>
+<h4>Fully worked \(2\times2\) example</h4>
+<p>Take</p>
+<div class="display-math">\[A=\begin{pmatrix}2&amp;-i\\i&amp;2\end{pmatrix}=A^\dagger.\]</div>
+<p>The characteristic equation is</p>
+<div class="display-math">\[\det(A-\lambda I)=(2-\lambda)^2-1=0,\]</div>
+<p>so the eigenvalues are \(\lambda_+=3\) and \(\lambda_-=1\). Corresponding normalized eigenvectors are</p>
+<div class="display-math">\[v_+=\frac1{\sqrt2}\begin{pmatrix}1\\i\end{pmatrix},\qquad
+v_-=\frac1{\sqrt2}\begin{pmatrix}1\\-i\end{pmatrix},\qquad v_+^\dagger v_-=0.\]</div>
+<p>With</p>
+<div class="display-math">\[U=\frac1{\sqrt2}\begin{pmatrix}1&amp;1\\i&amp;-i\end{pmatrix},\]</div>
+<p>we obtain \(U^\dagger U=I\) and</p>
+<div class="display-math">\[\boxed{U^\dagger AU=\begin{pmatrix}3&amp;0\\0&amp;1\end{pmatrix}}.\]</div>
+<p>This concretely verifies real eigenvalues, orthogonal eigenvectors, and unitary diagonalization.</p>
+<p><strong>Exam conclusion.</strong> Hermitian/self-adjoint structure guarantees real measurement values, orthogonal spectral subspaces, real expectation values, and the existence of a spectral representation; for unbounded physical operators, a correct domain is indispensable.</p><p class="small"><a href="#b2">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b3"><summary><span class="num">B3</span><span>Derivation of the time-independent Schr&amp;quot;odinger equation and time factor</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Derive the time-independent Schr&amp;quot;odinger equation from the time-dependent Schr&amp;quot;odinger equation. Derive the expression for time-dependence of the wave function.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Begin with the dynamics.</strong> For a spinless particle in \(\R^3\) with a time-independent scalar potential \(V(\mathbf r)\),</p>
+<div class="display-math">\[\label{eq:TDSE}
+\boxed{i\hbar\frac{\partial\Psi(\mathbf r,t)}{\partial t}
+=\left[-\frac{\hbar^2}{2m}\nabla^2+V(\mathbf r)\right]\Psi(\mathbf r,t)}.\]</div>
+<p>This is the time-dependent Schrödinger{} equation, with \(\nabla^2=\partial_x^2+\partial_y^2+\partial_z^2\).</p>
+<p><strong>Step 2: Seek separated solutions.</strong> Assume a nontrivial product \(\Psi(\mathbf r,t)=\psi(\mathbf r)T(t)\). Substitution yields</p>
+<div class="display-math">\[i\hbar\psi\frac{\dd T}{\dd t}
+=-\frac{\hbar^2}{2m}T\nabla^2\psi+VT\psi.\]</div>
+<p>Dividing by \(\psi T\) wherever nonzero,</p>
+<div class="display-math">\[\label{eq:separation}
+i\hbar\frac{T'}T
+=-\frac{\hbar^2}{2m}\frac{\nabla^2\psi}{\psi}+V(\mathbf r).\]</div>
+<p>The left side depends only on \(t\), while the right side only on \(\mathbf r\). Therefore both equal a constant \(E\). For the standard self-adjoint time-independent Hamiltonian the separation constant is real and represents energy.</p>
+<p><strong>Step 3: Obtain the spatial eigenvalue equation.</strong></p>
+<div class="display-math">\[-\frac{\hbar^2}{2m}\frac{\nabla^2\psi}{\psi}+V=E
+\quad\Longrightarrow\quad
+\boxed{\left[-\frac{\hbar^2}{2m}\nabla^2+V(\mathbf r)\right]\psi(\mathbf r)=E\psi(\mathbf r)}.\]</div>
+<p>This is the time-independent Schrödinger{} equation \(H\psi=E\psi\). In one dimension it is</p>
+<div class="display-math">\[\boxed{-\frac{\hbar^2}{2m}\psi''(x)+V(x)\psi(x)=E\psi(x)},
+\quad\text{or}\quad
+\boxed{\psi''+\frac{2m}{\hbar^2}(E-V)\psi=0}.\]</div>
+<p>Only those \(E\) values admitting solutions satisfying the appropriate boundary conditions belong to the spectrum. Bound states in confining potentials often form a discrete sequence, while free-particle energies are continuous.</p>
+<p><strong>Step 4: Solve the temporal equation.</strong> From \(i\hbar T'/T=E\),</p>
+<div class="display-math">\[\frac{\dd T}{T}=-\frac{iE}{\hbar}\dd t.\]</div>
+<p>Integration gives \(\ln T=-iEt/\hbar+\text{constant}\), hence</p>
+<div class="display-math">\[\boxed{T(t)=C e^{-iEt/\hbar}}.\]</div>
+<p>The constant \(C\) is absorbed into \(\psi\). The final separated wavefunction is therefore</p>
+<div class="display-math">\[\label{eq:stationary}
+\boxed{\Psi_E(\mathbf r,t)=\psi_E(\mathbf r)e^{-iEt/\hbar}}.\]</div>
+<p><strong>Step 5: Why ``stationary''?</strong> Since \(E\) is real,</p>
+<div class="display-math">\[|\Psi_E(\mathbf r,t)|^2=|\psi_E(\mathbf r)|^2|e^{-iEt/\hbar}|^2=|\psi_E(\mathbf r)|^2,\]</div>
+<p>so its position probability density is time independent. The state need not have zero current or zero momentum. Its energy variance is zero if it is a normalized eigenstate: \(\langle H\rangle=E\) and \(\langle H^2\rangle=E^2\).</p>
+<p><strong>Step 6: General initial states.</strong> If \(\{\psi_n\}\) is a complete discrete energy eigenbasis, an arbitrary normalized initial wavefunction is \(\Psi(\mathbf r,0)=\sum_n c_n\psi_n(\mathbf r)\) with \(c_n=\langle\psi_n|\Psi(0)\rangle\). Linearity gives</p>
+<div class="display-math">\[\label{eq:generalt}
+\boxed{\Psi(\mathbf r,t)=\sum_n c_n\psi_n(\mathbf r)e^{-iE_nt/\hbar}},\qquad \sum_n|c_n|^2=1.\]</div>
+<p>Add a continuum integral if the Hamiltonian has continuous-spectrum states. The cross terms in \(|\Psi|^2\) carry phases \(e^{-i(E_n-E_m)t/\hbar}\); a superposition of different energies need not be stationary. The operator formulation is \(|\Psi(t)\rangle=e^{-iHt/\hbar}|\Psi(0)\rangle\).</p>
+<p><strong>Illustrative energy quantization.</strong> In an infinite well \(0<x<L\), \(V=0\) inside and \(\psi(0)=\psi(L)=0\). The equation \(\psi''+k^2\psi=0\) has \(\psi=A\sin kx+B\cos kx\). Boundary conditions force \(B=0\), \(k_n=n\pi/L\), and normalization gives</p>
+<div class="display-math">\[\boxed{E_n=\frac{n^2\pi^2\hbar^2}{2mL^2}},\qquad
+\boxed{\Psi_n(x,t)=\sqrt{\frac2L}\sin\frac{n\pi x}{L}\,e^{-iE_nt/\hbar}}.\]</div>
+<p>The phase is time-dependent even though \(|\Psi_n|^2\) is not. This completes both requested derivations.</p><p class="small"><a href="#b3">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b4"><summary><span class="num">B4</span><span>Free particle in one dimension: stationary equation and full \(x,t\) solution</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Solve the time-independent Schr&amp;quot;odinger's equation for the case of a free particle in 1D and obtain the wave function as a function of both space and time.</p></aside><h3>Detailed worked solution</h3><p><strong>Step 1: Hamiltonian.</strong> A free particle on the line experiences \(V(x)=0\), so</p>
+<div class="display-math">\[H=\frac{p^2}{2m}=-\frac{\hbar^2}{2m}\frac{\dd^2}{\dd x^2}.\]</div>
+<p>The TISE is</p>
+<div class="display-math">\[-\frac{\hbar^2}{2m}\frac{\dd^2\psi}{\dd x^2}=E\psi,
+\quad\Longrightarrow\quad \psi''+k^2\psi=0,\quad k=\frac{\sqrt{2mE}}\hbar.\]</div>
+<p><strong>Step 2: Characteristic equation.</strong> Trying \(\psi=e^{rx}\) gives \(r^2+k^2=0\), so \(r=\pm ik\) and</p>
+<div class="display-math">\[\label{eq:free_spatial}
+\boxed{\psi_E(x)=Ae^{ikx}+Be^{-ikx}},\qquad E=\frac{\hbar^2k^2}{2m},\quad k&gt;0.\]</div>
+<p>Equivalently, \(\psi=C\cos kx+D\sin kx\). Both components have the same \(E>0\). For \(E=0\), solutions are \(A+Bx\); no nonzero such solution is square integrable on the line. There is no negative-energy spectrum for this Hamiltonian on \(L^2(\R)\).</p>
+<p><strong>Step 3: Restore time.</strong> The time equation \(i\hbar T'=ET\) gives \(T=e^{-iEt/\hbar}=e^{-i\omega t}\), \(\omega=\hbar k^2/(2m)\). The full fixed-energy solution is</p>
+<div class="display-math">\[\label{eq:free_full}
+\boxed{\Psi_E(x,t)=[Ae^{ikx}+Be^{-ikx}]e^{-i\hbar k^2t/(2m)}}\]</div>
+<p>or</p>
+<div class="display-math">\[\boxed{\Psi_E(x,t)=Ae^{i(kx-\omega t)}+Be^{-i(kx+\omega t)}}.\]</div>
+<p><strong>Step 4: Interpret the terms.</strong> Applying \(p=-i\hbar\partial_x\),</p>
+<div class="display-math">\[p\,e^{ikx}=+\hbar k\,e^{ikx},\qquad p\,e^{-ikx}=-\hbar k\,e^{-ikx}.\]</div>
+<p>Thus the \(A\) wave has momentum \(+\hbar k\) and propagates to the right; the \(B\) wave has momentum \(-\hbar k\) and propagates to the left. Their identical energy \(E=\hbar^2k^2/(2m)\) makes the positive-energy continuum doubly degenerate in direction.</p>
+<p><strong>Step 5: Normalization.</strong> A single plane wave has \(|\Psi|^2=|A|^2\), so \(\int_{\R}|\Psi|^2\dd x\) diverges unless \(A=0\). Such plane waves are generalized eigenfunctions. Momentum-normalized states use</p>
+<div class="display-math">\[\langle x|p\rangle=\frac1{\sqrt{2\pi\hbar}}e^{ipx/\hbar},\qquad
+\langle p'|p\rangle=\delta(p-p').\]</div>
+<p>Physical normalized free states are superpositions,</p>
+<div class="display-math">\[\boxed{\Psi(x,t)=\frac1{\sqrt{2\pi\hbar}}\int_{\R} a(p)
+\exp\left[\frac i\hbar\left(px-\frac{p^2t}{2m}\right)\right]\dd p},
+\quad\int_{\R}|a(p)|^2\dd p=1.\]</div>
+<p><strong>Step 6: Probability current.</strong> Starting from the TDSE and its conjugate one derives</p>
+<div class="display-math">\[\frac{\partial\rho}{\partial t}+\frac{\partial j}{\partial x}=0,\qquad
+\rho=|\Psi|^2,\quad j=\frac\hbar{2mi}(\Psi^*\Psi'-\Psi\Psi'^*).\]</div>
+<p>For a single \(Ae^{i(kx-\omega t)}\),</p>
+<div class="display-math">\[\boxed{j_+=\frac{\hbar k}{m}|A|^2},\qquad
+\boxed{j_-=-\frac{\hbar k}{m}|B|^2},\]</div>
+<p>while the fixed-energy \(A/B\) superposition gives \(j=(\hbar k/m)(|A|^2-|B|^2)\). This current measures probability transport and has the sign of the net particle flow.</p>
+<p><strong>Step 7: Dispersion and wave-packet motion.</strong> The dispersion relation is</p>
+<div class="display-math">\[\boxed{\omega(k)=\frac{\hbar k^2}{2m}}.\]</div>
+<p>Thus \(v_{\rm phase}=\omega/k=\hbar k/(2m)=v/2\) under the kinetic-energy phase convention, whereas \(v_g=\dd\omega/\dd k=\hbar k/m=p/m=v\). Since \(\dd^2\omega/\dd k^2=\hbar/m\ne0\), free localized wave packets generally disperse.</p>
+<p><strong>Result.</strong> Equation (see \(\LaTeX\) source: eq:free_full) is the requested space-time solution at fixed \(E>0\); the Fourier superposition is the normalized physical solution for general initial data.</p><p class="small"><a href="#b4">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b5"><summary><span class="num">B5</span><span>Position uncertainty for a constant wavefunction on \([-a,a]\)</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>A particle in 1D is described by a wave function \(\psi(x)=A\) from \(-a\) to \(a\). Calculate its uncertainty in position (\(\sigma_x\)).</p></aside><h3>Detailed worked solution</h3><p>Let \(a>0\) and</p>
+<div class="display-math">\[\psi(x)=\begin{cases}A,&amp;-a\le x\le a,\\0,&amp;\text{otherwise.}\end{cases}\]</div>
+<p><strong>Step 1: Normalize.</strong> Born's condition gives</p>
+<div class="display-math">\[1=\int_{-\infty}^{\infty}|\psi|^2\dd x
+=|A|^2\int_{-a}^a\dd x=2a|A|^2.\]</div>
+<p>Choose an irrelevant overall phase so \(A>0\). Then</p>
+<div class="display-math">\[\boxed{A=\frac1{\sqrt{2a}}},\qquad
+\boxed{\rho(x)=|\psi|^2=\frac1{2a}\quad(|x|\le a)}.\]</div>
+<p><strong>Step 2: Compute the mean.</strong> Because the normalized density is even, the integrand \(x\rho(x)\) is odd:</p>
+<div class="display-math">\[\langle x\rangle=\frac1{2a}\int_{-a}^a x\,\dd x=\boxed{0}.\]</div>
+<p><strong>Step 3: Compute the second moment.</strong></p>
+<div class="display-math">\[\begin{aligned}\langle x^2\rangle&amp;=\int_{-\infty}^\infty x^2\rho(x)\dd x
+=\frac1{2a}\int_{-a}^a x^2\dd x\\
+&amp;=\frac1{2a}\left[\frac{x^3}{3}\right]_{-a}^a
+=\frac1{2a}\frac{2a^3}{3}=\boxed{\frac{a^2}{3}}.\end{aligned}\]</div>
+<p><strong>Step 4: Variance and standard deviation.</strong></p>
+<div class="display-math">\[\begin{aligned}\sigma_x^2&amp;=\langle x^2\rangle-\langle x\rangle^2=\frac{a^2}{3},\\
+\boxed{\sigma_x=\Delta x=\frac{a}{\sqrt3}}&amp;\qquad(a&gt;0).\end{aligned}\]</div>
+<p><strong>Interpretation.</strong> The position outcome is uniformly distributed over an interval of width \(2a\); its average is the center \(0\), while its standard deviation is \(a/\sqrt3\simeq0.577a\). This is a <em>statistical spread</em>, not a statement that the particle is certainly located at the origin.</p>
+<p><strong>M.Sc. domain subtlety.</strong> The rectangular \(\psi\) jumps at \(x=\pm a\). It is a perfectly legitimate normalized \(L^2(\R)\) position state with finite \(\Delta x\), but it does not lie in the standard \(H^1(\R)\) domain of free momentum. Its momentum-space amplitude is proportional to \(\sin(ap/\hbar)/p\), so \(|a(p)|^2\sim p^{-2}\) along its envelope. Its momentum variance is therefore infinite; a formal derivative inside the interval alone would incorrectly suggest zero momentum uncertainty. The assignment requests only \(\sigma_x\), which is well-defined.</p><p class="small"><a href="#b5">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b6"><summary><span class="num">B6</span><span>Position–momentum uncertainties of a free particle in 1D</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Evaluate position and momentum uncertainties for a free particle in 1D.</p></aside><h3>Detailed worked solution</h3><p><strong>Why the preparation matters.</strong> The Hamiltonian \(H=p^2/(2m)\) fixes the dynamics, not the initial state. Without specifying the state, no unique pair \((\Delta x,\Delta p)\) exists. We distinguish an ideal generalized momentum eigenstate from a normalized wave packet, then work out a Gaussian state completely.</p>
+<h4>Case 1: Generalized plane-wave eigenstate</h4>
+<p>For \(\phi_p(x)=(2\pi\hbar)^{-1/2}e^{ipx/\hbar}\), \(\hat p\phi_p=p\phi_p\). In generalized eigenstate language momentum is sharp, so formally \(\Delta p=0\). But \(\phi_p\notin L^2(\R)\) and therefore does not define an ordinary normalized position probability distribution. Its \(\langle x\rangle\), \(\langle x^2\rangle\), and \(\Delta x\) are not ordinary well-defined moments. Calling it ``\(\Delta x=\infty\)'' is a heuristic delocalization statement, not a standard deviation calculated from a normalized vector.</p>
+<h4>Case 2: Initial Gaussian packet and normalization</h4>
+<p>Choose a normalized Gaussian centered at \(x_0\) with central momentum \(p_0\) and positive width parameter \(\sigma_0\):</p>
+<div class="display-math">\[\label{eq:gauss0}
+\boxed{\psi(x,0)=\frac1{(2\pi\sigma_0^2)^{1/4}}
+\exp\left[-\frac{(x-x_0)^2}{4\sigma_0^2}+\frac{ip_0(x-x_0)}\hbar\right]}.\]</div>
+<p>Its probability density is</p>
+<div class="display-math">\[\rho(x,0)=\frac1{\sqrt{2\pi}\sigma_0}
+\exp\left[-\frac{(x-x_0)^2}{2\sigma_0^2}\right].\]</div>
+<p>Let \(y=x-x_0\). The Gaussian integrals</p>
+<div class="display-math">\[\label{eq:gaussints}
+\int_{\R}e^{-ay^2}\dd y=\sqrt{\frac\pi a},\quad
+\int_{\R}ye^{-ay^2}\dd y=0,\quad
+\int_{\R}y^2e^{-ay^2}\dd y=\frac{\sqrt\pi}{2a^{3/2}}\]</div>
+<p>for \(a>0\) verify \(\int\rho\dd x=1\), \(\langle y\rangle=0\), and \(\langle y^2\rangle=\sigma_0^2\). Thus</p>
+<div class="display-math">\[\boxed{\langle x\rangle_0=x_0},\quad
+\boxed{\langle x^2\rangle_0=x_0^2+\sigma_0^2},\quad
+\boxed{\Delta x(0)=\sigma_0}.\]</div>
+<h4>Calculate the momentum moments explicitly</h4>
+<p>Differentiate (see \(\LaTeX\) source: eq:gauss0):</p>
+<div class="display-math">\[\psi'(x,0)=\left[-\frac{x-x_0}{2\sigma_0^2}+\frac{ip_0}{\hbar}\right]\psi(x,0).\]</div>
+<p>Acting with \(p=-i\hbar\partial_x\),</p>
+<div class="display-math">\[\label{eq:p_on_gauss}
+\boxed{p\psi=\left[p_0+\frac{i\hbar(x-x_0)}{2\sigma_0^2}\right]\psi}.\]</div>
+<p>Integrating against \(\psi^*\) and using \(\langle x-x_0\rangle=0\) gives</p>
+<div class="display-math">\[\boxed{\langle p\rangle_0=p_0}.\]</div>
+<p>For the second central moment, avoid a cumbersome second derivative by using self-adjointness and the norm:</p>
+<div class="display-math">\[\begin{aligned}(\Delta p(0))^2
+&amp;=\langle(p-p_0)^2\rangle_0
+=\|(p-p_0)\psi\|^2\\
+&amp;=\int_{\R}\frac{\hbar^2(x-x_0)^2}{4\sigma_0^4}|\psi|^2\,\dd x
+=\frac{\hbar^2}{4\sigma_0^4}\sigma_0^2.\end{aligned}\]</div>
+<p>Therefore,</p>
+<div class="display-math">\[\label{eq:gaussunc0}
+\boxed{\langle p^2\rangle_0=p_0^2+\frac{\hbar^2}{4\sigma_0^2}},\qquad
+\boxed{\Delta p(0)=\frac{\hbar}{2\sigma_0}}.\]</div>
+<p>Multiplying the two uncertainties,</p>
+<div class="display-math">\[\label{eq:initialUP}
+\boxed{\Delta x(0)\,\Delta p(0)=\sigma_0\frac{\hbar}{2\sigma_0}=\frac\hbar2}.\]</div>
+<p>The initial Gaussian saturates the Heisenberg–Robertson bound and is an <em>unchirped minimum-uncertainty state</em>.</p>
+<h4>Derive time-dependent uncertainties via Heisenberg operators</h4>
+<p>For free evolution, the Heisenberg equation is \(\dd A_H/\dd t=(i/\hbar)[H,A_H]\) for operators with no explicit time dependence. Since \(H=p^2/(2m)\),</p>
+<div class="display-math">\[[H,p]=0,\qquad [H,x]=-\frac{i\hbar}{m}p.\]</div>
+<p>Thus</p>
+<div class="display-math">\[\label{eq:hex}
+\boxed{p_H(t)=p(0)},\qquad
+\boxed{x_H(t)=x(0)+\frac{p(0)}m t}.\]</div>
+<p>Taking means gives \(\langle p\rangle_t=p_0\) and \(\langle x\rangle_t=x_0+p_0t/m\). Taking centered squares carefully,</p>
+<div class="display-math">\[\label{eq:genericvariance}
+\boxed{\Delta x(t)^2=\Delta x(0)^2+\frac{2t}{m}\Cov(x,p)_0+\frac{t^2}{m^2}\Delta p(0)^2},\]</div>
+<p>where \(\Cov(x,p)=\frac12\langle (x-\langle x\rangle)(p-\langle p\rangle)+(p-\langle p\rangle)(x-\langle x\rangle)\rangle\).</p>
+<p>For the real-envelope Gaussian (see \(\LaTeX\) source: eq:gauss0), this initial symmetrized covariance vanishes. For example, \(\langle(x-x_0)(p-p_0)\rangle=i\hbar/2\) by (see \(\LaTeX\) source: eq:p_on_gauss), while the symmetric real part is zero. Therefore (see \(\LaTeX\) source: eq:genericvariance) becomes</p>
+<div class="display-math">\[\label{eq:gausstime}
+\boxed{\Delta x(t)=\sigma_0\sqrt{1+\left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}},\qquad
+\boxed{\Delta p(t)=\frac\hbar{2\sigma_0}}.\]</div>
+<p>Thus</p>
+<div class="display-math">\[\label{eq:prodtime}
+\boxed{\Delta x(t)\Delta p(t)=\frac\hbar2\sqrt{1+\left(\frac{\hbar t}{2m\sigma_0^2}\right)^2}\ \ge\ \frac\hbar2}.\]</div>
+<p>For \(t\ne0\), the ordinary Robertson product is strictly larger than \(\hbar/2\). Momentum variance stays fixed; position variance grows quadratically because different momenta propagate at different velocities.</p>
+<h4>Exact evolved Gaussian and probability density</h4>
+<p>The free particle's general momentum-space solution is \(a(p,t)=e^{-ip^2t/(2m\hbar)}a(p,0)\). Fourier transforming the initial Gaussian gives</p>
+<div class="display-math">\[\label{eq:gauss_evolved}
+\boxed{\begin{aligned}
+\Psi(x,t)={}&amp;\frac{(2\pi\sigma_0^2)^{-1/4}}{\sqrt{1+i\tau}}
+\exp\!\left[-\frac{(x-x_0-p_0t/m)^2}{4\sigma_0^2(1+i\tau)}\right]\\
+&amp;\times\exp\!\left[\frac{ip_0(x-x_0)}\hbar-\frac{ip_0^2t}{2m\hbar}\right],
+\qquad \tau=\frac{\hbar t}{2m\sigma_0^2}.
+\end{aligned}}\]</div>
+<p>Direct substitution into the free TDSE verifies the expression; at \(t=0\) it reduces to (see \(\LaTeX\) source: eq:gauss0). Because \(|1+i\tau|=\sqrt{1+\tau^2}\), its density is</p>
+<div class="display-math">\[\boxed{|\Psi(x,t)|^2=\frac1{\sqrt{2\pi}\sigma(t)}
+\exp\left[-\frac{(x-x_0-p_0t/m)^2}{2\sigma(t)^2}\right]},\quad
+\sigma(t)=\sigma_0\sqrt{1+\tau^2}.\]</div>
+<p>The packet remains normalized, its center propagates at \(v_0=p_0/m\), and its width grows; this agrees with the operator derivation.</p>
+<h4>Uncertainty principle and stronger Schrödinger–Robertson relation</h4>
+<p>On a suitable common domain, the canonical commutator is \([x,p]=i\hbar I\). The Cauchy–Schwarz inequality applied to \((x-\langle x\rangle)|\psi\rangle\) and \((p-\langle p\rangle)|\psi\rangle\) implies</p>
+<div class="display-math">\[(\Delta x)^2(\Delta p)^2\ge\Cov(x,p)^2+\frac14|\langle[x,p]\rangle|^2
+=\Cov(x,p)^2+\frac{\hbar^2}{4}.\]</div>
+<p>For the evolved Gaussian, \(\Cov(x,p)_t=t\Delta p^2/m=\hbar^2t/(4m\sigma_0^2)\), so</p>
+<div class="display-math">\[(\Delta x(t))^2(\Delta p(t))^2-\Cov(x,p)_t^2=\boxed{\frac{\hbar^2}{4}}.\]</div>
+<p>The packet continues to saturate the <em>stronger</em> inequality even though \(\Delta x(t)\Delta p(t)>\hbar/2\) for \(t\ne0\).</p>
+<p><strong>Conclusion.</strong> A free-particle plane wave has sharp momentum only as an improper, delocalized eigenstate. For a normalizable unchirped Gaussian, initially \(\Delta x=\sigma_0\), \(\Delta p=\hbar/(2\sigma_0)\), with minimum uncertainty product \(\hbar/2\). Free evolution preserves momentum spread and increases position spread according to (see \(\LaTeX\) source: eq:gausstime). These are state-dependent results, not universal numerical uncertainties assigned by the free-particle Hamiltonian alone.</p><p class="small"><a href="#b6">Link to this solution</a> · <a href="sources/assignment-i.tex">LaTeX source</a></p></div></details></section></main><section class="ack" id="acknowledgments"><h2>Acknowledgments, references and academic integrity</h2><p>These independent study notes are based on Quantum Mechanics–I coursework question sheets supplied by the Department of Physics &amp; Nanotechnology, SRM Institute of Science and Technology (SRMIST), Kattankulathur. The original problems are acknowledged to the course context and instructors. The expanded explanations and solution manuscripts were compiled for study by Kumar Azad, with AI assistance in drafting and LaTeX typesetting.</p><p>The archive is <strong>not an official SRMIST answer key</strong>, has not been independently certified by instructors, and is neither an arXiv submission nor a peer-reviewed research paper. Mathematical statements should be cross-checked against the question sheets and reference textbooks before reuse or academic submission.</p><p>Useful background reading includes D. J. Griffiths and D. F. Schroeter, <em>Introduction to Quantum Mechanics</em>; J. J. Sakurai and J. Napolitano, <em>Modern Quantum Mechanics</em>; and R. Shankar, <em>Principles of Quantum Mechanics</em>. See each source manuscript for its detailed references and assumptions.</p></section><footer>© 2026 Kumar Azad · Educational material, not an official institutional publication.</footer></div><script>
+const ps=[...document.querySelectorAll('details.problem')];async function typeset(el){if(el.dataset.mathdone)return;const mj=window.MathJax;if(mj?.typesetPromise){await mj.typesetPromise([el]);el.dataset.mathdone='1';}}
+async function expand(){ps.forEach(p=>p.open=true);if(window.MathJax?.typesetPromise)await MathJax.typesetPromise(ps);ps.forEach(p=>p.dataset.mathdone='1');}
+ps.forEach(p=>p.addEventListener('toggle',()=>{if(p.open)typeset(p)}));document.getElementById('expand').onclick=expand;document.getElementById('collapse').onclick=()=>ps.forEach(p=>p.open=false);document.getElementById('print').onclick=async()=>{await expand();window.print()};
+function openHash(){const id=decodeURIComponent(location.hash.slice(1));const p=document.getElementById(id);if(p&&p.matches('details.problem')){p.open=true;typeset(p)}}addEventListener('hashchange',openHash);addEventListener('load',openHash);document.addEventListener('DOMContentLoaded',openHash);
+</script></body></html>
