@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="MSc-level differential equations course notes: ODE and PDE definitions, solution methods, Fourier and Green methods, heat wave and Laplace equations, weak formulations, numerics and a research project.">
+<meta name="theme-color" content="#ffffff">
+<title>Ordinary and Partial Differential Equations — MSc Mathematical Physics | Kumar Azad</title>
+<style>
+:root{color-scheme:light;--ink:#171717;--link:#19436a;--line:#b4b4b4}
+*{box-sizing:border-box}html{background:#fff;color:var(--ink);scroll-behavior:smooth}
+body{max-width:815px;margin:0 auto;padding:26px 35px 72px;font:17px/1.64 "Times New Roman",Georgia,serif;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:4px}
+.skip-link{position:absolute;top:-120px;background:#fff;padding:10px;z-index:2}.skip-link:focus{top:8px}
+.site-nav{border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;padding-bottom:14px;font:13px/1.5 Arial,sans-serif}
+header{text-align:center;padding:44px 0 30px}header p{text-align:center;margin:8px auto}
+.eyebrow{font:11px/1.5 Arial,sans-serif;text-transform:uppercase;letter-spacing:.06em;color:#555}
+h1{font-size:36px;font-weight:normal;line-height:1.25;margin:15px 0 11px}
+.subtitle{font-size:19px;line-height:1.4}.author{font-size:17px;margin-top:19px}header small{font-size:13px;color:#555}
+h2{font-size:23px;line-height:1.3;margin:36px 0 14px}h3{font-size:19px;line-height:1.34;margin:25px 0 10px}
+p{margin:12px 0;text-align:justify;hyphens:auto}
+section{scroll-margin-top:18px}.abstract{max-width:705px;margin:0 auto 29px;padding:0 15px}
+.abstract h2{font-size:18px;text-align:center;margin:0 0 12px}.abstract p{font-size:16px;line-height:1.58}
+.status{font-size:15px;color:#444;margin:18px 0 24px}
+.contents{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:29px 0 35px;padding:8px 18px 13px;font-size:16px}
+.contents h2{font-size:17px;margin:6px 0}.contents ol{padding-left:24px;margin:3px 0}.contents li{margin:5px 0}
+.equation{margin:19px 0 24px;text-align:center;overflow-x:auto;overflow-y:hidden;padding:8px 4px;font-size:1.02em}
+.equation mjx-container[display="true"]{margin:0!important;padding:7px 0!important}.equation mjx-container{max-width:100%}
+.rule{font-size:15px;color:#444;margin:17px 0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding:12px 0}
+.table-wrap{overflow-x:auto;margin:20px 0}.compare{border-collapse:collapse;width:100%;min-width:550px;font-size:15px}
+.compare th,.compare td{border-bottom:1px solid #bbb;padding:10px;text-align:left;vertical-align:top}
+.compare th{border-bottom:2px solid #777}.compare caption{font-size:14px;color:#555;text-align:left;margin-bottom:8px}
+.math-exercise{padding:12px 0;border-top:1px solid #bbb;border-bottom:1px solid #bbb;font-size:16px;margin:20px 0}
+.project{border-top:1px solid #aaa;border-bottom:1px solid #aaa;padding:14px 0}
+.project h3{margin-top:8px}
+#references ol{padding-left:24px}#references li{margin:9px 0;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);margin-top:44px;padding-top:17px;font-size:14px;color:#555}footer p{text-align:left}
+@media(max-width:640px){body{padding:18px 17px 42px;font-size:16px;line-height:1.6}header{padding:29px 0 22px}h1{font-size:30px}h2{font-size:21px}h3{font-size:18px}.subtitle{font-size:17px}.abstract{padding:0}.abstract p{font-size:15px}p{text-align:left;hyphens:none}.equation{font-size:.95em}.contents{padding:8px 12px}.compare{font-size:14px}}
+@media print{@page{size:A4;margin:22mm}html,body{max-width:none;margin:0;padding:0}body{font-size:11pt;line-height:1.48}.site-nav,.skip-link{display:none}h2,h3{break-after:avoid}.equation{break-inside:avoid}a{color:inherit}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true,tags:'all',tagSide:'right',tagIndent:'0.5em'},chtml:{scale:1.02},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<nav class="site-nav" aria-label="Study note navigation">
+<a href="../">← Kumar Azad · Home</a>
+<a href="../mathematical-physics/">Mathematical Physics</a>
+<a href="../quantum-mechanics/">Quantum Mechanics</a>
+</nav>
+<header>
+<p class="eyebrow">Expository notes · Mathematical Physics</p>
+<h1>Ordinary &amp; Partial Differential Equations</h1>
+<p class="subtitle">Foundations, analytical methods, numerical methods and research problems</p>
+<p class="author">Kumar Azad</p>
+<p><small>M.Sc.-level guided course notes · 10 November 2026</small></p>
+</header>
+<main id="content">
+<section class="abstract" aria-labelledby="abstract-heading">
+<h2 id="abstract-heading">Abstract</h2>
+<p>Differential equations express laws involving derivatives. This tutorial moves from the definitions and classifications of ordinary differential equations (ODEs) and partial differential equations (PDEs) to first-order methods, second-order linear systems, existence and uniqueness, Sturm–Liouville theory, the classical heat, wave and Laplace equations, characteristic curves, energy and weak formulations, and numerical methods. Selected problems are derived from initial and boundary conditions, and a research section proposes a reproducible MSc-level study of variable-diffusivity heat flow. The presentation is a guided survey, not a substitute for a complete graduate textbook.</p>
+</section>
+<p class="status"><em>Academic status.</em> These are educational notes based on standard mathematical methods. Research projects below are proposals, not completed or published original results. Unless stated otherwise, solutions are classical and equations are considered on the domains specified in each example.</p>
+
+<nav class="contents" aria-label="Contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#definitions">Definitions, notation and problem types</a></li>
+<li><a href="#first-order">First-order ordinary differential equations</a></li>
+<li><a href="#higher-order">Higher-order linear ODEs, systems and stability</a></li>
+<li><a href="#solvability">Existence, uniqueness, and boundary-value theory</a></li>
+<li><a href="#spectral">Sturm–Liouville problems and Green functions</a></li>
+<li><a href="#pde">PDE classification and characteristics</a></li>
+<li><a href="#canonical">Solved heat, wave and Laplace equations</a></li>
+<li><a href="#functional">Fourier, weak and energy methods</a></li>
+<li><a href="#numerics">Numerical analysis and convergence</a></li>
+<li><a href="#research">MSc research project and further ideas</a></li>
+<li><a href="#references">Exercises and references</a></li>
+</ol>
+</nav>
+
+<section id="definitions">
+<h2>1. What is a differential equation?</h2>
+<p>A differential equation relates an unknown function to one or more of its derivatives. An <strong>ODE</strong> has one independent variable, while a <strong>PDE</strong> contains partial derivatives with respect to two or more independent variables. Their order is the highest derivative order appearing. A linear equation is linear in the unknown function and all its derivatives, with coefficients allowed to depend on independent variables.</p>
+<div class="equation" role="math" aria-label="Examples of ordinary and partial differential equations">
+\[
+\underbrace{y''(t)+\omega^2 y(t)=0}_{\mathrm{ODE}},
+\qquad
+\underbrace{\partial_t u(x,t)-\kappa\partial_x^2u(x,t)=0}_{\mathrm{PDE}}.
+\]
+</div>
+<p>For a scalar linear ODE, the general form is \(\sum_{j=0}^{m}a_j(t)y^{(j)}(t)=g(t)\). The homogeneous equation has \(g=0\); nonlinearity appears, for example, in \(y'=y^2\). For a PDE, the heat equation is linear, whereas \(u_t+uu_x=0\) is nonlinear.</p>
+<p>An <em>initial-value problem</em> (IVP) specifies information at an initial time, such as \(y(t_0)=y_0\). A <em>boundary-value problem</em> (BVP) specifies information at spatial boundaries, such as \(u(0,t)=u(L,t)=0\). Evolution PDEs usually require both initial and appropriate boundary conditions. A differential equation alone is typically insufficient to determine a unique physical solution.</p>
+<div class="table-wrap">
+<table class="compare">
+<caption>Table 1. How to read a proposed differential-equation model.</caption>
+<thead><tr><th scope="col">Feature</th><th scope="col">Question</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td>Order</td><td>Highest derivative?</td><td>\(y''+y=0\) is second order</td></tr>
+<tr><td>Linearity</td><td>Linear in unknown and derivatives?</td><td>\(u_t-\kappa u_{xx}=f\) is linear</td></tr>
+<tr><td>Domain</td><td>Where is it defined?</td><td>\(0&lt;x&lt;L,\ t&gt;0\)</td></tr>
+<tr><td>Data</td><td>Initial or boundary conditions?</td><td>\(u(0,t)=u(L,t)=0\)</td></tr>
+<tr><td>Well-posedness</td><td>Existence, uniqueness, continuous dependence?</td><td>Depends on PDE and data</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section id="first-order">
+<h2>2. First-order ODEs: the foundations</h2>
+<h3>2.1 Separable equations</h3>
+<p>For \(y'=f(t)g(y)\), on an interval where \(g(y)\ne0\), separate variables and integrate: \(\int dy/g(y)=\int f(t)\,dt+C\). Constant solutions at zeros of \(g\) must be checked separately because dividing by \(g\) may discard them. For exponential growth,</p>
+<div class="equation" role="math" aria-label="Exact solution of growth equation">
+\[
+\frac{dy}{dt}=ky,\quad y(0)=y_0
+\quad\Longrightarrow\quad
+\frac{dy}{y}=k\,dt
+\quad\Longrightarrow\quad y(t)=y_0e^{kt}.
+\]
+</div>
+<p>The logistic equation \(y'=r y(1-y/K)\), for \(r,K&gt;0\), models idealized saturation. For initial \(0&lt;y_0&lt;K\),</p>
+<div class="equation" role="math" aria-label="Logistic equation exact solution">
+\[
+y(t)=\frac{K}{1+\left(\frac{K-y_0}{y_0}\right)e^{-rt}}.
+\]
+</div>
+<p>The equilibria \(y=0\) and \(y=K\) are also solutions. For \(r&gt;0\), the former is unstable and the latter is stable against small positive perturbations.</p>
+
+<h3>2.2 Linear first-order equations and integrating factors</h3>
+<p>Given \(y'+p(t)y=q(t)\) with continuous \(p,q\), define the integrating factor \(\mu(t)=e^{\int p(t)\,dt}\). Multiplying by \(\mu\) converts the left side to one exact derivative:</p>
+<div class="equation" role="math" aria-label="Integrating factor derivation">
+\[
+\frac{d}{dt}\!\big(\mu y\big)=\mu q,
+\qquad
+y(t)=\frac{1}{\mu(t)}
+\left(C+\int^{t}\mu(s)q(s)\,ds\right).
+\]
+</div>
+<p><strong>Worked example.</strong> Solve \(y'+2y=4\), \(y(0)=1\). Here \(\mu=e^{2t}\); integration gives \(y=2+Ce^{-2t}\), and the initial condition gives \(C=-1\):</p>
+<div class="equation" role="math" aria-label="Worked linear ordinary differential equation">
+\[
+\boxed{y(t)=2-e^{-2t}},\qquad
+y'(t)+2y(t)=e^{-2t}+4-2e^{-2t}=4-e^{-2t}+e^{-2t}=4.
+\]
+</div>
+<p>The direct substitution verifies the equation; \(y(0)=1\) fixes the initial value.</p>
+
+<h3>2.3 Exact equations and nonlinear substitutions</h3>
+<p>A differential one-form \(M(x,y)\,dx+N(x,y)\,dy=0\) is locally exact on a suitably simple domain when \(\partial_y M=\partial_x N\). Then there exists a potential \(F\) with \(dF=Mdx+Ndy\), and solutions satisfy \(F(x,y)=C\). Bernoulli's equation \(y'+py=qy^\alpha\) can be reduced to a first-order linear ODE by setting \(z=y^{1-\alpha}\) on a domain where that substitution is valid, for \(\alpha\ne1\).</p>
+</section>
+
+<section id="higher-order">
+<h2>3. Second-order and higher ODEs, matrices and stability</h2>
+<p>Linear constant-coefficient equations are solved by an exponential ansatz. For \(y''+a y'+b y=0\), insert \(y=e^{\lambda t}\) to obtain the characteristic polynomial \(\lambda^2+a\lambda+b=0\). Distinct roots yield \(y=c_1e^{\lambda_1t}+c_2e^{\lambda_2t}\); a repeated root \(\lambda\) yields \((c_1+c_2t)e^{\lambda t}\). Complex conjugate roots produce damped oscillations.</p>
+<h3>3.1 Forced oscillators and resonance</h3>
+<p>Consider \(y''+\omega_0^2y=F\cos(\Omega t)\) with \(\Omega\ne\omega_0\). A particular solution is \(y_p=\frac{F}{\omega_0^2-\Omega^2}\cos(\Omega t)\). At resonance, the trial form fails; a resonant particular solution grows linearly in time:</p>
+<div class="equation" role="math" aria-label="Resonance of a forced oscillator">
+\[
+y''+\omega_0^2y=F\cos(\omega_0t)
+\quad\Longrightarrow\quad
+y_p(t)=\frac{F}{2\omega_0}\,t\sin(\omega_0t).
+\]
+</div>
+<p>Physical damping, nonlinear response or finite driving duration modifies this idealized undamped resonance.</p>
+
+<h3>3.2 Systems of ODEs and matrix exponentials</h3>
+<p>For \(\mathbf x'(t)=A\mathbf x(t)\), a constant \(n\times n\) matrix \(A\) generates the solution \(e^{At}\mathbf x(0)\). If \(A\) is diagonalizable, eigenvectors and eigenvalues give a particularly transparent expression. For a real matrix, asymptotic stability of the zero solution requires all eigenvalues to have strictly negative real part (assuming finite-dimensional constant-coefficient dynamics).</p>
+<div class="equation" role="math" aria-label="Linear systems and stability by eigenvalues">
+\[
+\mathbf x(t)=e^{At}\mathbf x_0,\qquad
+A=P\Lambda P^{-1}\Longrightarrow
+e^{At}=Pe^{\Lambda t}P^{-1}.
+\]
+</div>
+<p>For nonlinear autonomous \(\mathbf x'=\mathbf F(\mathbf x)\), linearize near an equilibrium \(\mathbf x_*\) by its Jacobian \(J=D\mathbf F(\mathbf x_*)\). The eigenvalues of \(J\) classify local stability for hyperbolic equilibria; eigenvalues with vanishing real parts require further nonlinear analysis. Lyapunov functions provide another method without solving explicitly.</p>
+
+<h3>3.3 Laplace transforms and convolution</h3>
+<p>For functions of suitable exponential order, define \(\mathcal L\{y\}(s)=\int_0^\infty e^{-st}y(t)\,dt\). Integration by parts gives \(\mathcal L\{y'\}=sY(s)-y(0)\), converting constant-coefficient IVPs into algebraic equations.</p>
+<div class="equation" role="math" aria-label="Laplace transformed second derivative">
+\[
+\mathcal L\{y''\}(s)=s^2Y(s)-sy(0)-y'(0).
+\]
+</div>
+<p>Convolution \((f*g)(t)=\int_0^t f(t-s)g(s)\,ds\) represents linear time-invariant input–response solutions; the transform satisfies \(\mathcal L\{f*g\}=\mathcal L\{f\}\mathcal L\{g\}\).</p>
+</section>
+
+<section id="solvability">
+<h2>4. Existence, uniqueness and problem formulation</h2>
+<p>The Picard–Lindelöf theorem gives a local unique solution of \(y'=f(t,y)\), \(y(t_0)=y_0\) if \(f\) is continuous near \((t_0,y_0)\) and locally Lipschitz in \(y\). Under these hypotheses the solution depends continuously on the initial data on a common short time interval. Local uniqueness does not imply global existence: solutions can diverge in finite time.</p>
+<div class="equation" role="math" aria-label="Integral equation equivalent to ordinary differential equation initial value problem">
+\[
+y(t)=y_0+\int_{t_0}^{t}f(s,y(s))\,ds.
+\]
+</div>
+<p>To see why a uniqueness hypothesis matters, the IVP \(y'=\sqrt{|y|}\), \(y(0)=0\) admits the zero solution, as well as solutions that remain zero until a time \(c\geq0\) and then take the value \((t-c)^2/4\). The right-hand side is continuous but not locally Lipschitz at \(y=0\).</p>
+<p>For boundary-value problems, existence and uniqueness can be different questions from the IVP case. For example, \(y''+\lambda y=0\), \(y(0)=y(\pi)=0\), has nonzero solutions only at special values \(\lambda=n^2\), \(n=1,2,\ldots\). At such values, uniqueness fails for the homogeneous BVP unless normalization is prescribed. Boundary compatibility and operator domains are essential at MSc level.</p>
+</section>
+
+<section id="spectral">
+<h2>5. Sturm–Liouville problems and Green functions</h2>
+<p>A regular Sturm–Liouville problem has the form</p>
+<div class="equation" role="math" aria-label="General self adjoint Sturm Liouville equation">
+\[
+-\frac{d}{dx}\left(p(x)\frac{d\phi}{dx}\right)+q(x)\phi
+=\lambda w(x)\phi,\qquad a&lt;x&lt;b,
+\]
+</div>
+<p>with \(p,w&gt;0\), real \(q\), suitable regularity, and self-adjoint separated boundary conditions. Integrating the product of two equations and subtracting gives \((\lambda_m-\lambda_n)\int_a^b w\phi_m\phi_n\,dx=0\) when boundary terms vanish. Distinct eigenvalues therefore have weighted-orthogonal eigenfunctions.</p>
+<div class="equation" role="math" aria-label="Sturm Liouville eigenfunction orthogonality">
+\[
+\lambda_m\ne\lambda_n\quad\Longrightarrow\quad
+\int_a^b w(x)\phi_m(x)\phi_n(x)\,dx=0.
+\]
+</div>
+<p>A Green function \(G(x,\xi)\) inverts a specified linear differential operator \(L\), with its boundary conditions included. Formally, \(L_xG(x,\xi)=\delta(x-\xi)\), and \(Lu=f\) has solution \(u(x)=\int G(x,\xi)f(\xi)\,d\xi\), when the inverse exists.</p>
+<p><strong>Worked example.</strong> For \(L=-d^2/dx^2\) on \(0&lt;x&lt;L\) with \(u(0)=u(L)=0\), require continuity at \(x=\xi\), a derivative jump \(\partial_xG(\xi^+,\xi)-\partial_xG(\xi^-,\xi)=-1\), and zero endpoint values. This yields</p>
+<div class="equation" role="math" aria-label="Dirichlet Green function for one dimensional Poisson operator">
+\[
+G(x,\xi)=
+\begin{cases}
+\dfrac{x(L-\xi)}{L}, &amp; 0\leq x\leq\xi,\\[5pt]
+\dfrac{\xi(L-x)}{L}, &amp; \xi\leq x\leq L .
+\end{cases}
+\]
+</div>
+<p>For \(f(x)=1\), integrating \(G\) over \(\xi\) gives \(u(x)=x(L-x)/2\). Directly checking \(-u''=1\) and \(u(0)=u(L)=0\) verifies the solution.</p>
+</section>
+
+<section id="pde">
+<h2>6. Classification of partial differential equations</h2>
+<p>For a second-order linear PDE in two independent variables, write the principal (second-derivative) part as \(Au_{xx}+2Bu_{xy}+Cu_{yy}\), with coefficients evaluated at the point of interest. The discriminant \(B^2-AC\) classifies the principal part where it is nondegenerate:</p>
+<div class="table-wrap">
+<table class="compare">
+<caption>Table 2. Type of a second-order PDE in two variables.</caption>
+<thead><tr><th scope="col">Type</th><th scope="col">Discriminant</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td>Elliptic</td><td>\(B^2-AC&lt;0\)</td><td>\(u_{xx}+u_{yy}=0\)</td></tr>
+<tr><td>Parabolic</td><td>\(B^2-AC=0\)</td><td>\(u_t-\kappa u_{xx}=0\)</td></tr>
+<tr><td>Hyperbolic</td><td>\(B^2-AC&gt;0\)</td><td>\(u_{tt}-c^2u_{xx}=0\)</td></tr>
+</tbody></table>
+</div>
+<p>These labels describe the differential operator, not whether a function is “stable” or “unstable.” Initial and boundary conditions must be compatible with the equation's type; for example, heat evolution is not generally reversible as a stable IVP.</p>
+<h3>6.1 Characteristics: the transport equation</h3>
+<p>The first-order transport PDE \(u_t+cu_x=0\) has straight characteristic curves \(x(t)=x_0+ct\), along which \(du/dt=u_t+cu_x=0\). Hence, for \(u(x,0)=f(x)\),</p>
+<div class="equation" role="math" aria-label="Method of characteristics solution of linear transport equation">
+\[
+\frac{dx}{dt}=c,\qquad
+\frac{du}{dt}=0
+\quad\Longrightarrow\quad
+u(x,t)=f(x-ct).
+\]
+</div>
+<p>For nonlinear inviscid Burgers flow \(u_t+uu_x=0\), characteristics move at speed \(u_0(x_0)\) and may intersect in finite time. At intersection, a classical single-valued solution breaks down and one needs weak/entropy solutions; not every distributional weak solution is physically acceptable.</p>
+</section>
+
+<section id="canonical">
+<h2>7. Worked PDE examples: heat, wave and Laplace</h2>
+<h3>7.1 Heat equation on a finite rod</h3>
+<p>On \(0&lt;x&lt;L\), take \(u_t=\kappa u_{xx}\), with \(\kappa&gt;0\), zero endpoint temperatures and initial data \(u(x,0)=\sin(\pi x/L)\). Set \(u(x,t)=X(x)T(t)\). Dividing gives \(T'/(\kappa T)=X''/X=-\lambda\), with eigenvalue \(\lambda=(\pi/L)^2\) for this initial mode.</p>
+<div class="equation" role="math" aria-label="Exact heat equation solution for sine initial data">
+\[
+\boxed{u(x,t)=\sin\left(\frac{\pi x}{L}\right)
+\exp\left(-\frac{\kappa\pi^2t}{L^2}\right).}
+\]
+</div>
+<p>The solution satisfies both boundary conditions, the initial profile, and \(u_t-\kappa u_{xx}=0\) identically. For a general sufficiently regular initial function \(f(x)\), expand it in the sine basis:</p>
+<div class="equation" role="math" aria-label="Fourier sine series solution of homogeneous Dirichlet heat equation">
+\[
+u(x,t)=\sum_{n=1}^\infty b_n
+e^{-\kappa(n\pi/L)^2t}\sin\left(\frac{n\pi x}{L}\right),
+\qquad b_n=\frac2L\int_0^Lf(x)\sin\left(\frac{n\pi x}{L}\right)dx.
+\]
+</div>
+
+<h3>7.2 Wave equation and normal modes</h3>
+<p>For a stretched ideal string \(u_{tt}=c^2u_{xx}\) on \(0&lt;x&lt;L\) with fixed endpoints, initial displacement \(\sin(\pi x/L)\), and zero initial velocity, separation of variables gives</p>
+<div class="equation" role="math" aria-label="Exact wave equation standing mode with zero velocity initial data">
+\[
+u(x,t)=\sin\left(\frac{\pi x}{L}\right)
+\cos\left(\frac{c\pi t}{L}\right).
+\]
+</div>
+<p>Unlike diffusion, ideal wave motion oscillates without intrinsic damping. On the full real line, the solution with initial displacement \(f\) and velocity \(g\) is d'Alembert's formula:</p>
+<div class="equation" role="math" aria-label="D Alembert solution of one dimensional wave equation">
+\[
+u(x,t)=\tfrac12\bigl[f(x-ct)+f(x+ct)\bigr]
++\frac{1}{2c}\int_{x-ct}^{x+ct}g(s)\,ds.
+\]
+</div>
+
+<h3>7.3 Laplace and Poisson boundary-value problems</h3>
+<p>Steady-state diffusion and electrostatic potentials lead to elliptic problems. In one spatial dimension, \(-u''=1\) with \(u(0)=u(L)=0\) gives the solution \(u=x(L-x)/2\), also obtained from the Green function above. In a rectangle, homogeneous Laplace problems with appropriate Dirichlet boundary data are often solved by separating \(u(x,y)=X(x)Y(y)\), leading to trigonometric factors in one direction and hyperbolic/exponential factors in the other.</p>
+<p>For a bounded domain and zero Dirichlet data, the harmonic equation \(\Delta u=0\) has only the zero solution (under the standard regularity assumptions); the maximum principle makes uniqueness transparent.</p>
+</section>
+
+<section id="functional">
+<h2>8. Fourier, weak and energy formulations</h2>
+<p>A graduate treatment asks not only how to guess a solution, but also in which function space it exists. For a smooth function \(u\), the integration-by-parts identity underlying weak formulations is \(\int_a^b(-u'')v\,dx=\int_a^bu'v'\,dx-[u'v]_a^b\). With test functions \(v\) vanishing at the endpoints, the boundary contribution disappears.</p>
+<p>For the Dirichlet Poisson equation \(-u''=f\), the weak problem is: find \(u\in H_0^1(0,L)\) such that</p>
+<div class="equation" role="math" aria-label="Weak variational formulation of the Poisson problem">
+\[
+\int_0^L u'(x)v'(x)\,dx
+=\int_0^L f(x)v(x)\,dx
+\qquad \forall v\in H_0^1(0,L).
+\]
+</div>
+<p>Here \(H_0^1\) is the Sobolev space of square-integrable functions with square-integrable weak derivative and zero trace at the boundary. With \(f\in L^2(0,L)\), Lax–Milgram and Poincaré's inequality provide existence and uniqueness. This setting supports finite-element discretization.</p>
+<h3>8.1 Energy estimate for the heat equation</h3>
+<p>Take \(u_t=\kappa u_{xx}\) on \(0&lt;x&lt;L\) with homogeneous Dirichlet boundary conditions and smooth data. Multiply by \(u\), integrate, and integrate the second derivative by parts:</p>
+<div class="equation" role="math" aria-label="Heat equation energy dissipation identity">
+\[
+\frac{d}{dt}\frac12\int_0^L u(x,t)^2dx
+=\kappa\int_0^L u u_{xx}\,dx
+=-\kappa\int_0^L |u_x|^2\,dx\leq0 .
+\]
+</div>
+<p>The nonincreasing \(L^2\) norm provides a stability diagnostic and, applied to the difference of two solutions, a uniqueness argument. For the wave equation, an analogous calculation shows conservation of kinetic plus gradient energy in the absence of forcing.</p>
+<h3>8.2 Fourier transforms and eigenfunction expansions</h3>
+<p>On an unbounded line, a Fourier transform converts constant-coefficient spatial derivatives into multiplication by powers of wave number. Under the convention \(\widehat u(k)=\int_{\mathbb R}u(x)e^{-ikx}dx\), the heat equation becomes \(\partial_t\widehat u=-\kappa k^2\widehat u\), so</p>
+<div class="equation" role="math" aria-label="Fourier transform heat equation solution">
+\[
+\widehat u(k,t)=e^{-\kappa k^2t}\widehat f(k),
+\qquad
+u(x,t)=\frac{1}{\sqrt{4\pi\kappa t}}
+\int_{\mathbb R}
+e^{-\frac{(x-\xi)^2}{4\kappa t}}f(\xi)\,d\xi,\quad t&gt;0 .
+\]
+</div>
+<p>The Gaussian heat kernel spreads an initial profile while preserving total mass on the infinite line under suitable integrability and decay assumptions. For bounded domains with zero Dirichlet data, mass generally leaves through the boundary and is not conserved.</p>
+</section>
+
+<section id="numerics">
+<h2>9. Numerical methods: what needs checking?</h2>
+<p>Closed-form formulas are rare for variable coefficients, nonlinear equations and complicated boundaries. Finite differences replace derivatives by discrete quotients; finite elements approximate weak solutions in finite-dimensional function spaces. A consistent numerical approximation is not automatically convergent: one must control stability and prove or test convergence under appropriate assumptions.</p>
+<h3>9.1 Finite differences for diffusion</h3>
+<p>On nodes \(x_j=jh\) with \(h=L/N\), a centered second derivative is \(u_{xx}(x_j)\approx(u_{j+1}-2u_j+u_{j-1})/h^2\), with local truncation error \(O(h^2)\) for sufficiently smooth \(u\). Explicit Euler time stepping yields</p>
+<div class="equation" role="math" aria-label="Explicit Euler centered difference heat scheme">
+\[
+U_j^{n+1}=U_j^n+\mu\bigl(U_{j+1}^n-2U_j^n+U_{j-1}^n\bigr),
+\qquad \mu=\frac{\kappa\Delta t}{h^2}.
+\]
+</div>
+<p>For the one-dimensional constant-diffusivity Dirichlet scheme, \(0\leq\mu\leq1/2\) guarantees the standard von Neumann stability condition. Backward Euler is unconditionally stable for this linear heat discretization but first-order in time; Crank–Nicolson is second-order in time for sufficiently smooth solutions and appropriate starting data, although it need not preserve positivity for arbitrarily large time steps.</p>
+<div class="rule"><strong>Report, do not assume:</strong> units, mesh size, time step, norm of the error, boundary implementation, computational solver tolerance, convergence rate, and the range of coefficients. For oscillatory PDEs, check phase and energy errors as well as pointwise differences.</div>
+</section>
+
+<section id="research">
+<h2>10. MSc-level research project</h2>
+<div class="project">
+<h3>Proposed study: variable-diffusivity heat flow and the reliability of numerical solvers</h3>
+<p><strong>Research question.</strong> How do smoothly varying positive diffusivities affect the decay of thermal modes, and how accurately can finite-difference and finite-element methods capture that behavior at practical resolutions? This is a benchmarkable mathematical-physics investigation. Its numerical comparisons may be useful educationally, but novelty is not established without a literature review and a distinct mathematical contribution.</p>
+<p><strong>Mathematical model.</strong> Let \(x\in(0,L)\), \(t&gt;0\), and write \(u\) for temperature relative to a zero-temperature boundary. Set</p>
+<div class="equation" role="math" aria-label="Research project variable diffusion model with smooth spatial diffusivity">
+\[
+\begin{gathered}
+u_t=\partial_x\!\left(D(x)u_x\right)+s(x,t),\\
+D(x)=D_0\!\left[1+\alpha\cos\!\left(\frac{2\pi x}{L}\right)\right],
+\qquad D_0&gt;0,\quad |\alpha|&lt;1,\\
+u(0,t)=u(L,t)=0,\qquad
+u(x,0)=\sin\!\left(\frac{\pi x}{L}\right).
+\end{gathered}
+\]
+</div>
+<p>Positivity \(D(x)\geq D_0(1-|\alpha|)&gt;0\) ensures uniform ellipticity of the spatial operator. Start with \(s=0\). For the check \(\alpha=0\), the exact solution is the heat mode from Section 7 with \(\kappa=D_0\); a numerical method must converge to it.</p>
+<p><strong>Analytical diagnostics.</strong> Multiply the PDE by \(u\), integrate, and use the zero Dirichlet traces. For \(s=0\), one obtains the dissipation law</p>
+<div class="equation" role="math" aria-label="Energy decay for variable diffusivity heat equation">
+\[
+\frac{d}{dt}\frac12\|u(\cdot,t)\|_{L^2(0,L)}^2
+=-\int_0^LD(x)|u_x(x,t)|^2\,dx
+\leq0.
+\]
+</div>
+<p><strong>Numerical formulation.</strong> Use face-centered diffusivities \(D_{j+1/2}=D(x_j+h/2)\). A conservative centered approximation of the spatial flux at interior node \(x_j\) is</p>
+<div class="equation" role="math" aria-label="Conservative variable coefficient diffusion finite difference discretization">
+\[
+(\mathcal L_hU)_j=
+\frac{D_{j+1/2}(U_{j+1}-U_j)
+-D_{j-1/2}(U_j-U_{j-1})}{h^2}.
+\]
+</div>
+<p>Advance the resulting ODE system by backward Euler \((U^{n+1}-U^n)/\Delta t=\mathcal L_hU^{n+1}\), then compare with Crank–Nicolson and piecewise-linear finite elements for the weak formulation. Use a mesh refinement study and time-step refinement; for \(\alpha=0\), compute \(L^2\) and maximum-norm errors against the analytic solution. For \(\alpha\ne0\), compare against a deliberately over-resolved reference solution, documenting its resolution and tolerances.</p>
+<p><strong>Research deliverables.</strong> A reproducible code repository; plots of heat profiles, energy decay and grid refinement; tabulated convergence orders; a mathematical explanation of energy stability; and a concise technical report documenting assumptions and limitations. A possible further direction is a localized pulsed source \(s(x,t)\), provided the forcing and its physical units are explicitly stated.</p>
+</div>
+<h3>Additional project directions</h3>
+<div class="table-wrap">
+<table class="compare">
+<thead><tr><th scope="col">Direction</th><th scope="col">Starting task</th><th scope="col">What must be validated?</th></tr></thead>
+<tbody>
+<tr><td>Sturm–Liouville spectrum</td><td>Numerically approximate eigenvalues with nonconstant \(p(x)\).</td><td>Boundary self-adjointness, eigenvector normalization and mesh convergence.</td></tr>
+<tr><td>Wave-packet evolution</td><td>Compare characteristic and spectral solutions of linear transport and waves.</td><td>Phase speed, energy behavior, and numerical dispersion.</td></tr>
+<tr><td>Schrödinger PDE</td><td>Propagate a Gaussian wave packet through a prescribed one-dimensional potential.</td><td>Norm, boundary reflections, unitary time stepping and convergence.</td></tr>
+<tr><td>Curved or toroidal domains</td><td>Define the Laplace–Beltrami operator for a specified geometry.</td><td>Metric, self-adjoint boundary conditions and limiting cases; substantial advanced prerequisites.</td></tr>
+</tbody>
+</table>
+</div>
+<p>The <a href="../mathematical-physics/">Mathematical Physics</a> notes provide the higher-dimensional Laplacian background. The <a href="../quantum-mechanics/">Quantum Mechanics</a> and <a href="../light-matter-interaction/">Light–Matter Interaction</a> notes show where differential equations enter quantum dynamics.</p>
+</section>
+
+<section id="references">
+<h2>11. Exercises and further reading</h2>
+<div class="math-exercise">
+<strong>Exercises.</strong> (i) Derive the integrating-factor formula; solve \(y'+2y=4\) with a given initial condition. (ii) Explain why local Lipschitz continuity matters to uniqueness. (iii) Calculate eigenpairs of the Dirichlet operator \(-d^2/dx^2\) on \((0,L)\). (iv) Verify the 1D Green-function derivative jump. (v) Check the heat-mode and wave-mode solutions by direct differentiation. (vi) Derive the heat energy identity and state the boundary terms. (vii) Test the constant-\(D\) numerical benchmark and measure observed convergence orders.
+</div>
+<h3>References</h3>
+<ol>
+<li>MIT OpenCourseWare, <a href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/pages/lecture-notes/">18.03 Differential Equations — Lecture Notes</a>. First-order equations, systems, transforms and Fourier methods.</li>
+<li>MIT OpenCourseWare, <a href="https://ocw.mit.edu/courses/18-303-linear-partial-differential-equations-fall-2006/pages/lecture-notes/">18.303 Linear Partial Differential Equations — Lecture Notes</a>. Heat, wave, characteristics, Fourier and Green methods.</li>
+<li>MIT OpenCourseWare, <a href="https://ocw.mit.edu/courses/18-303-linear-partial-differential-equations-analysis-and-numerics-fall-2014/">18.303 Linear PDE: Analysis and Numerics</a>. Matrix viewpoints, finite differences and finite elements.</li>
+<li>E. L. Ince, <em>Ordinary Differential Equations</em>, Dover Publications. A classical advanced reference for analytical ODE theory.</li>
+<li>L. C. Evans, <em>Partial Differential Equations</em>, 2nd ed., American Mathematical Society. Graduate reference for weak solutions and nonlinear PDE theory.</li>
+<li>J. D. Logan, <em>Applied Partial Differential Equations</em>, Springer. Introductory and intermediate methods with physical applications.</li>
+</ol>
+<p class="status">The selected methods survey topics through master's level; it does not claim to contain every theorem, proof or subfield of graduate ODE and PDE theory. Any original project must identify prior work and supply independently checked analytical or numerical results.</p>
+</section>
+</main>
+<footer><a href="../">← Back to Kumar Azad's personal webpage</a><p>Ordinary &amp; Partial Differential Equations · Educational notes · 2026</p></footer>
+</body>
+</html>
