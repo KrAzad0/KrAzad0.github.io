@@ -267,7 +267,7 @@
     /* Linked mathematical-physics study pages */
     .research-notes-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       margin-top: 3px;
     }
@@ -311,6 +311,9 @@
       color: #a9b7d0;
       font-size: .91rem;
       line-height: 1.6;
+    }
+    @media (max-width: 940px) {
+      .research-notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 680px) {
       .research-notes-grid { grid-template-columns: 1fr; }
@@ -433,6 +436,11 @@
     <section class="section research-notes" aria-labelledby="research-notes-heading">
       <h3 id="research-notes-heading">Mathematical Physics Notes</h3>
       <div class="research-notes-grid">
+        <a class="research-note-card" href="mathematical-physics/" aria-label="Open Mathematical Physics foundations from one to five dimensions">
+          <span class="research-note-eyebrow">Foundations · Dimensions 1–5</span>
+          <span class="research-note-title">Mathematical Physics <span aria-hidden="true">↗</span></span>
+          <span class="research-note-description">Vectors, differential operators, hyperspheres, and quantum equations in up to five dimensions.</span>
+        </a>
         <a class="research-note-card" href="positive-geometry/" aria-label="Open Positive Geometry mathematical physics notes">
           <span class="research-note-eyebrow">Geometry · Scattering Amplitudes</span>
           <span class="research-note-title">Positive Geometry <span aria-hidden="true">↗</span></span>
