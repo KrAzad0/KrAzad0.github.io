@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Mathematical physics foundations from one through five dimensions: vector spaces, coordinates, differential operators, radial Laplacians, hyperspherical volumes and quantum equations, with derivations.">
+<meta name="theme-color" content="#ffffff">
+<title>Mathematical Physics — Dimensions 1–5 | Kumar Azad</title>
+<style>
+:root{color-scheme:light;--ink:#171717;--link:#19436a;--line:#b4b4b4;--subtle:#555}
+*{box-sizing:border-box}
+html{background:#fff;color:var(--ink);scroll-behavior:smooth}
+body{max-width:815px;margin:0 auto;padding:26px 35px 72px;font:17px/1.64 "Times New Roman",Georgia,serif;text-rendering:optimizeLegibility}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+a:focus-visible,summary:focus-visible{outline:2px solid var(--link);outline-offset:4px}
+.skip-link{position:absolute;top:-120px;background:#fff;padding:10px;z-index:2}.skip-link:focus{top:8px}
+.site-nav{border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 20px;justify-content:space-between;padding-bottom:14px;font:13px/1.5 Arial,sans-serif}
+header{text-align:center;padding:44px 0 30px}header p{text-align:center;margin:8px auto}
+.eyebrow{font:11px/1.5 Arial,sans-serif;text-transform:uppercase;letter-spacing:.07em;color:#555}
+h1{font-size:36px;font-weight:normal;line-height:1.25;margin:15px 0 11px}
+.subtitle{font-size:19px;line-height:1.4}.author{font-size:17px;margin-top:19px}header small{font-size:13px;color:#555}
+h2{font-size:23px;line-height:1.3;margin:36px 0 14px}h3{font-size:19px;line-height:1.34;margin:25px 0 10px}
+p{margin:12px 0;text-align:justify;hyphens:auto}
+section{scroll-margin-top:18px}.abstract{max-width:705px;margin:0 auto 29px;padding:0 15px}
+.abstract h2{font-size:18px;text-align:center;margin:0 0 12px}.abstract p{font-size:16px;line-height:1.58}
+.status{font-size:15px;color:#444;margin:18px 0 24px}
+.contents{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:29px 0 35px;padding:8px 18px 13px;font-size:16px}
+.contents h2{font-size:17px;margin:6px 0}.contents ol{padding-left:24px;margin:3px 0}.contents li{margin:5px 0}
+.equation{margin:19px 0 24px;text-align:center;overflow-x:auto;overflow-y:hidden;padding:8px 4px;font-size:1.02em}
+.equation mjx-container[display="true"]{margin:0!important;padding:7px 0!important}.equation mjx-container{max-width:100%}
+figure{margin:26px auto;max-width:640px}figure svg{display:block;width:100%;height:auto;margin:auto}
+figcaption{font-size:14px;color:#444;text-align:center;line-height:1.5;margin:8px auto;max-width:570px}
+.compare-wrap{overflow-x:auto;margin:20px 0}
+.compare{border-collapse:collapse;width:100%;min-width:570px;font-size:15px}
+.compare th,.compare td{border-bottom:1px solid #bbb;padding:9px 10px;text-align:left;vertical-align:top}
+.compare th{border-bottom:2px solid #777;font-weight:700}.compare th:first-child,.compare td:first-child{white-space:nowrap}
+.compare caption{font-size:14px;color:#555;text-align:left;margin-bottom:8px}
+.dimension-panel{margin:12px 0;border-top:1px solid #d1d1d1;border-bottom:1px solid #d1d1d1}
+.dimension-panel summary{padding:12px 3px;cursor:pointer;font-weight:bold;font-size:17px}
+.dimension-panel .panel-body{padding:2px 10px 16px}
+.note{border-top:1px solid #ccc;border-bottom:1px solid #ccc;padding:12px 0;font-size:15px;margin:18px 0}
+.exercise{margin:17px 0;padding:12px 0;border-top:1px solid #bbb;border-bottom:1px solid #bbb;font-size:16px}
+#references ol{padding-left:24px}#references li{margin:9px 0;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--line);margin-top:44px;padding-top:17px;font-size:14px;color:#555}
+footer p{text-align:left}
+@media(max-width:640px){body{padding:18px 17px 42px;font-size:16px;line-height:1.6}header{padding:31px 0 22px}h1{font-size:30px}h2{font-size:21px}h3{font-size:18px}.subtitle{font-size:17px}.abstract{padding:0}.abstract p{font-size:15px}p{text-align:left;hyphens:none}.equation{font-size:.95em}.contents{padding:8px 12px}.compare{font-size:14px}}
+@media print{@page{size:A4;margin:22mm}html,body{max-width:none;margin:0;padding:0}body{font-size:11pt;line-height:1.48}.site-nav,.skip-link{display:none}h2,h3{break-after:avoid}figure,.equation{break-inside:avoid}a{color:inherit}.dimension-panel{break-inside:avoid}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+<script>
+window.MathJax={
+ tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],processEscapes:true,tags:'all',tagSide:'right',tagIndent:'0.5em'},
+ chtml:{scale:1.02},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']}
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#content">Skip to main content</a>
+<nav class="site-nav" aria-label="Research notes navigation">
+<a href="../">← Kumar Azad · Home</a>
+<a href="../positive-geometry/">Positive Geometry</a>
+<a href="../light-matter-interaction/">Light–Matter Interaction</a>
+</nav>
+<header>
+<p class="eyebrow">Expository notes · Mathematical physics foundations</p>
+<h1>Mathematical Physics</h1>
+<p class="subtitle">Dimensions, geometry and differential equations: from 1D to 5D</p>
+<p class="author">Kumar Azad</p>
+<p><small>M.Sc.-level learning notes · 10 November 2026</small></p>
+</header>
+<main id="content">
+<section class="abstract" aria-labelledby="abstract-heading">
+<h2 id="abstract-heading">Abstract</h2>
+<p>What does the dimension of a mathematical-physics model actually mean? Starting with linear independence and coordinates, these notes build a unified formulation on Euclidean \(\mathbb R^n\), with detailed comparisons for \(n=1,2,3,4,5\). We derive gradients and radial Laplacians, compute hyperspherical volume elements, and extend classical and quantum equations to \(n\) dimensions. A particle in an \(n\)-dimensional box supplies a solved boundary-value problem. Spatial dimensions, spacetime dimensions, phase-space dimensions and physical units are carefully distinguished.</p>
+</section>
+<p class="status"><em>Status.</em> Educational synthesis of standard mathematics and physics. Higher-dimensional Euclidean examples are mathematical models, not claims that our observed physical space has four or five independent spatial directions.</p>
+<nav class="contents" aria-label="Contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#meaning">Meaning of dimension and independent coordinates</a></li>
+<li><a href="#algebra">Vectors, inner products and transformations</a></li>
+<li><a href="#calculus">Differential operators in \(n\) dimensions</a></li>
+<li><a href="#cases">Explicit frameworks: 1D through 5D</a></li>
+<li><a href="#measures">Volume measures and higher-dimensional spheres</a></li>
+<li><a href="#dynamics">Classical and quantum equations</a></li>
+<li><a href="#box">Worked problem: the \(n\)-dimensional infinite well</a></li>
+<li><a href="#spacetime">Space versus spacetime</a></li>
+<li><a href="#references">Exercises and references</a></li>
+</ol>
+</nav>
+
+<section id="meaning">
+<h2>1. What is a dimension?</h2>
+<p>The <em>dimension of a finite-dimensional vector space</em> is the number of vectors in any basis. A basis is linearly independent and spans the entire space. In Euclidean space \(\mathbb R^n\), every point is specified by \(n\) real coordinates, and every vector can be written as a linear combination of \(n\) basis vectors:</p>
+<div class="equation" role="math" aria-label="n-dimensional coordinate and basis expansion">
+\[
+\mathbf x=(x_1,\ldots,x_n),\qquad
+\mathbf x=\sum_{i=1}^{n}x_i\mathbf e_i,\qquad
+\dim\mathbb R^n=n.
+\]
+</div>
+<p>Independent coordinates are essential. For example, the condition \(x_3=x_1+x_2\) describes a plane inside \(\mathbb R^3\). Although points are written using three numbers, only two may be chosen freely, so the plane has intrinsic dimension two:</p>
+<div class="equation" role="math" aria-label="Constrained coordinates describe a two dimensional plane in three dimensional space">
+\[
+(x_1,x_2,x_3)=s(1,0,1)+t(0,1,1),
+\qquad (s,t)\in\mathbb R^2.
+\]
+</div>
+<p>Do not confuse this with the <em>physical dimensions of units</em>, such as length \([L]\), mass \([M]\) or time \([T]\). Those are a different concept called dimensional analysis. A two-dimensional surface in \(\mathbb R^3\) and a quantity with physical units of area \(L^2\) both involve the number two, but they describe different things. The definition via bases is treated in <a href="#ref-mit">MIT's linear-algebra lectures</a>.</p>
+<figure>
+<svg viewBox="0 0 660 245" role="img" aria-labelledby="dimensions-figure-title dimensions-figure-description">
+<title id="dimensions-figure-title">Increasing coordinate dimension</title>
+<desc id="dimensions-figure-description">A line illustrates one independent direction, a square two directions, a cube three directions, and coordinate tuples label four and five independent directions.</desc>
+<rect width="660" height="245" fill="#fff"/>
+<g stroke="#274f6b" stroke-width="2.3" fill="none">
+<line x1="25" y1="92" x2="117" y2="92"/>
+<rect x="152" y="50" width="84" height="84"/>
+<path d="M299 58h65v65h-65z M322 34h65v65h-65z M299 58l23-24m42 24l23-24m-23 89l23-24"/>
+</g>
+<g font-family="Georgia,serif" fill="#222" font-size="16" text-anchor="middle">
+<text x="71" y="165">1D</text><text x="194" y="165">2D</text><text x="343" y="165">3D</text>
+<text x="492" y="69">4D</text><text x="492" y="92" font-size="13">(x₁,x₂,x₃,x₄)</text>
+<text x="577" y="146">5D</text><text x="577" y="170" font-size="12">(x₁,…,x₅)</text>
+</g>
+<g stroke="#aaa" stroke-dasharray="4 4"><path d="M420 40V185" /><path d="M540 40V185" /></g>
+<text x="330" y="216" font-family="Georgia,serif" font-size="14" text-anchor="middle" fill="#555">Four and five dimensions are represented by coordinates, not literal drawings of 4D or 5D objects.</text>
+</svg>
+<figcaption>Figure 1. Increasing the number of independent coordinates. A planar drawing can represent 1–3 spatial dimensions pictorially, but 4D and 5D require coordinate or projection-based descriptions.</figcaption>
+</figure>
+</section>
+
+<section id="algebra">
+<h2>2. Vector and tensor framework in \(\mathbb R^n\)</h2>
+<p>Take the standard orthonormal basis \(\mathbf e_i\cdot\mathbf e_j=\delta_{ij}\). For vectors \(\mathbf u,\mathbf v\in\mathbb R^n\), the Euclidean inner product and norm are</p>
+<div class="equation" role="math" aria-label="Inner product norm and Euclidean line element">
+\[
+\mathbf u\cdot\mathbf v=\sum_{i=1}^n u_iv_i,\quad
+\|\mathbf x\|^2=\sum_{i=1}^nx_i^2,\quad
+ds^2=\delta_{ij}\,dx^i dx^j.
+\]
+</div>
+<p>The final expression uses Einstein summation: a repeated upper and lower index is summed over \(1,\ldots,n\). A linear transformation is represented by an \(n\times n\) matrix \(A\), with \(y_i=A_{ij}x_j\). An orthogonal change of Cartesian axes preserves lengths:</p>
+<div class="equation" role="math" aria-label="Orthogonal transformation and invariance of the Euclidean metric">
+\[
+\mathbf y=Q\mathbf x,\qquad Q^{\mathsf T}Q=I_n,
+\qquad \|\mathbf y\|^2=\mathbf x^{\mathsf T}Q^{\mathsf T}Q\mathbf x=\|\mathbf x\|^2.
+\]
+</div>
+<p>In a general coordinate system \(q^i\), the line element can instead involve a position-dependent metric \(g_{ij}(q)\). The flat Cartesian case studied below has \(g_{ij}=\delta_{ij}\). The derivative, metric and integration rules are then straightforward to generalize.</p>
+</section>
+
+<section id="calculus">
+<h2>3. Gradient, divergence and Laplacian</h2>
+<p>Let \(f:\mathbb R^n\rightarrow\mathbb R\) be twice differentiable and \(\mathbf F:\mathbb R^n\rightarrow\mathbb R^n\) a differentiable vector field. The Cartesian differential operators are</p>
+<div class="equation" role="math" aria-label="Gradient divergence and Laplacian in n Euclidean dimensions">
+\[
+\begin{aligned}
+\nabla_nf&=\sum_{i=1}^n\mathbf e_i\,\partial_i f,\\
+\nabla_n\cdot\mathbf F&=\sum_{i=1}^n\partial_iF_i,\\
+\Delta_nf&=\nabla_n\cdot\nabla_nf
+=\sum_{i=1}^n\frac{\partial^2 f}{\partial x_i^2}.
+\end{aligned}
+\]
+</div>
+<h3>3.1 Derivation of the radial Laplacian</h3>
+<p>If \(f=f(r)\) depends only on the radius \(r=(x_1^2+\cdots+x_n^2)^{1/2}\), then, away from \(r=0\), the chain rule gives</p>
+<div class="equation" role="math" aria-label="Derivative of a radial function in Cartesian coordinates">
+\[
+\partial_if=f'(r)\frac{x_i}{r},\qquad
+\partial_i^2f=f''(r)\frac{x_i^2}{r^2}
++f'(r)\left(\frac1r-\frac{x_i^2}{r^3}\right).
+\]
+</div>
+<p>Summing over \(i\) and using \(\sum_i x_i^2=r^2\) yields the central dimension-dependent identity:</p>
+<div class="equation" role="math" aria-label="n-dimensional radial Laplacian">
+\[
+\boxed{
+\Delta_n f(r)
+=f''(r)+\frac{n-1}{r}f'(r)
+=\frac{1}{r^{n-1}}\frac{d}{dr}\left(r^{n-1}\frac{df}{dr}\right).
+}
+\]
+</div>
+<p>It immediately supplies a check: for \(f(r)=r^2\), one has \(\Delta_n r^2=2n\). More generally, for \(r>0\),</p>
+<div class="equation" role="math" aria-label="n dimensional Laplacian acting on a radial power">
+\[
+\Delta_n r^\alpha=\alpha(\alpha+n-2)\,r^{\alpha-2}.
+\]
+</div>
+<p>The full hyperspherical decomposition also has an angular term \(\Delta_{S^{n-1}}\), which vanishes for a purely radial function:</p>
+<div class="equation" role="math" aria-label="Laplacian in hyperspherical radial and angular parts">
+\[
+\Delta_n=\frac1{r^{n-1}}\partial_r
+\left(r^{n-1}\partial_r\right)
++\frac1{r^2}\Delta_{S^{n-1}},\qquad n\geq2.
+\]
+</div>
+</section>
+
+<section id="cases">
+<h2>4. One through five dimensions: explicit formulations</h2>
+<p>For a radial function \(f(r)\), each additional coordinate increases the coefficient of \(f'(r)/r\) by one. The table summarizes the five cases. Here \(r=\|\mathbf x\|\), and all radial expressions are evaluated at \(r>0\).</p>
+<div class="compare-wrap">
+<table class="compare">
+<caption>Table 1. Euclidean spatial dimension, coordinates and radial Laplacian.</caption>
+<thead><tr><th scope="col">Dimension</th><th scope="col">Coordinates</th><th scope="col">\(\Delta_n f(r)\)</th></tr></thead>
+<tbody>
+<tr><td>1D</td><td>\(x_1\)</td><td>\(f''(r)\)</td></tr>
+<tr><td>2D</td><td>\(x_1,x_2\)</td><td>\(f''(r)+r^{-1}f'(r)\)</td></tr>
+<tr><td>3D</td><td>\(x_1,x_2,x_3\)</td><td>\(f''(r)+2r^{-1}f'(r)\)</td></tr>
+<tr><td>4D</td><td>\(x_1,\ldots,x_4\)</td><td>\(f''(r)+3r^{-1}f'(r)\)</td></tr>
+<tr><td>5D</td><td>\(x_1,\ldots,x_5\)</td><td>\(f''(r)+4r^{-1}f'(r)\)</td></tr>
+</tbody></table>
+</div>
+<p>Expand the examples to see what a dimension changes in a simple differential equation \(\Delta_n f=0\) away from the origin.</p>
+<details class="dimension-panel" open>
+<summary>1D — one independent coordinate</summary>
+<div class="panel-body">
+<p>A point has the coordinate \(x\in\mathbb R\). The Laplace equation is an ordinary differential equation, and its general solution on an interval is affine.</p>
+<div class="equation" role="math" aria-label="One dimensional Laplace equation and its solution">
+\[
+\frac{d^2f}{dx^2}=0
+\quad\Longrightarrow\quad f(x)=A+Bx.
+\]
+</div>
+<p>With boundary values \(f(0)=0\) and \(f(L)=1\), the unique solution is \(f(x)=x/L\). The entire boundary of \((0,L)\) consists of two endpoints.</p>
+</div>
+</details>
+<details class="dimension-panel">
+<summary>2D — two independent coordinates</summary>
+<div class="panel-body">
+<p>The Cartesian equation \(\partial_x^2f+\partial_y^2f=0\) becomes \(f''(r)+f'(r)/r=0\) for radial functions. Multiply by \(r\) and integrate:</p>
+<div class="equation" role="math" aria-label="Two dimensional radial harmonic function">
+\[
+(rf')'=0\quad\Longrightarrow\quad f'(r)=\frac Br
+\quad\Longrightarrow\quad f(r)=A+B\log(r/r_0).
+\]
+</div>
+<p>The scale \(r_0>0\) makes the logarithm dimensionless. The logarithmic solution is valid on domains excluding \(r=0\), where it is singular.</p>
+</div>
+</details>
+<details class="dimension-panel">
+<summary>3D — ordinary Euclidean physical space</summary>
+<div class="panel-body">
+<p>For \(n=3\), the radial equation is \((r^2f')'=0\). Its solutions contain the familiar inverse-radius term:</p>
+<div class="equation" role="math" aria-label="Three dimensional radial harmonic function">
+\[
+(r^2f')'=0\quad\Longrightarrow\quad
+f(r)=A+\frac Br,\qquad r>0.
+\]
+</div>
+<p>Inverse-radius behavior is characteristic of the Laplace equation in three spatial dimensions away from sources. To introduce a point source at the origin one needs a distributional equation.</p>
+</div>
+</details>
+<details class="dimension-panel">
+<summary>4D — four Euclidean spatial coordinates</summary>
+<div class="panel-body">
+<p>The coordinate is \(\mathbf x=(x_1,x_2,x_3,x_4)\). Four-dimensional Euclidean harmonic functions solve \(f''+3f'/r=0\), with radial solutions</p>
+<div class="equation" role="math" aria-label="Four dimensional radial harmonic function">
+\[
+(r^3f')'=0\quad\Longrightarrow\quad
+f(r)=A+\frac{B}{r^2},\qquad r>0.
+\]
+</div>
+<p>This is an example of four <em>spatial</em> dimensions, not automatically the usual relativistic spacetime with three spatial coordinates plus time.</p>
+</div>
+</details>
+<details class="dimension-panel">
+<summary>5D — five Euclidean spatial coordinates</summary>
+<div class="panel-body">
+<p>With five independent spatial coordinates \(\mathbf x=(x_1,\ldots,x_5)\), the radial Laplacian is \(f''+4f'/r\). Consequently,</p>
+<div class="equation" role="math" aria-label="Five dimensional radial harmonic function">
+\[
+(r^4f')'=0\quad\Longrightarrow\quad
+f(r)=A+\frac{B}{r^3},\qquad r>0.
+\]
+</div>
+<p>The stronger inverse-power behavior follows from the greater surface area growth \(S_4(r)\propto r^4\), not from introducing a fifth physical force or an observed extra dimension.</p>
+</div>
+</details>
+<p class="note"><strong>Unified result.</strong> For \(n\geq3\), radial harmonic functions away from the origin have the form \(A+B r^{2-n}\). At \(n=2\), the power-law exponent becomes zero and is replaced by a logarithm; at \(n=1\), solutions are linear on each connected interval.</p>
+</section>
+
+<section id="measures">
+<h2>5. Integration, hyperspheres and the Gamma function</h2>
+<p>In \(\mathbb R^n\), the volume measure is \(d^n x=dx_1\cdots dx_n\). A change to hyperspherical coordinates separates one radius from \(n-1\) angular variables:</p>
+<div class="equation" role="math" aria-label="n dimensional integration measure in radial coordinates">
+\[
+d^n x=r^{n-1}\,dr\,d\Omega_{n-1},\qquad
+\int_{\mathbb R^n}F(r)\,d^n x
+=S_{n-1}\int_0^\infty F(r)r^{n-1}\,dr.
+\]
+</div>
+<p>For \(n\geq2\), \(d\Omega_{n-1}\) is the solid-angle measure on the unit sphere; the same radial integration formula remains valid for \(n=1\) if the zero-sphere is interpreted as two points, so \(S_0=2\). To derive the area constant, compute the Gaussian integral twice:</p>
+<div class="equation" role="math" aria-label="Gaussian integral yields sphere area gamma function">
+\[
+\begin{aligned}
+\int_{\mathbb R^n}e^{-\|\mathbf x\|^2}\,d^nx
+&=\left(\int_{-\infty}^{\infty}e^{-x^2}dx\right)^n
+=\pi^{n/2},\\
+&=S_{n-1}\int_0^\infty e^{-r^2}r^{n-1}dr
+=\frac{S_{n-1}}{2}\Gamma(n/2).
+\end{aligned}
+\]
+</div>
+<p>Equating the results, and integrating the radial measure from zero to \(R\), proves the standard volume and surface-area formulas:</p>
+<div class="equation" role="math" aria-label="Volume of n ball and surface area of n minus one sphere">
+\[
+\boxed{S_{n-1}=\frac{2\pi^{n/2}}{\Gamma(n/2)},\qquad
+V_n(R)=\frac{\pi^{n/2}}{\Gamma(n/2+1)}R^n,\qquad
+\frac{dV_n}{dR}=S_{n-1}R^{n-1}.}
+\]
+</div>
+<div class="compare-wrap">
+<table class="compare">
+<caption>Table 2. Volume of a radius-\(R\) ball, where \(V_n\) is \(n\)-dimensional measure.</caption>
+<thead><tr><th scope="col">Dimension</th><th scope="col">\(V_n(R)\)</th><th scope="col">Interpretation</th></tr></thead>
+<tbody>
+<tr><td>1D</td><td>\(2R\)</td><td>Length of an interval</td></tr>
+<tr><td>2D</td><td>\(\pi R^2\)</td><td>Area of a disk</td></tr>
+<tr><td>3D</td><td>\(\frac{4\pi}{3}R^3\)</td><td>Volume of a ball</td></tr>
+<tr><td>4D</td><td>\(\frac{\pi^2}{2}R^4\)</td><td>Four-dimensional volume</td></tr>
+<tr><td>5D</td><td>\(\frac{8\pi^2}{15}R^5\)</td><td>Five-dimensional volume</td></tr>
+</tbody>
+</table>
+</div>
+<p>The formulas follow from \(\Gamma(z+1)=z\Gamma(z)\) and \(\Gamma(1/2)=\sqrt\pi\). NIST's <a href="#ref-dlmf">Digital Library of Mathematical Functions</a> tabulates the general formula. Do not interpret four- and five-dimensional volume as ordinary cubic meters; their dimensions are \(L^4\) and \(L^5\).</p>
+</section>
+
+<section id="dynamics">
+<h2>6. Classical and quantum dynamics in \(n\) dimensions</h2>
+<h3>6.1 Classical Lagrangian formulation</h3>
+<p>For a particle of mass \(m\) moving in Euclidean \(\mathbb R^n\) under a potential \(V(\mathbf x,t)\), the Lagrangian is \(L=T-V\). Applying the Euler–Lagrange equation to each independent coordinate gives</p>
+<div class="equation" role="math" aria-label="n dimensional Lagrangian and Euler Lagrange equations">
+\[
+L=\frac m2\sum_{i=1}^{n}\dot x_i^2-V(\mathbf x,t),
+\qquad \frac d{dt}\frac{\partial L}{\partial\dot x_i}
+-\frac{\partial L}{\partial x_i}=0
+\quad\Longrightarrow\quad
+m\ddot x_i=-\partial_iV.
+\]
+</div>
+<p>For \(n\) configuration coordinates, the associated classical phase space generically has \(2n\) coordinates: \((x_1,\ldots,x_n,p_1,\ldots,p_n)\). <em>Phase-space dimension is not the same as spatial dimension.</em></p>
+<h3>6.2 Nonrelativistic Schrödinger formulation</h3>
+<p>The natural Hilbert space for a spinless particle in this model is \(L^2(\mathbb R^n,d^nx)\), or \(L^2(\Omega)\) for a domain \(\Omega\subseteq\mathbb R^n\). The position-space Schrödinger equation reads</p>
+<div class="equation" role="math" aria-label="n dimensional time dependent Schrodinger equation">
+\[
+i\hbar\frac{\partial\psi}{\partial t}
+=\left[-\frac{\hbar^2}{2m}\Delta_n+V(\mathbf x,t)\right]\psi,
+\qquad
+\int_{\Omega}|\psi(\mathbf x,t)|^2\,d^n x=1.
+\]
+</div>
+<p>For a time-independent potential \(V\), separating \(\psi(\mathbf x,t)=\phi(\mathbf x)e^{-iEt/\hbar}\) gives the stationary equation</p>
+<div class="equation" role="math" aria-label="n dimensional stationary Schrodinger equation">
+\[
+\left[-\frac{\hbar^2}{2m}\sum_{i=1}^{n}\partial_i^2+V(\mathbf x)\right]\phi(\mathbf x)=E\phi(\mathbf x).
+\]
+</div>
+<p>The dimension \(n\) changes the differential operator, integration measure and the available degeneracies. It does not change the basic requirement that the Hamiltonian be self-adjoint on a suitable domain. For bounded spatial regions, boundary conditions such as Dirichlet or Neumann must be specified; different conditions lead to different spectra.</p>
+</section>
+
+<section id="box">
+<h2>7. Worked derivation: a particle in a \(n\)-dimensional box</h2>
+<p>Consider a free spinless particle inside the hypercube \(\Omega=(0,L)^n\). Assume \(V=0\) inside, an impenetrable exterior, and Dirichlet conditions \(\psi=0\) whenever any coordinate equals \(0\) or \(L\).</p>
+<p>Separating the stationary wavefunction as \(\phi(\mathbf x)=X_1(x_1)\cdots X_n(x_n)\) yields \(n\) ordinary differential equations, one for each Cartesian coordinate:</p>
+<div class="equation" role="math" aria-label="Separated differential equation for n dimensional box">
+\[
+-\frac{\hbar^2}{2m}\sum_{i=1}^n
+\frac{X_i''(x_i)}{X_i(x_i)}=E,
+\qquad X_i(0)=X_i(L)=0.
+\]
+</div>
+<p>Because each term depends on a different coordinate, each must equal a separation constant. The boundary conditions select positive integers \(k_i=1,2,3,\ldots\), with \(X_i(x_i)\propto\sin(k_i\pi x_i/L)\). Normalizing each factor gives the exact orthonormal eigenfunctions and energies:</p>
+<div class="equation" role="math" aria-label="Exact normalized eigenfunctions and energies in n dimensional box">
+\[
+\begin{aligned}
+\phi_{k_1,\ldots,k_n}(\mathbf x)
+&=\left(\frac2L\right)^{n/2}\prod_{i=1}^{n}
+\sin\left(\frac{k_i\pi x_i}{L}\right),\\
+E_{k_1,\ldots,k_n}
+&=\frac{\pi^2\hbar^2}{2mL^2}\sum_{i=1}^{n}k_i^2.
+\end{aligned}
+\]
+</div>
+<p>The ground state has \(k_1=\cdots=k_n=1\). Thus its energy scales linearly with the number of independent confinement directions:</p>
+<div class="equation" role="math" aria-label="Ground state energy in dimensions 1 to 5">
+\[
+E_0^{(n)}=\frac{n\pi^2\hbar^2}{2mL^2},
+\qquad n=1,2,3,4,5.
+\]
+</div>
+<div class="compare-wrap">
+<table class="compare">
+<caption>Table 3. Ground-state energy in units \(E_{\mathrm{1D}}=\pi^2\hbar^2/(2mL^2)\).</caption>
+<thead><tr><th scope="col">Spatial dimension</th><th scope="col">Ground quantum numbers</th><th scope="col">\(E_0^{(n)}/E_{\mathrm{1D}}\)</th></tr></thead>
+<tbody>
+<tr><td>1D</td><td>\((1)\)</td><td>1</td></tr>
+<tr><td>2D</td><td>\((1,1)\)</td><td>2</td></tr>
+<tr><td>3D</td><td>\((1,1,1)\)</td><td>3</td></tr>
+<tr><td>4D</td><td>\((1,1,1,1)\)</td><td>4</td></tr>
+<tr><td>5D</td><td>\((1,1,1,1,1)\)</td><td>5</td></tr>
+</tbody>
+</table>
+</div>
+<p>This is a mathematical generalization of a separable quantum model, not experimental evidence for higher spatial dimensions. The normalization and scaling can be checked directly using \(\int_0^L\sin^2(k\pi x/L)\,dx=L/2\).</p>
+</section>
+
+<section id="spacetime">
+<h2>8. Four spatial dimensions versus four-dimensional spacetime</h2>
+<p>In the previous sections, \(n\) always counted independent <em>Euclidean spatial</em> coordinates, and the metric had all-positive signs. Relativity uses a different geometry. Ordinary special relativity has three spatial coordinates and one time coordinate, giving a four-dimensional Lorentzian spacetime:</p>
+<div class="equation" role="math" aria-label="Minkowski spacetime interval with three spatial and one time coordinate">
+\[
+x^\mu=(ct,x,y,z),\qquad
+ds^2=-c^2dt^2+dx^2+dy^2+dz^2
+\quad\text{(signature }-+++\text{)}.
+\]
+</div>
+<p>By contrast, four-dimensional <em>Euclidean space</em> has four positive directions, for example \(ds^2=dx_1^2+\cdots+dx_4^2\). A five-dimensional model could refer to five spatial coordinates, or to a \(4+1\) spacetime with four space and one time dimension. The number alone does not specify the metric, physics or causal structure.</p>
+<p class="note"><strong>Another important distinction.</strong> A system of \(N\) particles in ordinary three-dimensional space has \(3N\) configuration coordinates, even though the physical space remains three-dimensional. In general, dimension always belongs to a specified mathematical space.</p>
+</section>
+
+<section id="references">
+<h2>9. Exercises and references</h2>
+<div class="exercise">
+<strong>Suggested problems.</strong> (i) Verify that the constrained set \(x_3=x_1+x_2\) is two-dimensional by constructing a basis. (ii) From the Cartesian Laplacian, show \(\Delta_nr^\alpha=\alpha(\alpha+n-2)r^{\alpha-2}\) for \(r>0\). (iii) Derive \(V_4(R)\) and \(V_5(R)\) from the Gamma function. (iv) Confirm the normalization of \(\phi_{k_1,\ldots,k_n}\) and calculate the first excited energy for the 2D square. (v) Explain why a \(2N\)-dimensional classical phase space does not imply \(2N\) spatial directions.
+</div>
+<h3>References and further reading</h3>
+<ol>
+<li id="ref-mit">MIT OpenCourseWare, <a href="https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/ax-b-and-the-four-subspaces/independence-basis-and-dimension/">Independence, Basis, and Dimension</a>, 18.06SC Linear Algebra. The foundation for dimension as the number of basis vectors.</li>
+<li id="ref-dlmf">NIST Digital Library of Mathematical Functions, <a href="https://dlmf.nist.gov/5.19.iii">§5.19(iii), \(n\)-Dimensional Sphere</a>, especially Eq. 5.19.4. Gamma-function formulas for higher-dimensional volume and surface area.</li>
+<li>Texas A&amp;M University, <a href="https://people.tamu.edu/~c-pope/EM603/Prob21/prob9_commentary.pdf">Electromagnetic Theory: higher-dimensional spherical harmonics commentary</a>, including the \(n\)-dimensional hyperspherical Laplacian.</li>
+<li>MIT OpenCourseWare, <a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/">18.06 Linear Algebra</a>, lecture materials for bases, linear transformations and vector spaces.</li>
+</ol>
+<p class="status">The formulas assume flat Euclidean Cartesian geometry unless noted otherwise. For curved spaces one replaces the ordinary Laplacian by the Laplace–Beltrami operator and the ordinary measure by the metric volume form; those developments require additional differential geometry.</p>
+</section>
+</main>
+<footer>
+<a href="../">← Back to Kumar Azad's personal webpage</a>
+<p>Mathematical Physics · Dimensions 1–5 · Educational notes · 2026</p>
+</footer>
+</body>
+</html>
