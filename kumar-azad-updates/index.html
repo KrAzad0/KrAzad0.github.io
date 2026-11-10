@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Kumar Azad Updates: organized undergraduate and postgraduate course catalogue, subject-level learning spaces, links to existing mathematical physics lecture notes, and future coursework updates.">
+<meta name="theme-color" content="#0a192f">
+<title>Kumar Azad Updates | Undergraduate &amp; Postgraduate Coursework</title>
+<style>
+:root{--navy:#0a192f;--navy2:#122644;--teal:#15afaa;--paper:#f5f7fb;--text:#1d3044;--muted:#5a6a7d;--line:#d9e2e8;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:#126d78;text-underline-offset:3px}
+a:hover{color:#07515a}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #189f9d;outline-offset:3px}
+.skip{position:absolute;left:15px;top:-100px;padding:10px 15px;background:#fff;z-index:10}.skip:focus{top:12px}
+.container{max-width:1090px;margin:0 auto;padding:0 25px}
+.masthead{background:var(--navy);color:#e5ecff}
+.topline{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:18px 0;border-bottom:1px solid #29415c;font-size:13px}
+.topline a{color:#d4e2f7;text-decoration:none}
+.topline a:hover{color:#59f1d4}
+.toplinks{display:flex;gap:16px;flex-wrap:wrap}
+.hero{padding:50px 0 58px}
+.kicker{margin:0 0 9px;color:#6bf0d9;font-size:12px;letter-spacing:.11em;text-transform:uppercase;font-weight:750}
+.hero h1{font:750 clamp(35px,6vw,56px)/1.12 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.045em;margin:0 0 18px}
+.hero p{max-width:760px;color:#bacbe2;font-size:17px;margin:0 0 20px}
+.hero .subline{font-size:14px;color:#9eb1ca}
+.jump-links{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0}
+.jump-links a{border:1px solid #366477;color:#e8fff9;border-radius:8px;padding:9px 14px;text-decoration:none;font-weight:650;font-size:14px}
+.jump-links a:hover{border-color:#58e7cd;background:#122e44}
+main{padding:32px 0 66px}
+.summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:30px}
+.metric{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px}
+.metric b{display:block;color:var(--navy);font-size:25px;line-height:1.3}.metric span{color:var(--muted);font-size:13px}
+.section-head{margin:39px 0 17px;border-bottom:1px solid var(--line);padding-bottom:10px}
+.section-head h2{font-size:28px;letter-spacing:-.025em;margin:0 0 5px;color:var(--navy)}
+.section-head p{margin:4px 0;color:var(--muted);font-size:15px;max-width:860px}
+.tools{display:grid;grid-template-columns:1fr 170px;gap:12px;padding:19px;border-radius:12px;border:1px solid var(--line);background:#fff}
+.tools label{font-size:13px;font-weight:700;display:block;margin:0 0 6px;color:#304357}
+.tools input,.tools select{width:100%;padding:11px 12px;border:1px solid #b5c7d4;background:#fff;border-radius:8px;font:inherit;color:var(--text)}
+.result-count{font-size:13px;color:var(--muted);margin:10px 2px 0}
+.programme{background:white;border:1px solid var(--line);border-radius:13px;margin:18px 0 28px;overflow:hidden;scroll-margin-top:18px}
+.programme-header{display:flex;align-items:start;justify-content:space-between;gap:15px;padding:24px 26px;background:#fbfcff;border-bottom:1px solid var(--line)}
+.programme-label{font-size:11px;letter-spacing:.085em;font-weight:750;color:#087f82;text-transform:uppercase;margin:0 0 5px}
+.programme-header h3{font-size:22px;color:#17304c;letter-spacing:-.02em;line-height:1.3;margin:0}
+.institution{font-size:14px;color:var(--muted);margin:6px 0 0}
+.status{font-size:12px;color:#385265;border:1px solid #c8dae2;border-radius:20px;padding:5px 11px;white-space:normal;text-align:center;max-width:220px}
+.course-group{padding:0 26px 18px}
+.course-group h4{font-size:16px;color:#24384f;margin:23px 0 10px}
+.count{font:500 12px/1.5 system-ui,sans-serif;color:#76879a;margin-left:6px}
+.subject-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.subject{border:1px solid #d9e2e8;border-radius:9px;min-width:0;scroll-margin-top:15px;align-self:start;background:#fff}
+.subject[open]{border-color:#79b5b8;box-shadow:0 0 0 1px #79b5b8}
+.subject summary{display:flex;gap:12px;justify-content:space-between;cursor:pointer;padding:13px 15px;min-height:65px;align-items:center;list-style:none}
+.subject summary::-webkit-details-marker{display:none}
+.subject summary::before{content:"+";font:700 17px/1 system-ui;color:#138c91;order:2;flex:none}
+.subject[open] summary::before{content:"−"}
+.subject-name{font-size:14px;font-weight:660;color:#20374f;min-width:0}
+.subject-state{display:none}
+.subject-body{border-top:1px solid #e2e9ee;padding:11px 14px 13px}
+.slot{font-size:12px;margin:5px 0;display:grid;gap:0}
+.slot strong{font-weight:700;color:#34485c}
+.slot span{color:#718195}
+.existing{background:#eff8f7;border-radius:7px;padding:10px;font-size:12px;margin:12px 0;line-height:1.7}
+.existing a{font-weight:650}
+.permalink{font-size:12px;margin:9px 0 0}
+.note{border-left:4px solid #16a49d;padding:13px 18px;background:#eaf6f5;border-radius:0 9px 9px 0;margin:18px 0;font-size:14px;line-height:1.7}
+.resources{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.resource{background:#fff;border:1px solid var(--line);padding:18px;border-radius:10px}
+.resource h3{font-size:16px;margin:0 0 7px}.resource p{font-size:13px;color:var(--muted);margin:0}
+.resource a{font-weight:700}
+.update-log{background:#fff;border:1px solid var(--line);border-radius:10px;padding:17px 20px}
+.update-log time{font-size:13px;color:#087f82;font-weight:700}.update-log p{margin:5px 0;color:#485c6c;font-size:14px}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:13px}
+footer a{color:#086b74}
+[hidden]{display:none!important}
+@media(max-width:850px){.subject-list{grid-template-columns:1fr}.programme-header{flex-direction:column}.status{text-align:left}}
+@media(max-width:650px){.container{padding:0 16px}.hero{padding:38px 0 43px}.hero p{font-size:15px}.summary{grid-template-columns:1fr 1fr}.metric:last-child{grid-column:1/-1}.tools{grid-template-columns:1fr}.resources{grid-template-columns:1fr}.programme-header{padding:21px 17px}.course-group{padding:0 16px 13px}.section-head h2{font-size:24px}.subject summary{min-height:0}}
+@media print{html{scroll-behavior:auto}body{background:white}.masthead{background:white;color:black}.masthead p,.topline a{color:black}.jump-links,.tools{display:none}.programme{break-inside:avoid}.subject-body{display:block}.resources{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to coursework</a>
+<header class="masthead">
+  <div class="container">
+    <nav class="topline" aria-label="Main navigation">
+      <a href="../">← Kumar Azad · Personal Website</a>
+      <div class="toplinks"><a href="#pg">Postgraduate</a><a href="#ug">Undergraduate</a><a href="#resources">Study Resources</a><a href="#updates">Updates</a></div>
+    </nav>
+    <div class="hero">
+      <p class="kicker">Academic Learning Library · Course Index</p>
+      <h1>Kumar Azad Updates</h1>
+      <p>Undergraduate and postgraduate coursework, organized by degree and subject. Each subject has a dedicated space for future lecture notes, complete mathematical solutions, reading lists, and research connections.</p>
+      <p class="subline">A developing academic archive. Published learning material is linked where it exists; the other lecture spaces are intentionally marked as planned.</p>
+      <nav class="jump-links" aria-label="Jump to a section">
+        <a href="#pg">M.Sc. Coursework</a>
+        <a href="#ug">B.Sc. Coursework</a>
+        <a href="#resources">Existing Lecture Notes</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main id="main" class="container">
+  <div class="summary" aria-label="Course index summary">
+    <div class="metric"><b>3</b><span>Postgraduate programmes listed</span></div>
+    <div class="metric"><b>1</b><span>Undergraduate programme listed</span></div>
+    <div class="metric"><b>70</b><span>Named subject/group entries currently indexed</span></div>
+  </div>
+  <section aria-labelledby="find-title">
+    <div class="section-head"><h2 id="find-title">Find a Subject</h2><p>Search the names below and expand any subject to see its lecture and problem-solving workspace.</p></div>
+    <div class="tools">
+      <div><label for="search">Search course titles</label><input type="search" id="search" autocomplete="off" placeholder="e.g. Quantum Mechanics, Differential Equations"></div>
+      <div><label for="level">Programme level</label><select id="level"><option value="all">All courses</option><option value="pg">Postgraduate</option><option value="ug">Undergraduate</option></select></div>
+    </div>
+    <p id="result-count" class="result-count" role="status" aria-live="polite">70 subject/group entries currently listed</p>
+  </section>
+  <section id="pg" aria-labelledby="pg-title" class="level">
+    <div class="section-head"><h2 id="pg-title">Postgraduate Coursework</h2><p>Current SRMIST M.Sc. first, followed by completed Mathematics and previous Applied Physics coursework, with each programme's status made explicit.</p></div>
+    <section class="programme" id="pg-srmist" data-level="pg">
+  <div class="programme-header"><div>
+    <p class="programme-label">Postgraduate programme</p>
+    <h3>M.Sc. Physics (Quantum Technology)</h3>
+    <p class="institution">SRM Institute of Science and Technology (SRMIST)</p>
+    </div><span class="status">Current programme</span>
+  </div>
+  <section class="course-group" data-group="pg-srmist-0" aria-labelledby="heading-pg-srmist-0">
+    <h4 id="heading-pg-srmist-0">Semester I <span class="count">6 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="pg-srmist-mathematical-physics-i" data-subject="mathematical physics – i">
+    <summary><span class="subject-name">Mathematical Physics – I</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../mathematical-physics/">Related Mathematical Physics notes ↗</a></div>
+      <p class="permalink"><a href="#pg-srmist-mathematical-physics-i">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-srmist-classical-mechanics" data-subject="classical mechanics">
+    <summary><span class="subject-name">Classical Mechanics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-srmist-classical-mechanics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-srmist-quantum-mechanics-i" data-subject="quantum mechanics – i">
+    <summary><span class="subject-name">Quantum Mechanics – I</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../coursework/lecture-notes/quantum-mechanics/">SRMIST Quantum Mechanics worked solutions ↗</a> · <a href="../quantum-mechanics/">Quantum Mechanics study notes ↗</a></div>
+      <p class="permalink"><a href="#pg-srmist-quantum-mechanics-i">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-srmist-electronic-devices-and-applications" data-subject="electronic devices and applications">
+    <summary><span class="subject-name">Electronic Devices and Applications</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-srmist-electronic-devices-and-applications">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-srmist-physics-and-electronics-laboratory" data-subject="physics and electronics laboratory">
+    <summary><span class="subject-name">Physics and Electronics Laboratory</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-srmist-physics-and-electronics-laboratory">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-srmist-comprehensive-skills-in-quantitative-and-logical-reasoning" data-subject="comprehensive skills in quantitative and logical reasoning">
+    <summary><span class="subject-name">Comprehensive Skills in Quantitative and Logical Reasoning</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-srmist-comprehensive-skills-in-quantitative-and-logical-reasoning">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+</section>
+<section class="programme" id="pg-mathematics" data-level="pg">
+  <div class="programme-header"><div>
+    <p class="programme-label">Postgraduate programme</p>
+    <h3>M.Sc. Mathematics</h3>
+    <p class="institution">Mangalayatan University (Online)</p>
+    </div><span class="status">Completed programme</span>
+  </div>
+  <section class="course-group" data-group="pg-mathematics-0" aria-labelledby="heading-pg-mathematics-0">
+    <h4 id="heading-pg-mathematics-0">Core Mathematics <span class="count">7 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="pg-mathematics-real-analysis" data-subject="real analysis">
+    <summary><span class="subject-name">Real Analysis</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-real-analysis">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-abstract-algebra" data-subject="abstract algebra">
+    <summary><span class="subject-name">Abstract Algebra</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-abstract-algebra">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-partial-differential-equations" data-subject="partial differential equations">
+    <summary><span class="subject-name">Partial Differential Equations</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../differential-equations/">Related Differential Equations notes ↗</a></div>
+      <p class="permalink"><a href="#pg-mathematics-partial-differential-equations">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-differential-geometry" data-subject="differential geometry">
+    <summary><span class="subject-name">Differential Geometry</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-differential-geometry">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-classical-mechanics" data-subject="classical mechanics">
+    <summary><span class="subject-name">Classical Mechanics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-classical-mechanics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-complex-analysis" data-subject="complex analysis">
+    <summary><span class="subject-name">Complex Analysis</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-complex-analysis">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-general-topology" data-subject="general topology">
+    <summary><span class="subject-name">General Topology</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-general-topology">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="pg-mathematics-1" aria-labelledby="heading-pg-mathematics-1">
+    <h4 id="heading-pg-mathematics-1">Applied &amp; Computational <span class="count">2 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="pg-mathematics-numerical-methods" data-subject="numerical methods">
+    <summary><span class="subject-name">Numerical Methods</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-numerical-methods">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-operations-research" data-subject="operations research">
+    <summary><span class="subject-name">Operations Research</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-operations-research">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="pg-mathematics-2" aria-labelledby="heading-pg-mathematics-2">
+    <h4 id="heading-pg-mathematics-2">Programming &amp; Practical <span class="count">2 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="pg-mathematics-programming-in-c" data-subject="programming in c">
+    <summary><span class="subject-name">Programming in C</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-programming-in-c">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-mathematics-programming-in-c-lab" data-subject="programming in c lab">
+    <summary><span class="subject-name">Programming in C Lab</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-mathematics-programming-in-c-lab">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+</section>
+<section class="programme" id="pg-applied-physics" data-level="pg">
+  <div class="programme-header"><div>
+    <p class="programme-label">Postgraduate programme</p>
+    <h3>M.Sc. Applied Physics</h3>
+    <p class="institution">Amity University, Gurugram</p>
+    </div><span class="status">Prior coursework · Programme withdrawn after one year</span>
+  </div>
+  <section class="course-group" data-group="pg-applied-physics-0" aria-labelledby="heading-pg-applied-physics-0">
+    <h4 id="heading-pg-applied-physics-0">Semester I <span class="count">9 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="pg-applied-physics-classical-mechanics" data-subject="classical mechanics">
+    <summary><span class="subject-name">Classical Mechanics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-classical-mechanics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-quantum-mechanics" data-subject="quantum mechanics">
+    <summary><span class="subject-name">Quantum Mechanics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../quantum-mechanics/">Related Quantum Mechanics study notes ↗</a></div>
+      <p class="permalink"><a href="#pg-applied-physics-quantum-mechanics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-electronics" data-subject="electronics">
+    <summary><span class="subject-name">Electronics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-electronics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-mathematical-physics" data-subject="mathematical physics">
+    <summary><span class="subject-name">Mathematical Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../mathematical-physics/">Related Mathematical Physics notes ↗</a></div>
+      <p class="permalink"><a href="#pg-applied-physics-mathematical-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-matlab" data-subject="matlab">
+    <summary><span class="subject-name">MATLAB</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-matlab">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-integrated-physics-lab-i" data-subject="integrated physics lab-i">
+    <summary><span class="subject-name">Integrated Physics Lab-I</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-integrated-physics-lab-i">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-japanese-i" data-subject="japanese-i">
+    <summary><span class="subject-name">Japanese-I</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-japanese-i">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-basics-of-communication" data-subject="basics of communication">
+    <summary><span class="subject-name">Basics of Communication</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-basics-of-communication">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-behavioural-science" data-subject="behavioural science">
+    <summary><span class="subject-name">Behavioural Science</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-behavioural-science">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="pg-applied-physics-1" aria-labelledby="heading-pg-applied-physics-1">
+    <h4 id="heading-pg-applied-physics-1">Semester II <span class="count">8 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="pg-applied-physics-quantum-mechanics-ii" data-subject="quantum mechanics ii">
+    <summary><span class="subject-name">Quantum Mechanics II</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../quantum-mechanics/">Related Quantum Mechanics study notes ↗</a></div>
+      <p class="permalink"><a href="#pg-applied-physics-quantum-mechanics-ii">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-electrodynamics" data-subject="electrodynamics">
+    <summary><span class="subject-name">Electrodynamics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-electrodynamics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-atomic-and-molecular-physics" data-subject="atomic and molecular physics">
+    <summary><span class="subject-name">Atomic and Molecular Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../light-matter-interaction/">Related Light–Matter Interaction notes ↗</a></div>
+      <p class="permalink"><a href="#pg-applied-physics-atomic-and-molecular-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-statistical-physics" data-subject="statistical physics">
+    <summary><span class="subject-name">Statistical Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-statistical-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-condensed-matter-physics-i" data-subject="condensed matter physics-i">
+    <summary><span class="subject-name">Condensed Matter Physics-I</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-condensed-matter-physics-i">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-integrated-physics-lab-ii" data-subject="integrated physics lab-ii">
+    <summary><span class="subject-name">Integrated Physics Lab-II</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-integrated-physics-lab-ii">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-japanese-ii" data-subject="japanese-ii">
+    <summary><span class="subject-name">Japanese-II</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-japanese-ii">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="pg-applied-physics-workshop-on-communication-skills-and-psychological-behaviour-skills" data-subject="workshop on communication skills and psychological behaviour skills">
+    <summary><span class="subject-name">Workshop on Communication Skills and Psychological Behaviour Skills</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#pg-applied-physics-workshop-on-communication-skills-and-psychological-behaviour-skills">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+</section>
+  </section>
+  <section id="ug" aria-labelledby="ug-title" class="level">
+    <div class="section-head"><h2 id="ug-title">Undergraduate Coursework</h2><p>B.Sc. Physics (Honours), grouped by subject area. These are the course titles and grouped entries presently documented on the main site.</p></div>
+    <div class="note"><strong>Completeness note:</strong> The main portfolio refers to 46 completed B.Sc. courses, but it does not enumerate all 46 individual titles. This index reproduces the available names and grouped entries without inventing the missing course titles. Additional courses and official semester ordering can be added after checking the academic record.</div>
+    <section class="programme" id="ug-bsc-physics" data-level="ug">
+  <div class="programme-header"><div>
+    <p class="programme-label">Undergraduate programme</p>
+    <h3>B.Sc. Physics (Honours)</h3>
+    <p class="institution">SRM University, Andhra Pradesh</p>
+    </div><span class="status">Completed · 2021–2024</span>
+  </div>
+  <section class="course-group" data-group="ug-bsc-physics-0" aria-labelledby="heading-ug-bsc-physics-0">
+    <h4 id="heading-ug-bsc-physics-0">Core Physics <span class="count">14 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="ug-bsc-physics-classical-and-modern-physics" data-subject="classical and modern physics">
+    <summary><span class="subject-name">Classical and Modern Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-classical-and-modern-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-mechanics" data-subject="mechanics">
+    <summary><span class="subject-name">Mechanics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-mechanics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-heat-and-thermodynamics" data-subject="heat and thermodynamics">
+    <summary><span class="subject-name">Heat and Thermodynamics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-heat-and-thermodynamics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-wave-and-oscillations" data-subject="wave and oscillations">
+    <summary><span class="subject-name">Wave and Oscillations</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-wave-and-oscillations">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-introduction-to-optics" data-subject="introduction to optics">
+    <summary><span class="subject-name">Introduction to Optics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-optics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-quantum-mechanics" data-subject="quantum mechanics">
+    <summary><span class="subject-name">Quantum Mechanics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../quantum-mechanics/">Related Quantum Mechanics study notes ↗</a></div>
+      <p class="permalink"><a href="#ug-bsc-physics-quantum-mechanics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-electrostatics-and-electric-current" data-subject="electrostatics and electric current">
+    <summary><span class="subject-name">Electrostatics and Electric Current</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-electrostatics-and-electric-current">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-electrodynamics" data-subject="electrodynamics">
+    <summary><span class="subject-name">Electrodynamics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-electrodynamics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-atomic-and-molecular-physics" data-subject="atomic and molecular physics">
+    <summary><span class="subject-name">Atomic and Molecular Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../light-matter-interaction/">Related Light–Matter Interaction notes ↗</a></div>
+      <p class="permalink"><a href="#ug-bsc-physics-atomic-and-molecular-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-solid-state-physics" data-subject="solid state physics">
+    <summary><span class="subject-name">Solid State Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-solid-state-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-nuclear-and-particle-physics" data-subject="nuclear and particle physics">
+    <summary><span class="subject-name">Nuclear and Particle Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-nuclear-and-particle-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-non-linear-optics" data-subject="non-linear optics">
+    <summary><span class="subject-name">Non-Linear Optics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-non-linear-optics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-introduction-to-lab-view" data-subject="introduction to lab view">
+    <summary><span class="subject-name">Introduction to Lab View</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-lab-view">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-introduction-to-quantum-computation" data-subject="introduction to quantum computation">
+    <summary><span class="subject-name">Introduction to Quantum Computation</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-quantum-computation">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="ug-bsc-physics-1" aria-labelledby="heading-ug-bsc-physics-1">
+    <h4 id="heading-ug-bsc-physics-1">Advanced Physics <span class="count">5 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="ug-bsc-physics-special-theory-of-relativity" data-subject="special theory of relativity">
+    <summary><span class="subject-name">Special Theory of Relativity</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-special-theory-of-relativity">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-free-space-and-optical-fibre-communication" data-subject="free space and optical fibre communication">
+    <summary><span class="subject-name">Free Space and Optical Fibre Communication</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-free-space-and-optical-fibre-communication">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-analog-and-digital-electronics" data-subject="analog and digital electronics">
+    <summary><span class="subject-name">Analog and Digital Electronics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-analog-and-digital-electronics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-introduction-to-impedance-spectroscopy-and-zview-lab" data-subject="introduction to impedance spectroscopy and zview lab">
+    <summary><span class="subject-name">Introduction to Impedance Spectroscopy and ZView Lab</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-impedance-spectroscopy-and-zview-lab">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-research-projects-i-ii" data-subject="research projects i &amp; ii">
+    <summary><span class="subject-name">Research Projects I &amp; II</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-research-projects-i-ii">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="ug-bsc-physics-2" aria-labelledby="heading-ug-bsc-physics-2">
+    <h4 id="heading-ug-bsc-physics-2">Mathematics &amp; Computational <span class="count">8 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="ug-bsc-physics-mathematical-physics" data-subject="mathematical physics">
+    <summary><span class="subject-name">Mathematical Physics</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../mathematical-physics/">Related Mathematical Physics notes ↗</a></div>
+      <p class="permalink"><a href="#ug-bsc-physics-mathematical-physics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-linear-algebra" data-subject="linear algebra">
+    <summary><span class="subject-name">Linear Algebra</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-linear-algebra">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-differential-equations" data-subject="differential equations">
+    <summary><span class="subject-name">Differential Equations</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../differential-equations/">Related Differential Equations notes ↗</a></div>
+      <p class="permalink"><a href="#ug-bsc-physics-differential-equations">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-complex-analysis" data-subject="complex analysis">
+    <summary><span class="subject-name">Complex Analysis</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-complex-analysis">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-elementary-number-theory" data-subject="elementary number theory">
+    <summary><span class="subject-name">Elementary Number Theory</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-elementary-number-theory">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-introduction-to-partial-differential-equations" data-subject="introduction to partial differential equations">
+    <summary><span class="subject-name">Introduction to Partial Differential Equations</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      <div class="existing"><strong>Already available on this site:</strong> <a href="../differential-equations/">Related Differential Equations notes ↗</a></div>
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-partial-differential-equations">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-mobile-application-development-java" data-subject="mobile application development (java)">
+    <summary><span class="subject-name">Mobile Application Development (Java)</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-mobile-application-development-java">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-web-programming" data-subject="web programming">
+    <summary><span class="subject-name">Web Programming</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-web-programming">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="ug-bsc-physics-3" aria-labelledby="heading-ug-bsc-physics-3">
+    <h4 id="heading-ug-bsc-physics-3">Laboratory &amp; Practical <span class="count">4 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="ug-bsc-physics-physics-lab-mechanics-thermodynamics-optics-electronics-electrodynamics" data-subject="physics lab (mechanics, thermodynamics, optics, electronics, electrodynamics)">
+    <summary><span class="subject-name">Physics Lab (Mechanics, Thermodynamics, Optics, Electronics, Electrodynamics)</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-physics-lab-mechanics-thermodynamics-optics-electronics-electrodynamics">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-atomic-molecular-physics-lab" data-subject="atomic &amp; molecular physics lab">
+    <summary><span class="subject-name">Atomic &amp; Molecular Physics Lab</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-atomic-molecular-physics-lab">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-solid-state-physics-lab" data-subject="solid state physics lab">
+    <summary><span class="subject-name">Solid State Physics Lab</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-solid-state-physics-lab">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-department-seminar" data-subject="department seminar">
+    <summary><span class="subject-name">Department Seminar</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-department-seminar">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+<section class="course-group" data-group="ug-bsc-physics-4" aria-labelledby="heading-ug-bsc-physics-4">
+    <h4 id="heading-ug-bsc-physics-4">General Education <span class="count">5 listed</span></h4>
+    <div class="subject-list"><details class="subject" id="ug-bsc-physics-introduction-to-communicative-english" data-subject="introduction to communicative english">
+    <summary><span class="subject-name">Introduction to Communicative English</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-communicative-english">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-psychology-for-everyday-living" data-subject="psychology for everyday living">
+    <summary><span class="subject-name">Psychology for Everyday Living</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-psychology-for-everyday-living">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-critical-thinking" data-subject="critical thinking">
+    <summary><span class="subject-name">Critical Thinking</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-critical-thinking">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-idea-of-india" data-subject="idea of india">
+    <summary><span class="subject-name">Idea of India</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-idea-of-india">Link to this subject</a></p>
+    </div>
+  </details>
+<details class="subject" id="ug-bsc-physics-introduction-to-environmental-science" data-subject="introduction to environmental science">
+    <summary><span class="subject-name">Introduction to Environmental Science</span><span class="subject-state">Learning space</span></summary>
+    <div class="subject-body">
+      <p class="slot"><strong>Lecture notes</strong><span>To be developed, lecture by lecture</span></p>
+      <p class="slot"><strong>Worked problems</strong><span>To be added with complete mathematical solutions</span></p>
+      <p class="slot"><strong>References &amp; projects</strong><span>To be added and checked against the syllabus</span></p>
+      
+      <p class="permalink"><a href="#ug-bsc-physics-introduction-to-environmental-science">Link to this subject</a></p>
+    </div>
+  </details></div>
+  </section>
+</section>
+  </section>
+  <section id="resources" aria-labelledby="resources-title">
+    <div class="section-head"><h2 id="resources-title">Existing Study Material</h2><p>These pages already contain mathematical explanations or worked problems. They are related resources—not automatically the full lecture series for every listed course.</p></div>
+    <div class="resources">
+      <div class="resource"><h3><a href="../coursework/lecture-notes/quantum-mechanics/">Quantum Mechanics — Worked Assignments</a></h3><p>Published coursework problem solutions, with an existing question index.</p></div>
+      <div class="resource"><h3><a href="../quantum-mechanics/">Quantum Mechanics — Theory &amp; Methods</a></h3><p>Graduate study notes on formalism, wells, oscillator, hydrogen and spin.</p></div>
+      <div class="resource"><h3><a href="../mathematical-physics/">Mathematical Physics — Foundations</a></h3><p>Vectors, operators, higher-dimensional Laplacians and quantum examples.</p></div>
+      <div class="resource"><h3><a href="../differential-equations/">Ordinary &amp; Partial Differential Equations</a></h3><p>ODE/PDE definitions, worked methods and a proposed research project.</p></div>
+      <div class="resource"><h3><a href="../positive-geometry/">Positive Geometry &amp; Amplitudes</a></h3><p>Canonical forms and the positive Grassmannian.</p></div>
+      <div class="resource"><h3><a href="../light-matter-interaction/">Light–Matter Interaction</a></h3><p>Gauge choices, dipole coupling and attosecond pulse models.</p></div>
+    </div>
+  </section>
+  <section id="updates" aria-labelledby="updates-title">
+    <div class="section-head"><h2 id="updates-title">Updates &amp; Next Lectures</h2><p>This page will be extended with course-specific lectures, derivations, assignments, reference lists and project notes as they are written and verified.</p></div>
+    <div class="update-log"><time datetime="2026-11-10">10 November 2026</time><p>Launched the course index for current and prior postgraduate studies and the listed undergraduate subjects, with stable subject anchors and links to existing study pages.</p></div>
+    <div class="note"><strong>Publishing framework:</strong> for each subject we can add <em>Lecture 01: definitions and foundational ideas</em>, later lectures, fully worked examples, exercise sets, references and revision history. Planned material is not presented as if it has already been written.</div>
+  </section>
+</main>
+<footer><div class="container"><a href="../">← Back to personal webpage</a><p>Kumar Azad Updates · Educational coursework index · 2026</p></div></footer>
+<script>
+(function(){
+  const search=document.getElementById('search');
+  const level=document.getElementById('level');
+  const count=document.getElementById('result-count');
+  const subjects=[...document.querySelectorAll('.subject')];
+  const groups=[...document.querySelectorAll('.course-group')];
+  const programmes=[...document.querySelectorAll('.programme')];
+  const sections=[...document.querySelectorAll('section.level')];
+  function update(){
+    const q=search.value.toLowerCase().trim();
+    const filter=level.value;
+    let shown=0;
+    for(const subject of subjects){
+      const programme=subject.closest('.programme');
+      const matchesLevel=filter==='all'||programme.dataset.level===filter;
+      const matchesText=subject.dataset.subject.includes(q);
+      const visible=matchesLevel&&matchesText;
+      subject.hidden=!visible;
+      if(visible)shown++;
+    }
+    for(const group of groups){
+      group.hidden=![...group.querySelectorAll('.subject')].some(x=>!x.hidden);
+    }
+    for(const programme of programmes){
+      programme.hidden=![...programme.querySelectorAll('.course-group')].some(x=>!x.hidden);
+    }
+    for(const section of sections){
+      section.hidden=![...section.querySelectorAll('.programme')].some(x=>!x.hidden);
+    }
+    count.textContent=shown+' subject/group '+(shown===1?'entry':'entries')+' shown';
+  }
+  search.addEventListener('input',update);
+  level.addEventListener('change',update);
+  update();
+})();
+</script>
+</body>
+</html>
