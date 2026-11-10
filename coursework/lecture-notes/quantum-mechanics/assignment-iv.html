@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Hydrogen, spherical harmonics and angular momentum"><title>Assignment IV — Complete Solutions | Kumar Azad</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],tags:'ams',processEscapes:true,macros:{"dd":"\\mathrm{d}","iu":"\\mathrm{i}","ee":"\\mathrm{e}","Hil":"\\mathcal H","Dom":"\\mathcal D","R":"\\mathbb R","C":"\\mathbb C","id":"\\mathbb I","avg":["\\langle #1\\rangle",1],"pmean":["\\langle #1\\rangle",1],"Var":"\\operatorname{Var}","Cov":"\\operatorname{Cov}","bra":["\\langle #1|",1],"ket":["|#1\\rangle",1],"braket":["\\langle #1|#2\\rangle",2],"ip":["\\langle #1|#2\\rangle",2],"norm":["\\lVert #1\\rVert",1],"abs":["\\lvert #1\\rvert",1],"p":"\\partial","Hh":"\\mathcal H","eps":"\\varepsilon_0","lap":"\\nabla^2","aH":"a_{\\mathrm H}","mH":"\\mu_{\\mathrm H}","Lop":"\\hat{\\mathbf L}","op":["\\hat{#1}",1],"HH":"\\mathcal H","UU":"\\hat U","PP":"\\hat{\\mathcal P}","grad":"\\boldsymbol\\nabla","tr":"\\operatorname{tr}","half":"\\tfrac12"}},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:true}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><div class="wrap"><nav class="nav"><a href="../../../">← Personal Homepage</a><a href="./">All 100 problems</a><a href="../../">Lecture Notes</a><a href="../../../quantum-mechanics/">Theory notes</a></nav><header><p class="eyebrow">Coursework / Lecture Notes / Quantum Mechanics</p><h1>Assignment IV</h1><p class="lead">Hydrogen, spherical harmonics and angular momentum. Each original question is followed by its full mathematical derivation, assumptions and examination conclusions.</p><p class="meta">Kumar Azad · M.Sc. Physics · SRMIST · Part A (10) + Part B (13) · November 2026</p></header><div class="actions"><a class="pill" href="./">Browse all assignments</a><a class="pill" href="sources/assignment-iv.tex">Download editable LaTeX</a><a class="pill" href="../../../quantum-mechanics/">Concept notes</a></div><aside class="notice">Select any problem below to display its complete worked solution. Mathematics is typeset with MathJax. The original LaTeX file preserves figure code and equation labels. For a full printable document, use “Expand all” and then “Print / Save as PDF.”</aside><h2>Problem index</h2><div class="grid"><a class="item" href="#a1"><span class="tiny">Part A · Problem 1</span><strong>Spherical symmetry of the Coulomb interaction</strong></a>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Hydrogen, spherical harmonics and angular momentum"><title>Assignment IV — Complete Solutions | Kumar Azad</title><link rel="stylesheet" href="style.css"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']],tags:'ams',processEscapes:true,macros:{"dd":"\\mathrm{d}","iu":"\\mathrm{i}","ee":"\\mathrm{e}","Hil":"\\mathcal H","Dom":"\\mathcal D","R":"\\mathbb R","C":"\\mathbb C","id":"\\mathbb I","avg":["\\langle #1\\rangle",1],"pmean":["\\langle #1\\rangle",1],"Var":"\\operatorname{Var}","Cov":"\\operatorname{Cov}","bra":["\\langle #1|",1],"ket":["|#1\\rangle",1],"braket":["\\langle #1|#2\\rangle",2],"ip":["\\langle #1|#2\\rangle",2],"norm":["\\lVert #1\\rVert",1],"abs":["\\lvert #1\\rvert",1],"p":"\\partial","Hh":"\\mathcal H","eps":"\\varepsilon_0","lap":"\\nabla^2","aH":"a_{\\mathrm H}","mH":"\\mu_{\\mathrm H}","Lop":"\\hat{\\mathbf L}","op":["\\hat{#1}",1],"HH":"\\mathcal H","UU":"\\hat U","PP":"\\hat{\\mathcal P}","grad":"\\boldsymbol\\nabla","tr":"\\operatorname{tr}","half":"\\tfrac12"}},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:true}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><a class="skip-link" href="#main">Skip to solutions</a><div class="wrap"><nav class="nav"><a href="../../../">← Personal Homepage</a><a href="./">All 100 problems</a><a href="../">Lecture Notes</a><a href="../../../quantum-mechanics/">Theory notes</a></nav><header><p class="eyebrow">Coursework / Lecture Notes / Quantum Mechanics</p><h1>Assignment IV</h1><p class="lead">Hydrogen, spherical harmonics and angular momentum. Each manuscript question is followed by its full mathematical derivation, assumptions and examination conclusions.</p><p class="meta">Kumar Azad · M.Sc. Physics · SRMIST · Part A (10) + Part B (13) · November 2026</p></header><div class="actions"><a class="pill" href="./">Browse all assignments</a><a class="pill" href="sources/assignment-iv.tex">Download editable LaTeX</a><a class="pill" href="../../../quantum-mechanics/">Concept notes</a></div><aside class="notice">Select any problem below to display its complete worked solution. Mathematics is typeset with MathJax. The retained LaTeX file preserves the manuscript, figure code and equation labels. See the <a href="verification.html">verification record</a> for known source gaps. For a full printable document, use “Expand all” and then “Print / Save as PDF.”</aside><h2>Problem index</h2><div class="grid"><a class="item" href="#a1"><span class="tiny">Part A · Problem 1</span><strong>Spherical symmetry of the Coulomb interaction</strong></a>
 <a class="item" href="#a2"><span class="tiny">Part A · Problem 2</span><strong>Integer-valued azimuthal quantum number</strong></a>
 <a class="item" href="#a3"><span class="tiny">Part A · Problem 3</span><strong>Orthonormality of spherical harmonics and hydrogen eigenstates</strong></a>
 <a class="item" href="#a4"><span class="tiny">Part A · Problem 4</span><strong>Complex conjugation and spherical harmonic phase conventions</strong></a>
@@ -6,10 +6,10 @@
 <a class="item" href="#a6"><span class="tiny">Part A · Problem 6</span><strong>Ground-state wavefunctions of hydrogen and hydrogenic ions</strong></a>
 <a class="item" href="#a7"><span class="tiny">Part A · Problem 7</span><strong>Short note on the hydrogen spectrum</strong></a>
 <a class="item" href="#a8"><span class="tiny">Part A · Problem 8</span><strong>Seven orbital-angular-momentum commutators</strong></a>
-<a class="item" href="#a9"><span class="tiny">Part A · Problem 9</span><strong>Factorization of \texorpdfstring{\(L^2\)}{L2} with raising/lowering operators</strong></a>
+<a class="item" href="#a9"><span class="tiny">Part A · Problem 9</span><strong>Factorization of \(L^2\) with raising/lowering operators</strong></a>
 <a class="item" href="#a10"><span class="tiny">Part A · Problem 10</span><strong>Normalized angular-momentum ladder coefficients</strong></a>
-<a class="item" href="#b1"><span class="tiny">Part B · Problem 1</span><strong>Separation of the 3D Schr&amp;quot;odinger equation for a central potential</strong></a>
-<a class="item" href="#b2"><span class="tiny">Part B · Problem 2</span><strong>Solutions of the polar \texorpdfstring{\(\theta\)}{theta}-equation and azimuthal \texorpdfstring{\(\phi\)}{phi}-equation</strong></a>
+<a class="item" href="#b1"><span class="tiny">Part B · Problem 1</span><strong>Separation of the 3D Schrödinger equation for a central potential</strong></a>
+<a class="item" href="#b2"><span class="tiny">Part B · Problem 2</span><strong>Solutions of the polar \(\theta\)-equation and azimuthal \(\phi\)-equation</strong></a>
 <a class="item" href="#b3"><span class="tiny">Part B · Problem 3</span><strong>Particle in an infinite spherical well: radial equation, spectrum and normalization</strong></a>
 <a class="item" href="#b4"><span class="tiny">Part B · Problem 4</span><strong>Probability inside the concentric half-radius sphere</strong></a>
 <a class="item" href="#b5"><span class="tiny">Part B · Problem 5</span><strong>Hydrogen radial equation: Frobenius series, quantization and normalized Laguerre states</strong></a>
@@ -17,60 +17,60 @@
 <a class="item" href="#b7"><span class="tiny">Part B · Problem 7</span><strong>Radial uncertainty of the hydrogen ground state</strong></a>
 <a class="item" href="#b8"><span class="tiny">Part B · Problem 8</span><strong>Hydrogen ground-state radial probability density and its maximum</strong></a>
 <a class="item" href="#b9"><span class="tiny">Part B · Problem 9</span><strong>Vanishing Cartesian position means in the hydrogen ground state</strong></a>
-<a class="item" href="#b10"><span class="tiny">Part B · Problem 10</span><strong>Cartesian second moments and variances in the \texorpdfstring{\(1s\)}{1s} state</strong></a>
+<a class="item" href="#b10"><span class="tiny">Part B · Problem 10</span><strong>Cartesian second moments and variances in the \(1s\) state</strong></a>
 <a class="item" href="#b11"><span class="tiny">Part B · Problem 11</span><strong>Algebraic angular-momentum spectrum from commutators and ladder norms</strong></a>
 <a class="item" href="#b12"><span class="tiny">Part B · Problem 12</span><strong>Derive spherical-coordinate angular momentum operators and spherical-harmonic eigenfunctions</strong></a>
-<a class="item" href="#b13"><span class="tiny">Part B · Problem 13</span><strong>Conservation of angular momentum in a spherically symmetric potential</strong></a></div><div class="controls"><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button><button id="print" type="button">Print / Save as PDF</button></div><main><section><h2>Part A · 10 problems</h2><details class="problem" id="a1"><summary><span class="num">A1</span><span>Spherical symmetry of the Coulomb interaction</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>What is meant by spherical symmetry of the Coulombic interaction?</p></aside><h3>Detailed worked solution</h3><p>For point charges \(q_1,q_2\), the interaction depends only on their separation:</p>
+<a class="item" href="#b13"><span class="tiny">Part B · Problem 13</span><strong>Conservation of angular momentum in a spherically symmetric potential</strong></a></div><div class="controls"><button id="expand" type="button">Expand all</button><button id="collapse" type="button">Collapse all</button><button id="print" type="button">Print / Save as PDF</button></div><main id="main"><section><h2>Part A · 10 problems</h2><details class="problem" id="a1"><summary><span class="num">A1</span><span>Spherical symmetry of the Coulomb interaction</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>What is meant by spherical symmetry of the Coulombic interaction?</p></aside><h3>Detailed worked solution</h3><p>For point charges \(q_1,q_2\), the interaction depends only on their separation:</p>
 <div class="display-math">\[V(\mathbf r)=\frac{q_1q_2}{4\pi\eps|\mathbf r|}=:V(r).\]</div>
 <p>For electron–proton attraction, \(q_1q_2=-e^2\), hence \(V(r)=-e^2/(4\pi\eps r)\). A three-dimensional rotation \(\mathcal R\in SO(3)\) preserves Euclidean length: \(|\mathcal R\mathbf r|=|\mathbf r|\). Consequently</p>
 <div class="display-math">\[V(\mathcal R\mathbf r)=V(\mathbf r),\qquad \nabla V(r)=\frac{\dd V}{\dd r}\,\hat{\mathbf r}.\]</div>
 <p>The force \(\mathbf F=-\nabla V\) is central (radial), with no preferred direction. Quantum mechanically the scalar Hamiltonian \(H=p^2/(2\mu)+V(r)\) is rotation-invariant and therefore \([H,L_i]=0\), a fact proved in detail in B13.</p>
 <div class="answer-box">\[\boxed{V(\mathcal R\mathbf r)=V(\mathbf r)\quad\forall\mathcal R\in SO(3).}\]</div>
 <p><strong>Exam-ready conclusion.</strong> Coulombic interaction is spherically symmetric because the potential depends only on the relative distance \(r\), not on the angular orientation of \(\mathbf r\).</p><p class="small"><a href="#a1">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a2"><summary><span class="num">A2</span><span>Integer-valued azimuthal quantum number</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Given that the azimuthal part of the hydrogen atom wave function is \(\Phi(\phi)=e^{\iu m\phi}\), show that \(m\) can only take integer values.</p></aside><h3>Detailed worked solution</h3><p>Angles \(\phi\) and \(\phi+2\pi\) represent the same spatial point. An ordinary scalar orbital wavefunction must therefore satisfy \(\Phi(\phi+2\pi)=\Phi(\phi)\). Insert \(\Phi(\phi)=e^{\iu m\phi}\):</p>
+<details class="problem" id="a2"><summary><span class="num">A2</span><span>Integer-valued azimuthal quantum number</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Given that the azimuthal part of the hydrogen atom wave function is \(\Phi(\phi)=e^{\iu m\phi}\), show that \(m\) can only take integer values.</p></aside><h3>Detailed worked solution</h3><p>Angles \(\phi\) and \(\phi+2\pi\) represent the same spatial point. An ordinary scalar orbital wavefunction must therefore satisfy \(\Phi(\phi+2\pi)=\Phi(\phi)\). Insert \(\Phi(\phi)=e^{\iu m\phi}\):</p>
 <div class="display-math">\[\begin{aligned}e^{\iu m(\phi+2\pi)}&amp;=e^{\iu m\phi},\\
 e^{2\pi\iu m}&amp;=1,\\
 \cos(2\pi m)+\iu\sin(2\pi m)&amp;=1.\end{aligned}\]</div>
 <p>The condition means \(2\pi m=2\pi k\) for some integer \(k\). Hence</p>
 <div class="answer-box">\[\boxed{m\in\mathbb Z=\{0,\pm1,\pm2,\ldots\}.}\]</div>
 <p>Normalized azimuthal functions are \(\Phi_m=(2\pi)^{-1/2}e^{\iu m\phi}\); \(\int_0^{2\pi}\Phi_m^*\Phi_{m'}\dd\phi=\delta_{mm'}\). For a fixed orbital \(l\), regularity of the polar solution additionally imposes \(-l\le m\le l\).</p><p class="small"><a href="#a2">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a3"><summary><span class="num">A3</span><span>Orthonormality of spherical harmonics and hydrogen eigenstates</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Write the orthonormality condition for (i) spherical harmonic functions and (ii) hydrogen atom wave functions.</p></aside><h3>Detailed worked solution</h3><p><strong>(i) Angular functions.</strong> The unit-sphere measure is \(\dd\Omega=\sin\theta\,\dd\theta\,\dd\phi\). Thus</p>
+<details class="problem" id="a3"><summary><span class="num">A3</span><span>Orthonormality of spherical harmonics and hydrogen eigenstates</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Write the orthonormality condition for (i) spherical harmonic functions and (ii) hydrogen atom wave functions.</p></aside><h3>Detailed worked solution</h3><p><strong>(i) Angular functions.</strong> The unit-sphere measure is \(\dd\Omega=\sin\theta\,\dd\theta\,\dd\phi\). Thus</p>
 <div class="display-math">\[\boxed{\int_0^{2\pi}\!\int_0^\pi Y_l^{m*}(\theta,\phi)Y_{l'}^{m'}(\theta,\phi)\sin\theta\,\dd\theta\,\dd\phi=\delta_{ll'}\delta_{mm'}.}\]</div>
 <p><strong>(ii) Hydrogen eigenfunctions.</strong> With \(\psi_{nlm}=R_{nl}(r)Y_l^m(\theta,\phi)\) and \(\dd^3r=r^2\dd r\,\dd\Omega\), orthonormality of bound states is</p>
 <div class="display-math">\[\boxed{\int_{\mathbb R^3}\psi_{nlm}^*(\mathbf r)\psi_{n'l'm'}(\mathbf r)\,\dd^3r=\delta_{nn'}\delta_{ll'}\delta_{mm'}.}\]</div>
 <p>The radial normalization is \(\int_0^\infty|R_{nl}(r)|^2r^2\dd r=1\); for the same \(l\), orthogonality of distinct radial bound states gives \(\int_0^\infty R_{nl}^*R_{n'l}\,r^2\dd r=\delta_{nn'}\). Continuum Coulomb states instead require delta-normalization and are not covered by the discrete Kronecker-delta statement.</p><p class="small"><a href="#a3">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a4"><summary><span class="num">A4</span><span>Complex conjugation and spherical harmonic phase conventions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(Y_l^{-m}=(Y_l^m)^*\). <em>This is the identity printed on the assignment sheet.</em></p></aside><h3>Detailed worked solution</h3><p>This relation depends on the relative phase chosen for the negative-\(m\) basis functions. For any normalized complex harmonic, the complex conjugate transforms under \(L_z=-\iu\hbar\partial_\phi\) with magnetic quantum number \(-m\), and under \(L^2\) with the same \(l(l+1)\). For fixed \((l,-m)\), that eigenspace is one-dimensional, so conjugation is proportional to \(Y_l^{-m}\), with a phase of modulus one. One may <em>define</em> the phases of the negative-\(m\) harmonics so that</p>
+<details class="problem" id="a4"><summary><span class="num">A4</span><span>Complex conjugation and spherical harmonic phase conventions</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Show that \(Y_l^{-m}=(Y_l^m)^*\). <em>This is the identity printed on the assignment sheet.</em></p></aside><h3>Detailed worked solution</h3><p>This relation depends on the relative phase chosen for the negative-\(m\) basis functions. For any normalized complex harmonic, the complex conjugate transforms under \(L_z=-\iu\hbar\partial_\phi\) with magnetic quantum number \(-m\), and under \(L^2\) with the same \(l(l+1)\). For fixed \((l,-m)\), that eigenspace is one-dimensional, so conjugation is proportional to \(Y_l^{-m}\), with a phase of modulus one. One may <em>define</em> the phases of the negative-\(m\) harmonics so that</p>
 <div class="display-math">\[\boxed{Y_l^{-m}=(Y_l^m)^*.}\]</div>
 <p><strong>Important convention clarification.</strong> In the more common Condon–Shortley convention used for the explicitly normalized harmonics and standard positive ladder coefficients in this manuscript,</p>
 <div class="display-math">\[\boxed{Y_l^{-m}=(-1)^m(Y_l^m)^*.}\]</div>
-<p>For example \(Y_1^1=-\sqrt{3/(8\pi)}\sin\theta e^{\iu\phi}\), while \(Y_1^{-1}=+\sqrt{3/(8\pi)}\sin\theta e^{-\iu\phi}\): the minus sign matters. The assignment's printed formula is recovered by rephasing the negative-\(m\) states: \(\widetilde Y_l^{-m}=(-1)^mY_l^{-m}\) (for \(m>0\)); then \(\widetilde Y_l^{-m}=(Y_l^m)^*\). The rephasing does not change eigenvalues or probabilities but changes some ladder coefficients' signs. These conventions must not be silently mixed.</p><p class="small"><a href="#a4">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a5"><summary><span class="num">A5</span><span>Quantized energies of hydrogen and hydrogenic ions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Write the energy quantization formula for (i) hydrogen atom and (ii) a hydrogenic atom.</p></aside><h3>Detailed worked solution</h3><p><strong>Hydrogen (\(Z=1\)).</strong> Define \(g=e^2/(4\pi\eps)\), \(\mH=m_em_p/(m_e+m_p)\). Separation of the Coulomb radial equation and polynomial termination yield</p>
+<p>For example \(Y_1^1=-\sqrt{3/(8\pi)}\sin\theta e^{\iu\phi}\), while \(Y_1^{-1}=+\sqrt{3/(8\pi)}\sin\theta e^{-\iu\phi}\): the minus sign matters. The assignment's printed formula is recovered by rephasing the negative-\(m\) states: \(\widetilde Y_l^{-m}=(-1)^mY_l^{-m}\) (for \(m&gt;0\)); then \(\widetilde Y_l^{-m}=(Y_l^m)^*\). The rephasing does not change eigenvalues or probabilities but changes some ladder coefficients' signs. These conventions must not be silently mixed.</p><p class="small"><a href="#a4">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="a5"><summary><span class="num">A5</span><span>Quantized energies of hydrogen and hydrogenic ions</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Write the energy quantization formula for (i) hydrogen atom and (ii) a hydrogenic atom.</p></aside><h3>Detailed worked solution</h3><p><strong>Hydrogen (\(Z=1\)).</strong> Define \(g=e^2/(4\pi\eps)\), \(\mH=m_em_p/(m_e+m_p)\). Separation of the Coulomb radial equation and polynomial termination yield</p>
 <div class="display-math">\[\boxed{E_n^{\rm H}=-\frac{\mH e^4}{2(4\pi\eps)^2\hbar^2n^2},\qquad n=1,2,3,\ldots}\]</div>
 <p>In the fixed-proton approximation this is \(E_n\simeq-13.6057\,\mathrm{eV}/n^2\), usually rounded to \(-13.6\,\mathrm{eV}/n^2\); with proton reduced mass the scale is about \(13.5983\,\mathrm{eV}\).</p>
 <p><strong>Hydrogenic (one-electron) ion of nuclear charge \(+Ze\).</strong> Its potential is \(V_Z(r)=-Ze^2/(4\pi\eps r)\). Let \(\mu_Z\) be its electron–nucleus reduced mass. Then</p>
 <div class="display-math">\[\boxed{E_n^{(Z)}=-\frac{\mu_Z Z^2e^4}{2(4\pi\eps)^2\hbar^2n^2}.}\]</div>
 <p>For a heavy nucleus, \(\mu_Z\simeq m_e\), yielding \(E_n^{(Z)}\simeq-13.6Z^2/n^2\,\mathrm{eV}\). Nuclear size, relativity, radiative effects and electronic correlations are outside the ideal Coulomb model. Full derivation: B5.</p><p class="small"><a href="#a5">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a6"><summary><span class="num">A6</span><span>Ground-state wavefunctions of hydrogen and hydrogenic ions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Write the ground-state wave function for (i) hydrogen atom and (ii) a hydrogenic atom.</p></aside><h3>Detailed worked solution</h3><p>For an attractive Coulomb potential \(-g/r\), the bound \(1s\) solution (\(n=1,l=m=0\)) has radial dependence \(e^{-r/a}\), where \(a=\hbar^2/(\mu g)\). Spherical normalization gives</p>
+<details class="problem" id="a6"><summary><span class="num">A6</span><span>Ground-state wavefunctions of hydrogen and hydrogenic ions</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Write the ground-state wave function for (i) hydrogen atom and (ii) a hydrogenic atom.</p></aside><h3>Detailed worked solution</h3><p>For an attractive Coulomb potential \(-g/r\), the bound \(1s\) solution (\(n=1,l=m=0\)) has radial dependence \(e^{-r/a}\), where \(a=\hbar^2/(\mu g)\). Spherical normalization gives</p>
 <div class="display-math">\[\begin{aligned}1&amp;=|C|^2\int_{\R^3}\ee^{-2r/a}\dd^3r=4\pi|C|^2\int_0^\infty r^2\ee^{-2r/a}\dd r\\
 &amp;=4\pi|C|^2\frac{2!}{(2/a)^3}=\pi a^3|C|^2.\end{aligned}\]</div>
-<p>Choosing \(C>0\), \(C=(\pi a^3)^{-1/2}\). For hydrogen \(a=\aH=4\pi\eps\hbar^2/(\mH e^2)\), so</p>
+<p>Choosing \(C&gt;0\), \(C=(\pi a^3)^{-1/2}\). For hydrogen \(a=\aH=4\pi\eps\hbar^2/(\mH e^2)\), so</p>
 <div class="display-math">\[\boxed{\psi_{100}^{\rm H}(r)=\frac1{\sqrt{\pi\aH^3}}\ee^{-r/\aH}.}\]</div>
 <p>For nuclear charge \(Z\) and nuclear mass \(M_Z\), \(\mu_Z=m_eM_Z/(m_e+M_Z)\) and \(a_Z=4\pi\eps\hbar^2/(\mu_ZZe^2)\). Hence</p>
 <div class="display-math">\[\boxed{\psi_{100}^{(Z)}(r)=\frac1{\sqrt{\pi a_Z^3}}\ee^{-r/a_Z}.}\]</div>
 <p>Alternatively, setting \(a_{\mu,Z}=4\pi\eps\hbar^2/(\mu_Z e^2)\), this is \(\psi_{100}^{(Z)}=(Z^3/(\pi a_{\mu,Z}^3))^{1/2}\ee^{-Zr/a_{\mu,Z}}\). The wavefunctions are full three-dimensional spatial states and include \(Y_0^0=1/\sqrt{4\pi}\). Their radial parts are \(R_{10}=2a^{-3/2}\ee^{-r/a}\).</p><p class="small"><a href="#a6">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a7"><summary><span class="num">A7</span><span>Short note on the hydrogen spectrum</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Write a short note on hydrogen spectrum.</p></aside><h3>Detailed worked solution</h3><p>The discrete bound-state energies in the nonrelativistic Coulomb model are</p>
+<details class="problem" id="a7"><summary><span class="num">A7</span><span>Short note on the hydrogen spectrum</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Write a short note on hydrogen spectrum.</p></aside><h3>Detailed worked solution</h3><p>The discrete bound-state energies in the nonrelativistic Coulomb model are</p>
 <div class="display-math">\[E_n=-\frac{\mH e^4}{2(4\pi\eps)^2\hbar^2n^2}=-\frac{E_{\rm Ry,H}}{n^2},\qquad n\ge1.\]</div>
-<p>An emitted photon from a transition \(n_i>n_f\) has energy \(h\nu=E_{n_i}-E_{n_f}\). Thus</p>
+<p>An emitted photon from a transition \(n_i&gt;n_f\) has energy \(h\nu=E_{n_i}-E_{n_f}\). Thus</p>
 <div class="display-math">\[\boxed{\frac1\lambda=R_{\rm H}\left(\frac1{n_f^2}-\frac1{n_i^2}\right),\quad n_i&gt;n_f,}\]</div>
 <p>where \(R_{\rm H}=\mu_{\rm H}e^4/[8\eps^2h^3c]\) is the reduced-mass-corrected Rydberg constant. The Lyman series ends on \(n_f=1\) (ultraviolet), Balmer on \(n_f=2\) (some visible lines), Paschen on \(n_f=3\) (infrared), and Brackett/Pfund on \(n_f=4,5\) (infrared). The levels approach the ionization threshold \(E=0\) as \(n\to\infty\), and line spacings narrow near series limits. For electric-dipole transitions the orbital selection rules are \(\Delta l=\pm1\) and \(\Delta m=0,\pm1\). These spectra are further modified in real hydrogen by fine structure, hyperfine structure, Lamb shifts and finite proton mass.</p><p class="small"><a href="#a7">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a8"><summary><span class="num">A8</span><span>Seven orbital-angular-momentum commutators</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Prove the following commutators:
-\begin{align*}
+<details class="problem" id="a8"><summary><span class="num">A8</span><span>Seven orbital-angular-momentum commutators</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Prove the following commutators:
+\[\begin{aligned}
 [\hat L_x,\hat L_y]&amp;=\iu\hbar\hat L_z,\\
 [\hat L^2,\hat L_x]&amp;=[\hat L^2,\hat L_y]=[\hat L^2,\hat L_z]=0,\\
 [\hat L_z,\hat z]&amp;=0,  [\hat L_z,\hat p_z]=0,\\
 [\hat L^2,\hat L_\pm]&amp;=0,  [\hat L_z,\hat L_\pm]=\pm\hbar\hat L_\pm,\\
 [\hat L_+,\hat L_-]&amp;=2\hbar\hat L_z.
-\end{align*}</p></aside><h3>Detailed worked solution</h3><p>Use the canonical relations \([x_i,p_j]=\iu\hbar\delta_{ij}\), \([x_i,x_j]=[p_i,p_j]=0\), and \([A,BC]=[A,B]C+B[A,C]\).</p>
+\end{aligned}\]</p></aside><h3>Detailed worked solution</h3><p>Use the canonical relations \([x_i,p_j]=\iu\hbar\delta_{ij}\), \([x_i,x_j]=[p_i,p_j]=0\), and \([A,BC]=[A,B]C+B[A,C]\).</p>
 <p><strong>(1) Cartesian angular commutator.</strong> The components are \(L_x=yp_z-zp_y\), \(L_y=zp_x-xp_z\), \(L_z=xp_y-yp_x\). Expand:</p>
 <div class="display-math">\[\begin{aligned}[L_x,L_y]&amp;=[yp_z,zp_x]-[yp_z,xp_z]-[zp_y,zp_x]+[zp_y,xp_z]\\
 &amp;=(-\iu\hbar yp_x)+0+0+(\iu\hbar xp_y)\\
@@ -95,7 +95,7 @@ e^{2\pi\iu m}&amp;=1,\\
 &amp;=-\iu[L_x,L_y]+\iu[L_y,L_x]\\
 &amp;=-2\iu(\iu\hbar L_z)=\boxed{2\hbar L_z}.\end{aligned}\]</div>
 <p>These identities are operator equalities on an appropriate common invariant dense domain; they do not require a particular state.</p><p class="small"><a href="#a8">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a9"><summary><span class="num">A9</span><span>Factorization of \texorpdfstring{\(L^2\)}{L2} with raising/lowering operators</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(\hat L^2=\hat L_\pm\hat L_\mp+\hat L_z^2\mp\hbar\hat L_z\).</p></aside><h3>Detailed worked solution</h3><p>Compute the ordered products, taking care that \(L_x\) and \(L_y\) do not commute:</p>
+<details class="problem" id="a9"><summary><span class="num">A9</span><span>Factorization of \(L^2\) with raising/lowering operators</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Show that \(\hat L^2=\hat L_\pm\hat L_\mp+\hat L_z^2\mp\hbar\hat L_z\).</p></aside><h3>Detailed worked solution</h3><p>Compute the ordered products, taking care that \(L_x\) and \(L_y\) do not commute:</p>
 <div class="display-math">\[\begin{aligned}L_+L_-&amp;=(L_x+\iu L_y)(L_x-\iu L_y)\\
 &amp;=L_x^2+L_y^2-\iu[L_x,L_y]\\
 &amp;=L^2-L_z^2+\hbar L_z.\end{aligned}\]</div>
@@ -106,7 +106,7 @@ e^{2\pi\iu m}&amp;=1,\\
 <p>so \(\boxed{L^2=L_-L_++L_z^2+\hbar L_z}\). Combined:</p>
 <div class="answer-box">\[\boxed{L^2=L_\pm L_\mp+L_z^2\mp\hbar L_z.}\]</div>
 <p>As a check, subtract the product formulas to recover \([L_+,L_-]=2\hbar L_z\). See B11 for the role of these identities in proving spectral quantization.</p><p class="small"><a href="#a9">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="a10"><summary><span class="num">A10</span><span>Normalized angular-momentum ladder coefficients</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>The raising and lowering operators change the value of \(m\) by one unit: \(\hat L_\pm f_l^m=A_l^m f_l^{m\pm1}\). Using the equation in Q9, prove that the appropriate coefficient is \(A_l^m=\hbar\sqrt{l(l+1)-m(m\pm1)}\).</p></aside><h3>Detailed worked solution</h3><p>Use normalized angular eigenstates \(f_l^m=\ket{l,m}\) with</p>
+<details class="problem" id="a10"><summary><span class="num">A10</span><span>Normalized angular-momentum ladder coefficients</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>The raising and lowering operators change the value of \(m\) by one unit: \(\hat L_\pm f_l^m=A_l^m f_l^{m\pm1}\). Using the equation in Q9, prove that the appropriate coefficient is \(A_l^m=\hbar\sqrt{l(l+1)-m(m\pm1)}\).</p></aside><h3>Detailed worked solution</h3><p>Use normalized angular eigenstates \(f_l^m=\ket{l,m}\) with</p>
 <div class="display-math">\[L^2\ket{l,m}=\hbar^2l(l+1)\ket{l,m},\qquad L_z\ket{l,m}=\hbar m\ket{l,m}.\]</div>
 <p>Suppose \(L_+\ket{l,m}=A_{lm}^{(+)}\ket{l,m+1}\). Because \(L_+^\dagger=L_-\), the squared norm is</p>
 <div class="display-math">\[\begin{aligned}|A_{lm}^{(+)}|^2&amp;=\norm{L_+\ket{l,m}}^2=\bra{l,m}L_-L_+\ket{l,m}\\
@@ -118,13 +118,13 @@ e^{2\pi\iu m}&amp;=1,\\
 <p>Choose the usual relative phases (Condon–Shortley) so that coefficients are real and nonnegative:</p>
 <div class="answer-box">\[\boxed{L_\pm\ket{l,m}=\hbar\sqrt{l(l+1)-m(m\pm1)}\ket{l,m\pm1}.}\]</div>
 <p>Equivalent factorizations are \(\hbar\sqrt{(l-m)(l+m+1)}\) for raising and \(\hbar\sqrt{(l+m)(l-m+1)}\) for lowering. The coefficients vanish at \(m=l\) and \(m=-l\), respectively. The norms fix magnitudes, while the phase convention fixes signs. This completes Part A.</p>
-<p>\clearpage</p><p class="small"><a href="#a10">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details></section><section><h2>Part B · 13 problems</h2><details class="problem" id="b1"><summary><span class="num">B1</span><span>Separation of the 3D Schr&amp;quot;odinger equation for a central potential</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Apply the variable separation method to Schr&amp;quot;odinger's equation in 3D and derive the radial and the angular equations (\(\theta\) and \(\phi\)) for a spherically symmetric potential \(V(r)\).</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Three-dimensional stationary Schr&amp;quot;odinger equation} For a spinless particle of mass \(\mu\) in a radial potential \(V(r)\),</p>
+<p class="small"><a href="#a10">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details></section><section><h2>Part B · 13 problems</h2><details class="problem" id="b1"><summary><span class="num">B1</span><span>Separation of the 3D Schrödinger equation for a central potential</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Apply the variable separation method to Schrödinger's equation in 3D and derive the radial and the angular equations (\(\theta\) and \(\phi\)) for a spherically symmetric potential \(V(r)\).</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Three-dimensional stationary Schrödinger equation</h4><p> For a spinless particle of mass \(\mu\) in a radial potential \(V(r)\),</p>
 <div class="display-math">\[-\frac{\hbar^2}{2\mu}\nabla^2\psi+V(r)\psi=E\psi,\qquad \psi\in L^2(\R^3).\]</div>
 <p>The Laplacian in spherical coordinates follows from the Euclidean metric \(\dd s^2=\dd r^2+r^2\dd\theta^2+r^2\sin^2\theta\dd\phi^2\):</p>
 <div class="display-math">\[\boxed{\nabla^2=\frac1{r^2}\p_r(r^2\p_r)+\frac1{r^2\sin\theta}\p_\theta(\sin\theta\p_\theta)+\frac1{r^2\sin^2\theta}\p_\phi^2.}\]</div>
-<p>Its Jacobian is \(\dd^3r=r^2\sin\theta\dd r\dd\theta\dd\phi\). Multiplying the Schr&amp;quot;odinger equation by \(-2\mu/\hbar^2\) gives</p>
+<p>Its Jacobian is \(\dd^3r=r^2\sin\theta\dd r\dd\theta\dd\phi\). Multiplying the Schrödinger equation by \(-2\mu/\hbar^2\) gives</p>
 <div class="display-math">\[\nabla^2\psi+\frac{2\mu}{\hbar^2}[E-V(r)]\psi=0.\]</div>
-<p>\subsubsection*{Step 2: Product separation} Choose</p>
+<h4>Step 2: Product separation</h4><p> Choose</p>
 <div class="display-math">\[\boxed{\psi(r,\theta,\phi)=R(r)\Theta(\theta)\Phi(\phi).}\]</div>
 <p>Then</p>
 <div class="display-math">\[\begin{aligned}&amp;\frac{\Theta\Phi}{r^2}\frac{\dd}{\dd r}\left(r^2\frac{\dd R}{\dd r}\right)+\frac{R\Phi}{r^2\sin\theta}\frac{\dd}{\dd\theta}\left(\sin\theta\frac{\dd\Theta}{\dd\theta}\right)\\
@@ -132,31 +132,31 @@ e^{2\pi\iu m}&amp;=1,\\
 <p>Divide by \(R\Theta\Phi\) and multiply by \(r^2\):</p>
 <div class="display-math">\[\underbrace{\frac1R\frac{\dd}{\dd r}(r^2R')+\frac{2\mu r^2}{\hbar^2}(E-V)}_{\text{radial only}}+\underbrace{\frac1{\Theta\sin\theta}\frac{\dd}{\dd\theta}(\sin\theta\Theta')+\frac1{\Phi\sin^2\theta}\Phi''}_{\text{angular only}}=0.\]</div>
 <p>Each bracket must equal a constant of opposite sign. Write the radial bracket \(\lambda\), the angular bracket \(-\lambda\). We will discover that regularity forces \(\lambda=l(l+1)\).</p>
-<p>\subsubsection*{Step 3: Separate the azimuthal equation} The angular equation reads</p>
+<h4>Step 3: Separate the azimuthal equation</h4><p> The angular equation reads</p>
 <div class="display-math">\[\frac{\sin\theta}{\Theta}\frac{\dd}{\dd\theta}(\sin\theta\Theta')+\lambda\sin^2\theta=-\frac{\Phi''}{\Phi}.\]</div>
 <p>The left is a function of \(\theta\) alone and the right of \(\phi\) alone. Introduce \(m^2\), so \(-\Phi''/\Phi=m^2\) and obtain</p>
 <div class="answer-box">\[\boxed{\Phi''+m^2\Phi=0.}\]</div>
 <p>The general azimuthal solution is \(\Phi=A\ee^{\iu m\phi}+B\ee^{-\iu m\phi}\); periodicity \(\Phi(\phi+2\pi)=\Phi(\phi)\) imposes integer \(m\), and a normalized eigenfunction of \(L_z\) is \((2\pi)^{-1/2}\ee^{\iu m\phi}\).</p>
-<p>\subsubsection*{Step 4: Polar equation} The remaining polar equation is</p>
+<h4>Step 4: Polar equation</h4><p> The remaining polar equation is</p>
 <div class="display-math">\[\frac1{\sin\theta}\frac{\dd}{\dd\theta}\left(\sin\theta\Theta'\right)+\left(\lambda-\frac{m^2}{\sin^2\theta}\right)\Theta=0.\]</div>
 <p>Set \(u=\cos\theta\). Then \(\dd/\dd\theta=-\sin\theta\dd/\dd u\) and</p>
 <div class="display-math">\[\boxed{(1-u^2)\Theta''(u)-2u\Theta'(u)+\left(\lambda-\frac{m^2}{1-u^2}\right)\Theta=0.}\]</div>
 <p>The global regularity conditions at \(u=\pm1\) select \(\lambda=l(l+1)\), \(l=0,1,\ldots\), \(|m|\le l\). The solutions are associated Legendre polynomials \(P_l^m(u)\).</p>
-<p>\subsubsection*{Step 5: Radial equation} The separated radial equation is</p>
+<h4>Step 5: Radial equation</h4><p> The separated radial equation is</p>
 <div class="display-math">\[\frac1R\frac{\dd}{\dd r}(r^2R')+\frac{2\mu r^2}{\hbar^2}(E-V)=\lambda.\]</div>
 <p>Divide by \(r^2\), insert \(\lambda=l(l+1)\), and multiply by \(R\):</p>
 <div class="answer-box">\[\boxed{\frac1{r^2}\frac{\dd}{\dd r}(r^2R')+\left[\frac{2\mu}{\hbar^2}(E-V)-\frac{l(l+1)}{r^2}\right]R=0.}\]</div>
 <p>With \(u_l(r)=rR_l(r)\), direct differentiation gives \((r^2R')'=ru''\) and hence</p>
 <div class="display-math">\[\boxed{-\frac{\hbar^2}{2\mu}u_l''+\left[V(r)+\frac{\hbar^2l(l+1)}{2\mu r^2}\right]u_l=Eu_l.}\]</div>
 <p>The effective radial potential includes the centrifugal barrier \(\hbar^2l(l+1)/(2\mu r^2)\). For regular central Hamiltonians, \(u_l(0)=0\) and the normalizable bound states satisfy \(u_l\in L^2(0,\infty;\dd r)\). The complete eigenfunctions are \(\psi_{nlm}=R_{nl}(r)Y_l^m(\theta,\phi)\). This proves the radial and both angular equations.</p><p class="small"><a href="#b1">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b2"><summary><span class="num">B2</span><span>Solutions of the polar \texorpdfstring{\(\theta\)}{theta}-equation and azimuthal \texorpdfstring{\(\phi\)}{phi}-equation</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>(i) Discuss the solutions to the \(\theta\)-equation.\\ (ii) Solve the \(\phi\)-equation.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{(i) Polar equation: associated Legendre functions} From B1,</p>
+<details class="problem" id="b2"><summary><span class="num">B2</span><span>Solutions of the polar \(\theta\)-equation and azimuthal \(\phi\)-equation</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>(i) Discuss the solutions to the \(\theta\)-equation.\\ (ii) Solve the \(\phi\)-equation.</p></aside><h3>Detailed worked solution</h3><h4>(i) Polar equation: associated Legendre functions</h4><p> From B1,</p>
 <div class="display-math">\[\frac1{\sin\theta}\frac{\dd}{\dd\theta}(\sin\theta\Theta')+\left[l(l+1)-\frac{m^2}{\sin^2\theta}\right]\Theta=0.\]</div>
 <p>Let \(u=\cos\theta\in[-1,1]\). Since \(\dd\Theta/\dd\theta=-\sin\theta\Theta_u\),</p>
 <div class="display-math">\[\begin{aligned}\frac1{\sin\theta}\frac{\dd}{\dd\theta}(\sin\theta\Theta')&amp;=\frac{\dd}{\dd u}\left[(1-u^2)\Theta_u\right]\\
 &amp;=(1-u^2)\Theta_{uu}-2u\Theta_u.\end{aligned}\]</div>
 <p>Consequently,</p>
 <div class="display-math">\[\boxed{(1-u^2)\Theta_{uu}-2u\Theta_u+\left[l(l+1)-\frac{m^2}{1-u^2}\right]\Theta=0.}\]</div>
-<p>This is the associated Legendre equation. At \(u=\pm1\), its leading behaviors for \(|m|>0\) are \((1-u^2)^{\pm|m|/2}\); regularity selects the positive exponent. The second solution is generally singular at a pole and excluded from ordinary scalar states on \(S^2\). For \(m=0\), a logarithmically singular Legendre \(Q_l\) branch is likewise excluded. The global regular solutions exist for \(l=0,1,\ldots\), \(m\in\mathbb Z\), \(|m|\le l\). For \(m\ge0\), Rodrigues' formula defines</p>
+<p>This is the associated Legendre equation. At \(u=\pm1\), its leading behaviors for \(|m|&gt;0\) are \((1-u^2)^{\pm|m|/2}\); regularity selects the positive exponent. The second solution is generally singular at a pole and excluded from ordinary scalar states on \(S^2\). For \(m=0\), a logarithmically singular Legendre \(Q_l\) branch is likewise excluded. The global regular solutions exist for \(l=0,1,\ldots\), \(m\in\mathbb Z\), \(|m|\le l\). For \(m\ge0\), Rodrigues' formula defines</p>
 <div class="display-math">\[\begin{aligned}P_l(u)&amp;=\frac1{2^ll!}\frac{\dd^l}{\dd u^l}(u^2-1)^l,\\
 P_l^m(u)&amp;=(-1)^m(1-u^2)^{m/2}\frac{\dd^mP_l}{\dd u^m}.\end{aligned}\]</div>
 <p>For negative \(m\), use \(P_l^{-m}=(-1)^m(l-m)!/(l+m)!\,P_l^m\) in the standard convention. Examples are</p>
@@ -166,20 +166,20 @@ P_l^m(u)&amp;=(-1)^m(1-u^2)^{m/2}\frac{\dd^mP_l}{\dd u^m}.\end{aligned}\]</div>
 <p>Their angular measure is \(\dd\Omega=\sin\theta\dd\theta\dd\phi\). The associated Legendre orthogonality identity yields</p>
 <div class="display-math">\[\int_{-1}^1P_l^m(u)P_{l'}^m(u)\dd u=\frac{2(l+m)!}{(2l+1)(l-m)!}\delta_{ll'},\]</div>
 <p>and hence \(\int_{S^2}Y_l^{m*}Y_{l'}^{m'}\dd\Omega=\delta_{ll'}\delta_{mm'}\).</p>
-<p>\subsubsection*{(ii) Azimuthal equation: periodic Fourier modes} The equation is \(\Phi''+m^2\Phi=0\). One may write \(\Phi=A\cos(m\phi)+B\sin(m\phi)\) for nonzero \(m\), or equivalently \(\Phi=C_+e^{\iu m\phi}+C_-e^{-\iu m\phi}\); the \(m=0\) general solution \(A+B\phi\) becomes a constant under periodicity. For a simultaneous \(L_z\) eigenfunction choose a single Fourier mode,</p>
+<h4>(ii) Azimuthal equation: periodic Fourier modes</h4><p> The equation is \(\Phi''+m^2\Phi=0\). One may write \(\Phi=A\cos(m\phi)+B\sin(m\phi)\) for nonzero \(m\), or equivalently \(\Phi=C_+e^{\iu m\phi}+C_-e^{-\iu m\phi}\); the \(m=0\) general solution \(A+B\phi\) becomes a constant under periodicity. For a simultaneous \(L_z\) eigenfunction choose a single Fourier mode,</p>
 <div class="display-math">\[\boxed{\Phi_m(\phi)=\frac{1}{\sqrt{2\pi}}\ee^{\iu m\phi},\qquad m\in\mathbb Z.}\]</div>
 <p>Periodic single-valuedness requires \(\Phi(\phi+2\pi)=\Phi(\phi)\), so \(\ee^{2\pi\iu m}=1\). Directly,</p>
 <div class="display-math">\[\begin{aligned}\int_0^{2\pi}\Phi_m^*\Phi_{m'}\dd\phi&amp;=\frac1{2\pi}\int_0^{2\pi}\ee^{\iu(m'-m)\phi}\dd\phi=\delta_{mm'},\\
 L_z\Phi_m&amp;=-\iu\hbar\partial_\phi\Phi_m=\hbar m\Phi_m.\end{aligned}\]</div>
 <p><strong>Exam-ready result.</strong> The polar solutions are regular associated Legendre functions with \(\lambda=l(l+1)\), and the azimuthal solutions are the normalized Fourier modes \((2\pi)^{-1/2}e^{\iu m\phi}\). Together they give spherical harmonics \(Y_l^m\), with \(l\in\mathbb N_0\) and \(|m|\le l\).</p><p class="small"><a href="#b2">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b3"><summary><span class="num">B3</span><span>Particle in an infinite spherical well: radial equation, spectrum and normalization</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Solve the radial equation of a particle trapped in an infinite spherical well of radius \(a\) and obtain the ground-state (\(l=0\)) energies and wave functions.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Boundary-value problem} Let \(a>0\) and \(\mu>0\). The spherical infinite-well potential is</p>
+<details class="problem" id="b3"><summary><span class="num">B3</span><span>Particle in an infinite spherical well: radial equation, spectrum and normalization</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Solve the radial equation of a particle trapped in an infinite spherical well of radius \(a\) and obtain the ground-state (\(l=0\)) energies and wave functions.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Boundary-value problem</h4><p> Let \(a&gt;0\) and \(\mu&gt;0\). The spherical infinite-well potential is</p>
 <div class="display-math">\[V(r)=\begin{cases}0,&amp;0\le r&lt;a,\\+\infty,&amp;r\ge a.\end{cases}\]</div>
-<p>The wavefunction vanishes beyond the boundary, and at the impenetrable wall satisfies \(\psi(a,\theta,\phi)=0\). For \(r<a\) the Schr&amp;quot;odinger equation is \(-\hbar^2\nabla^2\psi/(2\mu)=E\psi\). Separate \(\psi=R_l(r)Y_l^m(\theta,\phi)\) to obtain</p>
+<p>The wavefunction vanishes beyond the boundary, and at the impenetrable wall satisfies \(\psi(a,\theta,\phi)=0\). For \(r&lt;a\) the Schrödinger equation is \(-\hbar^2\nabla^2\psi/(2\mu)=E\psi\). Separate \(\psi=R_l(r)Y_l^m(\theta,\phi)\) to obtain</p>
 <div class="display-math">\[\boxed{R_l''+\frac2rR_l'+\left[k^2-\frac{l(l+1)}{r^2}\right]R_l=0,\qquad k^2=\frac{2\mu E}{\hbar^2}.}\]</div>
 <p>Set \(u=rR_l\). Since \((r^2R')'=ru''\),</p>
 <div class="display-math">\[\boxed{u''+\left[k^2-\frac{l(l+1)}{r^2}\right]u=0.}\]</div>
 <p>For the standard free spherical Hamiltonian, the regular boundary condition at the origin is \(u(0)=0\); the wall imposes \(u(a)=0\).</p>
-<p>\subsubsection*{Step 2: General spherical Bessel solutions} Let \(x=kr\). The equation for \(R_l\) becomes</p>
+<h4>Step 2: General spherical Bessel solutions</h4><p> Let \(x=kr\). The equation for \(R_l\) becomes</p>
 <div class="display-math">\[x^2R_{xx}+2xR_x+[x^2-l(l+1)]R=0.\]</div>
 <p>Its linearly independent solutions are the spherical Bessel functions \(j_l(x)\) and \(y_l(x)\):</p>
 <div class="display-math">\[\boxed{R_l(r)=A_lj_l(kr)+B_ly_l(kr).}\]</div>
@@ -188,7 +188,7 @@ L_z\Phi_m&amp;=-\iu\hbar\partial_\phi\Phi_m=\hbar m\Phi_m.\end{aligned}\]</div>
 <p>For arbitrary \(l\), the normalized radial function is</p>
 <div class="display-math">\[\boxed{R_{nl}(r)=\frac{\sqrt2}{a^{3/2}|j_{l+1}(\alpha_{ln})|}\,j_l\!\left(\frac{\alpha_{ln}r}{a}\right).}\]</div>
 <p>This uses the Bessel orthogonality identity \(\int_0^a r^2j_l^2(\alpha_{ln}r/a)\dd r=a^3j_{l+1}^2(\alpha_{ln})/2\).</p>
-<p>\subsubsection*{Step 3: Explicit \(l=0\) solution} For \(l=0\), the reduced equation simplifies to \(u''+k^2u=0\). Its general solution is</p>
+<h4>Step 3: Explicit \(l=0\) solution</h4><p> For \(l=0\), the reduced equation simplifies to \(u''+k^2u=0\). Its general solution is</p>
 <div class="display-math">\[u(r)=A\sin(kr)+B\cos(kr).\]</div>
 <p>Regularity at the origin, \(u(0)=0\), gives \(B=0\). Dirichlet boundary condition \(u(a)=0\) gives \(\sin(ka)=0\), so \(ka=n\pi\), \(n=1,2,\ldots\). Therefore</p>
 <div class="answer-box">\[\boxed{E_{n,0}=\frac{n^2\pi^2\hbar^2}{2\mu a^2},\qquad n=1,2,\ldots.}\]</div>
@@ -201,25 +201,25 @@ A&amp;=\sqrt{\frac2a}.\end{aligned}\]</div>
 <div class="display-math">\[\boxed{\psi_{n00}(r,\theta,\phi)=\frac1{\sqrt{2\pi a}}\frac{\sin(n\pi r/a)}r,\quad 0&lt;r&lt;a.}\]</div>
 <p>Set the wavefunction to zero for \(r\ge a\), and define its finite value at \(r=0\) by continuity. The \(n=1\) state is the absolute ground state:</p>
 <div class="display-math">\[\boxed{E_{\mathrm{gs}}=\frac{\pi^2\hbar^2}{2\mu a^2},\qquad \psi_{100}^{\rm well}=\frac{\sin(\pi r/a)}{r\sqrt{2\pi a}}.}\]</div>
-<p>\subsubsection*{Step 4: Independent three-dimensional normalization}</p>
+<h4>Step 4: Independent three-dimensional normalization</h4>
 <div class="display-math">\[\begin{aligned}\int_{r&lt;a}|\psi_{n00}|^2\dd^3r&amp;=4\pi\frac1{2\pi a}\int_0^a\sin^2(n\pi r/a)\dd r\\
 &amp;=\frac2a\cdot\frac a2=1.\end{aligned}\]</div>
-<p>Moreover, \(\nabla^2[u(r)/r]=(u''(r))/r\) for \(r>0\); hence \(u''=-(n\pi/a)^2u\) verifies \(H\psi=E\psi\). The energy has dimension \(\hbar^2/(\mu a^2)\), and the normalized wavefunction has dimension \(L^{-3/2}\). The radial ground-state probability density is \(P_r(r)=(2/a)\sin^2(\pi r/a)\). Thus the energy, normalization, boundary conditions and limiting origin behavior are consistent.</p><p class="small"><a href="#b3">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b4"><summary><span class="num">B4</span><span>Probability inside the concentric half-radius sphere</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Calculate the probability of finding a particle trapped in an infinite spherical well of radius \(a\) in the inner sphere of radius \(a/2\) with the same center. Assume that the particle is in the ground state \((n=1,l=0)\).</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Born rule over the full three-dimensional region} From B3, the normalized ground-state wavefunction is</p>
+<p>Moreover, \(\nabla^2[u(r)/r]=(u''(r))/r\) for \(r&gt;0\); hence \(u''=-(n\pi/a)^2u\) verifies \(H\psi=E\psi\). The energy has dimension \(\hbar^2/(\mu a^2)\), and the normalized wavefunction has dimension \(L^{-3/2}\). The radial ground-state probability density is \(P_r(r)=(2/a)\sin^2(\pi r/a)\). Thus the energy, normalization, boundary conditions and limiting origin behavior are consistent.</p><p class="small"><a href="#b3">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b4"><summary><span class="num">B4</span><span>Probability inside the concentric half-radius sphere</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Calculate the probability of finding a particle trapped in an infinite spherical well of radius \(a\) in the inner sphere of radius \(a/2\) with the same center. Assume that the particle is in the ground state \((n=1,l=0)\).</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Born rule over the full three-dimensional region</h4><p> From B3, the normalized ground-state wavefunction is</p>
 <div class="display-math">\[\psi_{100}(r,\theta,\phi)=\frac1{\sqrt{2\pi a}}\frac{\sin(\pi r/a)}r,\quad 0&lt;r&lt;a.\]</div>
-<p>It is zero outside the well. Its squared modulus is \(|\psi_{100}|^2=\sin^2(\pi r/a)/(2\pi ar^2)\). The inner region has \(0\le r\le a/2\), all \(0\le\theta\le\pi\), \(0\le\phi<2\pi\). Therefore</p>
+<p>It is zero outside the well. Its squared modulus is \(|\psi_{100}|^2=\sin^2(\pi r/a)/(2\pi ar^2)\). The inner region has \(0\le r\le a/2\), all \(0\le\theta\le\pi\), \(0\le\phi&lt;2\pi\). Therefore</p>
 <div class="display-math">\[\begin{aligned}P_{\rm inner}&amp;=\int_0^{a/2}\int_0^\pi\int_0^{2\pi}|\psi_{100}|^2r^2\sin\theta\,\dd\phi\dd\theta\dd r\\
 &amp;=\frac1{2\pi a}\int_0^{a/2}\sin^2(\pi r/a)\dd r\int_0^\pi\sin\theta\dd\theta\int_0^{2\pi}\dd\phi\\
 &amp;=\frac{2}{a}\int_0^{a/2}\sin^2(\pi r/a)\dd r.\end{aligned}\]</div>
-<p>The radial Jacobian \(r^2\) cancels the \(r^{-2}\) factor of the squared wavefunction. \subsubsection*{Step 2: Evaluate the integral} Use \(\sin^2u=(1-\cos2u)/2\):</p>
+<p>The radial Jacobian \(r^2\) cancels the \(r^{-2}\) factor of the squared wavefunction. </p><h4>Step 2: Evaluate the integral</h4><p> Use \(\sin^2u=(1-\cos2u)/2\):</p>
 <div class="display-math">\[\begin{aligned}P_{\rm inner}&amp;=\frac1a\int_0^{a/2}[1-\cos(2\pi r/a)]\dd r\\
 &amp;=\frac1a\left[r-\frac a{2\pi}\sin\frac{2\pi r}{a}\right]_0^{a/2}\\
 &amp;=\frac1a\left(\frac a2-\frac a{2\pi}\sin\pi\right)=\frac12.\end{aligned}\]</div>
 <div class="answer-box">\[\boxed{P(0\le r\le a/2)=\frac12=50\%.}\]</div>
-<p>\subsubsection*{Step 3: Normalization, CDF and interpretation} For arbitrary \(0\le b\le a\), the cumulative radial probability is</p>
+<h4>Step 3: Normalization, CDF and interpretation</h4><p> For arbitrary \(0\le b\le a\), the cumulative radial probability is</p>
 <div class="display-math">\[\boxed{F(b)=\frac2a\int_0^b\sin^2(\pi r/a)\dd r=\frac ba-\frac1{2\pi}\sin\frac{2\pi b}{a}.}\]</div>
 <p>It satisfies \(F(0)=0\), \(F(a)=1\), and \(F'(b)=(2/a)\sin^2(\pi b/a)\ge0\). The outer radial shell \(a/2\le r\le a\) also has probability \(1/2\). Although the inner sphere has only \((a/2)^3/a^3=1/8\) of the spatial volume, the density is not uniform: its radial density \((2/a)\sin^2(\pi r/a)\) is symmetric under \(r\mapsto a-r\). This symmetry explains the equal probabilities of the two radial halves. The most probable radial shell is at \(r=a/2\); the three-dimensional local density is largest at the origin.</p><p class="small"><a href="#b4">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b5"><summary><span class="num">B5</span><span>Hydrogen radial equation: Frobenius series, quantization and normalized Laguerre states</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Solve the radial equation for hydrogen atom and obtain the energy quantization formula.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Two-body reduced-mass Hamiltonian} For electron and proton positions \(\mathbf r_e,\mathbf r_p\), the full nonrelativistic Hamiltonian is</p>
+<details class="problem" id="b5"><summary><span class="num">B5</span><span>Hydrogen radial equation: Frobenius series, quantization and normalized Laguerre states</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Solve the radial equation for hydrogen atom and obtain the energy quantization formula.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Two-body reduced-mass Hamiltonian</h4><p> For electron and proton positions \(\mathbf r_e,\mathbf r_p\), the full nonrelativistic Hamiltonian is</p>
 <div class="display-math">\[H=-\frac{\hbar^2}{2m_e}\nabla_e^2-\frac{\hbar^2}{2m_p}\nabla_p^2-\frac{e^2}{4\pi\eps|\mathbf r_e-\mathbf r_p|}.\]</div>
 <p>Define \(\mathbf R=(m_e\mathbf r_e+m_p\mathbf r_p)/(m_e+m_p)\), \(\mathbf r=\mathbf r_e-\mathbf r_p\), and \(\mH=m_em_p/(m_e+m_p)\). The center-of-mass and relative terms separate. The internal Hamiltonian is</p>
 <div class="display-math">\[\boxed{H_{\rm rel}=-\frac{\hbar^2}{2\mH}\nabla_r^2-\frac gr,\qquad g=\frac{e^2}{4\pi\eps}.}\]</div>
@@ -227,11 +227,11 @@ A&amp;=\sqrt{\frac2a}.\end{aligned}\]</div>
 <div class="display-math">\[\boxed{R''+\frac2rR'+\left[\frac{2\mu E}{\hbar^2}+\frac{2\mu g}{\hbar^2r}-\frac{l(l+1)}{r^2}\right]R=0.}\]</div>
 <p>With \(u=rR\), this becomes</p>
 <div class="display-math">\[\boxed{u''+\left[\frac{2\mu E}{\hbar^2}+\frac{2\mu g}{\hbar^2r}-\frac{l(l+1)}{r^2}\right]u=0.}\]</div>
-<p>The normalization measure simplifies to \(\int_0^\infty|u|^2\dd r=\int_0^\infty|R|^2r^2\dd r=1\). For bound states \(E<0\), and the standard physical boundary conditions are regularity at \(r=0\) and square-integrability as \(r\to\infty\).</p>
-<p>\subsubsection*{Step 2: Determine the endpoint behavior} Set \(\alpha=\sqrt{-2\mu E}/\hbar>0\). At large \(r\), the radial equation reduces to \(u''-\alpha^2u\simeq0\), with solutions \(e^{\pm\alpha r}\). Normalizability excludes the growing exponential, leaving a decaying leading factor \(e^{-\alpha r}\). Algebraic Coulomb powers will be recovered later. Near \(r=0\), seek \(u\sim r^s\). The dominant indicial equation is \(s(s-1)-l(l+1)=0\), with roots \(s=l+1\) and \(s=-l\). The regular branch is</p>
+<p>The normalization measure simplifies to \(\int_0^\infty|u|^2\dd r=\int_0^\infty|R|^2r^2\dd r=1\). For bound states \(E&lt;0\), and the standard physical boundary conditions are regularity at \(r=0\) and square-integrability as \(r\to\infty\).</p>
+<h4>Step 2: Determine the endpoint behavior</h4><p> Set \(\alpha=\sqrt{-2\mu E}/\hbar&gt;0\). At large \(r\), the radial equation reduces to \(u''-\alpha^2u\simeq0\), with solutions \(e^{\pm\alpha r}\). Normalizability excludes the growing exponential, leaving a decaying leading factor \(e^{-\alpha r}\). Algebraic Coulomb powers will be recovered later. Near \(r=0\), seek \(u\sim r^s\). The dominant indicial equation is \(s(s-1)-l(l+1)=0\), with roots \(s=l+1\) and \(s=-l\). The regular branch is</p>
 <div class="display-math">\[\boxed{u(r)\sim r^{l+1},\qquad R(r)\sim r^l.}\]</div>
 <p>For \(l=0\), the constant \(u\) branch (\(R\sim1/r\)) is not in the regular domain of the ordinary Coulomb Hamiltonian, even though it is locally square-integrable under \(r^2\dd r\). Thus \(u(0)=0\).</p>
-<p>\subsubsection*{Step 3: Dimensionless Coulomb equation} Introduce</p>
+<h4>Step 3: Dimensionless Coulomb equation</h4><p> Introduce</p>
 <div class="display-math">\[\boxed{\rho=2\alpha r,\qquad \eta=\frac{\mu g}{\hbar^2\alpha}.}\]</div>
 <p>Then \(\dd/\dd r=2\alpha\dd/\dd\rho\), and the equation becomes</p>
 <div class="display-math">\[\boxed{\frac{\dd^2u}{\dd\rho^2}+\left[-\frac14+\frac\eta\rho-\frac{l(l+1)}{\rho^2}\right]u=0.}\]</div>
@@ -243,7 +243,7 @@ A&amp;=\sqrt{\frac2a}.\end{aligned}\]</div>
 <p>Since \(u''=fF''+2f'F'+f''F\), substitution cancels both \(\rho^{-2}\) and constant terms and yields</p>
 <div class="answer-box">\[\boxed{\rho F''+(2l+2-\rho)F'+(\eta-l-1)F=0.}\]</div>
 <p>This is the confluent hypergeometric equation with parameters \(a=l+1-\eta\), \(b=2l+2\).</p>
-<p>\subsubsection*{Step 4: Frobenius expansion and recurrence} Seek the solution regular at \(\rho=0\) in the form</p>
+<h4>Step 4: Frobenius expansion and recurrence</h4><p> Seek the solution regular at \(\rho=0\) in the form</p>
 <div class="display-math">\[F(\rho)=\sum_{j=0}^\infty c_j\rho^j,\qquad c_0\ne0.\]</div>
 <p>Then</p>
 <div class="display-math">\[\begin{aligned}F'&amp;=\sum_{j=1}^\infty jc_j\rho^{j-1},\\
@@ -256,7 +256,7 @@ F''&amp;=\sum_{j=2}^\infty j(j-1)c_j\rho^{j-2}.\end{aligned}\]</div>
 <p>Therefore,</p>
 <div class="answer-box">\[\boxed{c_{j+1}=\frac{j+l+1-\eta}{(j+1)(j+2l+2)}c_j.}\]</div>
 <p>For example, \(c_1=(l+1-\eta)c_0/(2l+2)\), \(c_2=(l+2-\eta)c_1/[2(2l+3)]\).</p>
-<p>\subsubsection*{Step 5: Polynomial termination and quantization} For generic \(\eta\), the regular solution is \({}_1F_1(l+1-\eta;2l+2;\rho)\). Its growing asymptotic contribution is proportional to \(e^\rho\rho^{(l+1-\eta)-(2l+2)} /\Gamma(l+1-\eta)\), making \(u\) grow as \(e^{\rho/2}\). A bound-state solution must suppress this contribution. The regular series terminates exactly when its numerator becomes zero at some nonnegative integer \(j=n_r\):</p>
+<h4>Step 5: Polynomial termination and quantization</h4><p> For generic \(\eta\), the regular solution is \({}_1F_1(l+1-\eta;2l+2;\rho)\). Its growing asymptotic contribution is proportional to \(e^\rho\rho^{(l+1-\eta)-(2l+2)} /\Gamma(l+1-\eta)\), making \(u\) grow as \(e^{\rho/2}\). A bound-state solution must suppress this contribution. The regular series terminates exactly when its numerator becomes zero at some nonnegative integer \(j=n_r\):</p>
 <div class="display-math">\[n_r+l+1-\eta=0,\qquad n_r=0,1,2,\ldots.\]</div>
 <p>Then all higher \(c_j\) vanish. Define the principal quantum number</p>
 <div class="display-math">\[\boxed{n=n_r+l+1,\qquad n=1,2,3,\ldots.}\]</div>
@@ -267,7 +267,7 @@ F''&amp;=\sum_{j=2}^\infty j(j-1)c_j\rho^{j-2}.\end{aligned}\]</div>
 &amp;=-\frac{\mu g^2}{2\hbar^2n^2}=-\frac{\mu e^4}{2(4\pi\eps)^2\hbar^2n^2}.\end{aligned}\]</div>
 <div class="answer-box">\[\boxed{E_n^{\rm H}=-\frac{\mH e^4}{2(4\pi\eps)^2\hbar^2n^2}\simeq-\frac{13.6\,\mathrm{eV}}{n^2}.}\]</div>
 <p>The more precise reduced-mass scale for hydrogen is about \(13.5983\,\mathrm{eV}\); fixed-nucleus hydrogen has \(13.6057\,\mathrm{eV}\). In the ideal Coulomb model the energy depends on \(n\), not separately on \(l,m\).</p>
-<p>\subsubsection*{Step 6: Associated Laguerre radial eigenfunctions} At \(\eta=n\), the equation becomes</p>
+<h4>Step 6: Associated Laguerre radial eigenfunctions</h4><p> At \(\eta=n\), the equation becomes</p>
 <div class="display-math">\[\rho F''+(2l+2-\rho)F'+n_rF=0.\]</div>
 <p>Compare with the associated Laguerre equation \(x y''+(\beta+1-x)y'+qy=0\). Identifying \(q=n_r=n-l-1\) and \(\beta=2l+1\),</p>
 <div class="display-math">\[F(\rho)\propto L_{n-l-1}^{2l+1}(\rho).\]</div>
@@ -277,7 +277,7 @@ F''&amp;=\sum_{j=2}^\infty j(j-1)c_j\rho^{j-2}.\end{aligned}\]</div>
 <div class="display-math">\[\boxed{\aH=\frac{\hbar^2}{\mu g}=\frac{4\pi\eps\hbar^2}{\mH e^2},\qquad \rho=2\alpha r=\frac{2r}{n\aH}.}\]</div>
 <p>Hence, before normalization,</p>
 <div class="display-math">\[R_{nl}(r)=N_{nl}\rho^l\ee^{-\rho/2}L_{n-l-1}^{2l+1}(\rho).\]</div>
-<p>\subsubsection*{Step 7: Exact normalization} The radial measure is \(r^2\dd r=(n\aH/2)^3\rho^2\dd\rho\). Thus</p>
+<h4>Step 7: Exact normalization</h4><p> The radial measure is \(r^2\dd r=(n\aH/2)^3\rho^2\dd\rho\). Thus</p>
 <div class="display-math">\[\begin{aligned}1&amp;=|N_{nl}|^2\left(\frac{n\aH}{2}\right)^3\int_0^\infty\ee^{-\rho}\rho^{2l+2}[L_{n-l-1}^{2l+1}(\rho)]^2\dd\rho.\end{aligned}\]</div>
 <p>The orthogonality identity</p>
 <div class="display-math">\[\int_0^\infty x^\beta\ee^{-x}L_q^\beta(x)L_{q'}^\beta(x)\dd x=\frac{\Gamma(q+\beta+1)}{q!}\delta_{qq'}\]</div>
@@ -291,17 +291,17 @@ F''&amp;=\sum_{j=2}^\infty j(j-1)c_j\rho^{j-2}.\end{aligned}\]</div>
 <p>Choose a positive overall phase to obtain</p>
 <div class="answer-box">\[\boxed{R_{nl}(r)=\left(\frac2{n\aH}\right)^{3/2}\sqrt{\frac{(n-l-1)!}{2n(n+l)!}}\ee^{-\rho/2}\rho^lL_{n-l-1}^{2l+1}(\rho),\quad\rho=\frac{2r}{n\aH}.}\]</div>
 <p>The full eigenfunctions are \(\psi_{nlm}=R_{nl}(r)Y_l^m(\theta,\phi)\). They satisfy \(\int_0^\infty|R_{nl}|^2r^2\dd r=1\) and \(\int_{S^2}|Y_l^m|^2\dd\Omega=1\).</p>
-<p>\subsubsection*{Step 8: Ground-state and excited-state checks} For \(n=1,l=0\), \(n_r=0\), \(L_0^1=1\), giving</p>
+<h4>Step 8: Ground-state and excited-state checks</h4><p> For \(n=1,l=0\), \(n_r=0\), \(L_0^1=1\), giving</p>
 <div class="display-math">\[\boxed{R_{10}=2\aH^{-3/2}\ee^{-r/\aH},\qquad\psi_{100}=\frac1{\sqrt{\pi\aH^3}}\ee^{-r/\aH}.}\]</div>
 <p>Direct normalization is \((4/\aH^3)\int_0^\infty r^2\ee^{-2r/\aH}\dd r=1\). For \(n=2,l=0\), \(L_1^1(\rho)=2-\rho\) and \(\rho=r/\aH\), so</p>
 <div class="display-math">\[R_{20}=\frac{1}{2\sqrt2\,\aH^{3/2}}\left(2-\frac r{\aH}\right)\ee^{-r/(2\aH)},\]</div>
 <p>with one radial node at \(r=2\aH\). For \(n=2,l=1\), \(L_0^3=1\),</p>
 <div class="display-math">\[R_{21}=\frac{1}{2\sqrt6\,\aH^{3/2}}\frac r{\aH}\ee^{-r/(2\aH)}.\]</div>
 <p>Both \(2s\) and \(2p\) have \(E_2=E_1/4\) in the ideal Coulomb problem. Every term has the proper dimensions \([R_{nl}]=L^{-3/2}\), \([E]=ML^2T^{-2}\); this completes the radial solution and quantization proof.</p><p class="small"><a href="#b5">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b6"><summary><span class="num">B6</span><span>Hydrogen ground-state expectation value of Coulomb potential energy</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Calculate \(\langle V\rangle\) for the ground state \((\psi_{100})\) of hydrogen atom. Give its numerical value.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Normalize the \texorpdfstring{\(1s\)}{1s} state} The reduced-mass hydrogen ground state is \(\psi_{100}=(\pi\aH^3)^{-1/2}\ee^{-r/\aH}\), with \(\aH=4\pi\eps\hbar^2/(\mH e^2)\) and Coulomb coupling \(g=e^2/(4\pi\eps)\). Its normalization is</p>
+<details class="problem" id="b6"><summary><span class="num">B6</span><span>Hydrogen ground-state expectation value of Coulomb potential energy</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Calculate \(\langle V\rangle\) for the ground state \((\psi_{100})\) of hydrogen atom. Give its numerical value.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Normalize the \(1s\) state</h4><p> The reduced-mass hydrogen ground state is \(\psi_{100}=(\pi\aH^3)^{-1/2}\ee^{-r/\aH}\), with \(\aH=4\pi\eps\hbar^2/(\mH e^2)\) and Coulomb coupling \(g=e^2/(4\pi\eps)\). Its normalization is</p>
 <div class="display-math">\[\begin{aligned}\int_{\R^3}|\psi_{100}|^2\dd^3r&amp;=\frac1{\pi\aH^3}\int_0^\infty r^2\ee^{-2r/\aH}\dd r\int_0^\pi\sin\theta\dd\theta\int_0^{2\pi}\dd\phi\\
 &amp;=\frac4{\aH^3}\frac{2!}{(2/\aH)^3}=1.\end{aligned}\]</div>
-<p>\subsubsection*{Step 2: Evaluate the complete expectation integral} For \(V(r)=-g/r\),</p>
+<h4>Step 2: Evaluate the complete expectation integral</h4><p> For \(V(r)=-g/r\),</p>
 <div class="display-math">\[\begin{aligned}\avg V_{100}&amp;=\int_{\R^3}\psi_{100}^*(\mathbf r)\left(-\frac gr\right)\psi_{100}(\mathbf r)\dd^3r\\
 &amp;=-\frac{g}{\pi\aH^3}\int_0^\infty r\ee^{-2r/\aH}\dd r\int_0^\pi\sin\theta\dd\theta\int_0^{2\pi}\dd\phi\\
 &amp;=-\frac{4g}{\aH^3}\int_0^\infty r\ee^{-2r/\aH}\dd r.\end{aligned}\]</div>
@@ -313,31 +313,31 @@ F''&amp;=\sum_{j=2}^\infty j(j-1)c_j\rho^{j-2}.\end{aligned}\]</div>
 &amp;=-\frac{\mH g^2}{\hbar^2}=-\frac{\mH e^4}{(4\pi\eps)^2\hbar^2}.\end{aligned}\]</div>
 <div class="answer-box">\[\boxed{\avg V_{100}=-\frac{e^2}{4\pi\eps\aH}=-\frac{\mH e^4}{(4\pi\eps)^2\hbar^2}\simeq-27.1966\ \mathrm{eV}.}\]</div>
 <p>The result in SI units is approximately \(-4.35737\times10^{-18}\,\mathrm J\). If the reduced-mass correction is neglected, \(\avg V\simeq-27.2114\,\mathrm{eV}\); standard examination rounding gives \(-27.2\,\mathrm{eV}\).</p>
-<p>\subsubsection*{Step 3: Independent quantum virial theorem check} Define the Hermitian dilation generator \(G=(\mathbf r\cdot\mathbf p+\mathbf p\cdot\mathbf r)/2\). Canonical commutators imply</p>
+<h4>Step 3: Independent quantum virial theorem check</h4><p> Define the Hermitian dilation generator \(G=(\mathbf r\cdot\mathbf p+\mathbf p\cdot\mathbf r)/2\). Canonical commutators imply</p>
 <div class="display-math">\[[G,T]=2\iu\hbar T,\qquad [G,V]=-\iu\hbar\,\mathbf r\cdot\nabla V.\]</div>
 <p>For a stationary eigenstate with finite expectations, \(\avg{[G,H]}=0\). Therefore \(2\avg T=\avg{\mathbf r\cdot\nabla V}\). For \(V=-g/r\), \(\mathbf r\cdot\nabla V=rV'(r)=g/r=-V\). Consequently,</p>
 <div class="display-math">\[\boxed{2\avg T=-\avg V,\qquad E=\avg T+\avg V=\frac12\avg V.}\]</div>
 <p>But \(E_1=-\mH g^2/(2\hbar^2)\), so</p>
 <div class="display-math">\[\boxed{\avg V_{100}=2E_1,\qquad \avg T_{100}=-E_1.}\]</div>
 <p>The direct integral and virial theorem agree. The \(1/r\) singularity causes no divergence because the radial integration measure contributes \(r^2\) and the integrand behaves as \(r\) near the origin. The dimensional check \([g/\aH]=\text{energy}\) is satisfied.</p><p class="small"><a href="#b6">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b7"><summary><span class="num">B7</span><span>Radial uncertainty of the hydrogen ground state</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Find the radial uncertainty \((\sigma_r)\) of the electron in the ground state \((\psi_{100})\) of hydrogen atom.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Distinguish radial from Cartesian uncertainty} The relative separation \(r=|\mathbf r_e-\mathbf r_p|\ge0\) is a positive radial observable. Its standard deviation is</p>
+<details class="problem" id="b7"><summary><span class="num">B7</span><span>Radial uncertainty of the hydrogen ground state</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Find the radial uncertainty \((\sigma_r)\) of the electron in the ground state \((\psi_{100})\) of hydrogen atom.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Distinguish radial from Cartesian uncertainty</h4><p> The relative separation \(r=|\mathbf r_e-\mathbf r_p|\ge0\) is a positive radial observable. Its standard deviation is</p>
 <div class="display-math">\[\boxed{\sigma_r=\Delta r=\sqrt{\avg{r^2}-\avg r^2}.}\]</div>
 <p>This notation means \(\avg{r^2}-(\avg r)^2\), not \(\avg{r^2}-\avg{r^2}\). We retain the proton reduced mass through \(\aH=4\pi\eps\hbar^2/(\mH e^2)\).</p>
-<p>\subsubsection*{Step 2: Normalize and define radial probability} For \(\psi_{100}=(\pi\aH^3)^{-1/2}\ee^{-r/\aH}\),</p>
+<h4>Step 2: Normalize and define radial probability</h4><p> For \(\psi_{100}=(\pi\aH^3)^{-1/2}\ee^{-r/\aH}\),</p>
 <div class="display-math">\[\begin{aligned}\int_{\R^3}|\psi|^2\dd^3r&amp;=\frac4{\aH^3}\int_0^\infty r^2\ee^{-2r/\aH}\dd r=1.\end{aligned}\]</div>
 <p>Integrating \(|\psi|^2\) over the unit-sphere angles gives the normalized radial density</p>
 <div class="display-math">\[\boxed{P_r(r)=4\pi r^2|\psi_{100}(r)|^2=\frac{4r^2}{\aH^3}\ee^{-2r/\aH},\qquad \int_0^\infty P_r\dd r=1.}\]</div>
 <p>Thus \(\avg{r^k}=\int_0^\infty r^kP_r(r)\dd r\).</p>
-<p>\subsubsection*{Step 3: First moment} Using the full spherical volume element,</p>
+<h4>Step 3: First moment</h4><p> Using the full spherical volume element,</p>
 <div class="display-math">\[\begin{aligned}\avg r&amp;=\int_0^\infty\!\int_0^\pi\!\int_0^{2\pi}r|\psi|^2r^2\sin\theta\dd\phi\dd\theta\dd r\\
 &amp;=\frac4{\aH^3}\int_0^\infty r^3\ee^{-2r/\aH}\dd r\\
 &amp;=\frac4{\aH^3}\frac{3!}{(2/\aH)^4}=\frac4{\aH^3}\cdot\frac{6\aH^4}{16}=\frac32\aH.\end{aligned}\]</div>
 <p>Thus \(\boxed{\avg r=3\aH/2}\).</p>
-<p>\subsubsection*{Step 4: Second moment} Similarly,</p>
+<h4>Step 4: Second moment</h4><p> Similarly,</p>
 <div class="display-math">\[\begin{aligned}\avg{r^2}&amp;=\int_{\R^3}r^2|\psi|^2\dd^3r=\frac4{\aH^3}\int_0^\infty r^4\ee^{-2r/\aH}\dd r\\
 &amp;=\frac4{\aH^3}\frac{4!}{(2/\aH)^5}=\frac4{\aH^3}\cdot\frac{24\aH^5}{32}=3\aH^2.\end{aligned}\]</div>
 <p>Hence \(\boxed{\avg{r^2}=3\aH^2}\).</p>
-<p>\subsubsection*{Step 5: Variance and standard deviation}</p>
+<h4>Step 5: Variance and standard deviation</h4>
 <div class="display-math">\[\begin{aligned}(\Delta r)^2&amp;=3\aH^2-\left(\frac32\aH\right)^2=\left(3-\frac94\right)\aH^2=\frac34\aH^2,\\
 \Delta r&amp;=\frac{\sqrt3}{2}\aH.\end{aligned}\]</div>
 <div class="answer-box">\[\boxed{\Delta r=\frac{\sqrt3}{2}\aH=\frac{\sqrt3}{2}\left(1+\frac{m_e}{m_p}\right)a_0.}\]</div>
@@ -346,86 +346,86 @@ F''&amp;=\sum_{j=2}^\infty j(j-1)c_j\rho^{j-2}.\end{aligned}\]</div>
 <p><strong>Consistency checks.</strong> A general radial moment formula is</p>
 <div class="display-math">\[\avg{r^k}=\frac{\Gamma(k+3)}{2^{k+1}}\aH^k,\qquad k&gt;-3.\]</div>
 <p>At \(k=0,1,2\), it respectively gives normalization, \(3\aH/2\) and \(3\aH^2\). The most probable radius \(r_{\rm mp}=\aH\), mean radius \(3\aH/2\), radial standard deviation \(\sqrt3\aH/2\), and Cartesian coordinate standard deviations \(\aH\) are distinct quantities. The radial variance has units of length squared, as required.</p><p class="small"><a href="#b7">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b8"><summary><span class="num">B8</span><span>Hydrogen ground-state radial probability density and its maximum</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that for the ground state of hydrogen atom the radial probability density \([P(r)]\) is maximum at one Bohr radius. Give a plot of \(P(r)\).</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Derive the normalized \texorpdfstring{\(1s\)}{1s} wavefunction} The ground-state Coulomb radial equation is</p>
+<details class="problem" id="b8"><summary><span class="num">B8</span><span>Hydrogen ground-state radial probability density and its maximum</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Show that for the ground state of hydrogen atom the radial probability density \([P(r)]\) is maximum at one Bohr radius. Give a plot of \(P(r)\).</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Derive the normalized \(1s\) wavefunction</h4><p> The ground-state Coulomb radial equation is</p>
 <div class="display-math">\[R''+\frac2rR'+\frac{2\mH}{\hbar^2}\left(E+\frac gr\right)R=0.\]</div>
 <p>Try a regular, decaying solution \(R=A\ee^{-\beta r}\). Then \(R'=-\beta R\), \(R''=\beta^2R\). Substitution and separation of powers of \(r\) give</p>
 <div class="display-math">\[\beta^2+\frac{2\mH E}{\hbar^2}=0,\qquad -2\beta+\frac{2\mH g}{\hbar^2}=0.\]</div>
 <p>Hence \(\beta=\mH g/\hbar^2=1/\aH\), and \(E_1=-\mH g^2/(2\hbar^2)\). The normalized ground state is</p>
 <div class="display-math">\[\boxed{\psi_{100}(r)=\frac1{\sqrt{\pi\aH^3}}\ee^{-r/\aH}.}\]</div>
 <p>The normalization directly follows from \((4/\aH^3)\int_0^\infty r^2\ee^{-2r/\aH}\dd r=1\).</p>
-<p>\subsubsection*{Step 2: Radial density and normalization} For a thin spherical shell \(r\le |\mathbf r|\le r+\dd r\), the volume is \(4\pi r^2\dd r\). Hence</p>
+<h4>Step 2: Radial density and normalization</h4><p> For a thin spherical shell \(r\le |\mathbf r|\le r+\dd r\), the volume is \(4\pi r^2\dd r\). Hence</p>
 <div class="display-math">\[\begin{aligned}P(r)\dd r&amp;=4\pi r^2|\psi_{100}(r)|^2\dd r,\\
 P(r)&amp;=\frac{4r^2}{\aH^3}\ee^{-2r/\aH},\qquad r\ge0.\end{aligned}\]</div>
 <div class="answer-box">\[\boxed{P(r)=\frac{4r^2}{\aH^3}\ee^{-2r/\aH}.}\]</div>
 <p>The density has dimension \(L^{-1}\). Indeed \(\int_0^\infty P(r)\dd r=4\aH^{-3}\times\aH^3/4=1\), so \(P(r)\dd r\) is a probability and \(P(r)\) by itself is not.</p>
-<p>\subsubsection*{Step 3: First derivative and stationary points}</p>
+<h4>Step 3: First derivative and stationary points</h4>
 <div class="display-math">\[\begin{aligned}P'(r)&amp;=\frac4{\aH^3}\frac{\dd}{\dd r}\left(r^2\ee^{-2r/\aH}\right)\\
 &amp;=\frac4{\aH^3}\ee^{-2r/\aH}\left(2r-\frac{2r^2}{\aH}\right)\\
 &amp;=\boxed{\frac{8r}{\aH^3}\ee^{-2r/\aH}\left(1-\frac r{\aH}\right)}.\end{aligned}\]</div>
 <p>Since the exponential is strictly positive, \(P'(r)=0\) at \(r=0\) and at \(r=\aH\).</p>
-<p>\subsubsection*{Step 4: Second derivative and global maximum} Differentiating once more,</p>
+<h4>Step 4: Second derivative and global maximum</h4><p> Differentiating once more,</p>
 <div class="display-math">\[\boxed{P''(r)=\frac8{\aH^3}\ee^{-2r/\aH}\left(1-\frac{4r}{\aH}+\frac{2r^2}{\aH^2}\right).}\]</div>
 <p>At the positive stationary point,</p>
 <div class="display-math">\[\boxed{P''(\aH)=-\frac8{\ee^2\aH^3}&lt;0,}\]</div>
-<p>so \(r=\aH\) is a strict local maximum. Furthermore, \(P'(r)>0\) for \(0<r<\aH\), \(P'(r)<0\) for \(r>\aH\), and \(P(r)\to0\) as \(r\to\infty\). Hence the maximum is unique and global:</p>
+<p>so \(r=\aH\) is a strict local maximum. Furthermore, \(P'(r)&gt;0\) for \(0&lt;r&lt;\aH\), \(P'(r)&lt;0\) for \(r&gt;\aH\), and \(P(r)\to0\) as \(r\to\infty\). Hence the maximum is unique and global:</p>
 <div class="answer-box">\[\boxed{r_{\rm most\ probable}=\aH\simeq0.529465\,\text{\AA}\quad\text{(one Bohr-radius scale).}}\]</div>
 <p>At this radius \(P_{\max}=4/(\ee^2\aH)\). In the fixed-nucleus approximation \(\aH=a_0\), exactly the standard Bohr radius.</p>
-<p>\subsubsection*{Step 5: Analytic plot of the dimensionless density} Let \(x=r/\aH\), \(y=\aH P(r)=4x^2\ee^{-2x}\). Both plotted axes are dimensionless; the graph is equivalent to \(P(r)\) versus \(r/\aH\), without picking an arbitrary physical length unit.</p>
-<aside class="hint">The original LaTeX source contains the accompanying figure and its code.</aside>
-<p>\subsubsection*{Step 6: Distinguish spatial and radial densities} The <em>spatial</em> density is \(\rho_{\rm spatial}(r)=|\psi_{100}|^2=(\pi\aH^3)^{-1}\ee^{-2r/\aH}\), with units \(L^{-3}\). Its derivative is negative for every \(r\ge0\), so its maximum is at \(r=0\). By contrast the <em>radial</em> density is \(P(r)=4\pi r^2\rho_{\rm spatial}(r)\), with units \(L^{-1}\), which peaks at \(r=\aH\) because the shell-volume factor grows as \(r^2\). There is no contradiction. The cumulative probability inside radius \(b\) is</p>
+<h4>Step 5: Analytic plot of the dimensionless density</h4><p> Let \(x=r/\aH\), \(y=\aH P(r)=4x^2\ee^{-2x}\). Both plotted axes are dimensionless; the graph is equivalent to \(P(r)\) versus \(r/\aH\), without picking an arbitrary physical length unit.</p>
+<figure><svg viewBox="0 0 700 320" role="img" aria-label="Hydrogen 1s radial probability"><title>Hydrogen 1s radial probability</title><desc>For u = r/a, the dimensionless radial probability density is 4u² exp(−2u). Its maximum is at u = 1.</desc><rect width="700" height="320" fill="white"/><g stroke="#bbc9ce" fill="none"><path d="M65 45V260H645"/></g><g font-family="system-ui,sans-serif" font-size="14" fill="#1d2937"><text x="65" y="25">Hydrogen 1s radial probability</text><text x="300" y="307">u = r/a</text><text x="8" y="48">a P(r)</text><text x="56.0" y="282">0</text><text x="56.0" y="282">0</text><text x="626.0" y="282">6</text><text x="12" y="265.0">0</text><text x="12" y="265.0">0</text><text x="12" y="55.0">0.6</text></g><polyline fill="none" stroke="#0d6874" stroke-width="2.4" points="65.00,260.00 65.95,259.86 66.90,259.46 67.85,258.81 68.80,257.93 69.75,256.83 70.70,255.53 71.65,254.04 72.60,252.36 73.55,250.53 74.50,248.54 75.45,246.41 76.40,244.14 77.35,241.76 78.30,239.26 79.25,236.66 80.20,233.97 81.15,231.20 82.10,228.35 83.05,225.44 84.00,222.46 84.95,219.43 85.90,216.36 86.85,213.25 87.80,210.10 88.75,206.93 89.70,203.73 90.65,200.52 91.60,197.30 92.55,194.08 93.50,190.85 94.45,187.62 95.40,184.41 96.35,181.20 97.30,178.01 98.25,174.84 99.20,171.68 100.15,168.56 101.10,165.46 102.05,162.39 103.00,159.35 103.95,156.35 104.90,153.38 105.85,150.46 106.80,147.58 107.75,144.74 108.70,141.94 109.65,139.19 110.60,136.49 111.55,133.84 112.50,131.24 113.45,128.69 114.40,126.20 115.35,123.75 116.30,121.36 117.25,119.03 118.20,116.75 119.15,114.53 120.10,112.36 121.05,110.25 122.00,108.20 122.95,106.20 123.90,104.26 124.85,102.38 125.80,100.56 126.75,98.80 127.70,97.09 128.65,95.44 129.60,93.85 130.55,92.31 131.50,90.83 132.45,89.41 133.40,88.05 134.35,86.74 135.30,85.48 136.25,84.28 137.20,83.14 138.15,82.05 139.10,81.01 140.05,80.03 141.00,79.10 141.95,78.22 142.90,77.39 143.85,76.62 144.80,75.89 145.75,75.22 146.70,74.59 147.65,74.01 148.60,73.48 149.55,72.99 150.50,72.55 151.45,72.16 152.40,71.81 153.35,71.50 154.30,71.24 155.25,71.02 156.20,70.84 157.15,70.70 158.10,70.61 159.05,70.55 160.00,70.53 160.95,70.55 161.90,70.61 162.85,70.70 163.80,70.83 164.75,70.99 165.70,71.19 166.65,71.42 167.60,71.68 168.55,71.97 169.50,72.30 170.45,72.66 171.40,73.04 172.35,73.46 173.30,73.90 174.25,74.37 175.20,74.87 176.15,75.39 177.10,75.94 178.05,76.51 179.00,77.11 179.95,77.73 180.90,78.38 181.85,79.04 182.80,79.73 183.75,80.44 184.70,81.17 185.65,81.91 186.60,82.68 187.55,83.47 188.50,84.27 189.45,85.09 190.40,85.92 191.35,86.78 192.30,87.64 193.25,88.53 194.20,89.42 195.15,90.33 196.10,91.25 197.05,92.19 198.00,93.14 198.95,94.10 199.90,95.07 200.85,96.05 201.80,97.04 202.75,98.04 203.70,99.05 204.65,100.07 205.60,101.09 206.55,102.13 207.50,103.17 208.45,104.22 209.40,105.28 210.35,106.34 211.30,107.40 212.25,108.48 213.20,109.55 214.15,110.64 215.10,111.72 216.05,112.81 217.00,113.91 217.95,115.01 218.90,116.11 219.85,117.21 220.80,118.31 221.75,119.42 222.70,120.53 223.65,121.64 224.60,122.75 225.55,123.86 226.50,124.97 227.45,126.08 228.40,127.20 229.35,128.31 230.30,129.42 231.25,130.53 232.20,131.64 233.15,132.75 234.10,133.85 235.05,134.96 236.00,136.06 236.95,137.16 237.90,138.26 238.85,139.35 239.80,140.45 240.75,141.54 241.70,142.62 242.65,143.71 243.60,144.79 244.55,145.87 245.50,146.94 246.45,148.01 247.40,149.07 248.35,150.13 249.30,151.19 250.25,152.24 251.20,153.29 252.15,154.33 253.10,155.37 254.05,156.40 255.00,157.43 255.95,158.46 256.90,159.47 257.85,160.49 258.80,161.49 259.75,162.49 260.70,163.49 261.65,164.48 262.60,165.47 263.55,166.44 264.50,167.42 265.45,168.38 266.40,169.35 267.35,170.30 268.30,171.25 269.25,172.19 270.20,173.13 271.15,174.06 272.10,174.98 273.05,175.90 274.00,176.81 274.95,177.71 275.90,178.61 276.85,179.50 277.80,180.39 278.75,181.26 279.70,182.14 280.65,183.00 281.60,183.86 282.55,184.71 283.50,185.56 284.45,186.39 285.40,187.23 286.35,188.05 287.30,188.87 288.25,189.68 289.20,190.48 290.15,191.28 291.10,192.07 292.05,192.86 293.00,193.64 293.95,194.41 294.90,195.17 295.85,195.93 296.80,196.68 297.75,197.42 298.70,198.16 299.65,198.89 300.60,199.61 301.55,200.33 302.50,201.04 303.45,201.75 304.40,202.44 305.35,203.14 306.30,203.82 307.25,204.50 308.20,205.17 309.15,205.83 310.10,206.49 311.05,207.15 312.00,207.79 312.95,208.43 313.90,209.06 314.85,209.69 315.80,210.31 316.75,210.93 317.70,211.53 318.65,212.14 319.60,212.73 320.55,213.32 321.50,213.90 322.45,214.48 323.40,215.05 324.35,215.62 325.30,216.18 326.25,216.73 327.20,217.28 328.15,217.82 329.10,218.36 330.05,218.89 331.00,219.41 331.95,219.93 332.90,220.44 333.85,220.95 334.80,221.45 335.75,221.95 336.70,222.44 337.65,222.93 338.60,223.41 339.55,223.88 340.50,224.35 341.45,224.82 342.40,225.28 343.35,225.73 344.30,226.18 345.25,226.62 346.20,227.06 347.15,227.50 348.10,227.93 349.05,228.35 350.00,228.77 350.95,229.18 351.90,229.59 352.85,230.00 353.80,230.40 354.75,230.79 355.70,231.18 356.65,231.57 357.60,231.95 358.55,232.32 359.50,232.70 360.45,233.06 361.40,233.43 362.35,233.79 363.30,234.14 364.25,234.49 365.20,234.84 366.15,235.18 367.10,235.52 368.05,235.85 369.00,236.18 369.95,236.51 370.90,236.83 371.85,237.14 372.80,237.46 373.75,237.77 374.70,238.07 375.65,238.38 376.60,238.67 377.55,238.97 378.50,239.26 379.45,239.55 380.40,239.83 381.35,240.11 382.30,240.39 383.25,240.66 384.20,240.93 385.15,241.20 386.10,241.46 387.05,241.72 388.00,241.97 388.95,242.23 389.90,242.48 390.85,242.72 391.80,242.97 392.75,243.21 393.70,243.44 394.65,243.68 395.60,243.91 396.55,244.14 397.50,244.36 398.45,244.58 399.40,244.80 400.35,245.02 401.30,245.23 402.25,245.44 403.20,245.65 404.15,245.86 405.10,246.06 406.05,246.26 407.00,246.45 407.95,246.65 408.90,246.84 409.85,247.03 410.80,247.22 411.75,247.40 412.70,247.58 413.65,247.76 414.60,247.94 415.55,248.11 416.50,248.28 417.45,248.45 418.40,248.62 419.35,248.79 420.30,248.95 421.25,249.11 422.20,249.27 423.15,249.43 424.10,249.58 425.05,249.73 426.00,249.88 426.95,250.03 427.90,250.18 428.85,250.32 429.80,250.46 430.75,250.60 431.70,250.74 432.65,250.88 433.60,251.01 434.55,251.14 435.50,251.28 436.45,251.40 437.40,251.53 438.35,251.66 439.30,251.78 440.25,251.90 441.20,252.02 442.15,252.14 443.10,252.26 444.05,252.37 445.00,252.49 445.95,252.60 446.90,252.71 447.85,252.82 448.80,252.92 449.75,253.03 450.70,253.13 451.65,253.24 452.60,253.34 453.55,253.44 454.50,253.54 455.45,253.63 456.40,253.73 457.35,253.82 458.30,253.92 459.25,254.01 460.20,254.10 461.15,254.19 462.10,254.27 463.05,254.36 464.00,254.45 464.95,254.53 465.90,254.61 466.85,254.70 467.80,254.78 468.75,254.85 469.70,254.93 470.65,255.01 471.60,255.09 472.55,255.16 473.50,255.23 474.45,255.31 475.40,255.38 476.35,255.45 477.30,255.52 478.25,255.59 479.20,255.65 480.15,255.72 481.10,255.79 482.05,255.85 483.00,255.91 483.95,255.98 484.90,256.04 485.85,256.10 486.80,256.16 487.75,256.22 488.70,256.28 489.65,256.33 490.60,256.39 491.55,256.45 492.50,256.50 493.45,256.56 494.40,256.61 495.35,256.66 496.30,256.71 497.25,256.76 498.20,256.81 499.15,256.86 500.10,256.91 501.05,256.96 502.00,257.01 502.95,257.05 503.90,257.10 504.85,257.14 505.80,257.19 506.75,257.23 507.70,257.28 508.65,257.32 509.60,257.36 510.55,257.40 511.50,257.44 512.45,257.48 513.40,257.52 514.35,257.56 515.30,257.60 516.25,257.64 517.20,257.67 518.15,257.71 519.10,257.75 520.05,257.78 521.00,257.82 521.95,257.85 522.90,257.88 523.85,257.92 524.80,257.95 525.75,257.98 526.70,258.01 527.65,258.04 528.60,258.08 529.55,258.11 530.50,258.14 531.45,258.17 532.40,258.19 533.35,258.22 534.30,258.25 535.25,258.28 536.20,258.31 537.15,258.33 538.10,258.36 539.05,258.39 540.00,258.41 540.95,258.44 541.90,258.46 542.85,258.49 543.80,258.51 544.75,258.53 545.70,258.56 546.65,258.58 547.60,258.60 548.55,258.62 549.50,258.65 550.45,258.67 551.40,258.69 552.35,258.71 553.30,258.73 554.25,258.75 555.20,258.77 556.15,258.79 557.10,258.81 558.05,258.83 559.00,258.85 559.95,258.87 560.90,258.88 561.85,258.90 562.80,258.92 563.75,258.94 564.70,258.95 565.65,258.97 566.60,258.99 567.55,259.00 568.50,259.02 569.45,259.04 570.40,259.05 571.35,259.07 572.30,259.08 573.25,259.10 574.20,259.11 575.15,259.13 576.10,259.14 577.05,259.15 578.00,259.17 578.95,259.18 579.90,259.19 580.85,259.21 581.80,259.22 582.75,259.23 583.70,259.24 584.65,259.26 585.60,259.27 586.55,259.28 587.50,259.29 588.45,259.30 589.40,259.32 590.35,259.33 591.30,259.34 592.25,259.35 593.20,259.36 594.15,259.37 595.10,259.38 596.05,259.39 597.00,259.40 597.95,259.41 598.90,259.42 599.85,259.43 600.80,259.44 601.75,259.45 602.70,259.46 603.65,259.46 604.60,259.47 605.55,259.48 606.50,259.49 607.45,259.50 608.40,259.51 609.35,259.52 610.30,259.52 611.25,259.53 612.20,259.54 613.15,259.55 614.10,259.55 615.05,259.56 616.00,259.57 616.95,259.58 617.90,259.58 618.85,259.59 619.80,259.60 620.75,259.60 621.70,259.61 622.65,259.62 623.60,259.62 624.55,259.63 625.50,259.63 626.45,259.64 627.40,259.65 628.35,259.65 629.30,259.66 630.25,259.66 631.20,259.67 632.15,259.67 633.10,259.68 634.05,259.69 635.00,259.69"/><text x="380" y="45" fill="#0d6874" font-family="system-ui,sans-serif" font-size="14">1s</text></svg><figcaption>For u = r/a, the dimensionless radial probability density is 4u² exp(−2u). Its maximum is at u = 1.</figcaption></figure>
+<h4>Step 6: Distinguish spatial and radial densities</h4><p> The <em>spatial</em> density is \(\rho_{\rm spatial}(r)=|\psi_{100}|^2=(\pi\aH^3)^{-1}\ee^{-2r/\aH}\), with units \(L^{-3}\). Its derivative is negative for every \(r\ge0\), so its maximum is at \(r=0\). By contrast the <em>radial</em> density is \(P(r)=4\pi r^2\rho_{\rm spatial}(r)\), with units \(L^{-1}\), which peaks at \(r=\aH\) because the shell-volume factor grows as \(r^2\). There is no contradiction. The cumulative probability inside radius \(b\) is</p>
 <div class="display-math">\[\boxed{F(b)=\int_0^bP(r)\dd r=1-\ee^{-2b/\aH}\left(1+\frac{2b}{\aH}+\frac{2b^2}{\aH^2}\right).}\]</div>
 <p>At \(b=\aH\), \(F(\aH)=1-5e^{-2}\simeq0.3233\). Thus the most probable radius does not enclose 50% of the probability. The mean radius is \(\avg r=3\aH/2\) (B7), also distinct from the mode. The curve in Fig. (source: fig:hydrogenradial) and the negative second derivative establish the assignment claim.</p><p class="small"><a href="#b8">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b9"><summary><span class="num">B9</span><span>Vanishing Cartesian position means in the hydrogen ground state</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(\langle x\rangle=\langle y\rangle=\langle z\rangle=0\) for the ground state \((\psi_{100})\) of hydrogen atom.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Normalized state and spherical coordinates} The reduced-mass \(1s\) wavefunction is</p>
+<details class="problem" id="b9"><summary><span class="num">B9</span><span>Vanishing Cartesian position means in the hydrogen ground state</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Show that \(\langle x\rangle=\langle y\rangle=\langle z\rangle=0\) for the ground state \((\psi_{100})\) of hydrogen atom.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Normalized state and spherical coordinates</h4><p> The reduced-mass \(1s\) wavefunction is</p>
 <div class="display-math">\[\psi_{100}(r)=\frac{\ee^{-r/\aH}}{\sqrt{\pi\aH^3}},\qquad |\psi_{100}|^2=\frac{\ee^{-2r/\aH}}{\pi\aH^3}.\]</div>
 <p>As before, \((4/\aH^3)\int_0^\infty r^2\ee^{-2r/\aH}\dd r=1\). The operators act by multiplication. In spherical coordinates,</p>
 <div class="display-math">\[x=r\sin\theta\cos\phi,\qquad y=r\sin\theta\sin\phi,\qquad z=r\cos\theta,\qquad\dd^3r=r^2\sin\theta\dd r\dd\theta\dd\phi.\]</div>
 <p>For any Cartesian coordinate \(q\), \(\avg q=\int_{\R^3}q|\psi|^2\dd^3r\).</p>
-<p>\subsubsection*{Step 2: Calculate \texorpdfstring{\(\langle x\rangle\)}{&lt;x&gt;}}</p>
+<h4>Step 2: Calculate \(\langle x\rangle\)</h4>
 <div class="display-math">\[\begin{aligned}\avg x&amp;=\frac1{\pi\aH^3}\int_0^\infty r^3\ee^{-2r/\aH}\dd r\int_0^\pi\sin^2\theta\dd\theta\int_0^{2\pi}\cos\phi\dd\phi.\end{aligned}\]</div>
 <p>The finite radial moment is \(\int_0^\infty r^3\ee^{-2r/\aH}\dd r=3!/(2/\aH)^4=3\aH^4/8\). The polar integral equals \(\int_0^\pi\sin^2\theta\dd\theta=\pi/2\), while</p>
 <div class="display-math">\[\int_0^{2\pi}\cos\phi\dd\phi=[\sin\phi]_0^{2\pi}=0.\]</div>
 <p>Therefore \(\boxed{\avg x=0}\).</p>
-<p>\subsubsection*{Step 3: Calculate \texorpdfstring{\(\langle y\rangle\)}{&lt;y&gt;}}</p>
+<h4>Step 3: Calculate \(\langle y\rangle\)</h4>
 <div class="display-math">\[\avg y=\frac1{\pi\aH^3}\int_0^\infty r^3\ee^{-2r/\aH}\dd r\int_0^\pi\sin^2\theta\dd\theta\int_0^{2\pi}\sin\phi\dd\phi.\]</div>
 <p>Here \(\int_0^{2\pi}\sin\phi\dd\phi=[-\cos\phi]_0^{2\pi}=0\). Thus \(\boxed{\avg y=0}\).</p>
-<p>\subsubsection*{Step 4: Calculate \texorpdfstring{\(\langle z\rangle\)}{&lt;z&gt;}}</p>
+<h4>Step 4: Calculate \(\langle z\rangle\)</h4>
 <div class="display-math">\[\avg z=\frac1{\pi\aH^3}\int_0^\infty r^3\ee^{-2r/\aH}\dd r\int_0^\pi\sin\theta\cos\theta\dd\theta\int_0^{2\pi}\dd\phi.\]</div>
 <p>Now \(\int_0^\pi\sin\theta\cos\theta\dd\theta=\tfrac12[\sin^2\theta]_0^\pi=0\), while \(\int_0^{2\pi}\dd\phi=2\pi\). Hence \(\boxed{\avg z=0}\).</p>
 <div class="answer-box">\[\boxed{\avg x_{100}=\avg y_{100}=\avg z_{100}=0,\qquad\avg{\mathbf r}=\mathbf0.}\]</div>
-<p>\subsubsection*{Step 5: Independent parity argument} The \(1s\) state is even under inversion: \(\psi_{100}(-\mathbf r)=\psi_{100}(\mathbf r)\). The position operators are odd: \(\mathcal P x_i\mathcal P^{-1}=-x_i\). Thus, changing variables \(\mathbf r\mapsto-\mathbf r\) in the expectation integral yields</p>
+<h4>Step 5: Independent parity argument</h4><p> The \(1s\) state is even under inversion: \(\psi_{100}(-\mathbf r)=\psi_{100}(\mathbf r)\). The position operators are odd: \(\mathcal P x_i\mathcal P^{-1}=-x_i\). Thus, changing variables \(\mathbf r\mapsto-\mathbf r\) in the expectation integral yields</p>
 <div class="display-math">\[\avg{x_i}=\int x_i|\psi|^2\dd^3r=-\int x_i|\psi|^2\dd^3r=-\avg{x_i},\]</div>
 <p>so \(\avg{x_i}=0\). In fact, every parity eigenstate with finite first position moments has this property.</p>
-<p>\subsubsection*{Step 6: Rotational-symmetry argument and interpretation} A rotationally invariant state has \(\psi(\mathcal R\mathbf r)=\psi(\mathbf r)\), so its mean vector must satisfy \(\mathcal R\avg{\mathbf r}=\avg{\mathbf r}\) for all \(\mathcal R\in SO(3)\). Only the zero vector has this property, proving \(\avg{\mathbf r}=0\). More explicitly, a \(\pi\)-rotation about \(z\) sends \((x,y,z)\mapsto(-x,-y,z)\), forcing \(\avg x=\avg y=0\); a \(\pi\)-rotation about \(x\) forces \(\avg z=0\). This does <em>not</em> imply that \(\avg r=0\): from B7, \(\avg r=3\aH/2>0\). The vector mean cancels directions, while radial distance is nonnegative. The integrals are absolutely convergent because \(r^3e^{-2r/\aH}\) is integrable near \(0\) and infinity. Thus the angular cancellation is legitimate.</p><p class="small"><a href="#b9">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b10"><summary><span class="num">B10</span><span>Cartesian second moments and variances in the \texorpdfstring{\(1s\)}{1s} state</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(\langle x^2\rangle=\langle y^2\rangle=\langle z^2\rangle=\tfrac13\langle r^2\rangle\) for the ground state \((\psi_{100})\) of hydrogen atom.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Radial second moment} For the normalized state \(|\psi|^2=(\pi\aH^3)^{-1}\ee^{-2r/\aH}\),</p>
+<h4>Step 6: Rotational-symmetry argument and interpretation</h4><p> A rotationally invariant state has \(\psi(\mathcal R\mathbf r)=\psi(\mathbf r)\), so its mean vector must satisfy \(\mathcal R\avg{\mathbf r}=\avg{\mathbf r}\) for all \(\mathcal R\in SO(3)\). Only the zero vector has this property, proving \(\avg{\mathbf r}=0\). More explicitly, a \(\pi\)-rotation about \(z\) sends \((x,y,z)\mapsto(-x,-y,z)\), forcing \(\avg x=\avg y=0\); a \(\pi\)-rotation about \(x\) forces \(\avg z=0\). This does <em>not</em> imply that \(\avg r=0\): from B7, \(\avg r=3\aH/2&gt;0\). The vector mean cancels directions, while radial distance is nonnegative. The integrals are absolutely convergent because \(r^3e^{-2r/\aH}\) is integrable near \(0\) and infinity. Thus the angular cancellation is legitimate.</p><p class="small"><a href="#b9">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
+<details class="problem" id="b10"><summary><span class="num">B10</span><span>Cartesian second moments and variances in the \(1s\) state</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Show that \(\langle x^2\rangle=\langle y^2\rangle=\langle z^2\rangle=\tfrac13\langle r^2\rangle\) for the ground state \((\psi_{100})\) of hydrogen atom.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Radial second moment</h4><p> For the normalized state \(|\psi|^2=(\pi\aH^3)^{-1}\ee^{-2r/\aH}\),</p>
 <div class="display-math">\[\begin{aligned}\avg{r^2}&amp;=\int_{\R^3}r^2|\psi|^2\dd^3r=\frac4{\aH^3}\int_0^\infty r^4\ee^{-2r/\aH}\dd r\\
 &amp;=\frac4{\aH^3}\frac{4!}{(2/\aH)^5}=\frac4{\aH^3}\frac{24\aH^5}{32}=3\aH^2.\end{aligned}\]</div>
 <p>Therefore \(\boxed{\avg{r^2}=3\aH^2}\). The normalized state check is \((4/\aH^3)\int r^2\ee^{-2r/\aH}\dd r=1\).</p>
-<p>\subsubsection*{Step 2: Explicit \texorpdfstring{\(x^2\)}{x2} integral} Since \(x^2=r^2\sin^2\theta\cos^2\phi\),</p>
+<h4>Step 2: Explicit \(x^2\) integral</h4><p> Since \(x^2=r^2\sin^2\theta\cos^2\phi\),</p>
 <div class="display-math">\[\begin{aligned}\avg{x^2}&amp;=\frac1{\pi\aH^3}\int_0^\infty r^4\ee^{-2r/\aH}\dd r\int_0^\pi\sin^3\theta\dd\theta\int_0^{2\pi}\cos^2\phi\dd\phi.\end{aligned}\]</div>
 <p>With \(u=\cos\theta\),</p>
 <div class="display-math">\[\int_0^\pi\sin^3\theta\dd\theta=\int_{-1}^1(1-u^2)\dd u=\left[u-\frac{u^3}{3}\right]_{-1}^1=\frac43.\]</div>
 <p>Using \(\cos^2\phi=(1+\cos2\phi)/2\), \(\int_0^{2\pi}\cos^2\phi\dd\phi=\pi\). Therefore</p>
 <div class="display-math">\[\begin{aligned}\avg{x^2}&amp;=\frac1{\pi\aH^3}\left(\frac{3\aH^5}{4}\right)\frac43\pi=\aH^2.\end{aligned}\]</div>
 <p>Thus \(\boxed{\avg{x^2}=\aH^2}\).</p>
-<p>\subsubsection*{Step 3: Explicit \texorpdfstring{\(y^2\)}{y2} integral} Since \(y^2=r^2\sin^2\theta\sin^2\phi\),</p>
+<h4>Step 3: Explicit \(y^2\) integral</h4><p> Since \(y^2=r^2\sin^2\theta\sin^2\phi\),</p>
 <div class="display-math">\[\begin{aligned}\avg{y^2}&amp;=\frac1{\pi\aH^3}\int_0^\infty r^4\ee^{-2r/\aH}\dd r\int_0^\pi\sin^3\theta\dd\theta\int_0^{2\pi}\sin^2\phi\dd\phi.\end{aligned}\]</div>
 <p>Here \(\int_0^{2\pi}\sin^2\phi\dd\phi=\pi\). Thus \(\avg{y^2}=(\pi\aH^3)^{-1}(3\aH^5/4)(4/3)\pi=\aH^2\), giving \(\boxed{\avg{y^2}=\aH^2}\).</p>
-<p>\subsubsection*{Step 4: Explicit \texorpdfstring{\(z^2\)}{z2} integral} Since \(z^2=r^2\cos^2\theta\),</p>
+<h4>Step 4: Explicit \(z^2\) integral</h4><p> Since \(z^2=r^2\cos^2\theta\),</p>
 <div class="display-math">\[\begin{aligned}\avg{z^2}&amp;=\frac1{\pi\aH^3}\int_0^\infty r^4\ee^{-2r/\aH}\dd r\int_0^\pi\cos^2\theta\sin\theta\dd\theta\int_0^{2\pi}\dd\phi.\end{aligned}\]</div>
 <p>With \(u=\cos\theta\),</p>
 <div class="display-math">\[\int_0^\pi\cos^2\theta\sin\theta\dd\theta=\int_{-1}^1u^2\dd u=\frac23.\]</div>
 <p>Thus \(\avg{z^2}=(\pi\aH^3)^{-1}(3\aH^5/4)(2/3)(2\pi)=\aH^2\), so \(\boxed{\avg{z^2}=\aH^2}\).</p>
-<p>\subsubsection*{Step 5: Isotropy and tensor proof} For any rotationally invariant probability law, the symmetric matrix \(M_{ij}=\avg{x_ix_j}\) obeys \(\mathcal R M\mathcal R^\mathsf T=M\) for every \(\mathcal R\in SO(3)\). Therefore \(M_{ij}=C\delta_{ij}\). Taking the trace,</p>
+<h4>Step 5: Isotropy and tensor proof</h4><p> For any rotationally invariant probability law, the symmetric matrix \(M_{ij}=\avg{x_ix_j}\) obeys \(\mathcal R M\mathcal R^\mathsf T=M\) for every \(\mathcal R\in SO(3)\). Therefore \(M_{ij}=C\delta_{ij}\). Taking the trace,</p>
 <div class="display-math">\[3C=\operatorname{Tr}M=\avg{x^2+y^2+z^2}=\avg{r^2},\qquad C=\frac13\avg{r^2}.\]</div>
 <p>Thus, independently of the explicit radial function,</p>
 <div class="answer-box">\[\boxed{\avg{x^2}=\avg{y^2}=\avg{z^2}=\frac13\avg{r^2}=\aH^2.}\]</div>
 <p>Off-diagonal second moments also vanish: \(\avg{xy}=\avg{yz}=\avg{zx}=0\).</p>
-<p>\subsubsection*{Step 6: Cartesian variances and uncertainty} B9 established \(\avg x=\avg y=\avg z=0\). Therefore</p>
+<h4>Step 6: Cartesian variances and uncertainty</h4><p> B9 established \(\avg x=\avg y=\avg z=0\). Therefore</p>
 <div class="display-math">\[(\Delta x)^2=\avg{x^2}-(\avg x)^2=\aH^2,\]</div>
 <p>with analogous formulas for \(y,z\). Hence</p>
 <div class="answer-box">\[\boxed{\Delta x=\Delta y=\Delta z=\aH\simeq5.29465\times10^{-11}\,\mathrm m\simeq0.529465\,\text{\AA}.}\]</div>
 <p>The covariance matrix is \(\Sigma_{ij}=\aH^2\delta_{ij}\). Note carefully that the radial standard deviation \(\Delta r=\sqrt3\aH/2\) differs from each Cartesian standard deviation. All second moments converge because \(r^4e^{-2r/\aH}\) is integrable at both ends, and all quantities have the correct dimensions.</p><p class="small"><a href="#b10">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b11"><summary><span class="num">B11</span><span>Algebraic angular-momentum spectrum from commutators and ladder norms</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Determine the eigenvalues of \(\hat L^2\) and \(\hat L_z\) using the algebraic theory of angular momentum.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: Commutation relations and Casimir operator} The Hermitian angular momentum components satisfy</p>
+<details class="problem" id="b11"><summary><span class="num">B11</span><span>Algebraic angular-momentum spectrum from commutators and ladder norms</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Determine the eigenvalues of \(\hat L^2\) and \(\hat L_z\) using the algebraic theory of angular momentum.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: Commutation relations and Casimir operator</h4><p> The Hermitian angular momentum components satisfy</p>
 <div class="display-math">\[\boxed{[L_i,L_j]=\iu\hbar\varepsilon_{ijk}L_k,\quad L_i^\dagger=L_i.}\]</div>
 <p>Define \(L^2=L_x^2+L_y^2+L_z^2\). From the product commutator identity,</p>
 <div class="display-math">\[\begin{aligned}[L^2,L_z]&amp;=[L_x^2,L_z]+[L_y^2,L_z]\\
@@ -433,7 +433,7 @@ P(r)&amp;=\frac{4r^2}{\aH^3}\ee^{-2r/\aH},\qquad r\ge0.\end{aligned}\]</div>
 <p>Cyclic permutations similarly give \([L^2,L_x]=[L^2,L_y]=0\). We may choose normalized common eigenvectors and, <em>without assuming their eigenvalues</em>, write</p>
 <div class="display-math">\[\boxed{L^2\ket{\lambda,\mu}=\hbar^2\lambda\ket{\lambda,\mu},\qquad L_z\ket{\lambda,\mu}=\hbar\mu\ket{\lambda,\mu}.}\]</div>
 <p>Hermiticity implies \(\lambda,\mu\in\R\), and positivity gives \(\lambda\ge0\).</p>
-<p>\subsubsection*{Step 2: Define ladders and prove their commutators} Define \(L_\pm=L_x\pm\iu L_y\), with \(L_\pm^\dagger=L_\mp\). The angular commutation relations give</p>
+<h4>Step 2: Define ladders and prove their commutators</h4><p> Define \(L_\pm=L_x\pm\iu L_y\), with \(L_\pm^\dagger=L_\mp\). The angular commutation relations give</p>
 <div class="display-math">\[\begin{aligned}[L_z,L_+]&amp;=[L_z,L_x]+\iu[L_z,L_y]\\
 &amp;=\iu\hbar L_y+\iu(-\iu\hbar L_x)=\hbar L_+,\\
 [L_z,L_-]&amp;=[L_z,L_x]-\iu[L_z,L_y]=-\hbar L_-.\end{aligned}\]</div>
@@ -442,7 +442,7 @@ P(r)&amp;=\frac{4r^2}{\aH^3}\ee^{-2r/\aH},\qquad r\ge0.\end{aligned}\]</div>
 &amp;=\hbar(\mu\pm1)L_\pm\ket{\lambda,\mu},\\
 L^2(L_\pm\ket{\lambda,\mu})&amp;=\hbar^2\lambda L_\pm\ket{\lambda,\mu}.\end{aligned}\]</div>
 <p>Hence the ladder changes \(\mu\mapsto\mu\pm1\) while preserving \(\lambda\), unless the result is the zero vector.</p>
-<p>\subsubsection*{Step 3: Ordered products and norm positivity} Direct multiplication without commuting the operators gives</p>
+<h4>Step 3: Ordered products and norm positivity</h4><p> Direct multiplication without commuting the operators gives</p>
 <div class="display-math">\[\begin{aligned}L_+L_-&amp;=L_x^2+L_y^2-\iu[L_x,L_y]=L^2-L_z^2+\hbar L_z,\\
 L_-L_+&amp;=L_x^2+L_y^2+\iu[L_x,L_y]=L^2-L_z^2-\hbar L_z.\end{aligned}\]</div>
 <p>Since \(L_+^\dagger=L_-\),</p>
@@ -451,7 +451,7 @@ L_-L_+&amp;=L_x^2+L_y^2+\iu[L_x,L_y]=L^2-L_z^2-\hbar L_z.\end{aligned}\]</div>
 <p>Also \(\avg{L_x^2+L_y^2}=\hbar^2(\lambda-\mu^2)\ge0\), so</p>
 <div class="display-math">\[\boxed{\mu^2\le\lambda.}\]</div>
 <p>This bound forbids infinitely many unit-raising or unit-lowering steps at fixed finite \(\lambda\). A highest and a lowest state must exist in the irreducible ladder.</p>
-<p>\subsubsection*{Step 4: Highest and lowest weights} Let \(\mu_{\max}\) and \(\mu_{\min}\) be the top and bottom values. Their ladder results vanish:</p>
+<h4>Step 4: Highest and lowest weights</h4><p> Let \(\mu_{\max}\) and \(\mu_{\min}\) be the top and bottom values. Their ladder results vanish:</p>
 <div class="display-math">\[L_+\ket{\lambda,\mu_{\max}}=0,\qquad L_-\ket{\lambda,\mu_{\min}}=0.\]</div>
 <p>The squared-norm identities yield</p>
 <div class="display-math">\[\boxed{\lambda=\mu_{\max}(\mu_{\max}+1)=\mu_{\min}(\mu_{\min}-1).}\]</div>
@@ -459,28 +459,28 @@ L_-L_+&amp;=L_x^2+L_y^2+\iu[L_x,L_y]=L^2-L_z^2-\hbar L_z.\end{aligned}\]</div>
 <div class="display-math">\[\begin{aligned}0&amp;=\mu_{\max}(\mu_{\max}+1)-\mu_{\min}(\mu_{\min}-1)\\
 &amp;=(\mu_{\max}+\mu_{\min})(\mu_{\max}-\mu_{\min}+1).\end{aligned}\]</div>
 <p>The second factor is positive because \(\mu_{\max}\ge\mu_{\min}\); hence \(\mu_{\min}=-\mu_{\max}\).</p>
-<p>\subsubsection*{Step 5: Quantization from the integer number of ladder steps} Suppose there are \(N\ge0\) raising steps, so \(\mu_{\max}-\mu_{\min}=N\), with \(N\in\mathbb Z\). Since \(\mu_{\min}=-\mu_{\max}\),</p>
+<h4>Step 5: Quantization from the integer number of ladder steps</h4><p> Suppose there are \(N\ge0\) raising steps, so \(\mu_{\max}-\mu_{\min}=N\), with \(N\in\mathbb Z\). Since \(\mu_{\min}=-\mu_{\max}\),</p>
 <div class="display-math">\[2\mu_{\max}=N.\]</div>
 <p>Define \(j=N/2=\mu_{\max}\). Then</p>
 <div class="display-math">\[\boxed{j=0,\frac12,1,\frac32,\ldots,\quad m=-j,-j+1,\ldots,j.}\]</div>
 <p>The highest-weight condition gives \(\lambda=j(j+1)\). Consequently,</p>
 <div class="answer-box">\[\boxed{L^2\ket{j,m}=\hbar^2j(j+1)\ket{j,m},\qquad L_z\ket{j,m}=\hbar m\ket{j,m}.}\]</div>
 <p>The irreducible multiplet has \(2j+1\) magnetic states.</p>
-<p>\subsubsection*{Step 6: Normalized ladder coefficients} Write \(L_+\ket{j,m}=C_{jm}^+\ket{j,m+1}\). The norm calculation gives</p>
+<h4>Step 6: Normalized ladder coefficients</h4><p> Write \(L_+\ket{j,m}=C_{jm}^+\ket{j,m+1}\). The norm calculation gives</p>
 <div class="display-math">\[\begin{aligned}|C_{jm}^+|^2&amp;=\hbar^2[j(j+1)-m(m+1)],\\
 |C_{jm}^-|^2&amp;=\hbar^2[j(j+1)-m(m-1)].\end{aligned}\]</div>
 <p>Choosing standard phases gives</p>
 <div class="answer-box">\[\boxed{L_\pm\ket{j,m}=\hbar\sqrt{j(j+1)-m(m\pm1)}\ket{j,m\pm1}.}\]</div>
 <p>At \(m=j\), \(L_+\ket{j,j}=0\); at \(m=-j\), \(L_-\ket{j,-j}=0\). The norms determine coefficient magnitudes, while state phases establish the chosen positive signs.</p>
-<p>\subsubsection*{Step 7: Orbital versus half-integer spin} The abstract algebra admits both integer and half-integer \(j\). For <em>orbital</em> angular momentum \(\mathbf L=\mathbf r\times\mathbf p\) acting on scalar spatial functions, \(L_z=-\iu\hbar\partial_\phi\). Thus \(L_z\Phi=\hbar m\Phi\) has \(\Phi(\phi)\propto e^{\iu m\phi}\). Single-valuedness under \(\phi\mapsto\phi+2\pi\) requires \(m\in\mathbb Z\). Since the highest \(m=j\) must be an integer in an orbital multiplet,</p>
+<h4>Step 7: Orbital versus half-integer spin</h4><p> The abstract algebra admits both integer and half-integer \(j\). For <em>orbital</em> angular momentum \(\mathbf L=\mathbf r\times\mathbf p\) acting on scalar spatial functions, \(L_z=-\iu\hbar\partial_\phi\). Thus \(L_z\Phi=\hbar m\Phi\) has \(\Phi(\phi)\propto e^{\iu m\phi}\). Single-valuedness under \(\phi\mapsto\phi+2\pi\) requires \(m\in\mathbb Z\). Since the highest \(m=j\) must be an integer in an orbital multiplet,</p>
 <div class="display-math">\[\boxed{l=0,1,2,\ldots,\qquad m=-l,\ldots,l,\quad L^2=\hbar^2l(l+1),\quad L_z=\hbar m.}\]</div>
 <p>Half-integer spin is allowed because spinors transform under \(SU(2)\), the double cover of \(SO(3)\); a \(2\pi\) rotation changes a spin-\(1/2\) spinor's sign without changing the physical ray. In particular \(S^2=3\hbar^2/4\), \(S_z=\pm\hbar/2\) for electron spin. For \(l=1\), \(L^2=2\hbar^2\) and \(m=-1,0,1\), with \(L_+\ket{1,0}=\sqrt2\hbar\ket{1,1}\). This provides an explicit consistency check.</p><p class="small"><a href="#b11">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b12"><summary><span class="num">B12</span><span>Derive spherical-coordinate angular momentum operators and spherical-harmonic eigenfunctions</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Express the angular momentum operators in polar coordinates and prove that the spherical harmonics are the eigenfunctions of \(\hat L^2\) and \(\hat L_z\).</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: From the vector definition to Cartesian operators} Using \(\mathbf p=-\iu\hbar\nabla\),</p>
+<details class="problem" id="b12"><summary><span class="num">B12</span><span>Derive spherical-coordinate angular momentum operators and spherical-harmonic eigenfunctions</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Express the angular momentum operators in polar coordinates and prove that the spherical harmonics are the eigenfunctions of \(\hat L^2\) and \(\hat L_z\).</p></aside><h3>Detailed worked solution</h3><h4>Step 1: From the vector definition to Cartesian operators</h4><p> Using \(\mathbf p=-\iu\hbar\nabla\),</p>
 <div class="display-math">\[\boxed{\mathbf L=\mathbf r\times\mathbf p=-\iu\hbar(\mathbf r\times\nabla).}\]</div>
 <p>The Cartesian components are</p>
 <div class="display-math">\[\boxed{L_x=-\iu\hbar(y\p_z-z\p_y),\quad L_y=-\iu\hbar(z\p_x-x\p_z),\quad L_z=-\iu\hbar(x\p_y-y\p_x).}\]</div>
 <p>The spherical coordinates are \(x=r\sin\theta\cos\phi\), \(y=r\sin\theta\sin\phi\), \(z=r\cos\theta\).</p>
-<p>\subsubsection*{Step 2: Derive the multivariable chain rules} For smooth \(f(r,\theta,\phi)\),</p>
+<h4>Step 2: Derive the multivariable chain rules</h4><p> For smooth \(f(r,\theta,\phi)\),</p>
 <div class="display-math">\[\p_xf=(\p_xr)\p_rf+(\p_x\theta)\p_\theta f+(\p_x\phi)\p_\phi f,\]</div>
 <p>with analogous expressions for \(y,z\). Since \(r=\sqrt{x^2+y^2+z^2}\), \(\cos\theta=z/r\), and \(\tan\phi=y/x\) locally,</p>
 <div class="display-math">\[\begin{array}{c|ccc}
@@ -493,7 +493,7 @@ r&amp;\sin\theta\cos\phi&amp;\sin\theta\sin\phi&amp;\cos\theta\\[1mm]
 <div class="display-math">\[\begin{aligned}\p_x&amp;=\sin\theta\cos\phi\,\p_r+\frac{\cos\theta\cos\phi}{r}\p_\theta-\frac{\sin\phi}{r\sin\theta}\p_\phi,\\
 \p_y&amp;=\sin\theta\sin\phi\,\p_r+\frac{\cos\theta\sin\phi}{r}\p_\theta+\frac{\cos\phi}{r\sin\theta}\p_\phi,\\
 \p_z&amp;=\cos\theta\,\p_r-\frac{\sin\theta}{r}\p_\theta.\end{aligned}\]</div>
-<p>\subsubsection*{Step 3: Calculate \texorpdfstring{\(L_x,L_y,L_z\)}{Lx Ly Lz}} For \(L_x=-\iu\hbar(y\p_z-z\p_y)\), substitute \(y=r\sin\theta\sin\phi\), \(z=r\cos\theta\). Then</p>
+<h4>Step 3: Calculate \(L_x,L_y,L_z\)</h4><p> For \(L_x=-\iu\hbar(y\p_z-z\p_y)\), substitute \(y=r\sin\theta\sin\phi\), \(z=r\cos\theta\). Then</p>
 <div class="display-math">\[\begin{aligned}y\p_z&amp;=r\sin\theta\cos\theta\sin\phi\,\p_r-\sin^2\theta\sin\phi\,\p_\theta,\\
 z\p_y&amp;=r\sin\theta\cos\theta\sin\phi\,\p_r+\cos^2\theta\sin\phi\,\p_\theta+\cot\theta\cos\phi\,\p_\phi.\end{aligned}\]</div>
 <p>The radial derivatives cancel, giving</p>
@@ -506,25 +506,25 @@ x\p_z&amp;=r\sin\theta\cos\theta\cos\phi\,\p_r-\sin^2\theta\cos\phi\,\p_\theta,\
 <p>Finally, direct substitution gives \(x\p_y-y\p_x=(\cos^2\phi+\sin^2\phi)\p_\phi=\p_\phi\), hence</p>
 <div class="display-math">\[\boxed{L_z=-\iu\hbar\p_\phi.}\]</div>
 <p>All three lack \(\p_r\), because angular momentum generates changes of direction at fixed radius.</p>
-<p>\subsubsection*{Step 4: Ladder operators} From \(L_\pm=L_x\pm\iu L_y\) and \(e^{\pm\iu\phi}=\cos\phi\pm\iu\sin\phi\),</p>
+<h4>Step 4: Ladder operators</h4><p> From \(L_\pm=L_x\pm\iu L_y\) and \(e^{\pm\iu\phi}=\cos\phi\pm\iu\sin\phi\),</p>
 <div class="display-math">\[\boxed{L_\pm=\hbar\ee^{\pm\iu\phi}\left(\pm\p_\theta+\iu\cot\theta\,\p_\phi\right).}\]</div>
 <p>For example,</p>
 <div class="display-math">\[\begin{aligned}L_+&amp;=\iu\hbar(\sin\phi\p_\theta+\cot\theta\cos\phi\p_\phi)-\hbar(-\cos\phi\p_\theta+\cot\theta\sin\phi\p_\phi)\\
 &amp;=\hbar(\cos\phi+\iu\sin\phi)\p_\theta+\iu\hbar\cot\theta(\cos\phi+\iu\sin\phi)\p_\phi.\end{aligned}\]</div>
 <p>The lowering formula follows by the opposite sign.</p>
-<p>\subsubsection*{Step 5: Compute \texorpdfstring{\(L^2\)}{L squared} with coefficient derivatives} Write \(L_x=\iu\hbar A\), \(L_y=\iu\hbar B\), where \(A=\sin\phi\p_\theta+\cot\theta\cos\phi\p_\phi\) and \(B=-\cos\phi\p_\theta+\cot\theta\sin\phi\p_\phi\). Acting on an arbitrary smooth angular function \(f\), the product rule gives</p>
+<h4>Step 5: Compute \(L^2\) with coefficient derivatives</h4><p> Write \(L_x=\iu\hbar A\), \(L_y=\iu\hbar B\), where \(A=\sin\phi\p_\theta+\cot\theta\cos\phi\p_\phi\) and \(B=-\cos\phi\p_\theta+\cot\theta\sin\phi\p_\phi\). Acting on an arbitrary smooth angular function \(f\), the product rule gives</p>
 <div class="display-math">\[A^2+B^2=\p_\theta^2+\cot\theta\p_\theta+\cot^2\theta\p_\phi^2.\]</div>
 <p>The mixed derivatives cancel: their coefficient is \(2\cot\theta(\sin\phi\cos\phi-\cos\phi\sin\phi)=0\). First-order \(\p_\phi\) terms also cancel, including derivatives of \(\cot\theta\); the first-order \(\p_\theta\) coefficient is \(\cot\theta(\cos^2\phi+\sin^2\phi)=\cot\theta\). Since \(L_z^2=-\hbar^2\p_\phi^2\),</p>
 <div class="display-math">\[\begin{aligned}L^2&amp;=-\hbar^2[A^2+B^2+\p_\phi^2]\\
 &amp;=-\hbar^2\left[\p_\theta^2+\cot\theta\p_\theta+\csc^2\theta\p_\phi^2\right]\\
 &amp;=\boxed{-\hbar^2\left[\frac1{\sin\theta}\p_\theta(\sin\theta\p_\theta)+\frac1{\sin^2\theta}\p_\phi^2\right]}.\end{aligned}\]</div>
 <p>The expression in brackets is the Laplace–Beltrami operator \(\Delta_{S^2}\) on the unit sphere, so \(L^2=-\hbar^2\Delta_{S^2}\).</p>
-<p>\subsubsection*{Step 6: Derive angular eigenfunctions} Separate \(Y(\theta,\phi)=\Theta(\theta)\Phi(\phi)\). The \(L_z\) eigenvalue equation \(-\iu\hbar\Phi'=\hbar m\Phi\) gives \(\Phi\propto e^{\iu m\phi}\); periodicity forces \(m\in\mathbb Z\). The \(L^2\) equation \(L^2Y=\hbar^2\lambda Y\) reduces to</p>
+<h4>Step 6: Derive angular eigenfunctions</h4><p> Separate \(Y(\theta,\phi)=\Theta(\theta)\Phi(\phi)\). The \(L_z\) eigenvalue equation \(-\iu\hbar\Phi'=\hbar m\Phi\) gives \(\Phi\propto e^{\iu m\phi}\); periodicity forces \(m\in\mathbb Z\). The \(L^2\) equation \(L^2Y=\hbar^2\lambda Y\) reduces to</p>
 <div class="display-math">\[\frac1{\sin\theta}\frac{\dd}{\dd\theta}(\sin\theta\Theta')+\left(\lambda-\frac{m^2}{\sin^2\theta}\right)\Theta=0.\]</div>
 <p>With \(u=\cos\theta\), this becomes \((1-u^2)\Theta''-2u\Theta'+[\lambda-m^2/(1-u^2)]\Theta=0\). Smoothness at both poles selects \(\lambda=l(l+1)\) and \(\Theta\propto P_l^m(\cos\theta)\), \(l\in\mathbb N_0\), \(|m|\le l\). The normalized angular functions (Condon–Shortley convention) are</p>
 <div class="display-math">\[\boxed{Y_l^m(\theta,\phi)=N_{lm}P_l^m(\cos\theta)e^{\iu m\phi},\quad N_{lm}=\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}.}\]</div>
 <p>For \(m\ge0\), \(P_l^m(u)=(-1)^m(1-u^2)^{m/2}\dd^mP_l/\dd u^m\), where \(P_l(u)=(2^ll!)^{-1}(\dd/\dd u)^l(u^2-1)^l\). The angular measure is \(\dd\Omega=\sin\theta\dd\theta\dd\phi\), and \(\int Y_l^{m*}Y_{l'}^{m'}\dd\Omega=\delta_{ll'}\delta_{mm'}\).</p>
-<p>\subsubsection*{Step 7: Prove the two eigenvalue equations} First,</p>
+<h4>Step 7: Prove the two eigenvalue equations</h4><p> First,</p>
 <div class="display-math">\[\begin{aligned}L_zY_l^m&amp;=-\iu\hbar\p_\phi[N_{lm}P_l^m(\cos\theta)e^{\iu m\phi}]\\
 &amp;=\hbar mY_l^m.\end{aligned}\]</div>
 <p>Second, the associated Legendre equation implies</p>
@@ -533,19 +533,19 @@ x\p_z&amp;=r\sin\theta\cos\theta\cos\phi\,\p_r-\sin^2\theta\cos\phi\,\p_\theta,\
 <div class="display-math">\[\begin{aligned}L^2Y_l^m&amp;=-\hbar^2N_{lm}e^{\iu m\phi}\left[\frac1{\sin\theta}\frac{\dd}{\dd\theta}(\sin\theta\frac{\dd P_l^m}{\dd\theta})-\frac{m^2}{\sin^2\theta}P_l^m\right]\\
 &amp;=\hbar^2l(l+1)Y_l^m.\end{aligned}\]</div>
 <div class="answer-box">\[\boxed{L^2Y_l^m=\hbar^2l(l+1)Y_l^m,\qquad L_zY_l^m=\hbar mY_l^m.}\]</div>
-<p>\subsubsection*{Step 8: Prove the ladder action} Apply \(L_+=\hbar e^{\iu\phi}(\p_\theta+\iu\cot\theta\p_\phi)\):</p>
+<h4>Step 8: Prove the ladder action</h4><p> Apply \(L_+=\hbar e^{\iu\phi}(\p_\theta+\iu\cot\theta\p_\phi)\):</p>
 <div class="display-math">\[L_+Y_l^m=\hbar N_{lm}e^{\iu(m+1)\phi}\left[\frac{\dd P_l^m(\cos\theta)}{\dd\theta}-m\cot\theta P_l^m(\cos\theta)\right].\]</div>
 <p>The associated Legendre identity \((\dd/\dd\theta-m\cot\theta)P_l^m(\cos\theta)=P_l^{m+1}(\cos\theta)\), combined with \(N_{lm}/N_{l,m+1}=\sqrt{(l-m)(l+m+1)}\), yields</p>
 <div class="display-math">\[\boxed{L_+Y_l^m=\hbar\sqrt{(l-m)(l+m+1)}Y_l^{m+1}.}\]</div>
 <p>The corresponding lowering identity \((-\dd/\dd\theta-m\cot\theta)P_l^m=(l+m)(l-m+1)P_l^{m-1}\) gives</p>
 <div class="display-math">\[\boxed{L_-Y_l^m=\hbar\sqrt{(l+m)(l-m+1)}Y_l^{m-1}.}\]</div>
 <p>Thus \(L_\pm Y_l^m=\hbar\sqrt{l(l+1)-m(m\pm1)}Y_l^{m\pm1}\); the top \(m=l\) and bottom \(m=-l\) states are annihilated.</p>
-<p>\subsubsection*{Step 9: Explicit \texorpdfstring{\(l=1\)}{l=1} verification} The normalized functions are</p>
+<h4>Step 9: Explicit \(l=1\) verification</h4><p> The normalized functions are</p>
 <div class="display-math">\[Y_1^0=\sqrt{\frac3{4\pi}}\cos\theta,\quad Y_1^1=-\sqrt{\frac3{8\pi}}\sin\theta e^{\iu\phi},\quad Y_1^{-1}=+\sqrt{\frac3{8\pi}}\sin\theta e^{-\iu\phi}.\]</div>
 <p>For \(f=\cos\theta\), \(f''+\cot\theta f'=-2\cos\theta\), giving \(L^2Y_1^0=2\hbar^2Y_1^0\). Also \(L_zY_1^1=-\iu\hbar(\iu)Y_1^1=\hbar Y_1^1\). Direct differentiation gives</p>
 <div class="display-math">\[\begin{aligned}L_+Y_1^0&amp;=\hbar e^{\iu\phi}\p_\theta\left(\sqrt{\frac3{4\pi}}\cos\theta\right)=-\hbar\sqrt{\frac3{4\pi}}\sin\theta e^{\iu\phi}=\sqrt2\hbar Y_1^1,\\
 L_-Y_1^0&amp;=\sqrt2\hbar Y_1^{-1},\qquad L_+Y_1^1=0,\quad L_-Y_1^{-1}=0.\end{aligned}\]</div>
-<p>\subsubsection*{Step 10: Explicit \texorpdfstring{\(l=2\)}{l=2} verification}</p>
+<h4>Step 10: Explicit \(l=2\) verification</h4>
 <div class="display-math">\[\begin{aligned}Y_2^0&amp;=\sqrt{\frac5{16\pi}}(3\cos^2\theta-1),\\
 Y_2^1&amp;=-\sqrt{\frac{15}{8\pi}}\sin\theta\cos\theta\,e^{\iu\phi},\\
 Y_2^2&amp;=\sqrt{\frac{15}{32\pi}}\sin^2\theta\,e^{2\iu\phi}.\end{aligned}\]</div>
@@ -553,17 +553,17 @@ Y_2^2&amp;=\sqrt{\frac{15}{32\pi}}\sin^2\theta\,e^{2\iu\phi}.\end{aligned}\]</di
 <div class="display-math">\[\begin{aligned}L_+Y_2^0&amp;=-6\hbar\sqrt{\frac5{16\pi}}\sin\theta\cos\theta e^{\iu\phi}=\sqrt6\hbar Y_2^1,\\
 L_+Y_2^1&amp;=\hbar\sqrt{\frac{15}{8\pi}}\sin^2\theta e^{2\iu\phi}=2\hbar Y_2^2.\end{aligned}\]</div>
 <p>Similarly \(L_-Y_2^2=2\hbar Y_2^1\), \(L_+Y_2^2=0\), \(L_-Y_2^{-2}=0\). These explicitly verify the differential formulas and match the algebraic spectrum B11.</p>
-<p>\subsubsection*{Domain and self-adjointness check} The angular Hilbert space is \(L^2(S^2,\dd\Omega)\). On smooth globally regular scalar functions,</p>
+<h4>Domain and self-adjointness check</h4><p> The angular Hilbert space is \(L^2(S^2,\dd\Omega)\). On smooth globally regular scalar functions,</p>
 <div class="display-math">\[\langle f|L^2f\rangle=\hbar^2\int_{S^2}\left(|\p_\theta f|^2+\frac{|\p_\phi f|^2}{\sin^2\theta}\right)\dd\Omega\ge0.\]</div>
 <p>Integration-by-parts surface terms vanish because the sphere has no boundary and smoothness handles coordinate poles. The apparent \(\cot\theta\), \(\csc\theta\) singularities arise from coordinate charts, not physical singularities of \(L_i\). This completes the operator and eigenfunction derivation.</p><p class="small"><a href="#b12">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details>
-<details class="problem" id="b13"><summary><span class="num">B13</span><span>Conservation of angular momentum in a spherically symmetric potential</span></summary><div class="answer"><aside class="question"><div class="label">Original question</div><p>Show that \(\displaystyle\frac{\dd\langle\mathbf L\rangle}{\dd t}=0\) for any spherically symmetric potential.</p></aside><h3>Detailed worked solution</h3><p>\subsubsection*{Step 1: State the Hamiltonian and canonical algebra} For a spinless particle with a scalar central potential,</p>
+<details class="problem" id="b13"><summary><span class="num">B13</span><span>Conservation of angular momentum in a spherically symmetric potential</span></summary><div class="answer"><aside class="question"><div class="label">Question as transcribed in manuscript</div><p>Show that \(\displaystyle\frac{\dd\langle\mathbf L\rangle}{\dd t}=0\) for any spherically symmetric potential.</p></aside><h3>Detailed worked solution</h3><h4>Step 1: State the Hamiltonian and canonical algebra</h4><p> For a spinless particle with a scalar central potential,</p>
 <div class="display-math">\[\boxed{H=T+V(r)=\frac{p_x^2+p_y^2+p_z^2}{2\mu}+V(r),\qquad r=\sqrt{x^2+y^2+z^2}.}\]</div>
 <p>The components of orbital angular momentum are</p>
 <div class="display-math">\[L_x=yp_z-zp_y,\qquad L_y=zp_x-xp_z,\qquad L_z=xp_y-yp_x.\]</div>
 <p>The canonical commutators are \([x_i,p_j]=\iu\hbar\delta_{ij}\), \([x_i,x_j]=[p_i,p_j]=0\). For a differentiable multiplication operator \(f(\mathbf r)\),</p>
 <div class="display-math">\[\boxed{[p_i,f]=-\iu\hbar\p_i f,\qquad[f,p_i]=\iu\hbar\p_i f.}\]</div>
 <p>To prove conservation, it suffices to show \([H,L_i]=[T,L_i]+[V,L_i]=0\) for each \(i\).</p>
-<p>\subsubsection*{Step 2: Explicit kinetic commutator with \texorpdfstring{\(L_x\)}{Lx}} Using \(L_x=yp_z-zp_y\),</p>
+<h4>Step 2: Explicit kinetic commutator with \(L_x\)</h4><p> Using \(L_x=yp_z-zp_y\),</p>
 <div class="display-math">\[[p_x,L_x]=0,\qquad[p_y,L_x]=-\iu\hbar p_z,\qquad[p_z,L_x]=\iu\hbar p_y.\]</div>
 <p>Apply \([A^2,B]=A[A,B]+[A,B]A\):</p>
 <div class="display-math">\[\begin{aligned}[p_x^2,L_x]&amp;=0,\\
@@ -571,14 +571,14 @@ L_+Y_2^1&amp;=\hbar\sqrt{\frac{15}{8\pi}}\sin^2\theta e^{2\iu\phi}=2\hbar Y_2^2.
 [p_z^2,L_x]&amp;=+\iu\hbar(p_zp_y+p_yp_z).\end{aligned}\]</div>
 <p>Adding, \([p_x^2+p_y^2+p_z^2,L_x]=0\); thus</p>
 <div class="display-math">\[\boxed{[T,L_x]=0.}\]</div>
-<p>\subsubsection*{Step 3: Explicit kinetic commutator with \texorpdfstring{\(L_y\)}{Ly}} For \(L_y=zp_x-xp_z\),</p>
+<h4>Step 3: Explicit kinetic commutator with \(L_y\)</h4><p> For \(L_y=zp_x-xp_z\),</p>
 <div class="display-math">\[[p_x,L_y]=\iu\hbar p_z,\qquad[p_y,L_y]=0,\qquad[p_z,L_y]=-\iu\hbar p_x.\]</div>
 <p>Consequently,</p>
 <div class="display-math">\[\begin{aligned}[p_x^2,L_y]&amp;=+\iu\hbar(p_xp_z+p_zp_x),\\
 [p_y^2,L_y]&amp;=0,\\
 [p_z^2,L_y]&amp;=-\iu\hbar(p_zp_x+p_xp_z).\end{aligned}\]</div>
 <p>The terms cancel, giving \(\boxed{[T,L_y]=0}\).</p>
-<p>\subsubsection*{Step 4: Explicit kinetic commutator with \texorpdfstring{\(L_z\)}{Lz}} For \(L_z=xp_y-yp_x\),</p>
+<h4>Step 4: Explicit kinetic commutator with \(L_z\)</h4><p> For \(L_z=xp_y-yp_x\),</p>
 <div class="display-math">\[[p_x,L_z]=-\iu\hbar p_y,\qquad[p_y,L_z]=\iu\hbar p_x,\qquad[p_z,L_z]=0.\]</div>
 <p>Therefore,</p>
 <div class="display-math">\[\begin{aligned}[p_x^2,L_z]&amp;=-\iu\hbar(p_xp_y+p_yp_x),\\
@@ -587,7 +587,7 @@ L_+Y_2^1&amp;=\hbar\sqrt{\frac{15}{8\pi}}\sin^2\theta e^{2\iu\phi}=2\hbar Y_2^2.
 <p>Thus \(\boxed{[T,L_z]=0}\). Collecting,</p>
 <div class="display-math">\[\boxed{[T,L_x]=[T,L_y]=[T,L_z]=0.}\]</div>
 <p>The kinetic energy depends only on the rotational scalar \(\mathbf p^2\) and is invariant under all three rotations.</p>
-<p>\subsubsection*{Step 5: Potential commutators by chain rule} For a radial function,</p>
+<h4>Step 5: Potential commutators by chain rule</h4><p> For a radial function,</p>
 <div class="display-math">\[\boxed{\p_xV=V'(r)\frac xr,\quad \p_yV=V'(r)\frac yr,\quad \p_zV=V'(r)\frac zr.}\]</div>
 <p>Since coordinates commute with \(V(r)\),</p>
 <div class="display-math">\[\begin{aligned}[V,L_x]&amp;=[V,yp_z-zp_y]=y[V,p_z]-z[V,p_y]\\
@@ -600,43 +600,46 @@ L_+Y_2^1&amp;=\hbar\sqrt{\frac{15}{8\pi}}\sin^2\theta e^{2\iu\phi}=2\hbar Y_2^2.
 <p>Therefore,</p>
 <div class="display-math">\[\boxed{[V(r),L_x]=[V(r),L_y]=[V(r),L_z]=0.}\]</div>
 <p>This uses only the radial dependence of \(V\), not any particular form such as Coulomb or oscillator. Singular potentials require suitable domains; a rotationally invariant self-adjoint Hamiltonian suffices for the global symmetry argument below.</p>
-<p>\subsubsection*{Step 6: Hamiltonian commutators and Heisenberg conservation} Combining the independent kinetic and potential calculations,</p>
+<h4>Step 6: Hamiltonian commutators and Heisenberg conservation</h4><p> Combining the independent kinetic and potential calculations,</p>
 <div class="answer-box">\[\boxed{[H,L_x]=[H,L_y]=[H,L_z]=0.}\]</div>
-<p>For an operator without explicit Schr&amp;quot;odinger-picture time dependence, the Heisenberg equation is</p>
+<p>For an operator without explicit Schrödinger-picture time dependence, the Heisenberg equation is</p>
 <div class="display-math">\[\boxed{\frac{\dd A_H}{\dd t}=\frac{\iu}{\hbar}[H_H,A_H].}\]</div>
 <p>Thus for each angular momentum component,</p>
 <div class="display-math">\[\frac{\dd L_{i,H}}{\dd t}=\frac{\iu}{\hbar}[H_H,L_{i,H}]=0,\]</div>
 <p>which integrates to \(L_{i,H}(t)=L_{i,H}(0)\). This is the stronger <em>operator conservation law</em>.</p>
-<p>\subsubsection*{Step 7: Expectation-value conservation} Ehrenfest's equation for a Schr&amp;quot;odinger-picture observable with no explicit time dependence is</p>
+<h4>Step 7: Expectation-value conservation</h4><p> Ehrenfest's equation for a Schrödinger-picture observable with no explicit time dependence is</p>
 <div class="display-math">\[\frac{\dd}{\dd t}\avg A=\frac{\iu}{\hbar}\avg{[H,A]}.\]</div>
 <p>Applying it to \(L_x,L_y,L_z\) and using their vanishing Hamiltonian commutators,</p>
 <div class="display-math">\[\frac{\dd\avg{L_x}}{\dd t}=\frac{\dd\avg{L_y}}{\dd t}=\frac{\dd\avg{L_z}}{\dd t}=0.\]</div>
 <p>Consequently,</p>
 <div class="answer-box">\[\boxed{\frac{\dd}{\dd t}\avg{\mathbf L}=\mathbf0,\qquad\avg{\mathbf L}(t)=\avg{\mathbf L}(0).}\]</div>
 <p>This holds for every normalizable state for which the relevant expectations exist, not only an energy eigenstate.</p>
-<p>\subsubsection*{Step 8: Conservation of \texorpdfstring{\(L^2\)}{L squared}} Since \(L^2=L_x^2+L_y^2+L_z^2\) and \([H,L_i]=0\),</p>
+<h4>Step 8: Conservation of \(L^2\)</h4><p> Since \(L^2=L_x^2+L_y^2+L_z^2\) and \([H,L_i]=0\),</p>
 <div class="display-math">\[\begin{aligned}[H,L^2]&amp;=\sum_i[H,L_i^2]\\
 &amp;=\sum_i([H,L_i]L_i+L_i[H,L_i])=0.\end{aligned}\]</div>
 <p>Hence \(\boxed{[H,L^2]=0}\), \(\dd L_H^2/\dd t=0\), and \(\dd\avg{L^2}/\dd t=0\). Because \([L^2,L_z]=0\), the operators \(H,L^2,L_z\) admit a common eigenbasis on the central-potential bound-state space, with \(\psi_{n_r l m}(r,\theta,\phi)=R_{n_r l}(r)Y_l^m(\theta,\phi)\).</p>
-<p>\subsubsection*{Step 9: Classical zero torque and quantum correspondence} The classical central force is \(\mathbf F=-\nabla V=-V'(r)\hat{\mathbf r}\). Differentiate \(\mathbf L=\mathbf r\times\mathbf p\):</p>
+<h4>Step 9: Classical zero torque and quantum correspondence</h4><p> The classical central force is \(\mathbf F=-\nabla V=-V'(r)\hat{\mathbf r}\). Differentiate \(\mathbf L=\mathbf r\times\mathbf p\):</p>
 <div class="display-math">\[\begin{aligned}\frac{\dd\mathbf L}{\dd t}&amp;=\dot{\mathbf r}\times\mathbf p+\mathbf r\times\dot{\mathbf p}\\
 &amp;=\dot{\mathbf r}\times\mu\dot{\mathbf r}+\mathbf r\times\mathbf F\\
 &amp;=\mathbf r\times[-V'(r)\hat{\mathbf r}]=\mathbf0.\end{aligned}\]</div>
 <p>Thus the central force produces zero torque. The quantum Heisenberg analogue is \(\dd\mathbf L_H/\dd t=-\mathbf r_H\times\nabla V(r_H)=\mathbf0\).</p>
-<p>\subsubsection*{Step 10: Rotational symmetry and Noether theorem} A rotation \(\mathcal R\) preserves \(r\) and \(\mathbf p^2\), hence leaves \(H\) invariant. Quantum rotation operators are generated by angular momentum:</p>
+<h4>Step 10: Rotational symmetry and Noether theorem</h4><p> A rotation \(\mathcal R\) preserves \(r\) and \(\mathbf p^2\), hence leaves \(H\) invariant. Quantum rotation operators are generated by angular momentum:</p>
 <div class="display-math">\[U(\vartheta)=\exp[-\iu\vartheta\,\mathbf n\cdot\mathbf L/\hbar].\]</div>
 <p>Rotational invariance means \(U(\vartheta)^\dagger H U(\vartheta)=H\). Differentiate at \(\vartheta=0\):</p>
 <div class="display-math">\[[H,\mathbf n\cdot\mathbf L]=0.\]</div>
 <p>Since \(\mathbf n\) is arbitrary, \([H,L_i]=0\) for all components. The classical Lagrangian \(\mathscr L=\mu\dot{\mathbf r}^{\,2}/2-V(r)\) is also rotation invariant. For the infinitesimal transformation \(\delta\mathbf r=\delta\vartheta\,\mathbf n\times\mathbf r\), Noether's charge is</p>
 <div class="display-math">\[Q_{\mathbf n}=\frac{\p\mathscr L}{\p\dot{\mathbf r}}\cdot\frac{\delta\mathbf r}{\delta\vartheta}=\mathbf p\cdot(\mathbf n\times\mathbf r)=\mathbf n\cdot(\mathbf r\times\mathbf p)=\mathbf n\cdot\mathbf L.\]</div>
 <p>It is conserved for every \(\mathbf n\). Therefore continuous spatial rotational invariance entails angular momentum conservation.</p>
-<p>\subsubsection*{Step 11: Physical caveats and interpretation} Operator conservation \(\dd L_{i,H}/\dd t=0\) implies conservation of the expectation for every appropriate state, whereas a constant expectation in a single special state does not itself prove an operator commutator vanishes. Although the three components are each conserved, they do <em>not</em> commute with each other: \([L_x,L_y]=\iu\hbar L_z\), so their simultaneous values need not all be sharp. For rotationally invariant <em>spin-dependent</em> interactions such as \(f(r)\mathbf L\cdot\mathbf S\), total \(\mathbf J=\mathbf L+\mathbf S\) may be conserved while orbital \(\mathbf L\) separately is not; our proof assumes the specified spinless scalar Hamiltonian.</p>
+<h4>Step 11: Physical caveats and interpretation</h4><p> Operator conservation \(\dd L_{i,H}/\dd t=0\) implies conservation of the expectation for every appropriate state, whereas a constant expectation in a single special state does not itself prove an operator commutator vanishes. Although the three components are each conserved, they do <em>not</em> commute with each other: \([L_x,L_y]=\iu\hbar L_z\), so their simultaneous values need not all be sharp. For rotationally invariant <em>spin-dependent</em> interactions such as \(f(r)\mathbf L\cdot\mathbf S\), total \(\mathbf J=\mathbf L+\mathbf S\) may be conserved while orbital \(\mathbf L\) separately is not; our proof assumes the specified spinless scalar Hamiltonian.</p>
 <p><strong>Exam-ready conclusion.</strong> The two independent commutator calculations give \([T,L_i]=[V(r),L_i]=0\), hence \([H,L_i]=0\). The Heisenberg–Ehrenfest equation then yields</p>
 <div class="display-math">\[\boxed{\frac{\dd}{\dd t}\avg{\mathbf L}=\frac{\iu}{\hbar}\avg{[H,\mathbf L]}=\mathbf0.}\]</div>
 <p>Thus orbital angular momentum is conserved in any spherically symmetric scalar potential. <strong>Hence proved.</strong></p>
-<p>\clearpage</p><p class="small"><a href="#b13">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details></section></main><section class="ack" id="acknowledgments"><h2>Acknowledgments, references and academic integrity</h2><p>These independent study notes are based on Quantum Mechanics–I coursework question sheets supplied by the Department of Physics &amp; Nanotechnology, SRM Institute of Science and Technology (SRMIST), Kattankulathur. The original problems are acknowledged to the course context and instructors. The expanded explanations and solution manuscripts were compiled for study by Kumar Azad, with AI assistance in drafting and LaTeX typesetting.</p><p>The archive is <strong>not an official SRMIST answer key</strong>, has not been independently certified by instructors, and is neither an arXiv submission nor a peer-reviewed research paper. Mathematical statements should be cross-checked against the question sheets and reference textbooks before reuse or academic submission.</p><p>Useful background reading includes D. J. Griffiths and D. F. Schroeter, <em>Introduction to Quantum Mechanics</em>; J. J. Sakurai and J. Napolitano, <em>Modern Quantum Mechanics</em>; and R. Shankar, <em>Principles of Quantum Mechanics</em>. See each source manuscript for its detailed references and assumptions.</p></section><footer>© 2026 Kumar Azad · Educational material, not an official institutional publication.</footer></div><script>
-const ps=[...document.querySelectorAll('details.problem')];async function typeset(el){if(el.dataset.mathdone)return;const mj=window.MathJax;if(mj?.typesetPromise){await mj.typesetPromise([el]);el.dataset.mathdone='1';}}
-async function expand(){ps.forEach(p=>p.open=true);if(window.MathJax?.typesetPromise)await MathJax.typesetPromise(ps);ps.forEach(p=>p.dataset.mathdone='1');}
-ps.forEach(p=>p.addEventListener('toggle',()=>{if(p.open)typeset(p)}));document.getElementById('expand').onclick=expand;document.getElementById('collapse').onclick=()=>ps.forEach(p=>p.open=false);document.getElementById('print').onclick=async()=>{await expand();window.print()};
-function openHash(){const id=decodeURIComponent(location.hash.slice(1));const p=document.getElementById(id);if(p&&p.matches('details.problem')){p.open=true;typeset(p)}}addEventListener('hashchange',openHash);addEventListener('load',openHash);document.addEventListener('DOMContentLoaded',openHash);
+<p class="small"><a href="#b13">Link to this solution</a> · <a href="sources/assignment-iv.tex">LaTeX source</a></p></div></details></section></main><section class="ack" id="acknowledgments"><h2>Acknowledgments, references and academic integrity</h2><p>Thank you to the course faculty for their teaching and assignment questions. These independent study notes were compiled by Kumar Azad. <strong>ChatGPT (OpenAI) assisted with derivation, editing and formatting.</strong> All equations and reasoning should be independently reviewed. No faculty endorsement, official answer-key status, or arXiv publication is claimed.</p><p>The five retained LaTeX manuscripts are the immediate sources for this web edition. The original handout scans and the previously compiled 150-page PDF were not available for this web audit. Exact agreement with the scans is therefore unverified. <a href="verification.html">Read the source and completeness record</a>.</p><p>The archive is <strong>not an official SRMIST answer key</strong>, has not been independently certified by instructors, and is neither an arXiv submission nor a peer-reviewed research paper. Mathematical statements should be cross-checked against the question sheets and reference textbooks before reuse or academic submission.</p><p>Useful background reading includes D. J. Griffiths and D. F. Schroeter, <em>Introduction to Quantum Mechanics</em>; J. J. Sakurai and J. Napolitano, <em>Modern Quantum Mechanics</em>; and R. Shankar, <em>Principles of Quantum Mechanics</em>. See each source manuscript for its detailed references and assumptions.</p></section><footer>© 2026 Kumar Azad · Educational material, not an official institutional publication.</footer></div><script>
+const ps=[...document.querySelectorAll('details.problem')];
+function expand(){ps.forEach(p=>p.open=true)}
+document.getElementById('expand').onclick=expand;
+document.getElementById('collapse').onclick=()=>ps.forEach(p=>p.open=false);
+document.getElementById('print').onclick=async()=>{expand();if(window.MathJax?.startup?.promise)await MathJax.startup.promise;window.print()};
+function openHash(){let id;try{id=decodeURIComponent(location.hash.slice(1))}catch{return}const p=document.getElementById(id);if(p?.matches('details.problem')){p.open=true;requestAnimationFrame(()=>p.scrollIntoView({block:'start'}))}}
+addEventListener('hashchange',openHash);addEventListener('load',openHash);document.addEventListener('DOMContentLoaded',openHash);
 </script></body></html>
