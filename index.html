@@ -418,6 +418,45 @@
       padding: 5px 0;
       line-height: 1.6;
     }
+    /* Dedicated academic course and lecture library */
+    .updates-feature { margin-top: -12px; }
+    .updates-feature-link {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: center;
+      background: linear-gradient(115deg, #112544, #162c45);
+      border: 1px solid #3b777e;
+      border-radius: 10px;
+      min-height: 132px;
+      padding: 25px 28px;
+      text-decoration: none;
+      color: var(--heading);
+      transition: border-color .2s ease, transform .2s ease;
+    }
+    .updates-feature-link:hover {
+      border-color: var(--secondary);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+    .updates-feature-link:focus-visible { outline: 2px solid var(--secondary); outline-offset: 4px; }
+    .updates-feature-text { display: grid; gap: 8px; min-width: 0; }
+    .updates-feature-eyebrow {
+      color: var(--secondary);
+      text-transform: uppercase;
+      font-weight: 700;
+      font-size: .72rem;
+      letter-spacing: .05em;
+    }
+    .updates-feature-title { font-size: 1.48rem; line-height: 1.26; color: var(--heading); }
+    .updates-feature-description { color: #b6c5de; font-size: .93rem; line-height: 1.5; }
+    .updates-feature-arrow { flex: none; font-size: 1.65rem; color: var(--secondary); }
+    @media (max-width: 680px) {
+      .updates-feature { margin-top: 0; }
+      .updates-feature-link { padding: 20px; min-height: 0; }
+      .updates-feature-title { font-size: 1.23rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { .updates-feature-link { transition: none; } .updates-feature-link:hover { transform: none; } }
   </style>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6osY3jOSr5unUDtXOa6CMyLro8jAa6g7nxIQmQK87IbHPXI9YWyYstNt70kaRTQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="academic.css">
@@ -524,6 +563,16 @@
           <span class="research-note-description">Electromagnetic coupling, gauge choices, dipole transitions, and attosecond-driven atomic dynamics.</span>
         </a>
       </div>
+    </section>
+    <section class="updates-feature section" aria-labelledby="updates-feature-heading">
+      <a class="updates-feature-link" href="kumar-azad-updates/" aria-label="Open Kumar Azad Updates coursework and lecture library">
+        <span class="updates-feature-text">
+          <span class="updates-feature-eyebrow">Academic Learning Library · UG &amp; PG</span>
+          <strong id="updates-feature-heading" class="updates-feature-title">Kumar Azad Updates</strong>
+          <span class="updates-feature-description">A growing subject-by-subject archive for coursework, lectures, worked solutions, references, and academic updates.</span>
+        </span>
+        <span class="updates-feature-arrow" aria-hidden="true">↗</span>
+      </a>
     </section>
     <div class="section">
       <h3>About Me</h3>
@@ -673,7 +722,7 @@
 
     <section class="section academic-coursework" id="academic-coursework" aria-labelledby="academic-coursework-heading">
       <h3 id="academic-coursework-heading">Academic Coursework</h3>
-      <p class="coursework-intro">Graduate studies first, followed by undergraduate coursework. Select a program to view its courses.</p>
+      <p class="coursework-intro">Graduate studies first, followed by undergraduate coursework. Select a program to view its courses. For the expandable subject-by-subject catalogue and future lectures, visit <a href="kumar-azad-updates/">Kumar Azad Updates</a>.</p>
 <div class="project-card"><div class="project-meta">M.Sc. COURSEWORK · LECTURE NOTES</div><div class="project-title"><a href="coursework/lecture-notes/">Coursework Lecture Notes</a></div><p>Quantum Mechanics–I, Assignments I–V: 100 detailed mathematical solutions with LaTeX sources, acknowledgments and searchable question index.</p><a href="coursework/lecture-notes/quantum-mechanics/">Explore all worked solutions →</a></div>
       <details class="coursework-program" open id="srmist-coursework">
         <summary><span class="coursework-degree">M.Sc. Physics (Quantum Technology)</span><span class="coursework-subtitle">Current · SRM Institute of Science and Technology (SRMIST)</span></summary>
