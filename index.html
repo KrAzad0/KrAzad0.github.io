@@ -457,6 +457,13 @@
       .updates-feature-title { font-size: 1.23rem; }
     }
     @media (prefers-reduced-motion: reduce) { .updates-feature-link { transition: none; } .updates-feature-link:hover { transform: none; } }
+    .research-workspace-feature { margin-top: -18px; }
+    .research-workspace-feature .workspace-feature-link {
+      background: linear-gradient(115deg,#14233e,#182d4d);
+      border-color: #4b6f85;
+    }
+    .research-workspace-feature .workspace-feature-link:hover { border-color: var(--secondary); }
+    @media (max-width: 680px) { .research-workspace-feature { margin-top: 0; } }
   </style>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVJkEZSMUkrQ6osY3jOSr5unUDtXOa6CMyLro8jAa6g7nxIQmQK87IbHPXI9YWyYstNt70kaRTQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="academic.css">
@@ -570,6 +577,16 @@
           <span class="updates-feature-eyebrow">Academic Learning Library · UG &amp; PG</span>
           <strong id="updates-feature-heading" class="updates-feature-title">Kumar Azad Updates</strong>
           <span class="updates-feature-description">A growing subject-by-subject archive for coursework, lectures, worked solutions, references, and academic updates.</span>
+        </span>
+        <span class="updates-feature-arrow" aria-hidden="true">↗</span>
+      </a>
+    </section>
+    <section class="updates-feature research-workspace-feature section" aria-labelledby="research-workspace-heading">
+      <a class="updates-feature-link workspace-feature-link" href="research-workspace/" aria-label="Explore Kumar Azad's Research Workspace for physics, mathematics, AI and quantum computing">
+        <span class="updates-feature-text">
+          <span class="updates-feature-eyebrow">Ongoing Research · Physics · Mathematica · AI · Quantum Computing</span>
+          <strong id="research-workspace-heading" class="updates-feature-title">Research Workspace · 2026–2028</strong>
+          <span class="updates-feature-description">A version-controlled hub for research questions, symbolic calculations, simulations, algorithms, project updates and reproducible evidence.</span>
         </span>
         <span class="updates-feature-arrow" aria-hidden="true">↗</span>
       </a>
@@ -886,6 +903,7 @@
 
  <div class="section">
   <h3>Projects</h3>
+  <p class="project-workspace-intro">Follow current project questions, modeling steps and verifiable updates in the <a href="research-workspace/">2026–2028 Research Workspace</a>, with the editable <a href="https://github.com/KrAzad0/PROJECT-KUMAR-AZAD-2026-2028">GitHub project repository</a> as its source.</p>
   <div class="project-card">
    <div class="project-title">Literature Review on Ramanujan Lost Notebook</div>
    <div class="project-meta">Nov 2025 - Present</div>
