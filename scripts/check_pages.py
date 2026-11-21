@@ -9,6 +9,7 @@ No private repository contents or tokens are printed.
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -53,15 +54,22 @@ def page_paths():
     return result
 
 def check(url):
-    # Use HEAD to avoid downloading all PDFs while checking true HTTP status.
+    # HEAD avoids downloading PDFs. Retry short-lived DNS/network failures.
     req = urllib.request.Request(url, headers={"User-Agent": HEADERS["User-Agent"]}, method="HEAD")
-    try:
-        with urllib.request.urlopen(req, timeout=22) as response:
-            return response.status, response.geturl(), ""
-    except urllib.error.HTTPError as e:
-        return e.code, e.geturl(), str(e.reason)
-    except Exception as e:
-        return 0, url, str(e)
+    last = None
+    for attempt in range(4):
+        try:
+            with urllib.request.urlopen(req, timeout=22) as response:
+                return response.status, response.geturl(), ""
+        except urllib.error.HTTPError as e:
+            if e.code not in (429, 500, 502, 503, 504):
+                return e.code, e.geturl(), str(e.reason)
+            last = (e.code, e.geturl(), str(e.reason))
+        except Exception as e:
+            last = (0, url, str(e))
+        if attempt < 3:
+            time.sleep(1 + attempt)
+    return last
 
 def main():
     repos = public_repos()
