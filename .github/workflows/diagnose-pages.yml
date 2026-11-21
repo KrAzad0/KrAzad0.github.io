@@ -1,0 +1,48 @@
+name: Diagnose GitHub Pages domain and project URLs
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/diagnose-pages.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check GitHub Pages settings and live HTTP redirects
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -u
+          echo "=== DNS for official GitHub Pages hostname ==="
+          dig +short krazad0.github.io || true
+          echo "=== GitHub Pages settings from REST API ==="
+          for repo in KrAzad0.github.io QM-CH1-SOLUTION; do
+            echo "--- $repo"
+            curl -sS --max-time 15 -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              -H "X-GitHub-Api-Version: 2022-11-28" \
+              "https://api.github.com/repos/KrAzad0/${repo}/pages" |
+              python3 -c 'import sys,json; d=json.load(sys.stdin); print(json.dumps({k:d.get(k) for k in ("html_url","cname","status","source","message")},indent=2))' || true
+          done
+          echo "=== Probe canonical URLs: response codes, final URLs and redirect headers ==="
+          urls=(
+            "https://krazad0.github.io/"
+            "https://krazad0.github.io/QM-CH1-SOLUTION/"
+            "https://krazad0.github.io/QM-CH1-SOLUTION/chapter4/"
+            "https://krazad0.github.io/QM-CH1-SOLUTION/chapter5/"
+            "https://krazad0.github.io/QM-CH1-SOLUTION/chapter5/index.html"
+            "https://krazad0.github.io/QM-CH1-SOLUTION/chapter5/chapter-5-solutions.pdf"
+            "https://krazad0.github.io/research-workspace/"
+          )
+          for u in "${urls[@]}"; do
+            echo "--- $u"
+            curl -sS -L --max-time 25 -o /dev/null -w 'HTTP=%{http_code} FINAL=%{url_effective} REDIRECTS=%{num_redirects}\n' "$u" || true
+            curl -sSI --max-time 15 "$u" | grep -Ei '^(HTTP/|location:|server:|cache-control:)' || true
+          done
+          echo "=== Probe fresh path URL to bypass cached redirects ==="
+          curl -sS -L --max-time 25 -o /dev/null -w 'HTTP=%{http_code} FINAL=%{url_effective} REDIRECTS=%{num_redirects}\n' \
+            "https://krazad0.github.io/QM-CH1-SOLUTION/chapter5/index.html?audit=20261121" || true
