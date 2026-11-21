@@ -37,7 +37,7 @@ def public_repos():
     return repos
 
 def page_paths():
-    result = ["/", "/research-workspace/", "/QM-CH1-SOLUTION/"]
+    result = ["/", "/access-all-projects/", "/access-all-projects/index.html", "/research-workspace/", "/QM-CH1-SOLUTION/"]
     result += [f"/QM-CH1-SOLUTION/chapter{i}/" for i in range(2, 6)]
     result += ["/QM-CH1-SOLUTION/chapter5/index.html",
                "/QM-CH1-SOLUTION/chapter5/chapter-5-solutions.pdf"]
