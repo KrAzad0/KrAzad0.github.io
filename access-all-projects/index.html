@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Project Access · Kumar Azad</title>
+<meta name="description" content="A fresh access point for Kumar Azad's verified GitHub Pages websites, coursework and research projects.">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#101c2a">
+<style>
+:root{color-scheme:dark;--bg:#0a1320;--panel:#132237;--panel2:#16283e;--ink:#f2f6fa;--muted:#b0bfcd;--line:#304760;--accent:#8be1cb;--blue:#9abfff;font-family:Inter,-apple-system,BlinkMacSystemFont,system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(145deg,#0a1320,#11263b 53%,#0a1320);color:var(--ink);line-height:1.6}
+a{color:inherit}button,input{font:inherit}button{cursor:pointer}
+.shell{max-width:1200px;margin:auto;padding:0 24px}
+header{border-bottom:1px solid #263b4e;background:#0c1b2cf2}
+nav{min-height:74px;display:flex;gap:24px;align-items:center;justify-content:space-between}
+.logo{text-decoration:none;font-weight:750;letter-spacing:.02em;display:flex;align-items:center;gap:12px}
+.logo span:first-child{color:var(--accent);font-size:28px}
+.minilink{font-size:13px;color:var(--muted);text-decoration:none}
+.hero{padding:78px 0 56px}
+.eyebrow{text-transform:uppercase;letter-spacing:.19em;font-size:12px;color:var(--accent);font-weight:700}
+h1{font-size:clamp(48px,8vw,104px);line-height:1.03;letter-spacing:-.06em;font-weight:780;margin:16px 0 25px;max-width:1000px}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{color:#d1dfed;font-size:clamp(16px,2.3vw,21px);max-width:780px;margin-bottom:23px}
+.status{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0}
+.pill{padding:7px 12px;border:1px solid #44657b;border-radius:100px;color:#d8e6f3;font-size:12px}
+.pill.verified{border-color:#417e73;color:var(--accent)}
+.note{max-width:850px;color:var(--muted);font-size:14px;background:#14263b;border-left:3px solid var(--accent);padding:18px 21px;border-radius:0 8px 8px 0}
+.bar{position:sticky;top:0;z-index:10;background:#102035f5;backdrop-filter:blur(12px);border-block:1px solid var(--line);padding:15px 0}
+.tools{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.search{flex:1;min-width:220px;border:1px solid #52677f;background:#091624;color:var(--ink);border-radius:11px;padding:14px 16px;outline-offset:3px}
+.search::placeholder{color:#b8c5d5}
+.select{background:#10243b;color:var(--ink);border:1px solid #52677f;border-radius:11px;padding:14px 14px;max-width:100%}
+main{padding:24px 0 100px}
+.group{padding-top:40px}
+.group-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:18px;border-bottom:1px solid #32485d;padding-bottom:10px}
+.group-head h2{font-size:clamp(24px,3vw,34px);letter-spacing:-.03em;margin:0}
+.group-head span{color:var(--muted);font-size:12px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.project{min-width:0;display:flex;flex-direction:column;gap:11px;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:21px;transition:border-color .2s,transform .2s}
+.project:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card-label{font-family:ui-monospace,SFMono-Regular,monospace;font-size:11px;color:var(--blue);overflow-wrap:anywhere}
+h3{font-size:18px;letter-spacing:-.018em;line-height:1.35;margin:0;flex:1}
+.actions{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}
+.open{display:inline-flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid #578777;color:var(--accent);border-radius:9px;text-decoration:none;font-weight:650;font-size:12px;padding:9px 12px}
+.open:hover{background:#1d483e}
+.copy{border:0;background:transparent;color:var(--muted);font-size:12px;text-decoration:underline;text-underline-offset:3px}
+footer{padding:35px 0 70px;color:var(--muted);border-top:1px solid var(--line);font-size:13px}
+footer a{color:var(--accent);text-underline-offset:3px}
+#empty{padding:35px 0;color:var(--muted)}
+.skip{position:absolute;left:-5000px;top:0}.skip:focus{left:8px;z-index:100;background:#fff;color:#000;padding:10px}
+@media(max-width:900px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:590px){.shell{padding-inline:17px}.hero{padding:45px 0 35px}.cards{grid-template-columns:1fr}.project{padding:18px}.tools{flex-direction:column;align-items:stretch}.select{width:100%}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#projects">Skip to projects</a>
+<header><nav class="shell"><a class="logo" href="../index.html?via=project-access-20261121"><span>Ψ</span><span>Kumar Azad · Projects</span></a><a class="minilink" href="https://github.com/KrAzad0" target="_blank" rel="noopener noreferrer">GitHub repositories ↗</a></nav></header>
+<section class="hero shell">
+<div class="eyebrow">PROJECT ACCESS · NOVEMBER 2026</div>
+<h1>Your work.<br><em>One home.</em></h1>
+<p class="lead">A fresh entry point for the public websites behind your quantum mechanics, theoretical physics, programming, mathematics and research projects.</p>
+<div class="status"><span class="pill verified">● 28 GitHub Pages repositories verified</span><span class="pill">42 direct access links</span><span class="pill">Official host: krazad0.github.io</span></div>
+<div class="note"><strong>Opening an old link still sends you to .me?</strong> Use the “Open website” links below. They include a fresh URL parameter to bypass old cached redirects. The site's verified address stays on <strong>krazad0.github.io</strong>. If even a fresh link redirects, use Safari or Chrome in a private window and clear the previous website data for the GitHub Pages hostname.</div>
+</section>
+<div class="bar"><div class="tools shell">
+<label for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Search all projects</label><input id="search" class="search" type="search" placeholder="Search a project, chapter or research topic" autocomplete="off">
+<label for="filter" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Project group</label><select class="select" id="filter"><option value="all">All project groups</option><option value="Quantum coursework">Quantum coursework</option><option value="Research & physics">Research & physics</option><option value="AI & coding">AI & coding</option><option value="Projects & portfolio">Projects & portfolio</option></select>
+<span id="count" aria-live="polite" style="font-size:12px;color:var(--muted)">42 links</span>
+</div></div>
+<main class="shell" id="projects"><section class="group" data-group="Quantum coursework">
+<div class="group-head"><h2>Quantum coursework</h2><span>10 sites</span></div>
+<div class="cards"><article class="project" data-search="coursework lecture notes coursework/lecture-notes/">
+<div class="card-label">/coursework/lecture-notes/</div>
+<h3>Coursework Lecture Notes</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/coursework/lecture-notes/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Coursework Lecture Notes in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/coursework/lecture-notes/" aria-label="Copy original link for Coursework Lecture Notes">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics — chapter 1 qm-ch1-solution/">
+<div class="card-label">/QM-CH1-SOLUTION/</div>
+<h3>Quantum Mechanics — Chapter 1</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/QM-CH1-SOLUTION/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics — Chapter 1 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/QM-CH1-SOLUTION/" aria-label="Copy original link for Quantum Mechanics — Chapter 1">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics — chapter 2 qm-ch1-solution/chapter2/">
+<div class="card-label">/QM-CH1-SOLUTION/chapter2/</div>
+<h3>Quantum Mechanics — Chapter 2</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/QM-CH1-SOLUTION/chapter2/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics — Chapter 2 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/QM-CH1-SOLUTION/chapter2/" aria-label="Copy original link for Quantum Mechanics — Chapter 2">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics — chapter 3 qm-ch1-solution/chapter3/">
+<div class="card-label">/QM-CH1-SOLUTION/chapter3/</div>
+<h3>Quantum Mechanics — Chapter 3</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/QM-CH1-SOLUTION/chapter3/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics — Chapter 3 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/QM-CH1-SOLUTION/chapter3/" aria-label="Copy original link for Quantum Mechanics — Chapter 3">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics — chapter 4 qm-ch1-solution/chapter4/">
+<div class="card-label">/QM-CH1-SOLUTION/chapter4/</div>
+<h3>Quantum Mechanics — Chapter 4</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/QM-CH1-SOLUTION/chapter4/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics — Chapter 4 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/QM-CH1-SOLUTION/chapter4/" aria-label="Copy original link for Quantum Mechanics — Chapter 4">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics — chapter 5 qm-ch1-solution/chapter5/">
+<div class="card-label">/QM-CH1-SOLUTION/chapter5/</div>
+<h3>Quantum Mechanics — Chapter 5</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/QM-CH1-SOLUTION/chapter5/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics — Chapter 5 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/QM-CH1-SOLUTION/chapter5/" aria-label="Copy original link for Quantum Mechanics — Chapter 5">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics from scratch quantum-mechanics-from-scratch/">
+<div class="card-label">/Quantum-Mechanics-From-Scratch/</div>
+<h3>Quantum Mechanics From Scratch</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/Quantum-Mechanics-From-Scratch/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics From Scratch in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/Quantum-Mechanics-From-Scratch/" aria-label="Copy original link for Quantum Mechanics From Scratch">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics gallery quantum-mechanics-gallery/">
+<div class="card-label">/quantum-mechanics-gallery/</div>
+<h3>Quantum Mechanics Gallery</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/quantum-mechanics-gallery/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics Gallery in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/quantum-mechanics-gallery/" aria-label="Copy original link for Quantum Mechanics Gallery">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics lecture notes coursework/lecture-notes/quantum-mechanics/">
+<div class="card-label">/coursework/lecture-notes/quantum-mechanics/</div>
+<h3>Quantum Mechanics Lecture Notes</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/coursework/lecture-notes/quantum-mechanics/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics Lecture Notes in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/coursework/lecture-notes/quantum-mechanics/" aria-label="Copy original link for Quantum Mechanics Lecture Notes">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum mechanics notes quantum-mechanics/">
+<div class="card-label">/quantum-mechanics/</div>
+<h3>Quantum Mechanics Notes</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/quantum-mechanics/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Mechanics Notes in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/quantum-mechanics/" aria-label="Copy original link for Quantum Mechanics Notes">Copy link</button></div>
+</article></div></section>
+<section class="group" data-group="Research & physics">
+<div class="group-head"><h2>Research & physics</h2><span>12 sites</span></div>
+<div class="cards"><article class="project" data-search="differential equations differential-equations/">
+<div class="card-label">/differential-equations/</div>
+<h3>Differential Equations</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/differential-equations/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Differential Equations in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/differential-equations/" aria-label="Copy original link for Differential Equations">Copy link</button></div>
+</article>
+<article class="project" data-search="light–matter interaction light-matter-interaction/">
+<div class="card-label">/light-matter-interaction/</div>
+<h3>Light–Matter Interaction</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/light-matter-interaction/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Light–Matter Interaction in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/light-matter-interaction/" aria-label="Copy original link for Light–Matter Interaction">Copy link</button></div>
+</article>
+<article class="project" data-search="mathematical physics mathematical-physics/">
+<div class="card-label">/mathematical-physics/</div>
+<h3>Mathematical Physics</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/mathematical-physics/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Mathematical Physics in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/mathematical-physics/" aria-label="Copy original link for Mathematical Physics">Copy link</button></div>
+</article>
+<article class="project" data-search="physics eigen newtons law physics-eigen-newtons-law/">
+<div class="card-label">/physics-eigen-Newtons-Law/</div>
+<h3>Physics Eigen Newtons Law</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/physics-eigen-Newtons-Law/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Physics Eigen Newtons Law in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/physics-eigen-Newtons-Law/" aria-label="Copy original link for Physics Eigen Newtons Law">Copy link</button></div>
+</article>
+<article class="project" data-search="physics eigen sim physics-eigen-sim/">
+<div class="card-label">/physics-eigen-sim/</div>
+<h3>Physics Eigen Sim</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/physics-eigen-sim/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Physics Eigen Sim in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/physics-eigen-sim/" aria-label="Copy original link for Physics Eigen Sim">Copy link</button></div>
+</article>
+<article class="project" data-search="positive geometry positive-geometry/">
+<div class="card-label">/positive-geometry/</div>
+<h3>Positive Geometry</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/positive-geometry/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Positive Geometry in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/positive-geometry/" aria-label="Copy original link for Positive Geometry">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum gallery at a planck scale  quantum-gallery-at-a-planck-scale-/">
+<div class="card-label">/Quantum-Gallery-at-a-Planck-Scale-/</div>
+<h3>Quantum Gallery At A Planck Scale </h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/Quantum-Gallery-at-a-Planck-Scale-/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Gallery At A Planck Scale  in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/Quantum-Gallery-at-a-Planck-Scale-/" aria-label="Copy original link for Quantum Gallery At A Planck Scale ">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum research portfolio quantum-research-portfolio/">
+<div class="card-label">/quantum-research-portfolio/</div>
+<h3>Quantum Research Portfolio</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/quantum-research-portfolio/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Research Portfolio in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/quantum-research-portfolio/" aria-label="Copy original link for Quantum Research Portfolio">Copy link</button></div>
+</article>
+<article class="project" data-search="research paper research-paper/">
+<div class="card-label">/Research-Paper/</div>
+<h3>Research Paper</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/Research-Paper/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Research Paper in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/Research-Paper/" aria-label="Copy original link for Research Paper">Copy link</button></div>
+</article>
+<article class="project" data-search="research workspace research-workspace/">
+<div class="card-label">/research-workspace/</div>
+<h3>Research Workspace</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/research-workspace/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Research Workspace in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/research-workspace/" aria-label="Copy original link for Research Workspace">Copy link</button></div>
+</article>
+<article class="project" data-search="research: torus research/torus/">
+<div class="card-label">/research/torus/</div>
+<h3>Research: Torus</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/research/torus/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Research: Torus in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/research/torus/" aria-label="Copy original link for Research: Torus">Copy link</button></div>
+</article>
+<article class="project" data-search="torus hydrogen torus-hydrogen/">
+<div class="card-label">/torus-hydrogen/</div>
+<h3>Torus Hydrogen</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/torus-hydrogen/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Torus Hydrogen in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/torus-hydrogen/" aria-label="Copy original link for Torus Hydrogen">Copy link</button></div>
+</article></div></section>
+<section class="group" data-group="AI & coding">
+<div class="group-head"><h2>AI & coding</h2><span>8 sites</span></div>
+<div class="cards"><article class="project" data-search="attention residual attention-residual/">
+<div class="card-label">/Attention-Residual/</div>
+<h3>Attention Residual</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/Attention-Residual/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Attention Residual in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/Attention-Residual/" aria-label="Copy original link for Attention Residual">Copy link</button></div>
+</article>
+<article class="project" data-search="building an llm from scratch 2026 building-an-llm-from-scratch-2026/">
+<div class="card-label">/BUILDING-AN-LLM-FROM-SCRATCH-2026/</div>
+<h3>BUILDING AN LLM FROM SCRATCH 2026</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/BUILDING-AN-LLM-FROM-SCRATCH-2026/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open BUILDING AN LLM FROM SCRATCH 2026 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/BUILDING-AN-LLM-FROM-SCRATCH-2026/" aria-label="Copy original link for BUILDING AN LLM FROM SCRATCH 2026">Copy link</button></div>
+</article>
+<article class="project" data-search="calculator calculator/">
+<div class="card-label">/Calculator/</div>
+<h3>Calculator</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/Calculator/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Calculator in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/Calculator/" aria-label="Copy original link for Calculator">Copy link</button></div>
+</article>
+<article class="project" data-search="calculus ai calculus-ai/">
+<div class="card-label">/calculus-ai/</div>
+<h3>Calculus Ai</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/calculus-ai/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Calculus Ai in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/calculus-ai/" aria-label="Copy original link for Calculus Ai">Copy link</button></div>
+</article>
+<article class="project" data-search="codeforce codeforce/">
+<div class="card-label">/CodeForce/</div>
+<h3>CodeForce</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/CodeForce/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open CodeForce in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/CodeForce/" aria-label="Copy original link for CodeForce">Copy link</button></div>
+</article>
+<article class="project" data-search="main portfolio ">
+<div class="card-label">PERSONAL HOME</div>
+<h3>Main Portfolio</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Main Portfolio in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/" aria-label="Copy original link for Main Portfolio">Copy link</button></div>
+</article>
+<article class="project" data-search="mathorbit mathorbit/">
+<div class="card-label">/MathOrbit/</div>
+<h3>MathOrbit</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/MathOrbit/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open MathOrbit in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/MathOrbit/" aria-label="Copy original link for MathOrbit">Copy link</button></div>
+</article>
+<article class="project" data-search="think ai think-ai/">
+<div class="card-label">/think-ai/</div>
+<h3>Think Ai</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/think-ai/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Think Ai in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/think-ai/" aria-label="Copy original link for Think Ai">Copy link</button></div>
+</article></div></section>
+<section class="group" data-group="Projects & portfolio">
+<div class="group-head"><h2>Projects & portfolio</h2><span>12 sites</span></div>
+<div class="cards"><article class="project" data-search="2018 2026 2018-2026/">
+<div class="card-label">/2018-2026/</div>
+<h3>2018 2026</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/2018-2026/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open 2018 2026 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/2018-2026/" aria-label="Copy original link for 2018 2026">Copy link</button></div>
+</article>
+<article class="project" data-search="azad project atlas azad-project-atlas/">
+<div class="card-label">/azad-project-atlas/</div>
+<h3>Azad Project Atlas</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/azad-project-atlas/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Azad Project Atlas in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/azad-project-atlas/" aria-label="Copy original link for Azad Project Atlas">Copy link</button></div>
+</article>
+<article class="project" data-search="calculus learning journey calculus-learning-journey/">
+<div class="card-label">/calculus-learning-journey/</div>
+<h3>Calculus Learning Journey</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/calculus-learning-journey/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Calculus Learning Journey in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/calculus-learning-journey/" aria-label="Copy original link for Calculus Learning Journey">Copy link</button></div>
+</article>
+<article class="project" data-search="hobby gallery hobby-gallery/">
+<div class="card-label">/hobby-gallery/</div>
+<h3>Hobby Gallery</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/hobby-gallery/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Hobby Gallery in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/hobby-gallery/" aria-label="Copy original link for Hobby Gallery">Copy link</button></div>
+</article>
+<article class="project" data-search="jee archive jee-archive/">
+<div class="card-label">/jee-archive/</div>
+<h3>Jee Archive</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/jee-archive/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Jee Archive in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/jee-archive/" aria-label="Copy original link for Jee Archive">Copy link</button></div>
+</article>
+<article class="project" data-search="krazad00 krazad00/">
+<div class="card-label">/KRAZAD00/</div>
+<h3>KRAZAD00</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/KRAZAD00/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open KRAZAD00 in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/KRAZAD00/" aria-label="Copy original link for KRAZAD00">Copy link</button></div>
+</article>
+<article class="project" data-search="kumar azad kumar-azad/">
+<div class="card-label">/kumar-azad/</div>
+<h3>Kumar Azad</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/kumar-azad/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Kumar Azad in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/kumar-azad/" aria-label="Copy original link for Kumar Azad">Copy link</button></div>
+</article>
+<article class="project" data-search="kumar azad updates kumar-azad-updates/">
+<div class="card-label">/kumar-azad-updates/</div>
+<h3>Kumar Azad Updates</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/kumar-azad-updates/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Kumar Azad Updates in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/kumar-azad-updates/" aria-label="Copy original link for Kumar Azad Updates">Copy link</button></div>
+</article>
+<article class="project" data-search="ongoing project ongoing-project/">
+<div class="card-label">/Ongoing-Project/</div>
+<h3>Ongoing Project</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/Ongoing-Project/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Ongoing Project in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/Ongoing-Project/" aria-label="Copy original link for Ongoing Project">Copy link</button></div>
+</article>
+<article class="project" data-search="overleaf showcase overleaf-showcase/">
+<div class="card-label">/overleaf-showcase/</div>
+<h3>Overleaf Showcase</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/overleaf-showcase/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Overleaf Showcase in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/overleaf-showcase/" aria-label="Copy original link for Overleaf Showcase">Copy link</button></div>
+</article>
+<article class="project" data-search="quantum posts quantum-posts/">
+<div class="card-label">/quantum-posts/</div>
+<h3>Quantum Posts</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/quantum-posts/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantum Posts in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/quantum-posts/" aria-label="Copy original link for Quantum Posts">Copy link</button></div>
+</article>
+<article class="project" data-search="quantumscribe · website quantumscribe.github.io/">
+<div class="card-label">/quantumscribe.github.io/</div>
+<h3>Quantumscribe · Website</h3>
+<div class="actions"><a class="open" href="https://krazad0.github.io/quantumscribe.github.io/?via=project-access-20261121" rel="noopener noreferrer" target="_blank" aria-label="Open Quantumscribe · Website in new tab">Open website <span aria-hidden="true">↗</span></a><button type="button" class="copy" data-copy="https://krazad0.github.io/quantumscribe.github.io/" aria-label="Copy original link for Quantumscribe · Website">Copy link</button></div>
+</article></div></section><p id="empty" hidden>No projects match this search.</p></main>
+<footer><div class="shell">Verified by independent GitHub Actions HTTP and Pages settings checks · <a href="https://github.com/KrAzad0/KrAzad0.github.io/actions" target="_blank" rel="noopener noreferrer">Deployment and status history</a> · <a href="https://github.com/KrAzad0" target="_blank" rel="noopener noreferrer">Browse all repositories, including code-only projects</a>.<p>Not every repository publishes a website. This directory contains active Pages repositories and selected pages from the main portfolio.</p></div></footer>
+<script>
+(()=>{"use strict";
+const input=document.getElementById("search"),select=document.getElementById("filter"),count=document.getElementById("count"),empty=document.getElementById("empty");
+const groups=[...document.querySelectorAll(".group")];
+function filter(){const q=input.value.trim().toLowerCase();let total=0;
+for(const group of groups){let active=0;for(const card of group.querySelectorAll(".project")){const match=(!q||card.dataset.search.includes(q))&&(select.value==="all"||select.value===group.dataset.group);card.hidden=!match;if(match)active++;}
+group.hidden=active===0;total+=active;}count.textContent=total+" links";empty.hidden=total!==0;}
+input.addEventListener("input",filter);select.addEventListener("change",filter);
+document.querySelectorAll(".copy").forEach(button=>button.addEventListener("click",async()=>{
+const val=button.dataset.copy;try{await navigator.clipboard.writeText(val);button.textContent="Copied";setTimeout(()=>button.textContent="Copy link",1500);}
+catch{window.prompt("Copy link:",val);}
+}));
+})();
+</script></body></html>
