@@ -38,8 +38,10 @@ def public_repos():
 
 def page_paths():
     result = ["/", "/access-all-projects/", "/access-all-projects/index.html", "/research-workspace/", "/QM-CH1-SOLUTION/"]
-    result += [f"/QM-CH1-SOLUTION/chapter{i}/" for i in range(2, 6)]
+    result += [f"/QM-CH1-SOLUTION/chapter{i}/" for i in range(2, 7)]
     result += ["/QM-CH1-SOLUTION/chapter5/index.html",
+               "/QM-CH1-SOLUTION/chapter6/index.html",
+               "/QM-CH1-SOLUTION/chapter6/chapter-6-solutions.pdf",
                "/QM-CH1-SOLUTION/chapter5/chapter-5-solutions.pdf"]
     try:
         tree = github_api(f"/repos/{OWNER}/{OWNER}.github.io/git/trees/main?recursive=1")
