@@ -1,0 +1,20 @@
+name: Audit all Pages custom domains
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/audit_cnames.py'
+      - '.github/workflows/custom-domain-audit.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: read
+jobs:
+  scan-domains:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Inspect Pages custom-domain settings and live redirect headers
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/audit_cnames.py
