@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Kumar Azad’s research portfolio in quantum dynamics, mathematical physics, and scientific computing.">
+<title>Kumar Azad · Research Portfolio</title>
+<style>
+:root{color-scheme:light;--paper:#f7f6fc;--ink:#211a36;--muted:#595369;--violet:#583ab8;--line:#ded9ed;--white:#fff;--lavender:#ece7fb;font-family:Inter,system-ui,-apple-system,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.55}
+button,input{font:inherit;color:inherit}
+a{color:var(--violet);text-underline-offset:.22em}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #7655dd;outline-offset:4px}
+[hidden]{display:none!important}
+.wrap{width:min(1120px,calc(100% - 64px));margin-inline:auto}
+.site-header{border-bottom:1px solid var(--line)}
+.header-inner{display:flex;justify-content:space-between;align-items:center;gap:24px;min-height:76px}
+.brand{display:inline-flex;align-items:center;gap:12px;color:var(--ink);font-weight:750;text-decoration:none;white-space:nowrap}
+.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:#2c1b52;color:#e5dbff;font-size:23px;line-height:1}
+nav{display:flex;align-items:center;gap:31px}
+nav a{color:var(--muted);text-decoration:none;font-size:.89rem;font-weight:650}
+nav a:hover{text-decoration:underline}
+nav .outline{padding:8px 15px;border:1px solid var(--line);border-radius:8px;color:var(--ink)}
+.hero{padding:68px 0 50px}
+.kicker{margin:0 0 13px;color:var(--violet);text-transform:uppercase;letter-spacing:.15em;font-size:.82rem;font-weight:800}
+h1,h2,h3,p{margin-top:0}
+h1,h2{font-family:Georgia,'Times New Roman',serif;font-weight:500;letter-spacing:-.055em}
+h1{font-size:clamp(3.55rem,8.4vw,7.7rem);line-height:.98;margin:0 0 24px}
+h1 em{color:var(--violet);font-weight:inherit}
+.intro{max-width:635px;color:var(--muted);font-size:1.14rem;margin:0}
+section{scroll-margin-top:30px}
+.feature{overflow:hidden;border:1px solid var(--line);border-radius:22px;background:var(--white);box-shadow:0 16px 42px #3022520b}
+.feature-top{display:grid;grid-template-columns:1fr 1.07fr}
+.feature-copy{padding:39px 35px 34px 40px;align-content:center}
+.feature h2{font-size:clamp(2.5rem,4.8vw,4.3rem);line-height:1.01;margin:0 0 17px}
+.feature p:not(.kicker){color:var(--muted);margin-bottom:21px}
+.button{display:inline-flex;align-items:center;justify-content:center;border-radius:8px;padding:9px 14px;font-weight:700;text-decoration:none;color:var(--violet);border:1px solid #d9cff4;font-size:.9rem}
+.button:hover{background:var(--lavender)}
+figure{margin:0;min-height:373px;display:grid;grid-template-rows:1fr auto;position:relative;background:radial-gradient(ellipse at 49% 45%,#402176 0%,#261647 58%,#1b122e 100%);color:#e8dcff}
+.torus{display:block;width:100%;height:100%;min-height:290px;position:absolute;inset:0}
+.figure-label,figcaption{position:relative;z-index:1;pointer-events:none}
+.figure-label{font-family:ui-monospace,monospace;font-size:.83rem;text-transform:uppercase;letter-spacing:.13em;padding:21px 23px;color:#eadfff}
+figcaption{padding:0 23px 19px;display:flex;justify-content:space-between;gap:12px;color:#d7c8ef;font-size:.85rem}
+.controls{display:flex;gap:4px;flex-wrap:wrap;padding:0 26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.controls button{border:0;background:transparent;padding:14px 13px;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--muted);border-bottom:3px solid transparent}
+.controls button:hover{background:#f7f4fc}
+.controls button[aria-pressed="true"]{color:var(--violet);border-bottom-color:var(--violet)}
+.panel{padding:22px 39px 25px}
+.panel p:last-child,.panel ol:last-child{margin-bottom:0!important}
+.panel ol{padding-left:22px;color:var(--muted)}
+.formula{display:block;margin:12px 0 0;font-family:Georgia,serif;padding:11px 14px;background:#f4f0fb;border-radius:8px;color:#3d286c;overflow-wrap:anywhere}
+.section{padding-top:76px}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:24px}
+.section h2{font-size:clamp(2.65rem,5vw,4.4rem);line-height:1.03;margin:0}
+.section-head p:not(.kicker){color:var(--muted);margin:10px 0 0;max-width:585px}
+.search{display:grid;gap:5px;font-weight:700;font-size:.87rem;min-width:240px}
+.search input{background:white;border:1px solid #cfc5e8;border-radius:8px;padding:9px 12px;min-width:0}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.filters button{border:1px solid var(--line);background:white;border-radius:999px;padding:6px 13px;cursor:pointer;font-size:.89rem;font-weight:650}
+.filters button:hover{border-color:var(--violet)}
+.filters button[aria-pressed="true"]{background:#352161;border-color:#352161;color:white}
+.result{color:var(--muted);font-size:.87rem;margin:0 0 11px}
+.archive{border-top:1px solid var(--line)}
+.archive details{border-bottom:1px solid var(--line)}
+.archive summary{padding:18px 12px;display:grid;grid-template-columns:minmax(130px,.35fr) 1fr auto;gap:15px;align-items:center;list-style:none;cursor:pointer}
+.archive summary::-webkit-details-marker{display:none}
+.archive summary:after{content:'+';font-size:1.4rem;color:var(--violet);line-height:1}
+.archive details[open] summary:after{content:'−'}
+.archive summary:hover{background:#f0ebfa}
+.category{color:var(--violet);font-size:.86rem;font-weight:700}
+.entry-title{font-weight:750;font-size:1.06rem}
+.entry-body{margin-left:calc((100% - 26px) * .26);padding:0 36px 20px 12px;color:var(--muted)}
+.entry-body p{margin:0 0 9px}
+.entry-body p:last-child{margin-bottom:0}
+.entry-body strong{color:var(--ink)}
+.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:23px}
+.roadmap article{border:1px solid var(--line);border-radius:13px;background:white;padding:23px}
+.roadmap h3{margin:0 0 8px;font-size:1.16rem}
+.roadmap p{margin-bottom:0;color:var(--muted)}
+.lab-notes{margin-top:21px;background:var(--lavender);border:1px solid var(--line);border-radius:12px;padding:17px 21px}
+.lab-notes summary{cursor:pointer;font-weight:750}
+.lab-notes p{margin:12px 0 2px;color:var(--muted)}
+footer{margin-top:72px;border-top:1px solid var(--line)}
+.footer-inner{padding:23px 0 29px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;color:var(--muted)}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.skip{position:fixed;left:10px;top:9px;background:white;padding:8px;z-index:9;transform:translateY(-200%)}
+.skip:focus{transform:none}
+@media(max-width:760px){
+.wrap{width:calc(100% - 36px)}.header-inner{min-height:68px;gap:10px}nav{gap:14px}nav .outline{padding:5px 9px}nav a{font-size:.82rem}
+.hero{padding:49px 0 35px}.feature-top{grid-template-columns:1fr}.feature-copy{padding:27px}.feature h2{max-width:460px}figure{min-height:310px}.panel{padding:18px 25px}.controls{padding:0 10px}
+.section{padding-top:55px}.section-head{align-items:stretch;flex-direction:column;gap:13px}.search{min-width:0}.roadmap{grid-template-columns:1fr}footer{margin-top:50px}
+}
+@media(max-width:440px){
+nav a:first-child{display:none}nav{gap:10px}.brand{gap:6px}.mark{width:27px;height:27px;font-size:19px}.brand{font-size:.92rem}.intro{font-size:1.02rem}
+.archive summary{grid-template-columns:1fr auto;gap:3px 8px}.category{grid-column:1}.entry-title{grid-column:1}.archive summary:after{grid-column:2;grid-row:1/3}.entry-body{margin-left:0;padding-right:14px}figcaption{font-size:.77rem;padding-inline:15px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner wrap">
+    <a href="./" class="brand"><span class="mark" aria-hidden="true">ψ</span> Kumar Azad</a>
+    <nav aria-label="Main navigation">
+      <a href="#featured">Featured</a>
+      <a href="#archive">Archive</a>
+      <a href="#roadmap">Roadmap</a>
+      <a class="outline" href="https://github.com/KrAzad0">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="wrap">
+  <div class="hero">
+    <p class="kicker">Theoretical &amp; computational science</p>
+    <h1>Research <em>portfolio.</em></h1>
+    <p class="intro">A collection of research questions in quantum physics, mathematical structures, and scientific computing, with an emphasis on models that can be derived and tested.</p>
+  </div>
+
+  <section id="featured" class="feature" aria-labelledby="feature-title">
+    <div class="feature-top">
+      <div class="feature-copy">
+        <p class="kicker">Flagship research project</p>
+        <h2 id="feature-title">Hydrogen in a torus</h2>
+        <p>How does toroidal confinement change the energy spectrum and attosecond dynamics of a hydrogenic electron?</p>
+        <a class="button" href="https://github.com/KrAzad0/Torus-Hydrogen-Attosecond-Pulse">Project on GitHub</a>
+      </div>
+      <figure>
+        <div class="figure-label">Toroidal confinement</div>
+        <canvas class="torus" aria-label="Illustration of a torus with a major radius R and a tube radius a" role="img"></canvas>
+        <figcaption><span>Geometry illustration</span><span>R · major radius &nbsp; a · tube radius</span></figcaption>
+      </figure>
+    </div>
+    <div class="controls" aria-label="Featured project sections" hidden>
+      <button type="button" aria-pressed="true" aria-controls="model">Physical model</button>
+      <button type="button" aria-pressed="false" aria-controls="questions">Research questions</button>
+      <button type="button" aria-pressed="false" aria-controls="verification">Numerical roadmap</button>
+    </div>
+    <div id="model" class="panel">
+      <p>A proton near the torus centreline supplies the Coulomb potential. The electron obeys hard-wall Dirichlet conditions. A laser field with a Gaussian pulse envelope drives its time-dependent Schrödinger dynamics.</p>
+      <span class="formula">Ω = { (ρ, φ, z) : (ρ − R)² + z² &lt; a² }, &nbsp; R &gt; a &gt; 0</span>
+    </div>
+    <div id="questions" class="panel">
+      <p>How do the bound-state energies, probability density, and probability current vary with the two torus radii? Candidate extensions include tunnelling between localized regions, harmonic response, spin dynamics, and geometric phases.</p>
+    </div>
+    <div id="verification" class="panel">
+      <ol>
+        <li>Compute field-free eigenstates and compare converged energies across geometries.</li>
+        <li>Propagate a chosen initial state through the pulse in MATLAB and check norm conservation and time-step convergence.</li>
+        <li>Compare populations, density, and probability current across radii and pulse parameters.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="archive" class="section" aria-labelledby="archive-title">
+    <div class="section-head">
+      <div>
+        <p class="kicker">Research directions</p>
+        <h2 id="archive-title">Explore the archive</h2>
+        <p>Open a topic to see its research question and a proposed starting point.</p>
+      </div>
+      <label class="search" hidden>Search the archive<input type="search" placeholder="e.g. tunnelling, QCD, VQE"></label>
+    </div>
+
+    <div class="filters" aria-label="Filter by field" hidden>
+      <button type="button" data-filter="all" aria-pressed="true">All topics</button>
+      <button type="button" data-filter="quantum" aria-pressed="false">Quantum</button>
+      <button type="button" data-filter="math" aria-pressed="false">Mathematical physics</button>
+      <button type="button" data-filter="ai" aria-pressed="false">Scientific AI</button>
+      <button type="button" data-filter="interdisciplinary" aria-pressed="false">Interdisciplinary</button>
+    </div>
+    <p class="result" role="status" aria-live="polite" hidden></p>
+    <div class="archive">
+      <details data-field="quantum">
+        <summary><span class="category">Quantum dynamics</span><span class="entry-title">Toroidal hydrogen and attosecond pulses</span></summary>
+        <div class="entry-body"><p>How does the geometry of a toroidal hard wall affect hydrogenic bound states and driven dynamics?</p><p><strong>Starting point.</strong> Benchmark field-free eigenstates before adding the laser pulse.</p></div>
+      </details>
+      <details data-field="quantum">
+        <summary><span class="category">Quantum algorithms</span><span class="entry-title">Quantum algorithms for physical differential equations</span></summary>
+        <div class="entry-body"><p>Can a quantum or hybrid method reproduce a small, explicitly defined TDSE benchmark?</p><p><strong>Starting point.</strong> Compare quantum Hamiltonian simulation with finite-difference, spectral, or Krylov methods using matched accuracy criteria.</p></div>
+      </details>
+      <details data-field="math">
+        <summary><span class="category">Mathematical physics</span><span class="entry-title">Positive geometry and scattering amplitudes</span></summary>
+        <div class="entry-body"><p>Can twistor variables or positive geometry simplify a specific scattering-amplitude calculation?</p><p><strong>Starting point.</strong> Reproduce a known amplituhedron example, then identify which ingredients would need to change for a specified QCD process.</p></div>
+      </details>
+      <details data-field="ai">
+        <summary><span class="category">Scientific AI</span><span class="entry-title">Statistical physics of learning machines</span></summary>
+        <div class="entry-body"><p>Can a tractable learning model show changes in generalization as a control parameter varies?</p><p><strong>Starting point.</strong> Choose a model and dataset family, measure learning curves and loss, and test whether apparent transitions persist with scale.</p></div>
+      </details>
+      <details data-field="interdisciplinary">
+        <summary><span class="category">Quantum biology</span><span class="entry-title">Electron and proton tunnelling in molecules</span></summary>
+        <div class="entry-body"><p>How do molecular geometry, temperature and environmental coupling influence tunnelling in a model system?</p><p><strong>Starting point.</strong> Compare a minimal molecular barrier model with an environment-coupled model.</p></div>
+      </details>
+      <details data-field="quantum">
+        <summary><span class="category">Quantum devices</span><span class="entry-title">Spintronics and spin transport</span></summary>
+        <div class="entry-body"><p>How does spin–orbit coupling affect spin transport in a quantum dot or a nanoscale junction?</p><p><strong>Starting point.</strong> Calculate spin-dependent transmission in a minimal Hamiltonian. Other directions include spin Hall response, skyrmions, bimerons, and Heusler interfaces.</p></div>
+      </details>
+      <details data-field="math">
+        <summary><span class="category">Mathematical physics</span><span class="entry-title">Ramanujan’s Lost Notebook and mathematical physics</span></summary>
+        <div class="entry-body"><p>Can a specific identity involving q-series, modular forms, or partitions be linked to a meaningful quantity in a physical model?</p><p><strong>Starting point.</strong> Select one identity, check its known interpretations, and derive its connection to a model such as a partition function.</p></div>
+      </details>
+      <details data-field="interdisciplinary">
+        <summary><span class="category">Astrophysics</span><span class="entry-title">Neutron-star mergers and scattering observables</span></summary>
+        <div class="entry-body"><p>Which scattering observable or density correlation can be calculated for a specified merger environment?</p><p><strong>Starting point.</strong> Define the observable and test its sensitivity to a simplified density profile or nuclear matter equation of state.</p></div>
+      </details>
+      <details data-field="quantum">
+        <summary><span class="category">Open quantum systems</span><span class="entry-title">Thermalisation, decoherence, and quantum simulation</span></summary>
+        <div class="entry-body"><p>How well can a quantum simulation reproduce the relaxation and coherence decay of a small open system?</p><p><strong>Starting point.</strong> Solve a Lindblad master equation for a few levels and compare populations and coherences across implementations.</p></div>
+      </details>
+      <details data-field="quantum">
+        <summary><span class="category">Quantum chemistry</span><span class="entry-title">Variational algorithms for molecular simulation</span></summary>
+        <div class="entry-body"><p>How do variational quantum and classical molecular energies compare across the bond lengths of H₂?</p><p><strong>Starting point.</strong> Compare exact diagonalisation in a fixed basis, Hartree–Fock, and VQE under matched assumptions. The interactive H₂ simulator arose as an assistant-proposed extension.</p></div>
+      </details>
+    </div>
+  </section>
+
+  <section id="roadmap" class="section" aria-labelledby="roadmap-title">
+    <div class="section-head">
+      <div><p class="kicker">Research programme</p><h2 id="roadmap-title">Three research tracks</h2></div>
+    </div>
+    <div class="roadmap">
+      <article><h3>Toroidal quantum dynamics</h3><p>Develop a derivation and a reproducible MATLAB study of confinement and pulse-driven dynamics.</p></article>
+      <article><h3>Quantum algorithms for the TDSE</h3><p>Build a benchmark with matched error metrics and report the computational costs of each solver.</p></article>
+      <article><h3>Mathematical foundations of AI</h3><p>Test a statistical-physics question about learning and generalization in a model with controlled assumptions.</p></article>
+    </div>
+    <details class="lab-notes">
+      <summary>Related project concepts and research infrastructure</summary>
+      <p><strong>Collaborative extensions.</strong> Q-Schedule for timetable optimization, Q-Vibe for vibration analytics, the Q-MolSim H₂ simulator, machine learning with DFT, Heusler thin-film modelling, nanoscale quantum transport, and neural operators for PDEs.</p>
+      <p><strong>Infrastructure ideas.</strong> An unsolved-problem archive, a torus derivation and simulation archive, an arXiv reading workflow, and a daily mathematical physics programme.</p>
+    </details>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner wrap">
+    <span>Kumar Azad · Research Portfolio</span>
+    <div class="footer-links"><a href="https://github.com/KrAzad0">GitHub</a><a href="https://www.youtube.com/@thquantum-zero">YouTube</a></div>
+  </div>
+</footer>
+<script>
+const projectControls = document.querySelector('.controls');
+const projectButtons = [...projectControls.querySelectorAll('button')];
+function selectProjectPanel(selected) {
+  for (const button of projectButtons) {
+    const active = button === selected;
+    button.setAttribute('aria-pressed', active);
+    document.getElementById(button.getAttribute('aria-controls')).hidden = !active;
+  }
+}
+projectControls.hidden = false;
+selectProjectPanel(projectButtons[0]);
+for (const button of projectButtons) {
+  button.addEventListener('click', () => selectProjectPanel(button));
+}
+
+const search = document.querySelector('.search');
+const query = search.querySelector('input');
+const filters = document.querySelector('.filters');
+const filterButtons = [...filters.querySelectorAll('button')];
+const entries = [...document.querySelectorAll('.archive details')];
+const result = document.querySelector('.result');
+let field = 'all';
+function updateArchive() {
+  const terms = query.value.toLowerCase().trim().split(/\s+/).filter(Boolean);
+  let count = 0;
+  for (const entry of entries) {
+    const matchesField = field === 'all' || field === entry.dataset.field;
+    const entryText = entry.textContent.toLowerCase();
+    entry.hidden = !matchesField || !terms.every(term => entryText.includes(term));
+    if (!entry.hidden) count++;
+  }
+  result.textContent = count === 0 ? 'No topics match your search.' : count + (count === 1 ? ' topic' : ' topics');
+}
+search.hidden = false;
+filters.hidden = false;
+result.hidden = false;
+query.addEventListener('input', updateArchive);
+for (const button of filterButtons) {
+  button.addEventListener('click', () => {
+    field = button.dataset.filter;
+    for (const option of filterButtons) option.setAttribute('aria-pressed', option === button);
+    updateArchive();
+  });
+}
+updateArchive();
+
+const canvas = document.querySelector('.torus');
+const context = canvas.getContext('2d');
+function drawTorus() {
+  const {width, height} = canvas.getBoundingClientRect();
+  if (!width || !height || !context) return;
+  const density = Math.min(window.devicePixelRatio || 1, 2);
+  canvas.width = Math.round(width * density);
+  canvas.height = Math.round(height * density);
+  context.setTransform(density, 0, 0, density, width * density / 2, height * density / 2);
+  const scale = Math.min(width / 8.25, height / 5.65);
+  const radius = 2.34;
+  const tube = .82;
+  const tilt = .92;
+  const turn = -.21;
+  const tau = Math.PI * 2;
+  function project(u, v) {
+    const distance = radius + tube * Math.cos(v);
+    const x = distance * Math.cos(u);
+    const y = distance * Math.sin(u);
+    const z = tube * Math.sin(v);
+    const vertical = y * Math.cos(tilt) - z * Math.sin(tilt);
+    return {
+      x: scale * (x * Math.cos(turn) - vertical * Math.sin(turn)),
+      y: scale * (x * Math.sin(turn) + vertical * Math.cos(turn)),
+      depth: y * Math.sin(tilt) + z * Math.cos(tilt)
+    };
+  }
+  context.strokeStyle = '#dac3ff16';
+  context.lineWidth = 1;
+  for (let x = -Math.ceil(width / 48) * 24; x <= width / 2; x += 24) {
+    context.beginPath();
+    context.moveTo(x, -height / 2);
+    context.lineTo(x, height / 2);
+    context.stroke();
+  }
+  for (let y = -Math.ceil(height / 48) * 24; y <= height / 2; y += 24) {
+    context.beginPath();
+    context.moveTo(-width / 2, y);
+    context.lineTo(width / 2, y);
+    context.stroke();
+  }
+  const segments = [];
+  const around = 108;
+  const cross = 52;
+  for (let i = 0; i < around; i++) {
+    for (let j = 0; j < cross; j++) {
+      const point = project(tau * i / around, tau * j / cross);
+      if (j % 2 === 0) segments.push([point, project(tau * (i + 1) / around, tau * j / cross), i]);
+      if (i % 3 === 0) segments.push([point, project(tau * i / around, tau * (j + 1) / cross), i]);
+    }
+  }
+  segments.sort((first, second) => first[0].depth - second[0].depth);
+  for (const [start, end, i] of segments) {
+    const front = (start.depth + 3) / 6;
+    const hue = 267 + 65 * Math.pow((1 + Math.cos(tau * i / around - 1)) / 2, 3);
+    context.strokeStyle = 'hsla(' + hue + ', 100%, ' + (66 + 18 * front) + '%, ' + (.17 + .64 * front) + ')';
+    context.lineWidth = .65 + .38 * front;
+    context.beginPath();
+    context.moveTo(start.x, start.y);
+    context.lineTo(end.x, end.y);
+    context.stroke();
+  }
+}
+if ('ResizeObserver' in window) new ResizeObserver(drawTorus).observe(canvas);
+else window.addEventListener('resize', drawTorus);
+drawTorus();
+</script>
+</body>
+</html>
